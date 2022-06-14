@@ -4,9 +4,7 @@ const  sendToken  =require( "../utils/getjwt");
 exports.createuser= async (req, res) => {
   try {
     const { name, email, password } = req.body;
-
-
-    let user = await User.findOne({ email });
+let user = await User.findOne({ email });
 
     if (user) {
       return res
@@ -19,10 +17,7 @@ exports.createuser= async (req, res) => {
       name,
       email,
       password,
-      avatar: {
-        public_id: "avatars/ezc3su14rpw1afcurdem",
-        url: "https://res.cloudinary.com/vasal-clothings/image/upload/v1644650641/avatars/ezc3su14rpw1afcurdem.png",
-      },
+   
 
     });
 
