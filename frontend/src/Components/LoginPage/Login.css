@@ -2,15 +2,15 @@
     display: flex;
     padding: 0px 200px;
 }
-.signUpImg{
+.loginImg{
     flex: 1;
     background: #000;
 }
-.signupHolder{
+.loginHolder{
     flex: 1;
     padding: 50px;
 }
-.signupHolder h1{
+.loginHolder h1{
     font-size: 30px;
     margin-bottom: 20px;
 }

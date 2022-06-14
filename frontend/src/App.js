@@ -7,6 +7,9 @@ import Header from './Components/Layout/Header/Header';
 import Home from './Components/Home/Home';
 import About from './Components/Pages/About';
 import SignUp from './Components/LoginPage/SignUp';
+import Login from './Components/LoginPage/Login';
+import ForgetPassword from './Components/LoginPage/ForgetPassword';
+import ResetPassword from './Components/LoginPage/ResetPassword';
 
 function App() {
 
@@ -25,6 +28,9 @@ function App() {
           <Route path='/' element={<Home/>}/>
           <Route path='/about' element={<About/>}/>
           <Route path='/signup' element={<SignUp/>}/>
+          <Route path='/login' element={<Login/>}/>
+          <Route path='/forget' element={<ForgetPassword/>}/>
+          <Route path='/reset' element={<ResetPassword/>}/>
         </Routes>
       </Router>
     </div>

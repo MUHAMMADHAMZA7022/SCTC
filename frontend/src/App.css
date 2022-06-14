@@ -1,9 +1,12 @@
 :root {
     /* --boxShadow: 0px 5px 5px -5px rgba(44, 39, 39, 0.75); */
     --boxShadow: 0px 1px 6px 1px rgba(44, 39, 39, 0.75);
+    --themeColor: #002e3b;
     --lightColor: #868686;
+    --whiteColor: #fff;
     --lightBorder: 0 2px 3px rgb(0 0 0 / 10%);
     --boxBorder: rgb(0 0 0 / 10%);
+    --btnColor: #ec595f;
   }
   * {
     margin: 0;
@@ -42,7 +45,7 @@
     color: var(--themeColor);
     font-size: 12px;
     line-height: 16px;
-    font-weight: 500;
+    font-weight: 400;
     text-transform: uppercase;
     background: transparent;
     z-index: 0;
@@ -50,8 +53,7 @@
   .btn_primary.active,
   .btn_primary:focus,
   .btn_primary:hover {
-    color: var(--lightColor);
-    box-shadow: var(--boxShadow);
+    color: var(--whiteColor);
   }
   .btn_primary.active{
     background: var(--themeColor);
@@ -73,6 +75,6 @@
   .btn_primary:hover::after {
     border: 1px solid transparent;
     width: 100%;
-    color: var(--lightColor);
+    color: var(--whiteColor);
     transform: translate(0);
   }

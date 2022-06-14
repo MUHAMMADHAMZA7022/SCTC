@@ -1,25 +1,15 @@
 import React, { Fragment } from 'react'
-import "./SignUp.css";
+import "./Login.css";
 
-function SignUp() {
+function Login() {
     return (
         <Fragment>
-            {/* Sign Up Form */}
+            {/* Login Form */}
             <div className='formHolder'>
-                <div className='signupHolder'>
-                    <h1>Sign Up</h1>
-                    <form className="signupForm">
-                        {/* Name */}
-                        <div className="group_field">
-                            <label htmlFor="name">
-                                Name<span>*</span>
-                            </label>
-                            <input
-                                type='text'
-                                placeholder="Name"
-                                required
-                            />
-                        </div>
+                <div className='loginImg'></div>
+                <div className='loginHolder'>
+                    <h1>Log In</h1>
+                    <form className="loginForm">
                         {/* Email */}
                         <div className="group_field">
                             <label htmlFor="email">
@@ -34,7 +24,7 @@ function SignUp() {
                         {/* Password */}
                         <div className="group_field">
                             <label htmlFor="password">
-                            Password<span>*</span>
+                                Password<span>*</span>
                             </label>
                             <input
                                 type='password'
@@ -43,14 +33,13 @@ function SignUp() {
                             />
                         </div>
                         <div className="group_field">
-                            <button className='btn_primary'>Sign Up</button>
+                            <button className='btn_primary'>Login</button>
                         </div>
                     </form>
                 </div>
-                <div className='signUpImg'></div>
             </div>
         </Fragment>
     )
 }
 
-export default SignUp
+export default Login
