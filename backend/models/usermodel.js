@@ -16,6 +16,7 @@ const userSchema = new mongoose.Schema({
     required: [true, "Please Enter Your Email"],
     unique: true,
     validate: [validator.isEmail, "Please Enter a valid Email"],
+    trim: true,
   },
   password: {
     type: String,
@@ -62,16 +63,15 @@ userSchema.methods.comparePassword = async function (password) {
 
 userSchema.methods.Resetpasswordtoken = function () {
   // Generating Token
-  const resettoken = crypto.randomBytes(20).toString("hex");
+
 
   // Hashing and adding resetPasswordToken to userSchema
   this.resetpasswordtoken = crypto
     .createHash("sha256")
-    .update(resettoken)
-    .toString("hex");
-
+    .update(process.env.secretresettoken)
+    .digest("hex");
   this.resetpasswordexpire = Date.now() + 15 * 60 * 1000;
 
-  return resettoken;
+  return this.resetpasswordtoken;
 };
 module.exports = mongoose.model("user", userSchema);
