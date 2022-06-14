@@ -12,8 +12,8 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path='/' component={Home}></Route>
-          <Route path='/about' component={About}></Route>
+          <Route path='/' element={<Home/>}/>
+          <Route path='/about' element={<About/>}/>
         </Routes>
       </Router>
     </div>
