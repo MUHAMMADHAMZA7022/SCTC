@@ -20,10 +20,10 @@ app.use(cors(corsOptions));
 app.get("/", (req, res) => {
   res.send("Hello Backend");
 });
-
+const errormiddleware = require("./middleware/error");
 const user = require("./routers/userroute");
 app.use("/api/v1", user); 
 
-
+app.use(errormiddleware);
 module.exports = app;
 

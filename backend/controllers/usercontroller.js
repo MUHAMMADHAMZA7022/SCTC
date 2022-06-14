@@ -1,8 +1,9 @@
 const User = require("../models/usermodel");
 const sendEmail = require("../utils/sendmail");
 const sendToken = require("../utils/getjwt");
-const crypto=require("crypto");
-
+const crypto = require("crypto");
+const Errorhandler = require("../middleware/errorhandler"); //ye hum ny product error k liye bnya mtlb glt id dy user to server bnd naw ho
+const catchasyncerror = require("../middleware/asyncerror");
 exports.createuser = async (req, res) => {
   try {
     const { name, email, password } = req.body;
@@ -73,11 +74,11 @@ exports.forgetPassword = async (req, res) => {
     }
 
     //Get resettoken save kiya databse mein
-    const resettoken = user.Resetpasswordtoken(); 
-  
+    const resettoken = user.Resetpasswordtoken();
+
     await user.save({ validateBeforeSave: false });
 
-    const resetpasswordurl = `${process.env.Frontend_Url}/password/reset/${resettoken}`; 
+    const resetpasswordurl = `${process.env.Frontend_Url}/password/reset/${resettoken}`;
     const message = `Your Password reset token is:-\n\n ${resetpasswordurl} \n\n If you have not requested this email then, please ignore it`;
     try {
       await sendEmail({
@@ -93,19 +94,16 @@ exports.forgetPassword = async (req, res) => {
       user.resetpasswordtoken = undefined;
       user.resetpasswordexpire = undefined; //ye undefined kiya k phly upar save krwa chuky ha error naw aye tbhi undefined kr k save kr diya wa
       await user.save({ validateBeforeSave: false }); //ye save kr liya hum ny
-    res.status(500).json({ success: false, message: error.message });
-     
+      res.status(500).json({ success: false, message: error.message });
     }
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
     console.log(error.message);
-
   }
 };
 exports.resetPassword = async (req, res) => {
   try {
-
-    if (!req.body.password||!req.body.confirmpassword) {
+    if (!req.body.password || !req.body.confirmpassword) {
       return res
         .status(400)
         .json({ success: false, message: "Please enter all the fields" });
@@ -116,15 +114,14 @@ exports.resetPassword = async (req, res) => {
         .json({ success: false, message: "Password Not Matched" });
     }
 
-
-    const resetpasswordtoken =  
- crypto.createHash('sha256')
- .update(process.env.secretresettoken)
- .digest('hex')
+    const resetpasswordtoken = crypto
+      .createHash("sha256")
+      .update(process.env.secretresettoken)
+      .digest("hex");
 
     console.log(resetpasswordtoken);
     const user = await User.findOne({
-      resetpasswordtoken:resetpasswordtoken,
+      resetpasswordtoken: resetpasswordtoken,
       resetpasswordexpire: {
         $gt: Date.now(),
       },
@@ -146,3 +143,129 @@ exports.resetPassword = async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
+//me
+exports.getuserdetails = async (req, res) => {
+  try {
+    const user = await User.findById(req.user.id);
+    res.status(200).json({
+      success: true,
+      user,
+    });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+//get all users(Admin)
+exports.getallusers = async (req, res, next) => {
+  try {
+    const users = await User.find();
+    res.status(200).json({
+      success: true,
+      users,
+    });
+  } catch (error) {
+    res.status(500).json({ success: false, message: "No User Found" });
+  }
+};
+//get single user(Admin)
+exports.getsingleuser = async (req, res, next) => {
+  try {
+    const user = await User.findById(req.params.id);
+    if (!user) {
+      return res
+        .status(404)
+        .json({
+          success: false,
+          message: `User Does Not exist this id:${req.params.id}`,
+        });
+    }
+    res.status(200).json({
+      success: true,
+      user,
+    });
+  } catch (error) {
+    res
+      .status(500)
+      .json({
+        success: false,
+        message: "User Does Not exist this id:${req.params.id}",
+      });
+  }
+};
+// user delete --(Admin)
+exports.deleteuser = async (req, res, next) => {
+  try {
+    const user = await User.findById(req.params.id);
+    if (!user) {
+      return next(
+        new Errorhandler(`User Does Not exist this id:${req.params.id}`)
+      );
+    }
+    if (user.email === "muhammadhamza7022@gmail.com") {
+      return next(new Errorhandler(`ADMIN NOT DELETED`));
+    }
+
+    await user.remove();
+    res.status(200).json({
+      success: true,
+      message: "User Deleted Successfully",
+    });
+  } catch (error) {
+    res
+      .status(500)
+      .json({
+        success: false,
+        message: `User Does Not exist this id: ${req.params.id}`,
+      });
+  }
+};
+//update password
+exports.updatepassword = async (req, res, next) => {
+  try {
+    if(!req.body.oldpassword || !req.body.newpassword || !req.body.confirmpassword){
+      return res.status(400).json({success:false,message:"Please enter all the fields"})
+    }
+    const user = await User.findById(req.user.id).select("+password");
+    const passwordmatch = await user.comparePassword(req.body.oldpassword); //ye fuction bnya wa bcrpyt ka model mein compare k liye
+    if (!passwordmatch) {
+    return res.status(401).json({ success: false, message: "Old password Incorrect" });
+
+    }
+    if (req.body.newpassword !== req.body.confirmpassword) {
+    return res.status(404).json({ success: false, message: "Password Not Matched" });
+
+    }
+    user.password = req.body.newpassword;
+    await user.save();
+    sendToken(res,  user,200, "Password Changed Successfully");
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+//update user profile
+exports.updateprofile = async (req, res) => {
+  try {
+    if(!req.body.name || !req.body.email){
+      return res.status(400).json({success:false,message:"Please enter all the fields"})
+    }
+    const newuserdata = {
+      name: req.body.name,
+      email: req.body.email,
+    };
+    const user = await User.findByIdAndUpdate(req.user.id, newuserdata, {
+      new: true,
+      runValidators: true,
+      useFindAndModify: false,
+    });
+    res.status(200).json({
+      success: true,
+      user,
+      message: "Profile Updated Successfully",
+    });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+    
+  
+}

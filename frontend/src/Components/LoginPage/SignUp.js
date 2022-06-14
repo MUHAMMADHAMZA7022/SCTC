@@ -1,14 +1,47 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from "react";
 import "./SignUp.css";
+import {  useDispatch } from "react-redux";
+import {
 
-function SignUp() {
+  register,
+} from "../../redux/action/useraction";
+function SignUp({history}) {
+
+    const dispatch = useDispatch();
+  
+
+  
+    const [user, setUser] = useState({
+      name: "",
+      email: "",
+      password: "",
+    });
+  
+    const { name, email, password } = user;
+  
+    const registerDataChange = (e) => {
+      let name, value;
+      name = e.target.name; //name get kiya
+      value = e.target.value; //value mili user jo likh rha
+      setUser({ ...user, [name]: value });
+    };
+
+    const registerSubmit = (e) => {
+      e.preventDefault();
+      let myForm = new FormData();
+      myForm.set("name", name);
+      myForm.set("email", email);
+      myForm.set("password", password);
+      dispatch(register(myForm));
+      history.push("/login");
+    };
     return (
         <Fragment>
             {/* Sign Up Form */}
             <div className='formHolder'>
                 <div className='signupHolder'>
                     <h1>Sign Up</h1>
-                    <form className="signupForm">
+                    <form className="signupForm" onSubmit={registerSubmit}>
                         {/* Name */}
                         <div className="group_field">
                             <label htmlFor="name">
@@ -18,6 +51,9 @@ function SignUp() {
                                 type='text'
                                 placeholder="Name"
                                 required
+                                name='name'
+                                value={name}
+                                onChange={registerDataChange}
                             />
                         </div>
                         {/* Email */}
@@ -29,6 +65,9 @@ function SignUp() {
                                 type='email'
                                 placeholder="Email"
                                 required
+                                name='email'
+                                value={email}
+                                onChange={registerDataChange}
                             />
                         </div>
                         {/* Password */}
@@ -40,10 +79,13 @@ function SignUp() {
                                 type='password'
                                 placeholder="Password"
                                 required
+                                name='password'
+                                value={password}
+                                onChange={registerDataChange}
                             />
                         </div>
                         <div className="group_field">
-                            <button className='btn_primary'>Sign Up</button>
+                            <button className='btn_primary' >Sign Up</button>
                         </div>
                     </form>
                 </div>
