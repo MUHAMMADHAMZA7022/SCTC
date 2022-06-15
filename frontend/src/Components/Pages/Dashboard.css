@@ -1,0 +1,41 @@
+.dashboard_holder{
+    overflow: hidden;
+}
+.dSidebar{
+    width: 20%;
+    float: left;
+}
+.dashboard_content{
+    width: 80%;
+    float: right;
+}
+.dashboard_sidebar{
+    padding: 50px 0px;
+    border-right: 1px solid var(--themeColor);
+    background-color: var(--lightColor);
+    height: 100vh;
+}
+.dLogo{
+    padding: 10px;
+    font-size: 32px;
+    font-weight: 800;
+}
+.dList ul li a{
+    display: block;
+    padding: 5px 10px;
+    background-color: var(--lightColor);
+    color: var(--themeColor);
+}
+.dList ul li a:focus,
+.dList ul li a:hover{
+    background-color: var(--themeColor);
+    color: var(--whiteColor);
+}
+.dashboard .dList ul li a.dshActive,
+.courses .dList ul li a.crsActive,
+.students .dList ul li a.stdActive,
+.seminars .dList ul li a.semActive,
+.events .dList ul li a.evnActive{
+    background-color: var(--themeColor);
+    color: var(--whiteColor);
+}
