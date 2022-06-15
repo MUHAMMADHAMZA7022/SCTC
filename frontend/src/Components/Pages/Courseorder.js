@@ -2,21 +2,21 @@ import React, { Fragment } from 'react'
 import "./Dashboard.css";
 import Sidebar from './Sidebar';
 
-function Dashboard() {
+function Courseorder() {
     return (
         <Fragment>
-            <div className='dashboard_holder dashboard'>
+            <div className='dashboard_holder students'>
                 {/* Sidebar */}
                 <div className='dSidebar'>
                     <Sidebar />
                 </div>
                 {/* Main Content */}
                 <div className='dashboard_content'>
-                    This is Dashboard.
+                    This is Courses Order.
                 </div>
             </div>
         </Fragment>
     )
 }
 
-export default Dashboard
+export default Courseorder

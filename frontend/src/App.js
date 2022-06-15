@@ -13,10 +13,12 @@ import ResetPassword from './Components/LoginPage/ResetPassword';
 import Dashboard from './Components/Pages/Dashboard';
 
 import Courses from './Components/Pages/Courses';
+import Allcourses from './Components/Pages/Allcourses';
 import Sidebar from './Components/Pages/Sidebar';
 import Students from './Components/Pages/Students';
 import Seminars from './Components/Pages/Seminars';
 import Events from './Components/Pages/Events';
+import Courseorder from './Components/Pages/Courseorder';
 
 function App() {
 
@@ -40,7 +42,10 @@ function App() {
           <Route path='/forget' element={<ForgetPassword />} />
           <Route path='/reset' element={<ResetPassword />} />
           <Route path='/dashboard' element={<Dashboard />} />
-          <Route path='/courses' element={<Courses />} />
+          <Route path='/create/courses' element={<Courses />} />
+          <Route path='/all/course' element={<Allcourses />} />
+          <Route path='/courseorder' element={<Courseorder/>} />
+          
           <Route path='/sbr' element={<Sidebar />} />
           <Route path='/students' element={<Students />} />
           <Route path='/seminars' element={<Seminars />} />
