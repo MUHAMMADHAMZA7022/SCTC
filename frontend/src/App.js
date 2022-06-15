@@ -17,6 +17,8 @@ import Sidebar from './Components/Pages/Sidebar';
 import Students from './Components/Pages/Students';
 import Seminars from './Components/Pages/Seminars';
 import Events from './Components/Pages/Events';
+import UpdateCourse from './Components/Pages/UpdateCourse';
+import RemoveCourses from './Components/Pages/RemoveCourses';
 
 function App() {
 
@@ -27,7 +29,7 @@ function App() {
       },
     });
   }, []);
-  
+
   return (
     <div>
       <Router>
@@ -45,6 +47,8 @@ function App() {
           <Route path='/students' element={<Students />} />
           <Route path='/seminars' element={<Seminars />} />
           <Route path='/events' element={<Events />} />
+          <Route path='/updatecourse' element={<UpdateCourse />} />
+          <Route path='/removecourse' element={<RemoveCourses />} />
         </Routes>
       </Router>
     </div>
