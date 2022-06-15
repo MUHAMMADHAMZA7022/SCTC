@@ -21,6 +21,7 @@
     font-size: 32px;
     font-weight: 800;
 }
+.dList ul li span,
 .dList ul li a{
     display: block;
     padding: 5px 10px;
@@ -28,12 +29,15 @@
     color: var(--themeColor);
     border-bottom: 1px solid rgba(0, 46, 59, 0.29);
 }
+.dList ul li span:focus,
+.dList ul li span:hover,
 .dList ul li a:focus,
 .dList ul li a:hover{
     background-color: var(--themeColor);
     color: var(--whiteColor);
 }
 .dashboard .dList ul li a.dshActive,
+.courses .dList ul li span.crsActive,
 .courses .dList ul li a.crsActive,
 .students .dList ul li a.stdActive,
 .seminars .dList ul li a.semActive,
@@ -63,4 +67,26 @@
     color: var(--themeColor);
     overflow: hidden;
     margin-bottom: 10px;
+}
+
+.dashboard_sidebar .dList ul li{
+    overflow: hidden;
+}
+.dashboard_sidebar .dList ul li ul.child_bar{
+    display: block;
+}
+.dashboard_sidebar .dList ul li ul.child_bar li a{
+    display: block;
+    font-size: 12px;
+    padding: 5px 0 5px 30px;
+    background: var(--whiteColor);
+    color: var(--themeColor);
+}
+.dashboard_sidebar .dList ul li ul.child_bar li a:focus,
+.dashboard_sidebar .dList ul li ul.child_bar li a:hover{
+    background: var(--themeColor);
+    color: var(--whiteColor);
+}
+.dashboard_sidebar .dList ul li.toggleBar ul.child_bar{
+    display: none;
 }
