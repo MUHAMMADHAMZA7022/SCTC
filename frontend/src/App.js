@@ -6,23 +6,23 @@ import WebFont from "webfontloader";
 import Header from './Components/Layout/Header/Header';
 import Home from './Components/Home/Home';
 import About from './Components/Pages/About';
-import SignUp from './Components/LoginPage/SignUp';
-import Login from './Components/LoginPage/Login';
-import ForgetPassword from './Components/LoginPage/ForgetPassword';
-import ResetPassword from './Components/LoginPage/ResetPassword';
-import Dashboard from './Components/Pages/Dashboard';
+import SignUp from './Components/Users/SignUp';
+import Login from './Components/Users/Login';
+import ForgetPassword from './Components/Users/ForgetPassword';
+import ResetPassword from './Components/Users/ResetPassword';
+import Dashboard from './Components/Pages/Admin/Dashboard';
 
-import Courses from './Components/Pages/Courses';
-import Allcourses from './Components/Pages/Allcourses';
-import Sidebar from './Components/Pages/Sidebar';
-import Students from './Components/Pages/Students';
-import Seminars from './Components/Pages/Seminars';
-import Events from './Components/Pages/Events';
+import Courses from './Components/Pages/Admin/Courses';
+import Allcourses from './Components/Pages/Admin/Allcourses';
+import Sidebar from './Components/Pages/Admin/Sidebar';
+import Students from './Components/Pages/Admin/Students';
+import Seminars from './Components/Pages/Admin/Seminars';
+import Events from './Components/Pages/Admin/Events';
 
-import Courseorder from './Components/Pages/Courseorder';
+import Courseorder from './Components/Pages/Admin/Courseorder';
 
-import UpdateCourse from './Components/Pages/UpdateCourse';
-import RemoveCourses from './Components/Pages/RemoveCourses';
+import UpdateCourse from './Components/Pages/Admin/UpdateCourse';
+import RemoveCourses from './Components/Pages/Admin/RemoveCourses';
 
 function App() {
 

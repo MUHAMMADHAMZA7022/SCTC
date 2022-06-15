@@ -39,7 +39,7 @@ import VideoLabelIcon from '@mui/icons-material/VideoLabel';
 import EventIcon from '@mui/icons-material/Event';
 const Sidebar = () => {
   return (
-    <div className="sidebar dashboard_sidebar">
+    <div className="sidebar ">
       <Link to="/dashboard">
         <p>
           <DashboardIcon /> Dashboard

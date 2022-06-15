@@ -12,15 +12,17 @@ function Courses() {
         </div>
         {/* Main Content */}
         <div className='dashboard_content courses_content'>
-          <h1>Upload New Course</h1>
+          <h1>Create Course</h1>
           <form className='courseForm'>
-            <input placeholder='Course Title' type='text' />
-            <input placeholder='Course Price' type='text' />
-            <input placeholder='Instructor Name' type='text' />
-            <input placeholder='Course Deadline' type='date' />
-            <input placeholder='Course Image' type='file' />
+            <input placeholder='Course Name' type='text' />
             <textarea placeholder='Course Description' type='text' />
-            <button className='btn_primary'>Upload</button>
+            <textarea placeholder='Course File Link' type='text' />
+            <input placeholder='Course Price' type='number' />
+            <input placeholder='Course Images' type='file' />
+            <input placeholder=' Course Instructor' type='text' />
+            <input placeholder='Course Deadline' type='date' />
+            <input placeholder='Course Categorey' type="text" />
+            <button className='btn_primary'>Create</button>
           </form>
         </div>
       </div>
