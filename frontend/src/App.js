@@ -18,12 +18,11 @@ import Sidebar from './Components/Pages/Sidebar';
 import Students from './Components/Pages/Students';
 import Seminars from './Components/Pages/Seminars';
 import Events from './Components/Pages/Events';
-<<<<<<< HEAD
+
 import Courseorder from './Components/Pages/Courseorder';
-=======
+
 import UpdateCourse from './Components/Pages/UpdateCourse';
 import RemoveCourses from './Components/Pages/RemoveCourses';
->>>>>>> 738fcd203bfb11983585479dc3a7f7bb9f5060ee
 
 function App() {
 
