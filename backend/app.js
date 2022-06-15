@@ -21,8 +21,12 @@ app.get("/", (req, res) => {
   res.send("Hello Backend");
 });
 const errormiddleware = require("./middleware/error");
+// usser routes
 const user = require("./routers/userroute");
-app.use("/api/v1", user); 
+app.use("/api/v1/user", user); 
+// course routes
+const course = require("./routers/courseroute");
+app.use("/api/v1/course", course); 
 
 app.use(errormiddleware);
 module.exports = app;
