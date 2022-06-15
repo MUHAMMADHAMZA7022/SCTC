@@ -1,6 +1,7 @@
 :root {
     /* --boxShadow: 0px 5px 5px -5px rgba(44, 39, 39, 0.75); */
     --boxShadow: 0px 1px 6px 1px rgba(44, 39, 39, 0.75);
+    /* 0, 46, 59, 1  for theme color*/
     --themeColor: #002e3b;
     --lightColor: #868686;
     --whiteColor: #fff;

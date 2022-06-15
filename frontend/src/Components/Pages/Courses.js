@@ -11,8 +11,17 @@ function Courses() {
           <Sidebar />
         </div>
         {/* Main Content */}
-        <div className='dashboard_content'>
-          This is Courses.
+        <div className='dashboard_content courses_content'>
+          <h1>Upload New Course</h1>
+          <form className='courseForm'>
+            <input placeholder='Course Title' type='text' />
+            <input placeholder='Course Price' type='text' />
+            <input placeholder='Instructor Name' type='text' />
+            <input placeholder='Course Deadline' type='date' />
+            <input placeholder='Course Image' type='file' />
+            <textarea placeholder='Course Description' type='text' />
+            <button className='btn_primary'>Upload</button>
+          </form>
         </div>
       </div>
     </Fragment>
