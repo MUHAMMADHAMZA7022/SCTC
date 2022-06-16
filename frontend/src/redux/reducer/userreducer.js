@@ -19,7 +19,7 @@ const userreducer=createReducer({},{
       loginrequest: (state) => {
         state.loading = true;
       },
-      loginruccess: (state, action) => {
+      loginsuccess: (state, action) => {
         state.loading = false;
         state.isAuthenticated = true;
         state.user = action.payload.user;

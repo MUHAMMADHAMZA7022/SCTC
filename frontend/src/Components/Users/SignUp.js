@@ -5,27 +5,20 @@ import {
 
   register,
 } from "../../redux/action/useraction";
-function SignUp({history}) {
-
+function SignUp() {
     const dispatch = useDispatch();
-  
-
-  
     const [user, setUser] = useState({
       name: "",
       email: "",
       password: "",
     });
-  
     const { name, email, password } = user;
-  
     const registerDataChange = (e) => {
       let name, value;
       name = e.target.name; //name get kiya
       value = e.target.value; //value mili user jo likh rha
       setUser({ ...user, [name]: value });
     };
-
     const registerSubmit = (e) => {
       e.preventDefault();
       let myForm = new FormData();
@@ -33,7 +26,6 @@ function SignUp({history}) {
       myForm.set("email", email);
       myForm.set("password", password);
       dispatch(register(myForm));
-    //   history.push("/login");
     };
     return (
         <Fragment>

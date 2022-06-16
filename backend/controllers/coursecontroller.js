@@ -16,9 +16,7 @@ try {
     crop: "scale",
   });
 
-
- 
-  // req.body.user = req.user.id;
+ req.body.user = req.user.id;
   const { name,  course_file, description, price, instructor,  cateogery,deadline } =
     req.body;
 

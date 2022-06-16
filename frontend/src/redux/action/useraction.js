@@ -4,11 +4,11 @@ export const login = (email, password) => async (dispatch) => {
     dispatch({ type: " loginrequest" });
     const config = { headers: { "Content-Type": "application/json" } };
     const { data } = await axios.post(
-      `http://localhost:4000/api/v1/login`,
+      `http://localhost:4000/api/v1/user/login`,
       { email, password },
       config
     );
-    dispatch({ type: "loginsuccess", payload: data.user });
+    dispatch({ type: "loginsuccess", payload: data });
   } catch (error) {
     dispatch({ type: " loginfailure", payload: error.response.data.message });
   }
