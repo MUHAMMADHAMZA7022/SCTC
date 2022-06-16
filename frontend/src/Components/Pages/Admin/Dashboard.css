@@ -68,10 +68,17 @@
     overflow: hidden;
     margin-bottom: 10px;
 }
+<<<<<<< HEAD
  .imageeee {
     width: 10vmax;
     border-radius: 0%;
   }
+=======
+.courseForm textarea{
+    padding: 0px 2px 0px 5px;
+}
+
+>>>>>>> 512e0802f6e021e059ad08094d14948c368b8e5d
 .dashboard_sidebar .dList ul li{
     overflow: hidden;
 }
