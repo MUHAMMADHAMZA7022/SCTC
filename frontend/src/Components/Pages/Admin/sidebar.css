@@ -1,12 +1,12 @@
 .sidebar {
   display: flex;
   flex-direction: column;
-  padding: 2rem 0;
+  padding: 20px 0px;
 }
 .sidebar a {
   text-decoration: none;
   color: var(--themeColor);
-  padding: 1rem;
+  padding: 10px 0px 10px 0px;
 }
 .sidebar a:focus,
 .sidebar a ul li div.MuiTreeItem-label:focus,
@@ -35,6 +35,10 @@
 .sidebar a > P {
   display: flex;
   align-items: center;
+  padding: 5px 10px;
+}
+.sidebar .css-1g86id8-MuiTreeItem-content{
+  padding: 5px 10px;
 }
 .sidebar a > p > svg {
   margin-right: 0.5rem;

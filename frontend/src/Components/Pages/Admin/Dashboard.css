@@ -68,6 +68,9 @@
     overflow: hidden;
     margin-bottom: 10px;
 }
+.courseForm textarea{
+    padding: 0px 2px 0px 5px;
+}
 
 .dashboard_sidebar .dList ul li{
     overflow: hidden;
