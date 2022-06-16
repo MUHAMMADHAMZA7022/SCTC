@@ -33,7 +33,7 @@ function SignUp({history}) {
       myForm.set("email", email);
       myForm.set("password", password);
       dispatch(register(myForm));
-      history.push("/login");
+    //   history.push("/login");
     };
     return (
         <Fragment>

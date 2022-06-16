@@ -68,7 +68,10 @@
     overflow: hidden;
     margin-bottom: 10px;
 }
-
+ .imageeee {
+    width: 10vmax;
+    border-radius: 0%;
+  }
 .dashboard_sidebar .dList ul li{
     overflow: hidden;
 }
