@@ -1,0 +1,5 @@
+export const COURSE_REQUEST = "COURSE_REQUEST";
+export const COURSE_SUCCESS = "COURSE_SUCCESS";
+export const COURSE_RESET = "COURSE_RESET";
+export const COURSE_FAIL = "COURSE_FAIL";
+export const CLEAR_ERRORS = "CLEAR_ERRORS";

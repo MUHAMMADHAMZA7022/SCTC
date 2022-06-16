@@ -1,15 +1,17 @@
 import "./Dashboard.css";
 import Sidebar from './Sidebar';
-import React, { Fragment,  useState } from "react";
-import {  useDispatch } from "react-redux";
-import {  courseregister } from "../../../redux/action/courseaction";
-// import { NEW_PRODUCT_RESET } from "../../redux/constant/productConstants";
-
-function Courses({history}) {
+import React, { Fragment,  useState, useEffect} from "react";
+import {  useDispatch,useSelector } from "react-redux";
+import {  courseregister,CLEAR_ERROR } from "../../../redux/action/courseaction";
+import { COURSE_RESET } from "../../../redux/Constant/courseconstant";
+import { useNavigate } from "react-router-dom";
+import {useAlert} from "react-alert"
+function Courses() {
+let history = useNavigate();
     const dispatch = useDispatch();
-  // const alert = useAlert();
+  const alert = useAlert();
 
-  // const {  error, success } = useSelector((state) => state.coursereducer);
+   const {  error, success } = useSelector((state) => state.newCourse);
 
   const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
@@ -38,18 +40,18 @@ function Courses({history}) {
     "Cosmetics"
   ];
 
-  // useEffect(() => {
-  //   if (error) {
-  //     alert.error(error);
-  //     dispatch(clear_errors());
-  //   }
+  useEffect(() => {
+    if (error) {
+      alert.error(error);
+      dispatch(CLEAR_ERROR());
+    }
 
-  //   if (success) {
-  //     alert.success("Product Created Successfully");
-  //     history.push("/admin/dashboard");
-  //     // dispatch({ type: NEW_PRODUCT_RESET });
-  //   }
-  // }, [dispatch,  error, history, success]);
+    if (success) {
+     alert.success("Product Created Successfully");
+      history("/dashboard");
+       dispatch({ type: COURSE_RESET });
+    }
+  }, [dispatch,success,error, alert,history,]);
 
   const createProductSubmitHandler = (e) => {
     e.preventDefault();
@@ -95,22 +97,6 @@ function Courses({history}) {
         {/* Main Content */}
         <div className='dashboard_content courses_content'>
           <h1>Create Course</h1>
-<<<<<<< HEAD
-          <form className='courseForm'>
-            <input placeholder='Course Name' type='text' />
-            <textarea placeholder='Course Description' type='text' />
-            <textarea placeholder='Course File Link' type='text' />
-            <input placeholder='Course Price' type='number' />
-            <input placeholder='Course Images' type='file' />
-            <input placeholder=' Course Instructor' type='text' />
-            <input placeholder='Course Deadline' type='date' />
-            <select placeholder='Course Categorey'className='selectOpt'>
-              <option>Course Categorey</option>
-              <option>Biostatical</option>
-              <option>Physics</option>
-              <option>Chemistry</option>
-            </select>
-=======
           <form className='courseForm'  onSubmit={createProductSubmitHandler}>
           <input
                 type="text"
@@ -171,7 +157,6 @@ function Courses({history}) {
                 required
                 onChange={(e) => setdeadline(e.target.value)}
               />
->>>>>>> 2fee440db9332a58289b062dddb268d3d833a099
             <button className='btn_primary'>Create</button>
             
           </form>
