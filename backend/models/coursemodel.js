@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 const courseSechema = new mongoose.Schema({
-    course_name: {
+    name: {
         type: String,
         trim: true,
         required: [true, "Please Enter Course Name"],
     },
-    course_description: {
+    description: {
         type: String,
         required: [true, "Please Enter Course Description"],
     },
@@ -14,33 +14,31 @@ const courseSechema = new mongoose.Schema({
         required: [true, "Please Enter Course File"],
     },
 
-    course_price: {
+    price: {
         type: Number,
         required: [true, "Please Enter Course Price"],
         maxlength: [8, "Price caannot exceed 8 charaters"],
     },
-    course_images: [{
-        publicid: {
-            type: String,
-            required: true,
+    images: {
+        public_id: {
+          type: String,
         },
         url: {
-            type: String,
-            required: true,
+          type: String,
         },
-    },],
-    course_instructor: {
+      },
+        instructor: {
         type: String,
         trim: true,
         required: [true, "Please Enter Course Instructor Name"],
     },
-    course_deadline:{
+    deadline:{
         // type: Number*24*60*60*1000 + Date.now ,
         type:Number,
         required: [true, "Please Enter Course Deadline"],
 
     },
-    course_cateogery: {
+    cateogery: {
         type: String,
         required: [true, "Please Enter Course Cateogry"],
     },

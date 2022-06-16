@@ -5,7 +5,7 @@ const auth =require( "../utils/auth");
 const {
   createcourse,
 } = require("../controllers/coursecontroller"); 
-router.route("/createcourse").post( auth,createcourse);
+router.route("/createcourse").post( createcourse);
 
   module.exports = router;
 
