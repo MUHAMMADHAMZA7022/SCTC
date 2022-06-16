@@ -35,7 +35,7 @@ import ImportExportIcon from "@mui/icons-material/ImportExport";
 import ListAltIcon from "@mui/icons-material/ListAlt";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import AccessibilityIcon from '@mui/icons-material/Accessibility';
-import VideoLabelIcon from '@mui/icons-material/VideoLabel';
+// import VideoLabelIcon from '@mui/icons-material/VideoLabel';
 import EventIcon from '@mui/icons-material/Event';
 const Sidebar = () => {
   return (
@@ -52,11 +52,19 @@ const Sidebar = () => {
         >
           <TreeItem nodeId="1" label="Courses">
             <Link to="/all/course">
-              <TreeItem nodeId="2" label="All" icon={<PostAddIcon />} />
+              <TreeItem nodeId="2" label="All Courses" icon={<PostAddIcon />} />
             </Link>
 
             <Link to="/create/courses">
               <TreeItem nodeId="3" label="Create" icon={<AddIcon />} />
+            </Link>
+
+            <Link to="/removecourse">
+              <TreeItem nodeId="4" label="Remove" icon={<AddIcon />} />
+            </Link>
+
+            <Link to="/updatecourse">
+              <TreeItem nodeId="5" label="Update" icon={<AddIcon />} />
             </Link>
           </TreeItem>
         </TreeView>
@@ -72,7 +80,7 @@ const Sidebar = () => {
           <AccessibilityIcon /> Students
         </p>
       </Link>
-      <Link to="/seminars">
+      {/* <Link to="/seminars">
         <p>
           <VideoLabelIcon  />
           Seminars
@@ -83,6 +91,30 @@ const Sidebar = () => {
           <EventIcon />
          Events
         </p>
+      </Link> */}
+      <Link to={"#"}>
+        <TreeView
+          defaultCollapseIcon={<ExpandMoreIcon />}
+          defaultExpandIcon={<EventIcon />}
+        >
+          <TreeItem nodeId="1" label="Events">
+            <Link to="/all/events">
+              <TreeItem nodeId="2" label="All Events" icon={<PostAddIcon />} />
+            </Link>
+
+            <Link to="/create/event">
+              <TreeItem nodeId="3" label="Create" icon={<AddIcon />} />
+            </Link>
+
+            <Link to="/removeevent">
+              <TreeItem nodeId="4" label="Remove" icon={<AddIcon />} />
+            </Link>
+
+            <Link to="/updateevent">
+              <TreeItem nodeId="5" label="Update" icon={<AddIcon />} />
+            </Link>
+          </TreeItem>
+        </TreeView>
       </Link>
     </div>
   );

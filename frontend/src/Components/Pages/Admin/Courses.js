@@ -21,7 +21,12 @@ function Courses() {
             <input placeholder='Course Images' type='file' />
             <input placeholder=' Course Instructor' type='text' />
             <input placeholder='Course Deadline' type='date' />
-            <input placeholder='Course Categorey' type="text" />
+            <select placeholder='Course Categorey'className='selectOpt'>
+              <option>Course Categorey</option>
+              <option>Biostatical</option>
+              <option>Physics</option>
+              <option>Chemistry</option>
+            </select>
             <button className='btn_primary'>Create</button>
           </form>
         </div>

@@ -17,7 +17,9 @@ import Allcourses from './Components/Pages/Admin/Allcourses';
 import Sidebar from './Components/Pages/Admin/Sidebar';
 import Students from './Components/Pages/Admin/Students';
 import Seminars from './Components/Pages/Admin/Seminars';
+
 import Events from './Components/Pages/Admin/Events';
+import CreateEvent from './Components/Pages/Admin/CreateEvent';
 
 import Courseorder from './Components/Pages/Admin/Courseorder';
 
@@ -49,13 +51,15 @@ function App() {
           <Route path='/create/courses' element={<Courses />} />
           <Route path='/all/course' element={<Allcourses />} />
           <Route path='/courseorder' element={<Courseorder/>} />
+          <Route path='/updatecourse' element={<UpdateCourse />} />
+          <Route path='/removecourse' element={<RemoveCourses />} />
+          
+          <Route path='/all/events' element={<Events />} />
+          <Route path='/create/event' element={<CreateEvent />} />
           
           <Route path='/sbr' element={<Sidebar />} />
           <Route path='/students' element={<Students />} />
           <Route path='/seminars' element={<Seminars />} />
-          <Route path='/events' element={<Events />} />
-          <Route path='/updatecourse' element={<UpdateCourse />} />
-          <Route path='/removecourse' element={<RemoveCourses />} />
         </Routes>
       </Router>
     </div>

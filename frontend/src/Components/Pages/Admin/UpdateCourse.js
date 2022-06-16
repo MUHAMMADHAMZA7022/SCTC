@@ -12,7 +12,27 @@ function UpdateCourse() {
                 </div>
                 {/* Main Content */}
                 <div className='dashboard_content'>
-                    This is UpdateCourse.
+                    <div className='courseActionHolder'>
+                        <div className='actionHolder'>
+                            <h1>Update Course</h1>
+                            <form className="updateForm">
+                                {/* Email */}
+                                <div className="group_field">
+                                    <label htmlFor="email">
+                                        Course ID<span>*</span>
+                                    </label>
+                                    <input
+                                        type='text'
+                                        placeholder="Course ID"
+                                        required
+                                    />
+                                </div>
+                                <div className="group_field">
+                                    <button className='btn_primary'>Update Course</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </Fragment>
