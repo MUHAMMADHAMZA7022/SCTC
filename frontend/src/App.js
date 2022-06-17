@@ -1,8 +1,9 @@
 import './App.css';
 import { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import store from "./redux/store";
 import WebFont from "webfontloader";
-
+import { loadUser } from "./redux/action/useraction";
 import Header from './Components/Layout/Header/Header';
 import Home from './Components/Home/Home';
 import About from './Components/Pages/About';
@@ -34,6 +35,8 @@ function App() {
         families: ["Noto Sans", "sans-serif"],
       },
     });
+    store.dispatch(loadUser());
+
   }, []);
 
   return (

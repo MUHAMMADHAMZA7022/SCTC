@@ -8,7 +8,8 @@ const ApiFeatures = require("../utils/apifeatures");
 //createcourse -- Admin
 exports.createcourse = async (req, res, next) => {
 try {
-  
+  const { name,  course_file, description, price, instructor,  cateogery,deadline } =
+  req.body;
   const images = req.body.images;
   const mycloud = await cloudinary.v2.uploader.upload(images,{
     folder: "courses",
@@ -16,10 +17,7 @@ try {
     crop: "scale",
   });
 
- req.body.user = req.user.id;
-  const { name,  course_file, description, price, instructor,  cateogery,deadline } =
-    req.body;
-
+//  req.body.user = req.user.id;
   const courses = await Course.create({
     name,
     description,

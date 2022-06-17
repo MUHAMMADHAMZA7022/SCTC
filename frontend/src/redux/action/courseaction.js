@@ -1,30 +1,44 @@
-import axios from "axios"
+import axios from "axios";
+
+import {
+  
+  COURSE_REQUEST,
+  COURSE_SUCCESS,
+  COURSE_FAIL,
+  CLEAR_ERRORS
+
+} from "../Constant/courseconstant";
+
+
+// Create Product
+export const courseregister = (CourseData) => async (dispatch) => {
+  try {
+    dispatch({ type: COURSE_REQUEST });
+
+    const config = { headers: { "Content-Type": "multipart/form-data" } };
+  
+
+    const { data } = await axios.post(
+      `http://localhost:4000/api/v1/course/createcourse`,
+      CourseData,
+      config
+    );
+
+    dispatch({
+      type: COURSE_SUCCESS,
+      payload: data
+    });
+  } catch (error) {
+    dispatch({
+      type: COURSE_FAIL,
+      payload: error.response.data.message,
+    });
+  }
+};
+
 // Register
-export const courseregister = (courseData) => async (dispatch) => {
-    try {
-      console.log(courseData.images);
-      dispatch({ type: "courserequest" });
-  
-      const config = { headers: { "Content-Type": "multipart/form-data" } };
-  
-      console.log(courseData.images);
-      const { data } = await axios.post(`http://localhost:4000/api/v1/course/createcourse`, courseData, config, 
-      
-      
-      );
-  
-      dispatch({ type: "registersuccess", payload: data.courses });
-    } catch (error) {
-      dispatch({
-        type: "coursefailure",
-        payload: error.response.data.message,
-      });
-    }
-   
-  };
-  
-  export const clear_errors = () => async (dispatch) => {
-    dispatch({ type: "clear_errors" });
-  };
-  
-  
+
+//clear erro
+export const CLEAR_ERROR= () => async (dispatch) => {
+  dispatch({ type: CLEAR_ERRORS });
+};

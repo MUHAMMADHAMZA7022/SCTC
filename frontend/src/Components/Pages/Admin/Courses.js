@@ -1,5 +1,6 @@
 import "./Dashboard.css";
 import Sidebar from './Sidebar';
+<<<<<<< HEAD
 import React, { Fragment, useState } from "react";
 import { useDispatch } from "react-redux";
 import { courseregister } from "../../../redux/action/courseaction";
@@ -9,8 +10,20 @@ import { courseregister } from "../../../redux/action/courseaction";
 function Courses({ history }) {
   const dispatch = useDispatch();
   // const alert = useAlert();
+=======
+import React, { Fragment,  useState, useEffect} from "react";
+import {  useDispatch,useSelector } from "react-redux";
+import {  courseregister,CLEAR_ERROR } from "../../../redux/action/courseaction";
+import { COURSE_RESET } from "../../../redux/Constant/courseconstant";
+import { useNavigate } from "react-router-dom";
+import {useAlert} from "react-alert"
+function Courses() {
+let history = useNavigate();
+    const dispatch = useDispatch();
+  const alert = useAlert();
+>>>>>>> 24dc5632f2f821c8947bd38df47086b0b36c38ab
 
-  // const {  error, success } = useSelector((state) => state.coursereducer);
+   const {  error, success } = useSelector((state) => state.newCourse);
 
   const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
@@ -39,18 +52,18 @@ function Courses({ history }) {
     "Cosmetics"
   ];
 
-  // useEffect(() => {
-  //   if (error) {
-  //     alert.error(error);
-  //     dispatch(clear_errors());
-  //   }
+  useEffect(() => {
+    if (error) {
+      alert.error(error);
+      dispatch(CLEAR_ERROR());
+    }
 
-  //   if (success) {
-  //     alert.success("Product Created Successfully");
-  //     history.push("/admin/dashboard");
-  //     // dispatch({ type: NEW_PRODUCT_RESET });
-  //   }
-  // }, [dispatch,  error, history, success]);
+    if (success) {
+     alert.success("Product Created Successfully");
+      history("/dashboard");
+       dispatch({ type: COURSE_RESET });
+    }
+  }, [dispatch,success,error, alert,history,]);
 
   const createProductSubmitHandler = (e) => {
     e.preventDefault();
@@ -96,6 +109,7 @@ function Courses({ history }) {
         {/* Main Content */}
         <div className='dashboard_content courses_content'>
           <h1>Create Course</h1>
+<<<<<<< HEAD
           <form className='courseForm' onSubmit={createProductSubmitHandler}>
             <input
               type="text"
@@ -111,6 +125,23 @@ function Courses({ history }) {
               value={course_file}
               onChange={(e) => setcourse_file(e.target.value)}
             />
+=======
+          <form className='courseForm'  onSubmit={createProductSubmitHandler}>
+          <input
+                type="text"
+                placeholder="Course Name"
+                required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+             <input
+                type="text"
+                placeholder="File Url"
+                required
+                value={course_file}
+                onChange={(e) => setcourse_file(e.target.value)}
+              />
+>>>>>>> 24dc5632f2f821c8947bd38df47086b0b36c38ab
             <textarea
               placeholder="Course Description"
               value={description}
@@ -126,6 +157,7 @@ function Courses({ history }) {
             />
             <img src={avatarPreview} alt="Avatar Preview" className="imageeee" />
             <input
+<<<<<<< HEAD
               type="file"
               name="images"
               accept="image/*"
@@ -152,6 +184,28 @@ function Courses({ history }) {
               required
               onChange={(e) => setdeadline(e.target.value)}
             />
+=======
+                type="text"
+                placeholder="INstructor Name"
+                required
+                value={instructor}
+                onChange={(e) => setinstructor(e.target.value)}
+              />
+            <select onChange={(e) => setcateogery(e.target.value)}>
+                 <option value="">Choose Category</option>
+                {categories.map((cate) => (
+                  <option key={cate} value={cate}>
+                    {cate}
+                  </option>
+                ))}
+              </select>
+                            <input
+                type="number"
+                placeholder="Select Deadline"
+                required
+                onChange={(e) => setdeadline(e.target.value)}
+              />
+>>>>>>> 24dc5632f2f821c8947bd38df47086b0b36c38ab
             <button className='btn_primary'>Create</button>
 
           </form>
