@@ -1,15 +1,17 @@
 import "./Dashboard.css";
 import Sidebar from './Sidebar';
-import React, { Fragment,  useState } from "react";
-import {  useDispatch } from "react-redux";
-import {  courseregister } from "../../../redux/action/courseaction";
-// import { NEW_PRODUCT_RESET } from "../../redux/constant/productConstants";
-
-function Courses({history}) {
+import React, { Fragment,  useState, useEffect} from "react";
+import {  useDispatch,useSelector } from "react-redux";
+import {  courseregister,CLEAR_ERROR } from "../../../redux/action/courseaction";
+import { COURSE_RESET } from "../../../redux/Constant/courseconstant";
+import { useNavigate } from "react-router-dom";
+import {useAlert} from "react-alert"
+function Courses() {
+let history = useNavigate();
     const dispatch = useDispatch();
-  // const alert = useAlert();
+  const alert = useAlert();
 
-  // const {  error, success } = useSelector((state) => state.coursereducer);
+   const {  error, success } = useSelector((state) => state.newCourse);
 
   const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
@@ -38,18 +40,18 @@ function Courses({history}) {
     "Cosmetics"
   ];
 
-  // useEffect(() => {
-  //   if (error) {
-  //     alert.error(error);
-  //     dispatch(clear_errors());
-  //   }
+  useEffect(() => {
+    if (error) {
+      alert.error(error);
+      dispatch(CLEAR_ERROR());
+    }
 
-  //   if (success) {
-  //     alert.success("Product Created Successfully");
-  //     history.push("/admin/dashboard");
-  //     // dispatch({ type: NEW_PRODUCT_RESET });
-  //   }
-  // }, [dispatch,  error, history, success]);
+    if (success) {
+     alert.success("Product Created Successfully");
+      history("/dashboard");
+       dispatch({ type: COURSE_RESET });
+    }
+  }, [dispatch,success,error, alert,history,]);
 
   const createProductSubmitHandler = (e) => {
     e.preventDefault();
