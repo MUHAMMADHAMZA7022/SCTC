@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { Fragment, useEffect } from "react";
 import { useSelector } from "react-redux";
 import MetaData from "../Layout/Metadata";
@@ -74,3 +75,61 @@ let history=useNavigate();
 };
 
 export default Profile;
+=======
+import React, { Fragment } from 'react';
+import './Profile.css';
+
+function Profile() {
+    return (
+        <Fragment>
+            <div className='profile_holder'>
+                <div className='pForm_holder'>
+                    <form className="loginForm">
+                        {/* Name */}
+                        <div className="group_field">
+                            <label htmlFor="text">
+                                Email<span>*</span>
+                            </label>
+                            <input
+                                type='text'
+                                placeholder="Name"
+                                name="name"
+                                required
+                            />
+                        </div>
+                        {/* Email */}
+                        <div className="group_field">
+                            <label htmlFor="email">
+                                Email<span>*</span>
+                            </label>
+                            <input
+                                type='email'
+                                placeholder="Email"
+                                name="email"
+                                required
+                            />
+                        </div>
+                        {/* Password */}
+                        <div className="group_field">
+                            <label htmlFor="password">
+                                Password<span>*</span>
+                            </label>
+                            <input
+                                type='password'
+                                placeholder="Password"
+                                name="password"
+                                required
+                            />
+                        </div>
+                        <div className="group_field">
+                            <button className='btn_primary' >Change Password</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </Fragment>
+    )
+}
+
+export default Profile
+>>>>>>> 8f0ff70a95c77f445b592b09b739f3ec8163cc82

@@ -51,6 +51,7 @@ let history=useNavigate();
             <li className={isActive ? "pr_box" : null}>
               <Link onClick={ToggleClass} to={'#'} className='profile_box'></Link>
               <ul className='unstyled pr_list'>
+<<<<<<< HEAD
                 <li><Link to={'/profile'}>Profile</Link></li>
                  {
                   user.role === "admin" ?( 
@@ -60,6 +61,11 @@ let history=useNavigate();
                   )
                  } 
                 <li><button  onClick={logoutUser}>Logout</button></li>
+=======
+                <li><Link to='/profile'>Profile</Link></li>
+                <li><Link to='/dashboard'>Dashboard</Link></li>
+                <li><Link to={'#'}>Logout</Link></li>
+>>>>>>> 8f0ff70a95c77f445b592b09b739f3ec8163cc82
               </ul>
             </li>
               )}

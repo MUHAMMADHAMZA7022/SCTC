@@ -28,7 +28,13 @@ import Courseorder from './Components/Pages/Admin/Courseorder';
 
 import UpdateCourse from './Components/Pages/Admin/UpdateCourse';
 import RemoveCourses from './Components/Pages/Admin/RemoveCourses';
+<<<<<<< HEAD
 import ProtectedRoute from './Components/Route/ProtectedRoute';
+=======
+
+import Profile from './Components/Users/Profile';
+
+>>>>>>> 8f0ff70a95c77f445b592b09b739f3ec8163cc82
 function App() {
 const {  isAuthenticated } = useSelector((state) => state.user);
   useEffect(() => {
@@ -72,6 +78,7 @@ const {  isAuthenticated } = useSelector((state) => state.user);
           <Route path='/sbr' element={<Sidebar />} />
           <Route path='/students' element={<Students />} />
           <Route path='/seminars' element={<Seminars />} />
+          <Route path='/profile' element={<Profile />} />
         </Routes>
       </Router>
     </div>
