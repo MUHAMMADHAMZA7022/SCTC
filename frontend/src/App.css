@@ -7,7 +7,7 @@
     --whiteColor: #fff;
     --lightBorder: 0 2px 3px rgb(0 0 0 / 10%);
     --boxBorder: rgb(0 0 0 / 10%);
-    --btnColor: #ec595f;
+    --redColor: #ec595f;
   }
   * {
     margin: 0;
@@ -78,4 +78,16 @@
     width: 100%;
     color: var(--whiteColor);
     transform: translate(0);
+  }
+  .grid{
+    width: 1200px;
+  }
+  .col-lg{
+    width: 1200px;
+  }
+  .col-md{
+    width: 992px;
+  }
+  .col-sm{
+    width: 768px;
   }

@@ -1,0 +1,71 @@
+.header_holder{
+    background-color: rgba(0, 46, 59, 0.6);
+    padding: 10px 2px;
+    text-align: center;
+}
+.logo_holder{
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 10%;
+    color: white;
+}
+.navbar{
+    display: inline-block;
+    vertical-align: top;
+}
+.nav_list{
+    padding: 5px 2px;
+}
+.nav_list li{
+    float: left;
+}
+.nav_list li a{
+    display: inline-block;
+    padding: 10px 15px;
+    color: var(--whiteColor);
+    font-weight: 400;
+    font-size: 14px;
+}
+.nav_list li a.nav_btn{
+    background: var(--redColor);
+}
+.nav_list li a:focus,
+.nav_list li a:hover{
+    color: #0009;
+}
+.nav_list li a.profile_box{
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    margin: 0.2rem 0 0 1rem;
+    background-image: url(../../../images/Profile.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.nav_list li{
+    position: relative;
+}
+.nav_list li ul.pr_list {
+    overflow: hidden;
+    background: rgba(0, 46, 59, 0.6);;
+    position: absolute;
+    top: 90%;
+    left: -15%;
+    z-index: 2;
+    text-align: left;
+}
+.nav_list li ul.pr_list li{
+    float: none;
+    display: block;
+}
+.nav_list li.pr_box ul.pr_list{
+    display: block;
+    overflow: hidden;
+}
+.nav_list li.pr_box ul.pr_list li{
+    display: block;
+}
+.nav_list li.pr_box ul.pr_list{
+    display: none;
+}
