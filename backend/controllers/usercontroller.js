@@ -38,6 +38,7 @@ exports.loginuser = catchasyncerror(async (req, res, next) => {
   if (!passwordmatch) {
     return next(new Errorhandler("Invalid  password", 401));
   }
+  res.cookie("Test","thapa")
   sendToken(res,user,200, "Login Successfully");
 });
 exports.logout = async (req, res) => {

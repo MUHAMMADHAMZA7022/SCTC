@@ -12,7 +12,8 @@ app.use(coookieparser());
 const cors = require('cors');
 const corsOptions = {
   origin: "http://localhost:3000",
-  credentials: true,
+  Credentials: true,
+
   optionSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
