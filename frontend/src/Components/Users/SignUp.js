@@ -1,12 +1,16 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState,useEffect } from "react";
 import "./SignUp.css";
-import {  useDispatch } from "react-redux";
+import {  useDispatch ,useSelector} from "react-redux";
 import {
-
+CLEAR_ERROR,
   register,
 } from "../../redux/action/useraction";
-import{ Link} from "react-router-dom"
+import{ Link,useNavigate} from "react-router-dom"
+import { useAlert } from "react-alert";
 function SignUp() {
+  const {success, error, isAuthenticated } = useSelector((state) => state.user);
+    let history=useNavigate();
+    const alert = useAlert();
     const dispatch = useDispatch();
     const [user, setUser] = useState({
       name: "",
@@ -28,7 +32,19 @@ function SignUp() {
       myForm.set("password", password);
       dispatch(register(myForm));
     };
-    return (
+    useEffect(() => {
+        if (error) {
+          alert.error(error);
+          dispatch(CLEAR_ERROR());
+        }
+    
+        if (isAuthenticated) {
+    
+          history("/profile");
+          
+        }
+      }, [dispatch,success,error,alert,history,isAuthenticated]);
+        return (
         <Fragment>
             {/* Sign Up Form */}
             <div className='formHolder'>

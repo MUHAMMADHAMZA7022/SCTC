@@ -28,7 +28,11 @@ import Courseorder from './Components/Pages/Admin/Courseorder';
 
 import UpdateCourse from './Components/Pages/Admin/UpdateCourse';
 import RemoveCourses from './Components/Pages/Admin/RemoveCourses';
+import Updatepasword from './Components/Users/updatepassword';
 import ProtectedRoute from './Components/Route/ProtectedRoute';
+import { history } from './history';
+import { loadUser } from './redux/action/useraction';
+import store from "./redux/store";
 function App() {
 const {  isAuthenticated } = useSelector((state) => state.user);
   useEffect(() => {
@@ -38,7 +42,7 @@ const {  isAuthenticated } = useSelector((state) => state.user);
       },
     });
    
-      // store.dispatch(loadUser());
+       store.dispatch(loadUser());
 
    
 
@@ -46,7 +50,7 @@ const {  isAuthenticated } = useSelector((state) => state.user);
 
   return (
     <div>
-      <Router>
+      <Router history={history}>
         <Header />
         <Routes>
           <Route path='/' element={<Home />} />
@@ -68,6 +72,7 @@ const {  isAuthenticated } = useSelector((state) => state.user);
           
           <Route path='/all/events' element={<Events />} />
           <Route path='/create/event' element={<CreateEvent />} />
+          <Route path='/password/update' element={< Updatepasword  />} />
           
           <Route path='/sbr' element={<Sidebar />} />
           <Route path='/students' element={<Students />} />

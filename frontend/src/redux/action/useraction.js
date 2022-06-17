@@ -113,7 +113,7 @@ export const updatePassword = (passwords) => async (dispatch) => {
     const config = { headers: { "Content-Type": "application/json" } };
 
     const { data } = await axios.put(
-      `/api/vasal/password/update`,
+      `/api/v1/user/password/update`,
       passwords,
       config
     );

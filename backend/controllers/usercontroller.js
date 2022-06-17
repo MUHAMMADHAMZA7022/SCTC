@@ -206,28 +206,19 @@ exports.deleteuser = async (req, res, next) => {
   }
 };
 //update password
-exports.updatepassword = async (req, res, next) => {
-  try {
-    if(!req.body.oldpassword || !req.body.newpassword || !req.body.confirmpassword){
-      return res.status(400).json({success:false,message:"Please enter all the fields"})
-    }
-    const user = await User.findById(req.user.id).select("+password");
-    const passwordmatch = await user.comparePassword(req.body.oldpassword); //ye fuction bnya wa bcrpyt ka model mein compare k liye
-    if (!passwordmatch) {
-    return res.status(401).json({ success: false, message: "Old password Incorrect" });
-
-    }
-    if (req.body.newpassword !== req.body.confirmpassword) {
-    return res.status(404).json({ success: false, message: "Password Not Matched" });
-
-    }
-    user.password = req.body.newpassword;
-    await user.save();
-    sendToken(res,  user,200, "Password Changed Successfully");
-  } catch (error) {
-    res.status(500).json({ success: false, message: error.message });
+exports.updatepassword = catchasyncerror(async (req, res, next) => {
+  const user = await User.findById(req.user.id).select("+password");
+  const passwordmatch = await user.comparePassword(req.body.oldpassword); //ye fuction bnya wa bcrpyt ka model mein compare k liye
+  if (!passwordmatch) {
+    return next(new Errorhandler("Old password Incorrect", 401));
   }
-};
+  if (req.body.newpassword !== req.body.conformpassword) {
+    return next(new Errorhandler("Password Not Matched", 404));
+  }
+  user.password = req.body.newpassword;
+  await user.save();
+  sendToken(res,user,200,"Password Changed Successfully");
+});
 
 //update user profile
 exports.updateprofile = async (req, res) => {

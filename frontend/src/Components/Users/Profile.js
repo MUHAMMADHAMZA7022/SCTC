@@ -1,8 +1,8 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment } from "react";
 import { useSelector } from "react-redux";
 import MetaData from "../Layout/Metadata";
 // import Loader from "../Layout/Loader/Loader";
-import {  useNavigate ,Link} from "react-router-dom";
+import { Link} from "react-router-dom";
 import "./Profile.css";
 import { useDispatch } from "react-redux";
 import { Logout } from "../../redux/action/useraction";
@@ -12,19 +12,19 @@ const Profile = () => {
   const dispatch = useDispatch();
   const alert = useAlert();
 
-let history=useNavigate();
-  const { user, isAuthenticated } = useSelector((state) => state.user);
+// let history=useNavigate();
+   const { user} = useSelector((state) => state.user);
   function logoutUser() {
 
     dispatch(Logout());
     alert.success("Logout Successfully");
   }
 
-  useEffect(() => {
-    if (isAuthenticated === false) {
-      history("/login");
-    }
-  }, [history, isAuthenticated]);
+  // useEffect(() => {
+  //   if (isAuthenticated === false) {
+  //     history("/login");
+  //   }
+  // }, [history, isAuthenticated]);
   return (
     <Fragment>
       {/* {loading ? (
@@ -56,7 +56,7 @@ let history=useNavigate();
 
             <div>
               <Link className="btn_primary" to="/orders">
-                My Orders
+                Course History
               </Link>
               <Link className="btn_primary" to="/password/update">
                 Change Password

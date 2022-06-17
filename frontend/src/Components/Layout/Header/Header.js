@@ -1,4 +1,4 @@
-import React, { Fragment, useState,useEffect } from 'react';
+import React, { Fragment, useState} from 'react';
 import './Header.css';
 import {Link,useNavigate} from 'react-router-dom';
 // import Profile from '../../../images/Profile.png'
@@ -19,11 +19,7 @@ let history=useNavigate();
 
   }
 
-  useEffect(() => {
-    if (isAuthenticated === false) {
-      history("/login");
-    }
-  }, [history, isAuthenticated]);
+
   const [isActive, setActive] = useState("false");
   const ToggleClass = () => {
     setActive(!isActive); 
