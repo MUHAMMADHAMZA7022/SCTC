@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import './Header.css';
 import {Link} from 'react-router-dom';
+// import Profile from '../../../images/Profile.png'
 
 function Header() {
 
@@ -24,9 +25,10 @@ function Header() {
             <li><Link to='/contact'>Contact</Link></li>
             <li><Link to='/login' className='nav_btn'>Sign In</Link></li>
             <li className={isActive ? "pr_box" : null}>
-              <Link onClick={ToggleClass} to='/' className='profile_box'></Link>
+              <Link onClick={ToggleClass} to={'#'} className='profile_box'></Link>
               <ul className='unstyled pr_list'>
                 <li><Link to={'#'}>Profile</Link></li>
+                <li><Link to={'#'}>Dashboard</Link></li>
                 <li><Link to={'#'}>Logout</Link></li>
               </ul>
             </li>

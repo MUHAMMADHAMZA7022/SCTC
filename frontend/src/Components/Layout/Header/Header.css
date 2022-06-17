@@ -34,11 +34,14 @@
     color: #0009;
 }
 .nav_list li a.profile_box{
-    background: var(--redColor);
     width: 30px;
     height: 30px;
     border-radius: 100%;
     margin: 0.2rem 0 0 1rem;
+    background-image: url(../../../images/Profile.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .nav_list li{
     position: relative;
@@ -50,6 +53,7 @@
     top: 90%;
     left: -15%;
     z-index: 2;
+    text-align: left;
 }
 .nav_list li ul.pr_list li{
     float: none;
