@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .profileContainer {
   width: 100%;
   /* background-color: var(--lightColor); */
@@ -102,19 +101,3 @@
     margin: 2vmax 0;
   }
 }
-=======
-.profile_holder{
-    overflow: hidden;    
-    text-align: center;
-    padding: 50px 10px;
-}
-.pForm_holder{
-    width: 50%;
-    display: inline-block;
-    vertical-align: top;
-}
-.profile_holder .group_field{
-    width: 100%;
-    display: block;
-}
->>>>>>> 8f0ff70a95c77f445b592b09b739f3ec8163cc82

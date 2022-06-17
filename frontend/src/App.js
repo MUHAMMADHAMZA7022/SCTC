@@ -28,13 +28,7 @@ import Courseorder from './Components/Pages/Admin/Courseorder';
 
 import UpdateCourse from './Components/Pages/Admin/UpdateCourse';
 import RemoveCourses from './Components/Pages/Admin/RemoveCourses';
-<<<<<<< HEAD
 import ProtectedRoute from './Components/Route/ProtectedRoute';
-=======
-
-import Profile from './Components/Users/Profile';
-
->>>>>>> 8f0ff70a95c77f445b592b09b739f3ec8163cc82
 function App() {
 const {  isAuthenticated } = useSelector((state) => state.user);
   useEffect(() => {
