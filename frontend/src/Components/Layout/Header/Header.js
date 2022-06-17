@@ -28,7 +28,7 @@ function Header() {
               <Link onClick={ToggleClass} to={'#'} className='profile_box'></Link>
               <ul className='unstyled pr_list'>
                 <li><Link to='/profile'>Profile</Link></li>
-                <li><Link to={'#'}>Dashboard</Link></li>
+                <li><Link to='/dashboard'>Dashboard</Link></li>
                 <li><Link to={'#'}>Logout</Link></li>
               </ul>
             </li>
