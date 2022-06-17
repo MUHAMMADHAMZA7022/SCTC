@@ -1,8 +1,14 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import './Header.css';
 import {Link} from 'react-router-dom';
 
 function Header() {
+
+  const [isActive, setActive] = useState("false");
+  const ToggleClass = () => {
+    setActive(!isActive); 
+   };
+
   return (
     <Fragment>
       <div className='header_holder'>
@@ -17,6 +23,13 @@ function Header() {
             <li><Link to='/events'>Events</Link></li>
             <li><Link to='/contact'>Contact</Link></li>
             <li><Link to='/login' className='nav_btn'>Sign In</Link></li>
+            <li className={isActive ? "pr_box" : null}>
+              <Link onClick={ToggleClass} to='/' className='profile_box'></Link>
+              <ul className='unstyled pr_list'>
+                <li><Link to={'#'}>Profile</Link></li>
+                <li><Link to={'#'}>Logout</Link></li>
+              </ul>
+            </li>
           </ul>
         </div>
       </div>      

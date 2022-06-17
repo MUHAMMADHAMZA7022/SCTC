@@ -138,12 +138,12 @@ let history = useNavigate();
                 />
             <input
                 type="text"
-                placeholder="INstructor Name"
+                placeholder="Instructor Name"
                 required
                 value={instructor}
                 onChange={(e) => setinstructor(e.target.value)}
               />
-            <select onChange={(e) => setcateogery(e.target.value)}>
+            <select className="selectOpt" onChange={(e) => setcateogery(e.target.value)}>
                  <option value="">Choose Category</option>
                 {categories.map((cate) => (
                   <option key={cate} value={cate}>

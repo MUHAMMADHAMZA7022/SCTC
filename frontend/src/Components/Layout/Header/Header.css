@@ -2,7 +2,6 @@
     background-color: rgba(0, 46, 59, 0.6);
     padding: 10px 2px;
     text-align: center;
-    overflow: hidden;
 }
 .logo_holder{
     display: inline-block;
@@ -16,7 +15,6 @@
 }
 .nav_list{
     padding: 5px 2px;
-    overflow: hidden;
 }
 .nav_list li{
     float: left;
@@ -34,4 +32,36 @@
 .nav_list li a:focus,
 .nav_list li a:hover{
     color: #0009;
+}
+.nav_list li a.profile_box{
+    background: var(--redColor);
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    margin: 0.2rem 0 0 1rem;
+}
+.nav_list li{
+    position: relative;
+}
+.nav_list li ul.pr_list {
+    overflow: hidden;
+    background: rgba(0, 46, 59, 0.6);;
+    position: absolute;
+    top: 90%;
+    left: -15%;
+    z-index: 2;
+}
+.nav_list li ul.pr_list li{
+    float: none;
+    display: block;
+}
+.nav_list li.pr_box ul.pr_list{
+    display: block;
+    overflow: hidden;
+}
+.nav_list li.pr_box ul.pr_list li{
+    display: block;
+}
+.nav_list li.pr_box ul.pr_list{
+    display: none;
 }
