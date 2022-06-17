@@ -23,32 +23,23 @@ exports.createuser = async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
-exports.loginuser = async (req, res) => {
-  try {
-    const { email, password } = req.body;
-    if (!email || !password) {
-      return res
-        .status(400)
-        .json({ success: false, message: "Please enter all the fields" });
-    }
-    const user = await User.findOne({ email }).select("+password");
-    if (!user) {
-      return res
-        .status(400)
-        .json({ success: false, message: "Invalid Email " });
-    }
-    const ismatch = await user.comparePassword(password);
-    if (!ismatch) {
-      return res
-        .status(400)
-        .json({ success: false, message: "Wrong Password" });
-    }
+//login
+exports.loginuser = catchasyncerror(async (req, res, next) => {
+  const { email, password } = req.body;
 
-    sendToken(res, user, 200, "Login Successfully");
-  } catch (error) {
-    res.status(500).json({ success: false, message: error.message });
+  if (!email || !password) {
+    return next(new Errorhandler("Please Enter Email & Password", 400)); //ye khud errorhandler bnya wa ha
   }
-};
+  const user = await User.findOne({ email }).select("+password"); //password sedha is liye ni diya wa kio k upar false kiyawa tbhi select method use kiya
+  if (!user) {
+    return next(new Errorhandler("Invalid Email ", 401));
+  }
+  const passwordmatch = await user.comparePassword(password); //ye fuction bnya wa bcrpyt ka model mein compare k liye
+  if (!passwordmatch) {
+    return next(new Errorhandler("Invalid  password", 401));
+  }
+  sendToken(res,user,200, "Login Successfully");
+});
 exports.logout = async (req, res) => {
   try {
     res
