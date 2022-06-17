@@ -27,6 +27,8 @@ import Courseorder from './Components/Pages/Admin/Courseorder';
 import UpdateCourse from './Components/Pages/Admin/UpdateCourse';
 import RemoveCourses from './Components/Pages/Admin/RemoveCourses';
 
+import Profile from './Components/Users/Profile';
+
 function App() {
 
   useEffect(() => {
@@ -63,6 +65,7 @@ function App() {
           <Route path='/sbr' element={<Sidebar />} />
           <Route path='/students' element={<Students />} />
           <Route path='/seminars' element={<Seminars />} />
+          <Route path='/profile' element={<Profile />} />
         </Routes>
       </Router>
     </div>

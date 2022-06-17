@@ -1,0 +1,14 @@
+.profile_holder{
+    overflow: hidden;    
+    text-align: center;
+    padding: 50px 10px;
+}
+.pForm_holder{
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+}
+.profile_holder .group_field{
+    width: 100%;
+    display: block;
+}
