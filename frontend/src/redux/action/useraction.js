@@ -59,7 +59,7 @@ export const register = (userData) => async (dispatch) => {
 
     const config = { headers: { "Content-Type": "multipart/form-data" } };
 
-    const { data } = await axios.post( `http://localhost:4000/api/v1/user/register`, userData, config);
+    const { data } = await axios.post( `/api/v1/user/register`, userData, config);
 
     dispatch({ type: REGISTER_SUCCESS, payload: data.user });
   } catch (error) {
@@ -75,7 +75,7 @@ export const loadUser = () => async (dispatch) => {
   try {
     dispatch({ type: LOAD_USER_REQUEST });
 
-const { data } = await axios.get(`http://localhost:4000/api/v1/user/me`);
+const { data } = await axios.get(`/api/v1/user/me`);
 
     dispatch({ type: LOAD_USER_SUCCESS, payload: data.user });
   } catch (error) {
@@ -175,7 +175,7 @@ export const resetPassword = (token, passwords) => async (dispatch) => {
 // Logout User
 export const Logout = () => async (dispatch) => {
   try {
-    await axios.get(`/api/vasal/logout`);
+    await axios.get(`/api/v1/user/logout`);
 
     dispatch({ type: LOGOUT_SUCCESS });
   } catch (error) {
@@ -246,6 +246,6 @@ export const deleteUser = (id) => async (dispatch) => {
 };
 
 //clear error
-export const CLEAR_Errors = () => async (dispatch) => {
+export const CLEAR_ERROR = () => async (dispatch) => {
   dispatch({ type: CLEAR_ERRORS });
 };

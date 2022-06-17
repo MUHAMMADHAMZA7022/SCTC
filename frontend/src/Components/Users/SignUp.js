@@ -5,6 +5,7 @@ import {
 
   register,
 } from "../../redux/action/useraction";
+import{ Link} from "react-router-dom"
 function SignUp() {
     const dispatch = useDispatch();
     const [user, setUser] = useState({
@@ -79,6 +80,7 @@ function SignUp() {
                         <div className="group_field">
                             <button className='btn_primary' >Sign Up</button>
                         </div>
+                        <Link to={"/login"}>Go To Login Page</Link>
                     </form>
                 </div>
                 <div className='signUpImg'></div>

@@ -57,7 +57,7 @@ export const userReducer = (state = { user: {} }, action) => {
         loading: false,
         isAuthenticated: true,
         user: action.payload,
-        message: action.payload.data,
+        // message: action.payload.message,
        
       };
 
@@ -66,6 +66,8 @@ export const userReducer = (state = { user: {} }, action) => {
         loading: false,
         user: null,
         isAuthenticated: false,
+        message: action.payload,
+
       };
     case LOGIN_FAIL:
     case REGISTER_FAIL:

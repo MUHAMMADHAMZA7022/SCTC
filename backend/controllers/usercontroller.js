@@ -38,21 +38,18 @@ exports.loginuser = catchasyncerror(async (req, res, next) => {
   if (!passwordmatch) {
     return next(new Errorhandler("Invalid  password", 401));
   }
-  res.cookie("Test","thapa")
   sendToken(res,user,200, "Login Successfully");
 });
-exports.logout = async (req, res) => {
-  try {
-    res
-      .status(200)
-      .cookie("token", null, {
-        expires: new Date(Date.now()),
-      })
-      .json({ success: true, message: "Logged out successfully" });
-  } catch (error) {
-    res.status(500).json({ success: false, message: error.message });
-  }
-};
+exports.logout = catchasyncerror(async (req, res, next) => {
+  res.cookie("token", null, {
+    expires: new Date(Date.now()),
+    httpOnly: true,
+  });
+  res.status(200).json({
+    success: true,
+    message: "Logged out Successfully",
+  });
+});
 exports.forgetPassword = async (req, res) => {
   try {
     const user = await User.findOne({ email: req.body.email });
@@ -136,17 +133,14 @@ exports.resetPassword = async (req, res) => {
   }
 };
 //me
-exports.getuserdetails = async (req, res) => {
-  try {
-    const user = await User.findById(req.user.id);
-    res.status(200).json({
-      success: true,
-      user,
-    });
-  } catch (error) {
-    res.status(500).json({ success: false, message: error.message });
-  }
-};
+//get user detail
+exports.getuserdetails = catchasyncerror(async (req, res) => {
+  const user = await User.findById(req.user.id);
+  res.status(200).json({
+    success: true,
+    user,
+  });
+});
 //get all users(Admin)
 exports.getallusers = async (req, res, next) => {
   try {

@@ -1,10 +1,29 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState,useEffect } from 'react';
 import './Header.css';
-import {Link} from 'react-router-dom';
+import {Link,useNavigate} from 'react-router-dom';
 // import Profile from '../../../images/Profile.png'
+import { useDispatch,useSelector } from "react-redux";
+import { Logout } from "../../../redux/action/useraction";
+import { useAlert } from "react-alert";
 
 function Header() {
+  const dispatch = useDispatch();
+  const alert = useAlert();
+let history=useNavigate();
+  const { user, isAuthenticated } = useSelector((state) => state.user);
+  function logoutUser() {
+    dispatch(Logout());
+    history("/login");
 
+    alert.success("Logout Successfully");
+
+  }
+
+  useEffect(() => {
+    if (isAuthenticated === false) {
+      history("/login");
+    }
+  }, [history, isAuthenticated]);
   const [isActive, setActive] = useState("false");
   const ToggleClass = () => {
     setActive(!isActive); 
@@ -23,15 +42,27 @@ function Header() {
             <li><Link to='/about'>About</Link></li>
             <li><Link to='/events'>Events</Link></li>
             <li><Link to='/contact'>Contact</Link></li>
-            <li><Link to='/login' className='nav_btn'>Sign In</Link></li>
+            {
+              !isAuthenticated ? (
+                <li><Link to='/login' className='nav_btn'>Sign In</Link></li>
+
+              ):(
+            
             <li className={isActive ? "pr_box" : null}>
               <Link onClick={ToggleClass} to={'#'} className='profile_box'></Link>
               <ul className='unstyled pr_list'>
-                <li><Link to={'#'}>Profile</Link></li>
-                <li><Link to={'#'}>Dashboard</Link></li>
-                <li><Link to={'#'}>Logout</Link></li>
+                <li><Link to={'/profile'}>Profile</Link></li>
+                 {
+                  user.role === "admin" ?( 
+                    <li><Link to={'/dashboard'}>Dashboard</Link></li>
+                   ):(
+                     null
+                  )
+                 } 
+                <li><button  onClick={logoutUser}>Logout</button></li>
               </ul>
             </li>
+              )}
           </ul>
         </div>
       </div>      
