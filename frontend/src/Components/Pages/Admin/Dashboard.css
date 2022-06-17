@@ -68,13 +68,15 @@
     overflow: hidden;
     margin-bottom: 10px;
 }
- .imageeee {
-    width: 10vmax;
+.imageeee {
+    width: 20vmax;
     border-radius: 0%;
-  }
+    border: 1px solid var(--themeColor);
+    padding: 50px;
+}
 
 .courseForm textarea{
-    padding: 0px 2px 0px 5px;
+    padding: -2px 2px 0px 5px;
 }
 .courseForm select.selectOpt{
     width: 100%;
@@ -125,4 +127,44 @@
     font-size: 30px;
     margin-bottom: 20px;
     color: var(--themeColor);
+}
+.courses_holder{
+    overflow: hidden;
+    padding: 20px;
+    display: block;
+    width: 100%;
+}
+.course_card{
+    float: left;
+    width: 25%;
+    padding: 5px;
+    overflow: hidden;
+    display: flex;
+    box-shadow: var(--boxShadow);
+}
+.cr_img{
+    width: 15%;
+    flex: 1;
+    background: #000;
+}
+.crs_content{
+    padding: 0px 5px 5px 10px;
+    width: 85%;
+    flex: 3;
+}
+.crs_title h2{
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.crs_desp p{
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+.crs_action a.btn_primary{
+    padding: 2px 6px;
+    margin-right: 10px;
 }

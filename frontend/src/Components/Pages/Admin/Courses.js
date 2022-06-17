@@ -1,12 +1,13 @@
 import "./Dashboard.css";
 import Sidebar from './Sidebar';
-import React, { Fragment,  useState } from "react";
-import {  useDispatch } from "react-redux";
-import {  courseregister } from "../../../redux/action/courseaction";
+import React, { Fragment, useState } from "react";
+import { useDispatch } from "react-redux";
+import { courseregister } from "../../../redux/action/courseaction";
+// import { Link } from "react-router-dom";
 // import { NEW_PRODUCT_RESET } from "../../redux/constant/productConstants";
 
-function Courses({history}) {
-    const dispatch = useDispatch();
+function Courses({ history }) {
+  const dispatch = useDispatch();
   // const alert = useAlert();
 
   // const {  error, success } = useSelector((state) => state.coursereducer);
@@ -22,7 +23,7 @@ function Courses({history}) {
   const [avatarPreview, setAvatarPreview] = useState("");
 
 
-  
+
   const categories = [
     "Womens",
     "Newinn",
@@ -68,7 +69,7 @@ function Courses({history}) {
     const value = Object.fromEntries(myForm.entries());
     dispatch(courseregister(value));
   };
- 
+
   const updateProfileDataChange = (e) => {
     const reader = new FileReader();
 
@@ -95,68 +96,64 @@ function Courses({history}) {
         {/* Main Content */}
         <div className='dashboard_content courses_content'>
           <h1>Create Course</h1>
-          <form className='courseForm'  onSubmit={createProductSubmitHandler}>
-          <input
-                type="text"
-                placeholder="Course Name"
-                required
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
-             <input
-                type="text"
-                placeholder="File Url"
-                required
-                value={course_file}
-                onChange={(e) => setcourse_file(e.target.value)}
-              />
+          <form className='courseForm' onSubmit={createProductSubmitHandler}>
+            <input
+              type="text"
+              placeholder="Course Name"
+              required
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="File Url"
+              required
+              value={course_file}
+              onChange={(e) => setcourse_file(e.target.value)}
+            />
             <textarea
-                placeholder="Course Description"
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-                cols="30"
-                rows="1"
-              ></textarea>
+              placeholder="Course Description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              cols="30"
+              rows="1"
+            ></textarea>
             <input
-                type="number"
-                placeholder=" Course Price"
-                required
-                onChange={(e) => setPrice(e.target.value)}
-              />
-
-  
-
-                  <img src={avatarPreview} alt="Avatar Preview" className="imageeee"/>
-               
-                <input
-                  type="file"
-                  name="images"
-                  accept="image/*"
-                  onChange={updateProfileDataChange}
-                />
+              type="number"
+              placeholder=" Course Price"
+              required
+              onChange={(e) => setPrice(e.target.value)}
+            />
+            <img src={avatarPreview} alt="Avatar Preview" className="imageeee" />
             <input
-                type="text"
-                placeholder="INstructor Name"
-                required
-                value={instructor}
-                onChange={(e) => setinstructor(e.target.value)}
-              />
-            <select onChange={(e) => setcateogery(e.target.value)}>
-                 <option value="">Choose Category</option>
-                {categories.map((cate) => (
-                  <option key={cate} value={cate}>
-                    {cate}
-                  </option>
-                ))}
-              </select>
-                            <input
-                type="number"
-                placeholder="Select Deadline"
-                required
-                onChange={(e) => setdeadline(e.target.value)}
-              />
+              type="file"
+              name="images"
+              accept="image/*"
+              onChange={updateProfileDataChange}
+            />
+            <input
+              type="text"
+              placeholder="Instructor Name"
+              required
+              value={instructor}
+              onChange={(e) => setinstructor(e.target.value)}
+            />
+            <select className="selectOpt" onChange={(e) => setcateogery(e.target.value)}>
+              <option value="">Choose Category</option>
+              {categories.map((cate) => (
+                <option key={cate} value={cate}>
+                  {cate}
+                </option>
+              ))}
+            </select>
+            <input
+              type="number"
+              placeholder="Select Deadline"
+              required
+              onChange={(e) => setdeadline(e.target.value)}
+            />
             <button className='btn_primary'>Create</button>
-            
+
           </form>
         </div>
       </div>
