@@ -49,6 +49,7 @@ const {  isAuthenticated } = useSelector((state) => state.user);
 
   }, [dispatch]);
 
+
   return (
     <div>
       <Router history={history}>
@@ -58,27 +59,45 @@ const {  isAuthenticated } = useSelector((state) => state.user);
           <Route path='/about' element={<About />} />
           <Route path='/signup' element={<SignUp />} />
           <Route path='/login' element={<Login />} />
-          <Route path='/forget' element={<ForgetPassword />} />
-          <Route path='/reset' element={<ResetPassword />} />
-          <Route path='/dashboard' element={<Dashboard />} />
-          <Route path='/create/courses' element={<Courses />} />
-          <Route path='/all/course' element={<Allcourses />} />
+          <Route path='/forget' element={
+          <ProtectedRoute isAuthenticated={isAuthenticated}>
+      <ForgetPassword />
+            </ProtectedRoute>} />
+            <Route path='/reset' element={
+          <ProtectedRoute isAuthenticated={isAuthenticated} >
+   <ResetPassword />
+            </ProtectedRoute>} />
+            <Route path='/dashboard' element={
+          <ProtectedRoute isAuthenticated={isAuthenticated} adminRoute={true} isAdmin={true}>
+<Dashboard />
+            </ProtectedRoute>} />
+            <Route path='/create/courses' element={
+          <ProtectedRoute isAuthenticated={isAuthenticated} adminRoute={true} isAdmin={true}>
+<Courses />
+            </ProtectedRoute>} />
+            <Route path='/all/course' element={
+          <ProtectedRoute isAuthenticated={isAuthenticated} adminRoute={true} isAdmin={true}>
+<Allcourses />
+            </ProtectedRoute>} />
           <Route path='/courseorder' element={<Courseorder/>} />
           <Route path='/updatecourse' element={<UpdateCourse />} />
           <Route path='/removecourse' element={<RemoveCourses />} />
           <Route path='/profile' element={
-          <ProtectedRoute isAuthenticated={isAuthenticated}>
+          <ProtectedRoute isAuthenticated={isAuthenticated}  >
               <Profile />
             </ProtectedRoute>} />
           
           <Route path='/all/events' element={<Events />} />
           <Route path='/create/event' element={<CreateEvent />} />
-          <Route path='/password/update' element={< Updatepasword  />} />
+          
+          <Route path='/password/update' element={
+          <ProtectedRoute isAuthenticated={isAuthenticated}>
+         < Updatepasword  />
+            </ProtectedRoute>} />
           
           <Route path='/sbr' element={<Sidebar />} />
           <Route path='/students' element={<Students />} />
           <Route path='/seminars' element={<Seminars />} />
-          <Route path='/profile' element={<Profile />} />
         </Routes>
       </Router>
     </div>

@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { useSelector } from "react-redux";
-import MetaData from "../Layout/Metadata";
+// import MetaData from "../Layout/Metadata";
 // import Loader from "../Layout/Loader/Loader";
 import { Link} from "react-router-dom";
 import "./Profile.css";
@@ -31,7 +31,7 @@ const Profile = () => {
         <Loader />
       ) : ( */}
       <Fragment>
-        <MetaData title={`${user.name}'s Profile`} />
+        {/* <MetaData title={`${user.name}'s Profile`} /> */}
 
         <div className="section_heading">
           <div className="homeHeading">
