@@ -1,0 +1,170 @@
+.dashboard_holder{
+    overflow: hidden;
+}
+.dSidebar{
+    width: 20%;
+    float: left;
+}
+.dashboard_content{
+    width: 80%;
+    float: right;
+}
+.dashboard_sidebar{
+    padding: 10px 0px;
+    border-right: 1px solid var(--themeColor);
+    background-color: var(--whiteColor);
+    height: 100vh;
+    box-shadow: var(--boxShadow);
+}
+.dLogo{
+    padding: 10px;
+    font-size: 32px;
+    font-weight: 800;
+}
+.dList ul li span,
+.dList ul li a{
+    display: block;
+    padding: 5px 10px;
+    background-color: var(--whiteColor);
+    color: var(--themeColor);
+    border-bottom: 1px solid rgba(0, 46, 59, 0.29);
+}
+.dList ul li span:focus,
+.dList ul li span:hover,
+.dList ul li a:focus,
+.dList ul li a:hover{
+    background-color: var(--themeColor);
+    color: var(--whiteColor);
+}
+.dashboard .dList ul li a.dshActive,
+.courses .dList ul li span.crsActive,
+.courses .dList ul li a.crsActive,
+.students .dList ul li a.stdActive,
+.seminars .dList ul li a.semActive,
+.events .dList ul li a.evnActive{
+    background-color: var(--themeColor);
+    color: var(--whiteColor);
+}
+
+/* COURSES STYLES */
+.courses_content{
+    padding: 10px;
+}
+.courses_content h1{
+    color: var(--themeColor);
+    margin-bottom: 20px;
+}
+
+.courseForm textarea,
+.courseForm input{
+    width: 100%;
+    box-shadow: var(--boxShadow);
+    outline: none;
+    text-shadow: none;
+    border: none;
+    padding: 10px 2px 10px 5px;
+    font-size: 14px;
+    color: var(--themeColor);
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.imageeee {
+    width: 20vmax;
+    border-radius: 0%;
+    border: 1px solid var(--themeColor);
+    padding: 50px;
+}
+
+.courseForm textarea{
+    padding: -2px 2px 0px 5px;
+}
+.courseForm select.selectOpt{
+    width: 100%;
+    box-shadow: var(--boxShadow);
+    outline: none;
+    text-shadow: none;
+    border: none;
+    padding: 10px 2px 10px 5px;
+    font-size: 14px;
+    color: var(--themeColor);
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.dashboard_sidebar .dList ul li{
+    overflow: hidden;
+}
+.dashboard_sidebar .dList ul li ul.child_bar{
+    display: block;
+}
+.dashboard_sidebar .dList ul li ul.child_bar li a{
+    display: block;
+    font-size: 12px;
+    padding: 5px 0 5px 30px;
+    background: var(--whiteColor);
+    color: var(--themeColor);
+}
+.dashboard_sidebar .dList ul li ul.child_bar li a:focus,
+.dashboard_sidebar .dList ul li ul.child_bar li a:hover{
+    background: var(--themeColor);
+    color: var(--whiteColor);
+}
+.dashboard_sidebar .dList ul li.toggleBar ul.child_bar{
+    display: none;
+}
+
+.courseActionHolder{
+    display: block;
+    text-align: center;
+    padding: 0px 20px;
+}
+.actionHolder{
+    width: 100%;
+    padding: 50px;
+    display: inline-block;
+}
+.actionHolder h1{
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: var(--themeColor);
+}
+.courses_holder{
+    overflow: hidden;
+    padding: 20px;
+    display: block;
+    width: 100%;
+}
+.course_card{
+    float: left;
+    width: 25%;
+    padding: 5px;
+    overflow: hidden;
+    display: flex;
+    box-shadow: var(--boxShadow);
+}
+.cr_img{
+    width: 15%;
+    flex: 1;
+    background: #000;
+}
+.crs_content{
+    padding: 0px 5px 5px 10px;
+    width: 85%;
+    flex: 3;
+}
+.crs_title h2{
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.crs_desp p{
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+.crs_action a.btn_primary{
+    padding: 2px 6px;
+    margin-right: 10px;
+}
