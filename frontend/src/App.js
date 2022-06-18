@@ -2,7 +2,7 @@ import './App.css';
 import { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // import store from "./redux/store";
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import WebFont from "webfontloader";
 // import { loadUser } from "./redux/action/useraction";
 import Header from './Components/Layout/Header/Header';
@@ -37,17 +37,31 @@ import Updatepasword from './Components/Users/updatepassword';
 import ProtectedRoute from './Components/Route/ProtectedRoute';
 import { history } from './history';
 import { loadUser } from './redux/action/useraction';
-import store from "./redux/store";
 function App() {
+<<<<<<< HEAD
   const { isAuthenticated } = useSelector((state) => state.user);
+=======
+const dispatch=useDispatch();
+
+const {  isAuthenticated } = useSelector((state) => state.user);
+>>>>>>> f39ea192704d91f81e12b5d6866e4ccedcdcc24e
   useEffect(() => {
     WebFont.load({
       google: {
         families: ["Noto Sans", "sans-serif"],
       },
     });
+<<<<<<< HEAD
     store.dispatch(loadUser());
   }, []);
+=======
+   
+     dispatch(loadUser());
+
+   
+
+  }, [dispatch]);
+>>>>>>> f39ea192704d91f81e12b5d6866e4ccedcdcc24e
 
   return (
     <div>
