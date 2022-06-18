@@ -31,6 +31,8 @@ import RemoveCourses from './Components/Pages/Admin/RemoveCourses';
 import Updatepasword from './Components/Users/updatepassword';
 import ProtectedRoute from './Components/Route/ProtectedRoute';
 import { loadUser } from './redux/action/useraction';
+
+
 function App() {
 const dispatch=useDispatch();
 
@@ -57,7 +59,19 @@ const { user, isAuthenticated } = useSelector((state) => state.user);
           <Route path='/signup' element={<SignUp />} />
           <Route path='/login' element={<Login />} />         
           <Route path='/forget' element={<ForgetPassword />} />
+<<<<<<< HEAD
           <Route path='/reset/:token' element={<ResetPassword />} />
+=======
+          <Route path='/reset' element={<ResetPassword />} />
+<<<<<<< HEAD
+          <Route path='/dashboard' element={<Dashboard />} />
+
+          
+          <Route path='/create/courses' element={<Courses />} />
+          <Route path='/all/course' element={<Allcourses />} />
+          <Route path='/courseorder' element={<Courseorder />} />
+=======
+>>>>>>> 8f6a0b2c1811ae3bb16213481cea82e8a8135f07
         
           <Route path='/dashboard' element={
           <ProtectedRoute isAuthenticated={isAuthenticated}  adminRoute={true} isAdmin={user &&user.role==="admin"?true:false}>
@@ -72,6 +86,7 @@ const { user, isAuthenticated } = useSelector((state) => state.user);
              <Allcourses />
             </ProtectedRoute>} />
           <Route path='/courseorder' element={<Courseorder/>} />
+>>>>>>> 60a282953f955b9b5031fe773c8586daf967b243
           <Route path='/updatecourse' element={<UpdateCourse />} />
           <Route path='/removecourse' element={<RemoveCourses />} />
        
@@ -79,6 +94,19 @@ const { user, isAuthenticated } = useSelector((state) => state.user);
           <Route path='/all/events' element={<Events />} />
           <Route path='/create/event' element={<CreateEvent />} />
           <Route path='/profile' element={
+<<<<<<< HEAD
+            <ProtectedRoute isAuthenticated={isAuthenticated}>
+              <Profile />
+            </ProtectedRoute>} />
+
+          <Route path='/all/events' element={<Events />} />
+          <Route path='/create/event' element={<CreateEvent />} />
+          <Route path='/removeevent' element={<RemoveEvent />} />
+          <Route path='/updateevent' element={<UpdateEvent />} />
+
+          <Route path='/password/update' element={< Updatepasword />} />
+
+=======
           <ProtectedRoute isAuthenticated={isAuthenticated}>
               <Profile />
             </ProtectedRoute>} />
@@ -87,6 +115,7 @@ const { user, isAuthenticated } = useSelector((state) => state.user);
             < Updatepasword  />
             </ProtectedRoute>} />
           
+>>>>>>> 60a282953f955b9b5031fe773c8586daf967b243
           <Route path='/sbr' element={<Sidebar />} />
           <Route path='/students' element={<Students />} />
           <Route path='/seminars' element={<Seminars />} />
