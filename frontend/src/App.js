@@ -38,30 +38,21 @@ import ProtectedRoute from './Components/Route/ProtectedRoute';
 import { history } from './history';
 import { loadUser } from './redux/action/useraction';
 function App() {
-<<<<<<< HEAD
-  const { isAuthenticated } = useSelector((state) => state.user);
-=======
 const dispatch=useDispatch();
 
 const {  isAuthenticated } = useSelector((state) => state.user);
->>>>>>> f39ea192704d91f81e12b5d6866e4ccedcdcc24e
   useEffect(() => {
     WebFont.load({
       google: {
         families: ["Noto Sans", "sans-serif"],
       },
     });
-<<<<<<< HEAD
-    store.dispatch(loadUser());
-  }, []);
-=======
    
      dispatch(loadUser());
 
    
 
   }, [dispatch]);
->>>>>>> f39ea192704d91f81e12b5d6866e4ccedcdcc24e
 
   return (
     <div>
