@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import WebFont from "webfontloader";
 // import { loadUser } from "./redux/action/useraction";
 import Header from './Components/Layout/Header/Header';
-import Home from './Components/Home/Home';
+import Home from './Components/Layout/Home/Home';
 import About from './Components/Pages/About';
 import SignUp from './Components/Users/SignUp';
 import Profile from './Components/Users/Profile';
@@ -25,24 +25,18 @@ import Events from './Components/Pages/Admin/Events';
 import CreateEvent from './Components/Pages/Admin/CreateEvent';
 
 import Courseorder from './Components/Pages/Admin/Courseorder';
-import CourseHistory from './Components/Users/CourseHistory';
 
 import UpdateCourse from './Components/Pages/Admin/UpdateCourse';
 import RemoveCourses from './Components/Pages/Admin/RemoveCourses';
-
-import RemoveEvent from './Components/Pages/Admin/RemoveEvent';
-import UpdateEvent from './Components/Pages/Admin/UpdateEvent';
-
 import Updatepasword from './Components/Users/updatepassword';
 import ProtectedRoute from './Components/Route/ProtectedRoute';
-import { history } from './history';
 import { loadUser } from './redux/action/useraction';
 
 
 function App() {
 const dispatch=useDispatch();
 
-const {  isAuthenticated } = useSelector((state) => state.user);
+const { user, isAuthenticated } = useSelector((state) => state.user);
   useEffect(() => {
     WebFont.load({
       google: {
@@ -55,11 +49,9 @@ const {  isAuthenticated } = useSelector((state) => state.user);
    
 
   }, [dispatch]);
-
-
   return (
     <div>
-      <Router history={history}>
+      <Router >
         <Header />
         <Routes>
           <Route path='/' element={<Home />} />
@@ -68,16 +60,37 @@ const {  isAuthenticated } = useSelector((state) => state.user);
           <Route path='/login' element={<Login />} />
           <Route path='/forget' element={<ForgetPassword />} />
           <Route path='/reset' element={<ResetPassword />} />
+<<<<<<< HEAD
           <Route path='/dashboard' element={<Dashboard />} />
 
           
           <Route path='/create/courses' element={<Courses />} />
           <Route path='/all/course' element={<Allcourses />} />
           <Route path='/courseorder' element={<Courseorder />} />
+=======
+        
+          <Route path='/dashboard' element={
+          <ProtectedRoute isAuthenticated={isAuthenticated}  adminRoute={true} isAdmin={user &&user.role==="admin"?true:false}>
+              <Dashboard />
+            </ProtectedRoute>} />
+            <Route path='/create/courses' element={
+          <ProtectedRoute isAuthenticated={isAuthenticated}  adminRoute={true} isAdmin={user &&user.role==="admin"?true:false}>
+              <Courses />
+            </ProtectedRoute>} />
+            <Route path='/all/course' element={
+          <ProtectedRoute isAuthenticated={isAuthenticated}  adminRoute={true} isAdmin={user &&user.role==="admin"?true:false}>
+             <Allcourses />
+            </ProtectedRoute>} />
+          <Route path='/courseorder' element={<Courseorder/>} />
+>>>>>>> 60a282953f955b9b5031fe773c8586daf967b243
           <Route path='/updatecourse' element={<UpdateCourse />} />
           <Route path='/removecourse' element={<RemoveCourses />} />
-          <Route path='/coursehistory' element={<CourseHistory />} />
+       
+          
+          <Route path='/all/events' element={<Events />} />
+          <Route path='/create/event' element={<CreateEvent />} />
           <Route path='/profile' element={
+<<<<<<< HEAD
             <ProtectedRoute isAuthenticated={isAuthenticated}>
               <Profile />
             </ProtectedRoute>} />
@@ -89,9 +102,20 @@ const {  isAuthenticated } = useSelector((state) => state.user);
 
           <Route path='/password/update' element={< Updatepasword />} />
 
+=======
+          <ProtectedRoute isAuthenticated={isAuthenticated}>
+              <Profile />
+            </ProtectedRoute>} />
+          <Route path='/password/update' element={
+          <ProtectedRoute isAuthenticated={isAuthenticated}>
+            < Updatepasword  />
+            </ProtectedRoute>} />
+          
+>>>>>>> 60a282953f955b9b5031fe773c8586daf967b243
           <Route path='/sbr' element={<Sidebar />} />
           <Route path='/students' element={<Students />} />
           <Route path='/seminars' element={<Seminars />} />
+          <Route path='/profile' element={<Profile />} />
         </Routes>
       </Router>
     </div>

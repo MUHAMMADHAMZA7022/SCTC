@@ -3,8 +3,6 @@ import "./Dashboard.css";
 import Sidebar from './Sidebar';
 
 import { DataGrid } from '@mui/x-data-grid';
-import SuccessAlert from '../../Layout/Notifications/SuccessAlert';
-import ErrorAlert from '../../Layout/Notifications/ErrorAlert';
 
 function Students() {
 
@@ -38,8 +36,7 @@ function Students() {
                         autoHeight
                         />
                     </div>
-                    <SuccessAlert />
-                    <ErrorAlert />
+              
                 </div>
             </div>
         </Fragment>
