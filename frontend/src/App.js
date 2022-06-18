@@ -63,20 +63,30 @@ const { user, isAuthenticated } = useSelector((state) => state.user);
           <Route path='/dashboard' element={
           <ProtectedRoute isAuthenticated={isAuthenticated}  adminRoute={true} isAdmin={user &&user.role==="admin"?true:false}>
               <Dashboard />
-            </ProtectedRoute>} ></Route>
-          <Route path='/create/courses' element={<Courses />} />
-          <Route path='/all/course' element={<Allcourses />} />
+            </ProtectedRoute>} />
+            <Route path='/create/courses' element={
+          <ProtectedRoute isAuthenticated={isAuthenticated}  adminRoute={true} isAdmin={user &&user.role==="admin"?true:false}>
+              <Courses />
+            </ProtectedRoute>} />
+            <Route path='/all/course' element={
+          <ProtectedRoute isAuthenticated={isAuthenticated}  adminRoute={true} isAdmin={user &&user.role==="admin"?true:false}>
+             <Allcourses />
+            </ProtectedRoute>} />
           <Route path='/courseorder' element={<Courseorder/>} />
           <Route path='/updatecourse' element={<UpdateCourse />} />
           <Route path='/removecourse' element={<RemoveCourses />} />
+       
+          
+          <Route path='/all/events' element={<Events />} />
+          <Route path='/create/event' element={<CreateEvent />} />
           <Route path='/profile' element={
           <ProtectedRoute isAuthenticated={isAuthenticated}>
               <Profile />
             </ProtectedRoute>} />
-          
-          <Route path='/all/events' element={<Events />} />
-          <Route path='/create/event' element={<CreateEvent />} />
-          <Route path='/password/update' element={< Updatepasword  />} />
+          <Route path='/password/update' element={
+          <ProtectedRoute isAuthenticated={isAuthenticated}>
+            < Updatepasword  />
+            </ProtectedRoute>} />
           
           <Route path='/sbr' element={<Sidebar />} />
           <Route path='/students' element={<Students />} />
