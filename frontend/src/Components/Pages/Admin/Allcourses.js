@@ -29,6 +29,7 @@ function AllCourses() {
                 </div>
                 {/* Main Content */}
                 <div className='dashboard_content'>
+                    <h1>All Courses</h1>
                     {/* Courses in list table style */}
                     {/* <div style={{ height: 300, width: '100%' }}>
                         <DataGrid

@@ -55,7 +55,7 @@ let history=useNavigate();
                      null
                   )
                  } 
-                <li><button  onClick={logoutUser}>Logout</button></li>
+                <li><button className='logoutBtn' onClick={logoutUser}>Logout</button></li>
               </ul>
             </li>
               )}

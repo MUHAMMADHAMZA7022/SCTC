@@ -25,9 +25,14 @@ import Events from './Components/Pages/Admin/Events';
 import CreateEvent from './Components/Pages/Admin/CreateEvent';
 
 import Courseorder from './Components/Pages/Admin/Courseorder';
+import CourseHistory from './Components/Users/CourseHistory';
 
 import UpdateCourse from './Components/Pages/Admin/UpdateCourse';
 import RemoveCourses from './Components/Pages/Admin/RemoveCourses';
+
+import RemoveEvent from './Components/Pages/Admin/RemoveEvent';
+import UpdateEvent from './Components/Pages/Admin/UpdateEvent';
+
 import Updatepasword from './Components/Users/updatepassword';
 import ProtectedRoute from './Components/Route/ProtectedRoute';
 import { history } from './history';
@@ -59,6 +64,7 @@ const {  isAuthenticated } = useSelector((state) => state.user);
           <Route path='/about' element={<About />} />
           <Route path='/signup' element={<SignUp />} />
           <Route path='/login' element={<Login />} />
+<<<<<<< HEAD
           <Route path='/forget' element={
           <ProtectedRoute isAuthenticated={isAuthenticated}>
       <ForgetPassword />
@@ -80,21 +86,44 @@ const {  isAuthenticated } = useSelector((state) => state.user);
 <Allcourses />
             </ProtectedRoute>} />
           <Route path='/courseorder' element={<Courseorder/>} />
+=======
+          <Route path='/forget' element={<ForgetPassword />} />
+          <Route path='/reset' element={<ResetPassword />} />
+          <Route path='/dashboard' element={<Dashboard />} />
+
+          
+          <Route path='/create/courses' element={<Courses />} />
+          <Route path='/all/course' element={<Allcourses />} />
+          <Route path='/courseorder' element={<Courseorder />} />
+>>>>>>> 845eca9684ca579e2e263f5d7f0e35da85f789f5
           <Route path='/updatecourse' element={<UpdateCourse />} />
           <Route path='/removecourse' element={<RemoveCourses />} />
+          <Route path='/coursehistory' element={<CourseHistory />} />
           <Route path='/profile' element={
+<<<<<<< HEAD
           <ProtectedRoute isAuthenticated={isAuthenticated}  >
+=======
+            <ProtectedRoute isAuthenticated={isAuthenticated}>
+>>>>>>> 845eca9684ca579e2e263f5d7f0e35da85f789f5
               <Profile />
             </ProtectedRoute>} />
-          
+
           <Route path='/all/events' element={<Events />} />
           <Route path='/create/event' element={<CreateEvent />} />
+<<<<<<< HEAD
           
           <Route path='/password/update' element={
           <ProtectedRoute isAuthenticated={isAuthenticated}>
          < Updatepasword  />
             </ProtectedRoute>} />
           
+=======
+          <Route path='/removeevent' element={<RemoveEvent />} />
+          <Route path='/updateevent' element={<UpdateEvent />} />
+
+          <Route path='/password/update' element={< Updatepasword />} />
+
+>>>>>>> 845eca9684ca579e2e263f5d7f0e35da85f789f5
           <Route path='/sbr' element={<Sidebar />} />
           <Route path='/students' element={<Students />} />
           <Route path='/seminars' element={<Seminars />} />
