@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import WebFont from "webfontloader";
 // import { loadUser } from "./redux/action/useraction";
 import Header from './Components/Layout/Header/Header';
-import Home from './Components/Home/Home';
+import Home from './Components/Layout/Home/Home';
 import About from './Components/Pages/About';
 import SignUp from './Components/Users/SignUp';
 import Profile from './Components/Users/Profile';
@@ -30,7 +30,6 @@ import UpdateCourse from './Components/Pages/Admin/UpdateCourse';
 import RemoveCourses from './Components/Pages/Admin/RemoveCourses';
 import Updatepasword from './Components/Users/updatepassword';
 import ProtectedRoute from './Components/Route/ProtectedRoute';
-import { history } from './history';
 import { loadUser } from './redux/action/useraction';
 function App() {
 const dispatch=useDispatch();
@@ -50,7 +49,7 @@ const { user, isAuthenticated } = useSelector((state) => state.user);
   }, [dispatch]);
   return (
     <div>
-      <Router history={history}>
+      <Router >
         <Header />
         <Routes>
           <Route path='/' element={<Home />} />
