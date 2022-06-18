@@ -69,3 +69,19 @@
 .nav_list li.pr_box ul.pr_list{
     display: none;
 }
+.nav_list li ul.pr_list li button.logoutBtn{
+    display: inline-block;
+    padding: 10px 15px;
+    color: var(--whiteColor);
+    font-weight: 400;
+    font-size: 14px;
+    background: none;
+    outline: none;
+    border-radius: 0px;
+    border: none;
+    cursor: pointer;
+}
+.nav_list li ul.pr_list li button.logoutBtn:focus,
+.nav_list li ul.pr_list li button.logoutBtn:hover{
+    color: #444;
+}

@@ -11,8 +11,33 @@ function CreateEvent() {
                     <Sidebar />
                 </div>
                 {/* Main Content */}
-                <div className='dashboard_content'>
-                    Create Event Here
+                <div className='dashboard_content courses_content'>
+                    <h1>Create Event</h1>
+                    <form className='courseForm'>
+                        <input
+                            type="text"
+                            placeholder="Event Name"
+                            required
+                        />
+                        <textarea
+                            placeholder="Event Description"
+                            cols="30"
+                            rows="1"
+                        ></textarea>
+                        <img alt="Avatar Preview" className="imageeee" />
+                        <input
+                            type="file"
+                            name="images"
+                            accept="image/*"
+                        />
+                        <input
+                            type="number"
+                            placeholder="Event Date"
+                            required
+                        />
+                        <button className='btn_primary'>Create Event</button>
+
+                    </form>
                 </div>
             </div>
         </Fragment>
