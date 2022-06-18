@@ -135,7 +135,7 @@ export const forgotPassword = (email) => async (dispatch) => {
     const config = { headers: { "Content-Type": "application/json" } };
 
     const { data } = await axios.post(
-      `/api/vasal/password/forgot`,
+      `/api/v1/user/forgotpassword`,
       email,
       config
     );
@@ -157,7 +157,7 @@ export const resetPassword = (token, passwords) => async (dispatch) => {
     const config = { headers: { "Content-Type": "application/json" } };
 
     const { data } = await axios.put(
-      `/api/vasal/password/reset/${token}`,
+      `/api/v1/user/resetpassword/${token}`,
 
       passwords,
       config

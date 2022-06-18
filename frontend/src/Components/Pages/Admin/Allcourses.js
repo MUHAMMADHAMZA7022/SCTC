@@ -1,10 +1,19 @@
-import React, { Fragment } from 'react'
 import "./Dashboard.css";
 import Sidebar from './Sidebar';
 import { Link } from "react-router-dom";
 
-// import { DataGrid } from '@mui/x-data-grid';
+import React, { Fragment,  } from "react";
+// import { useSelector, useDispatch } from "react-redux";
+import {
+//   CLEAR_ERROR,
+//   getAdminProduct,
+//   deleteProduct,
+} from "../../../redux/action/courseaction";
+// import { useAlert } from "react-alert";
+// import Loader from "../Layout/Loader/Loader";
+// import { DELETE_PRODUCT_RESET } from "../../../redux/Constant/courseconstant";
 function AllCourses() {
+    // const alert = useAlert();
 
     // const columns = [
     //     { field: 'col1', headerName: 'Title', width: 150 },

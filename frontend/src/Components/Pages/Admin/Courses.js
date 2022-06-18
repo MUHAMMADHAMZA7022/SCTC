@@ -2,8 +2,8 @@ import "./Dashboard.css";
 import Sidebar from './Sidebar';
 import React, { Fragment, useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { courseregister, CLEAR_ERROR } from "../../../redux/action/courseaction";
-import { COURSE_RESET } from "../../../redux/Constant/courseconstant";
+import { createCourse, CLEAR_ERROR } from "../../../redux/action/courseaction";
+import { NEW_COURSE_RESET } from "../../../redux/Constant/courseconstant";
 import { useNavigate } from "react-router-dom";
 import { useAlert } from "react-alert"
 function Courses() {
@@ -47,9 +47,9 @@ function Courses() {
     }
 
     if (success) {
-      alert.success("Product Created Successfully");
+      alert.success("Course Created Successfully");
       history("/dashboard");
-      dispatch({ type: COURSE_RESET });
+      dispatch({ type:NEW_COURSE_RESET });
     }
   }, [dispatch, success, error, alert, history,]);
 
@@ -68,7 +68,7 @@ function Courses() {
     // const value = Object.fromEntries(myForm.entries());
     // value.topics = myForm.getAll("topics");
     const value = Object.fromEntries(myForm.entries());
-    dispatch(courseregister(value));
+    dispatch(createCourse(value));
   };
 
   const updateProfileDataChange = (e) => {

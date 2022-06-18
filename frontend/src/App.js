@@ -55,9 +55,9 @@ const { user, isAuthenticated } = useSelector((state) => state.user);
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/signup' element={<SignUp />} />
-          <Route path='/login' element={<Login />} />
+          <Route path='/login' element={<Login />} />         
           <Route path='/forget' element={<ForgetPassword />} />
-          <Route path='/reset' element={<ResetPassword />} />
+          <Route path='/reset/:token' element={<ResetPassword />} />
         
           <Route path='/dashboard' element={
           <ProtectedRoute isAuthenticated={isAuthenticated}  adminRoute={true} isAdmin={user &&user.role==="admin"?true:false}>
