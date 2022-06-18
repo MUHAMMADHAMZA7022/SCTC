@@ -108,7 +108,7 @@ exports.resetPassword = async (req, res) => {
       .update(process.env.secretresettoken)
       .digest("hex");
 
-    console.log(resetpasswordtoken);
+    // console.log(resetpasswordtoken);
     const user = await User.findOne({
       resetpasswordtoken: resetpasswordtoken,
       resetpasswordexpire: {
