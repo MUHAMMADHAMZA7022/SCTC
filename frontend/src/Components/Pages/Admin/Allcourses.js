@@ -50,7 +50,9 @@ function AllCourses() {
                     </div> */}
                     <div className="courses_holder">
                         <div className="course_card">
-                            <div className="cr_img"></div>
+                            <div className="cr_img">
+                                <img src={'#'} alt="course_image" />
+                            </div>
                             <div className="crs_content">
                                 <div className="crs_title">
                                     <h2>Learn Biostatical Programming Masterclass</h2>
