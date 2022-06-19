@@ -11,28 +11,55 @@ function UpdateCourse() {
                     <Sidebar />
                 </div>
                 {/* Main Content */}
-                <div className='dashboard_content'>
-                    <div className='courseActionHolder'>
-                        <div className='actionHolder'>
-                            <h1>Update Course</h1>
-                            <form className="updateForm">
-                                {/* Email */}
-                                <div className="group_field">
-                                    <label htmlFor="email">
-                                        Course ID<span>*</span>
-                                    </label>
-                                    <input
-                                        type='text'
-                                        placeholder="Course ID"
-                                        required
-                                    />
-                                </div>
-                                <div className="group_field">
-                                    <button className='btn_primary'>Update Course</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+                <div className='dashboard_content courses_content'>
+                    <h1>Create Course</h1>
+                    <form className='courseForm'>
+                        <input
+                            type="text"
+                            placeholder="Course Name"
+                            required
+                        />
+                        <input
+                            type="text"
+                            placeholder="File Url"
+                            required
+                        />
+                        <textarea
+                            placeholder="Course Description"
+                            cols="30"
+                            rows="1"
+                        ></textarea>
+                        <input
+                            type="number"
+                            placeholder=" Course Price"
+                            required
+                        />
+
+
+
+                        <img src={'#'} alt="Avatar Preview" className="imageeee" />
+
+                        <input
+                            type="file"
+                            name="images"
+                            accept="image/*"
+                        />
+                        <input
+                            type="text"
+                            placeholder="Instructor Name"
+                            required
+                        />
+                        <select className="selectOpt">
+                            <option value="">Choose Category</option>
+                        </select>
+                        <input
+                            type="number"
+                            placeholder="Select Deadline"
+                            required
+                        />
+                        <button className='btn_primary'>Update</button>
+
+                    </form>
                 </div>
             </div>
         </Fragment>

@@ -61,8 +61,8 @@ function AllCourses() {
                                     <p>Lorem Ipsum dolor sit amet dolor sit Ipsum dit amet </p>
                                 </div>
                                 <div className="crs_action">
-                                    <Link className='btn_primary' to={'#'}>Delete</Link>
-                                    <Link className='btn_primary' to={'#'}>Update</Link>
+                                    <Link className='btn_primary' to='/removecourse'>Delete</Link>
+                                    <Link className='btn_primary' to='/updatecourse'>Update</Link>
                                 </div>
                             </div>
                         </div>
