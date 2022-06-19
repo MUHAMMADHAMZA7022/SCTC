@@ -1,5 +1,6 @@
 import React from "react";
-import { useNavigate, Outlet } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const ProtectedRoute = ({
   isAuthenticated,
@@ -7,18 +8,24 @@ const ProtectedRoute = ({
   adminRoute,
   isAdmin,
   redirect = "/login",
-  redirectAdmin = "/login",
+  redirectAdmin = "/profile",
 }) => {
-  let Navigate = useNavigate();
-  if (!isAuthenticated) {
-    return Navigate(redirect)
-  }
+  const { loading} = useSelector((state) => state.user);
 
-  if (adminRoute && !isAdmin) {
-    return Navigate(redirectAdmin) 
+  if(loading===false)
+  {
+    
+    if (loading===false&& !isAuthenticated) {
+      return <Navigate to={redirect} />;
+    }
+  
+    if (adminRoute===true&& !isAdmin ) {
+      return <Navigate to={redirectAdmin} />;
+    }
   }
-
   return children ? children : <Outlet />;
-};
+
+  }
+
 
 export default ProtectedRoute;

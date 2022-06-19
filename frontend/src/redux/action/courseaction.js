@@ -52,11 +52,11 @@ export const getAdminProduct = () => async (dispatch) => {
   try {
     dispatch({ type: ADMIN_COURSE_REQUEST });
 
-    const { data } = await axios.get("/api/v1/admin/products");
+    const { data } = await axios.get("/api/v1/course/admin/courses");
 
     dispatch({
       type:   ADMIN_COURSE_SUCCESS,
-      payload: data.prod,
+      payload: data.course,
     });
   } catch (error) {
     dispatch({

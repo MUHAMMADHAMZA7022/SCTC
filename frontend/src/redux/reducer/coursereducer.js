@@ -45,7 +45,7 @@ export const productsReducer = (state = { courses: [] }, action) => {
     case ADMIN_COURSE_SUCCESS:
       return {
         loading: false,
-        courses: action.payload,
+        course: action.payload,
       };
     case ALL_COURSE_FAIL:
     case ADMIN_COURSE_FAIL:

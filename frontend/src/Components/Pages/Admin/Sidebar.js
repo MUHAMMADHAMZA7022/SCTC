@@ -45,7 +45,6 @@ const Sidebar = () => {
           <DashboardIcon /> Dashboard
         </p>
       </Link>
-      <Link to={"#"}>
         <TreeView
           defaultCollapseIcon={<ExpandMoreIcon />}
           defaultExpandIcon={<ImportExportIcon />}
@@ -68,7 +67,6 @@ const Sidebar = () => {
             </Link>
           </TreeItem>
         </TreeView>
-      </Link>
       <Link to="/courseorder">
         <p>
           <ListAltIcon />
@@ -92,7 +90,6 @@ const Sidebar = () => {
          Events
         </p>
       </Link> */}
-      <Link to={"#"}>
         <TreeView
           defaultCollapseIcon={<ExpandMoreIcon />}
           defaultExpandIcon={<EventIcon />}
@@ -115,7 +112,6 @@ const Sidebar = () => {
             </Link>
           </TreeItem>
         </TreeView>
-      </Link>
     </div>
   );
 };
