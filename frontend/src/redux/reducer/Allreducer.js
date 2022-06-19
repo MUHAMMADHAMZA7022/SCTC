@@ -1,5 +1,13 @@
 import { combineReducers } from "redux";
-import { newCourseReducer } from "./coursereducer";
+import {
+  // productsReducer,
+  // productDetailsReducer,
+  // productReducer,
+  newCourseReducer,
+  // newReviewReducer,
+  // productReviewsReducer,
+  // reviewReducer,
+} from "./coursereducer";
 import {
     allUsersReducer,
     userReducer,

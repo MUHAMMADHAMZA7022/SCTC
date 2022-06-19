@@ -57,10 +57,23 @@ const { user, isAuthenticated } = useSelector((state) => state.user);
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/signup' element={<SignUp />} />
-          <Route path='/login' element={<Login />} />
+          <Route path='/login' element={<Login />} />         
           <Route path='/forget' element={<ForgetPassword />} />
+<<<<<<< HEAD
           <Route path='/reset' element={<ResetPassword />} />
         
+=======
+          <Route path='/reset/:token' element={<ResetPassword />} />
+          <Route path='/courseorder' element={<Courseorder/>} />
+          <Route path='/updatecourse' element={<UpdateCourse />} />
+          <Route path='/removecourse' element={<RemoveCourses />} />    
+          <Route path='/all/events' element={<Events />} />
+          <Route path='/create/event' element={<CreateEvent />} />
+          <Route path='/sbr' element={<Sidebar />} />
+          <Route path='/students' element={<Students />} />
+          <Route path='/seminars' element={<Seminars />} />
+        {/* ADMIN ROUTES */}
+>>>>>>> ba637078fbb19470c95b38310029d66cc46e08e5
           <Route path='/dashboard' element={
           <ProtectedRoute isAuthenticated={isAuthenticated}  adminRoute={true} isAdmin={user &&user.role==="admin"?true:false}>
               <Dashboard />
@@ -73,6 +86,7 @@ const { user, isAuthenticated } = useSelector((state) => state.user);
           <ProtectedRoute isAuthenticated={isAuthenticated}  adminRoute={true} isAdmin={user &&user.role==="admin"?true:false}>
              <Allcourses />
             </ProtectedRoute>} />
+<<<<<<< HEAD
           <Route path='/courseorder' element={<Courseorder/>} />
           <Route path='/updatecourse' element={<UpdateCourse />} />
           <Route path='/removecourse' element={<RemoveCourses />} />
@@ -80,6 +94,10 @@ const { user, isAuthenticated } = useSelector((state) => state.user);
           
           <Route path='/all/events' element={<Events />} />
           <Route path='/create/event' element={<CreateEvent />} />
+=======
+        
+        {/* NORMAL ROUTES */}
+>>>>>>> ba637078fbb19470c95b38310029d66cc46e08e5
           <Route path='/profile' element={
           <ProtectedRoute isAuthenticated={isAuthenticated}>
               <Profile />
@@ -88,11 +106,15 @@ const { user, isAuthenticated } = useSelector((state) => state.user);
           <ProtectedRoute isAuthenticated={isAuthenticated}>
             < Updatepasword  />
             </ProtectedRoute>} />
+
           
+<<<<<<< HEAD
           <Route path='/sbr' element={<Sidebar />} />
           <Route path='/students' element={<Students />} />
           <Route path='/seminars' element={<Seminars />} />
           <Route path='/profile' element={<Profile />} />
+=======
+>>>>>>> ba637078fbb19470c95b38310029d66cc46e08e5
         </Routes>
       </Router>
     </div>
