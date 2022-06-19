@@ -50,7 +50,9 @@ function AllCourses() {
                     </div> */}
                     <div className="courses_holder">
                         <div className="course_card">
-                            <div className="cr_img"></div>
+                            <div className="cr_img">
+                                <img src={'#'} alt="course_image" />
+                            </div>
                             <div className="crs_content">
                                 <div className="crs_title">
                                     <h2>Learn Biostatical Programming Masterclass</h2>
@@ -59,8 +61,8 @@ function AllCourses() {
                                     <p>Lorem Ipsum dolor sit amet dolor sit Ipsum dit amet </p>
                                 </div>
                                 <div className="crs_action">
-                                    <Link className='btn_primary' to={'#'}>Delete</Link>
-                                    <Link className='btn_primary' to={'#'}>Update</Link>
+                                    <Link className='btn_primary' to='/removecourse'>Delete</Link>
+                                    <Link className='btn_primary' to='/updatecourse'>Update</Link>
                                 </div>
                             </div>
                         </div>
