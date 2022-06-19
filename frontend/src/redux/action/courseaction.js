@@ -92,7 +92,7 @@ export const createCourse = (courseData) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      `/api/v1/course/createcourse`,
+      `/api/v1/course/admin/createcourse`,
       courseData,
       config
     );
