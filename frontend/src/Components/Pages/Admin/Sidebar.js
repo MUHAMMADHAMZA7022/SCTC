@@ -50,21 +50,14 @@ const Sidebar = () => {
           defaultExpandIcon={<ImportExportIcon />}
         >
           <TreeItem nodeId="1" label="Courses">
-            <Link to="/all/course">
-              <TreeItem nodeId="2" label="All Courses" icon={<PostAddIcon />} />
-            </Link>
-
-            <Link to="/create/courses">
+          <Link to="/create/courses">
               <TreeItem nodeId="3" label="Create" icon={<AddIcon />} />
             </Link>
-
-            <Link to="/removecourse">
-              <TreeItem nodeId="4" label="Remove" icon={<AddIcon />} />
+            <Link to="/all/course">
+              <TreeItem nodeId="2" label="View Courses" icon={<PostAddIcon />} />
             </Link>
 
-            <Link to="/updatecourse">
-              <TreeItem nodeId="5" label="Update" icon={<AddIcon />} />
-            </Link>
+           
           </TreeItem>
         </TreeView>
       <Link to="/courseorder">

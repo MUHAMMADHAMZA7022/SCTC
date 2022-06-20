@@ -31,6 +31,7 @@ import Updatepasword from './Components/Users/updatepassword';
 import ProtectedRoute from './Components/Route/ProtectedRoute';
 import { loadUser } from './redux/action/useraction';
 import AdminCourses from './Components/Pages/Admin/AdminCourses';
+import Loader from './Components/Layout/Loader/loader';
 
 
 function App() {
@@ -53,13 +54,13 @@ const { user, isAuthenticated } = useSelector((state) => state.user);
         <Header />
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/loader' element={<Loader />} />
           <Route path='/about' element={<About />} />
           <Route path='/signup' element={<SignUp />} />
           <Route path='/login' element={<Login />} />         
           <Route path='/forget' element={<ForgetPassword />} />
           <Route path='/reset/:token' element={<ResetPassword />} />
           <Route path='/courseorder' element={<Courseorder/>} />
-          <Route path='/updatecourse' element={<UpdateCourse />} />
           <Route path='/removecourse' element={<RemoveCourses />} />    
           <Route path='/all/events' element={<Events />} />
           <Route path='/create/event' element={<CreateEvent />} />
@@ -78,7 +79,10 @@ const { user, isAuthenticated } = useSelector((state) => state.user);
             <Route path='/all/course' element={
           <ProtectedRoute isAuthenticated={isAuthenticated}  adminRoute={true} isAdmin={user &&user.role==="admin"?true:false}>
              <AdminCourses />
-             {/* <Allcourses/> */}
+            </ProtectedRoute>} />
+            <Route path='/updatecourse/:id' element={
+          <ProtectedRoute isAuthenticated={isAuthenticated}  adminRoute={true} isAdmin={user &&user.role==="admin"?true:false}>
+             <UpdateCourse/>
             </ProtectedRoute>} />
         
         {/* NORMAL ROUTES */}

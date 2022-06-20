@@ -81,7 +81,7 @@ exports.singlecourse = catchasyncerror(async (req, res, next) => {
 
 
 // updateCourse -- Admin
-exports.updatecourse = catchasyncerror(async (req, res) => {
+exports.updatecourse = catchasyncerror(async (req, res,next) => {
   let ucourse = await Course.findById(req.params.id);
   if (!ucourse) {
     return next(new Errorhandler("Course Not Found", 404)); //ly class bnae v utils mein phir ye error bnya wa sb sy phir middleare ein erro.js bnae
