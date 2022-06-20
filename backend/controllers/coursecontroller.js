@@ -94,7 +94,7 @@ exports.updatecourse = catchasyncerror(async (req, res,next) => {
     await cloudinary.v2.uploader.destroy(imageId);
 
     const myCloud = await cloudinary.v2.uploader.upload(req.body.images, {
-      folder: "images",
+      folder: "courses",
       width: 150,
       crop: "scale",
     });
