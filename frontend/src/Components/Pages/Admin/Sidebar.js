@@ -60,17 +60,18 @@ const Sidebar = () => {
            
           </TreeItem>
         </TreeView>
+        <Link to="/students">
+        <p>
+          <AccessibilityIcon /> Students
+        </p>
+      </Link>
       <Link to="/courseorder">
         <p>
           <ListAltIcon />
          Course Orders
         </p>
       </Link>
-      <Link to="/students">
-        <p>
-          <AccessibilityIcon /> Students
-        </p>
-      </Link>
+
       {/* <Link to="/seminars">
         <p>
           <VideoLabelIcon  />
