@@ -1,6 +1,7 @@
 .header_holder{
-    background-color: rgba(0, 46, 59, 0.6);
-    padding: 10px 2px;
+    /* background-color: rgba(0, 46, 59, 0.3); */
+    background: transparent;
+    padding: 30px 2px;
     text-align: center;
 }
 .logo_holder{
@@ -14,14 +15,14 @@
     vertical-align: top;
 }
 .nav_list{
-    padding: 5px 2px;
+    overflow: hidden;
 }
 .nav_list li{
     float: left;
 }
 .nav_list li a{
     display: inline-block;
-    padding: 10px 15px;
+    padding: 5px 20px;
     color: var(--whiteColor);
     font-weight: 400;
     font-size: 14px;
