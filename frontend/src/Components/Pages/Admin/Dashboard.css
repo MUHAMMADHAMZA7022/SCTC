@@ -131,26 +131,32 @@
 .courses_holder{
     overflow: hidden;
     padding: 20px;
-    display: block;
-    width: 100%;
+    display: inline-block;
+    width: 33.33%;
 }
 .course_card{
     float: left;
-    width: 25%;
+    width: 100%;
     padding: 5px;
     overflow: hidden;
-    display: flex;
     box-shadow: var(--boxShadow);
+    display: flex;
+    height: 200px;
 }
 .cr_img{
-    width: 15%;
     flex: 1;
-    background: #000;
+    width: 30%;
+    overflow: hidden;
 }
 .crs_content{
     padding: 0px 5px 5px 10px;
-    width: 85%;
-    flex: 3;
+    flex: 2;
+    width: 70%;
+    position: relative;
+}
+.cr_img img{
+    display: block;
+    object-fit: cover;
 }
 .crs_title h2{
     font-size: 14px;
@@ -163,15 +169,16 @@
     line-height: 16px;
     font-weight: 400;
     margin-bottom: 10px;
+    max-height: 100px;
+    overflow: auto;
 }
+.crs_action{
+    position: absolute;
+    bottom: 0;
+    left: auto;
+}
+.crs_action button.btn_primary,
 .crs_action a.btn_primary{
     padding: 2px 6px;
     margin-right: 10px;
-}
-/* COMMON ADMIN CLASS STUDENT PAGE ADMIN COLOR GREEN OR RED */
-.greenColor{
-    color: green;
-}
-.redColor{
-    color: red;
 }

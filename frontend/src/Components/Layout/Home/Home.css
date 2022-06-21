@@ -54,3 +54,73 @@
     font-size: 12px;
     line-height: 16px;
 }
+
+/* Home Courses Section Styles  */
+.homeCourses{
+    padding: 50px 0px;
+    overflow: hidden;
+}
+.hc_holder{
+    display: inline-block;
+    vertical-align: top;
+    width: calc(33% - 10px);
+    margin: 0 5px 10px 5px;
+}
+.hc_card{
+    float: left;
+    width: 100%;
+    padding: 5px;
+    overflow: hidden;
+    box-shadow: 0px 1px 6px 1px rgba(44, 39, 39, 0.35);
+    display: flex;
+    max-height: 150px;
+    height: 150px;
+    min-height: 150px;
+    border-radius: 3px;
+}
+.hc_img{
+    flex: 1;
+    width: 30%;
+    overflow: hidden;
+}
+.hc_img img{
+    display: block;
+    object-fit: cover;
+}
+.hc_content{
+    padding: 0px 5px 5px 10px;
+    flex: 2;
+    width: 70%;
+    position: relative;
+}
+.hc_content h2{
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--themeColor);
+    margin-bottom: 10px;
+}
+.hc_content p{
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 20px;
+    overflow: auto;
+    color: var(--lightColor);
+}
+.hc_action{
+    position: absolute;
+    bottom: 2%;
+    left: auto;
+}
+.hc_action a{
+    font-weight: 800;
+    margin-right: 30px;
+    color: var(--lightColor);
+    font-size: 14px;
+}
+.hc_action a.red_link{
+    color: var(--redColor);
+}
+.hc_action a:focus,
+.hc_action a:hover{
+    color: var(--themeColor);
+}
