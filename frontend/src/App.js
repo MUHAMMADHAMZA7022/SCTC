@@ -20,8 +20,9 @@ import Sidebar from './Components/Pages/Admin/Sidebar';
 import Students from './Components/Pages/Admin/Students';
 import Seminars from './Components/Pages/Admin/Seminars';
 
-import Events from './Components/Pages/Admin/Events';
+import AdminEvents from './Components/Pages/Admin/AdminEvent';
 import CreateEvent from './Components/Pages/Admin/CreateEvent';
+import UpdateEvent from './Components/Pages/Admin/UpdateEvent';
 
 import Courseorder from './Components/Pages/Admin/Courseorder';
 
@@ -62,10 +63,7 @@ const { user, isAuthenticated } = useSelector((state) => state.user);
           <Route path='/reset/:token' element={<ResetPassword />} />
           <Route path='/courseorder' element={<Courseorder/>} />
           <Route path='/removecourse' element={<RemoveCourses />} />    
-          <Route path='/all/events' element={<Events />} />
-          <Route path='/create/event' element={<CreateEvent />} />
           <Route path='/sbr' element={<Sidebar />} />
-          <Route path='/students' element={<Students />} />
           <Route path='/seminars' element={<Seminars />} />
         {/* ADMIN ROUTES */}
           <Route path='/dashboard' element={
@@ -84,7 +82,26 @@ const { user, isAuthenticated } = useSelector((state) => state.user);
           <ProtectedRoute isAuthenticated={isAuthenticated}  adminRoute={true} isAdmin={user &&user.role==="admin"?true:false}>
              <UpdateCourse/>
             </ProtectedRoute>} />
-        
+            <Route path='/students' element={
+          <ProtectedRoute isAuthenticated={isAuthenticated}  adminRoute={true} isAdmin={user &&user.role==="admin"?true:false}>
+             <Students/>
+            </ProtectedRoute>} />
+          
+            <Route path='/all/events' element={
+          <ProtectedRoute isAuthenticated={isAuthenticated}  adminRoute={true} isAdmin={user &&user.role==="admin"?true:false}>
+             <AdminEvents />
+            </ProtectedRoute>} />
+
+            <Route path='/create/event' element={
+          <ProtectedRoute isAuthenticated={isAuthenticated}  adminRoute={true} isAdmin={user &&user.role==="admin"?true:false}>
+             <CreateEvent/>
+            </ProtectedRoute>} />
+
+            <Route path='/updateevent/:id' element={
+          <ProtectedRoute isAuthenticated={isAuthenticated}  adminRoute={true} isAdmin={user &&user.role==="admin"?true:false}>
+             <UpdateEvent />
+            </ProtectedRoute>} />
+            
         {/* NORMAL ROUTES */}
           <Route path='/profile' element={
           <ProtectedRoute isAuthenticated={isAuthenticated}>

@@ -8,7 +8,7 @@ const ApiFeatures = require("../utils/apifeatures");
 //createcourse -- Admin
 exports.createevent = async (req, res, next) => {
 try {
-  const { name,  description,startdate,enddate,location} =
+  const { name,description,startdate,enddate,organization,location} =
   req.body;
   const images = req.body.images;
   const mycloud = await cloudinary.v2.uploader.upload(images,{
@@ -22,6 +22,7 @@ try {
     description,
 startdate,
 enddate,
+organization,
 location,
     images: {
       public_id: mycloud.public_id,
@@ -31,7 +32,7 @@ location,
   res.status(201).json({
     success: true,
     courses,
-    message: "Course Created Successfully",
+    message: "Event Created Successfully",
   });
 } catch (error) {
   res.status(500).json({ success: false, message: error.message });
@@ -40,7 +41,7 @@ location,
 }
 
 //Getcourses All
-exports.allevents = catchasyncerror(async (req, res) => {
+exports.allevent = catchasyncerror(async (req, res) => {
   const resultperpage = 8;
   const eventscount = await Event.countDocuments();
 
@@ -57,77 +58,75 @@ exports.allevents = catchasyncerror(async (req, res) => {
   });
 });
 //get all admin courses
-exports.allcoursesadmin = catchasyncerror(async (req, res) => {
-  const course = await Course.find();
+exports.alleventsadmin = catchasyncerror(async (req, res) => {
+  const event = await Event.find();
   res.status(200).json({
     success: true,
-    course,
+    event,
   });
 });
-// //one course
-// exports.singlecourse = catchasyncerror(async (req, res, next) => {
-//   const scourse = await Course.findById(req.params.id);
-//   if (!scourse) {
-//     return next(new Errorhandler("course Not Found", 404));
-//   }
-//   res.status(200).json({
-//     success: true,
-//     scourse,
-//   });
-// });
+//one course
+exports.singleevent = catchasyncerror(async (req, res, next) => {
+  const sevent = await Event.findById(req.params.id);
+  if (!sevent) {
+    return next(new Errorhandler("Event Not Found", 404));
+  }
+  res.status(200).json({
+    success: true,
+    sevent,
+  });
+});
 
 
-// // updateCourse -- Admin
-// exports.updatecourse = catchasyncerror(async (req, res,next) => {
-//   let ucourse = await Course.findById(req.params.id);
-//   if (!ucourse) {
-//     return next(new Errorhandler("Course Not Found", 404)); //ly class bnae v utils mein phir ye error bnya wa sb sy phir middleare ein erro.js bnae
-//   }
-//   // //addd avtar cloudinary
-//   if (req.body.images !== "") {
+// updateCourse -- Admin
+exports.updateevent = catchasyncerror(async (req, res,next) => {
+  let uevent = await Event.findById(req.params.id);
+  if (!uevent) {
+    return next(new Errorhandler("Event Not Found", 404)); //ly class bnae v utils mein phir ye error bnya wa sb sy phir middleare ein erro.js bnae
+  }
+  // //addd avtar cloudinary
+  if (req.body.images !== "") {
 
-//     const imageId = ucourse.images.public_id;
+    const imageId = uevent.images.public_id;
 
-//     await cloudinary.v2.uploader.destroy(imageId);
+    await cloudinary.v2.uploader.destroy(imageId);
 
-//     const myCloud = await cloudinary.v2.uploader.upload(req.body.images, {
-//       folder: "courses",
-//       width: 150,
-//       crop: "scale",
-//     });
+    const myCloud = await cloudinary.v2.uploader.upload(req.body.images, {
+      folder: "events",
+    });
 
-//     req.body.images = {
-//       public_id: myCloud.public_id,
-//       url: myCloud.secure_url,
-//     };
-//   }
-//   ucourse = await Course.findByIdAndUpdate(req.params.id, req.body, {
-//     new: true,
-//     runValidators: true,
-//     useFindAndModify: false,
-//   });
-//   res.status(200).json({
-//     success: true,
-//     ucourse,
-//     message: "Course Update Successfully",
-//   });
-// });
+    req.body.images = {
+      public_id: myCloud.public_id,
+      url: myCloud.secure_url,
+    };
+  }
+  uevent = await Event.findByIdAndUpdate(req.params.id, req.body, {
+    new: true,
+    runValidators: true,
+    useFindAndModify: false,
+  });
+  res.status(200).json({
+    success: true,
+    uevent,
+    message: "Event Update Successfully",
+  });
+});
 
-// // Delete Course---Admin
-// exports.deletecourse = catchasyncerror(async (req, res, next) => {
-//   const dcourse = await Course.findById(req.params.id);
-//   if (!dcourse) {
-//     return next(new Errorhandler("Course Not Found", 404));
-//   }
-//   // Deleting Images From Cloudinary
-//   const imageId = dcourse.images.public_id;
+// Delete Course---Admin
+exports.deleteevent = catchasyncerror(async (req, res, next) => {
+  const devent = await Event.findById(req.params.id);
+  if (!devent) {
+    return next(new Errorhandler("Event Not Found", 404));
+  }
+  // Deleting Images From Cloudinary
+  const imageId = devent.images.public_id;
 
-//   await cloudinary.v2.uploader.destroy(imageId);
+  await cloudinary.v2.uploader.destroy(imageId);
   
 
-//   await dcourse.remove();
-//   res.status(200).json({
-//     success: true,
-//     message: "Course Deleted Successfully",
-//   });
-// });
+  await devent.remove();
+  res.status(200).json({
+    success: true,
+    message: "Event Deleted Successfully",
+  });
+});

@@ -18,7 +18,6 @@ function UpdateCourse() {
     let history=useNavigate();
     const alert = useAlert();
     const productId = useParams().id;
-    console.log(productId);
     const { course, error } = useSelector((state) => state.courseDetails);
     const {
         loading,
@@ -167,7 +166,7 @@ function UpdateCourse() {
   
   
   
-              <img src={avatarPreview} alt="Avatar Preview" className="imageeee" />
+              <img src={avatarPreview} alt="Course Preview" className="imageeee" />
   
               <input
                 type="file"

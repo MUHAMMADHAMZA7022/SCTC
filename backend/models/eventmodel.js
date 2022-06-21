@@ -20,13 +20,17 @@ const eventSechema = new mongoose.Schema({
         },
       },
     startdate: {
-        type: Date,
+        type: String,
         required: [true, "Please Enter  Event Start Date"],
 
     },
     enddate:{
-        type: Date,
+        type: String,
         required: [true, "Please Enter  Event End Date"],
+    },
+    organization:{
+        type: String,
+        required: [true, "Please Enter Oraganization Name"],
     },
 
     location:{

@@ -97,13 +97,6 @@ const Sidebar = () => {
               <TreeItem nodeId="3" label="Create" icon={<AddIcon />} />
             </Link>
 
-            <Link to="/removeevent">
-              <TreeItem nodeId="4" label="Remove" icon={<AddIcon />} />
-            </Link>
-
-            <Link to="/updateevent">
-              <TreeItem nodeId="5" label="Update" icon={<AddIcon />} />
-            </Link>
           </TreeItem>
         </TreeView>
     </div>

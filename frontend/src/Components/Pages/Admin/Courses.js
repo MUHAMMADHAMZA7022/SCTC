@@ -130,7 +130,7 @@ function Courses() {
 
 
 
-            <img src={avatarPreview} alt="Avatar Preview" className="imageeee" />
+            <img src={avatarPreview} alt="Course Preview" className="imageeee" />
 
             <input
               type="file"

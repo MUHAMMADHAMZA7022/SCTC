@@ -2,13 +2,15 @@ import { combineReducers } from "redux";
 import {
   ALLcoursesReducer,
   courseDetailsReducer,
-  // productReducer,
   newCourseReducer,
   updatedeletecourseReducer ,
-  // newReviewReducer,
-  // productReviewsReducer,
-  // reviewReducer,
 } from "./coursereducer";
+import {
+  ALLeventsReducer,
+  eventDetailsReducer,
+  newEventReducer,
+  updatedeleteeventReducer ,
+} from "./eventreducer";
 import {
     allUsersReducer,
     userReducer,
@@ -23,10 +25,16 @@ const AllReducer = combineReducers({
     profile: profileReducer,
     forgotPassword: forgotPasswordReducer, 
     allUsers: allUsersReducer,
+    //courses
     newCourse: newCourseReducer,
     courses: ALLcoursesReducer,
     course:updatedeletecourseReducer ,
-    courseDetails: courseDetailsReducer
+    courseDetails: courseDetailsReducer,
+    //events
+    newEvent: newEventReducer,
+    events: ALLeventsReducer,
+    event:updatedeleteeventReducer ,
+    eventDetails: eventDetailsReducer,
    
   });
   
