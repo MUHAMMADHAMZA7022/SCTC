@@ -99,7 +99,7 @@ function Courses() {
         {/* Main Content */}
         <div className='dashboard_content courses_content'>
           <h1>Create Course</h1>
-          <form className='courseForm' onSubmit={createProductSubmitHandler}>
+          <form className='courseForm' encType="multipart/form-data" onSubmit={createProductSubmitHandler}>
             <input
               type="text"
               placeholder="Course Name"

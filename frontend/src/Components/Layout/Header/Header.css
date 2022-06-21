@@ -1,6 +1,6 @@
 .header_holder{
-    /* background-color: rgba(0, 46, 59, 0.3); */
-    background: transparent;
+    background-color: rgba(0, 46, 59, 0.3);
+    /* background: transparent; */
     padding: 30px 2px;
     text-align: center;
 }
@@ -14,9 +14,9 @@
     display: inline-block;
     vertical-align: top;
 }
-.nav_list{
+/* .nav_list{
     overflow: hidden;
-}
+} */
 .nav_list li{
     float: left;
 }
