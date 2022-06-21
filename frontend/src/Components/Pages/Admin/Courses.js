@@ -6,12 +6,13 @@ import { createCourse, CLEAR_ERROR } from "../../../redux/action/courseaction";
 import { NEW_COURSE_RESET } from "../../../redux/Constant/courseconstant";
 import { useNavigate } from "react-router-dom";
 import { useAlert } from "react-alert"
+import { LoadingButton } from "@mui/lab";
 function Courses() {
   let history = useNavigate();
   const dispatch = useDispatch();
   const alert = useAlert();
 
-  const { error, success } = useSelector((state) => state.newCourse);
+  const { error, success ,loading} = useSelector((state) => state.newCourse);
 
   const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
@@ -48,7 +49,7 @@ function Courses() {
 
     if (success) {
       alert.success("Course Created Successfully");
-      history("/dashboard");
+      history("/all/course");
       dispatch({ type:NEW_COURSE_RESET });
     }
   }, [dispatch, success, error, alert, history,]);
@@ -69,6 +70,7 @@ function Courses() {
     // value.topics = myForm.getAll("topics");
     const value = Object.fromEntries(myForm.entries());
     dispatch(createCourse(value));
+
   };
 
   const updateProfileDataChange = (e) => {
@@ -157,7 +159,19 @@ function Courses() {
               required
               onChange={(e) => setdeadline(e.target.value)}
             />
-            <button className='btn_primary'>Create</button>
+            {
+              loading===true?( <LoadingButton
+                className='btn_primary'
+                loading
+                loadingPosition="center"
+                variant="outlined"
+              >
+                Create
+              </LoadingButton>):(
+                <button className='btn_primary'>Create</button>
+
+              )
+            }
 
           </form>
         </div>

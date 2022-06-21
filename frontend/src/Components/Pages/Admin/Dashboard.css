@@ -168,3 +168,10 @@
     padding: 2px 6px;
     margin-right: 10px;
 }
+/* COMMON ADMIN CLASS STUDENT PAGE ADMIN COLOR GREEN OR RED */
+.greenColor{
+    color: green;
+}
+.redColor{
+    color: red;
+}

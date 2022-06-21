@@ -1,34 +1,169 @@
-import React, { Fragment } from 'react'
 import "./Dashboard.css";
 import Sidebar from './Sidebar';
 
 import { DataGrid } from '@mui/x-data-grid';
+import React, { Fragment, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import {  useNavigate} from "react-router-dom";
+import { useAlert } from "react-alert";
+import Button from '@mui/material/Button';
+import DeleteIcon from '@mui/icons-material/Delete';
 
+import {
+  getAllUsers,
+  CLEAR_ERROR,
+  deleteUser,
+} from "../../../redux/action/useraction";
+import { DELETE_USER_RESET } from "../../../redux/Constant/userconstant";
+import Loader from "../../Layout/Loader/loader";
+import { confirmAlert } from 'react-confirm-alert'; // Import
+import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 function Students() {
+let history = useNavigate();
+    const dispatch = useDispatch();
+    const alert = useAlert();
+  
+    const { error, users,loading } = useSelector((state) => state.allUsers);
+  
+    const {
+      error: deleteError,
+      isDeleted,
+      message,
+    } = useSelector((state) => state.profile);
+  
+    const deleteUserHandler = (id,name) => {
+        confirmAlert({
+            title: ' Delete Student',
+            message: `Are you sure to delete ${name}.`,
+            buttons: [
+              {
+                label: 'Yes',
+                onClick: () => {
+                  loading===true?(<Loader />):(
+      dispatch(deleteUser(id))
 
+                  );
+                }   
+              },
+              {
+                label: 'No',
+                onclose: () => {}
+              }
+            ]
+          });
+    };
+  
+    useEffect(() => {
+      if (error) {
+        alert.error(error);
+        dispatch(  CLEAR_ERROR());
+      }
+  
+      if (deleteError) {
+        alert.error(deleteError);
+        dispatch(  CLEAR_ERROR());
+      }
+  
+      if (isDeleted) {
+        alert.success(message);
+        history("/students");
+        dispatch({ type: DELETE_USER_RESET });
+      }
+  
+      dispatch(getAllUsers());
+    }, [dispatch, alert, error, deleteError, history, isDeleted, message]);
+  
     const columns = [
-        { field: 'col1', headerName: 'Name', width: 150 },
-        { field: 'col2', headerName: 'Email', width: 150 },
-        { field: 'col3', headerName: 'Phone', width: 150 },
-        { field: 'col4', headerName: 'Department', width: 150 }
-    ];
+        
+      { field: "id", headerName: "User ID", minWidth: 180, flex: 0.8 },
+      {
+        field: "name",
+        headerName: "Name",
+        minWidth: 150,
+        flex: 0.5,
+      },
+      {
+        field: "email",
+        headerName: "Email",
+        minWidth: 200,
+        flex: 1,
+      },
+     
+      {
+     field: "role",
+        headerName: "Role",
+        type: "number",
+        minWidth: 70,
+        flex: 0.3,
+        cellClassName: (params) => {
+            return params.getValue(params.id, "role") === "admin"
+              ?  "greenColor":"redColor"
+              
+              
+          },
+      },
+      {
+        field: "joined",
+        headerName: "Joined",
+        type:"number",
+        minWidth: 80,
+        flex: 0.5,
 
-    const rows = [
-        { id: 1, col1: 'Saim', col2: 'syedsaim40@gmail.com', col3: '03209455811', col4: 'BSCS' },
-        { id: 2, col1: 'Hamza', col2: 'syedsaim40@gmail.com', col3: '03209455811', col4: 'medical' },
-        { id: 3, col1: 'Gulzaib', col2: 'syedsaim40@gmail.com', col3: '03209455811', col4: 'it' }
+      },
+  
+      {
+        field: "actions",
+        flex: 0.3,
+        headerName: "Actions",
+        minWidth: 150,
+        type: "number",
+        sortable: false,
+        renderCell: (params) => {
+            const i=params.getValue(params.id, "id")
+            const n=params.getValue(params.id, "name")
+          return (
+            <Fragment>
+        
+              <Button
+                onClick={() =>
+              
+                  deleteUserHandler(i,n)}
+              >
+                <DeleteIcon />
+              </Button>
+            </Fragment>
+          );
+        },
+      },
     ];
+  
+    const rows = [];
+  
+    users &&
+      users.forEach((item) => {
+        rows.push({
+          id: item._id,
+          role: item.role,
+          email: item.email,
+          name: item.name,
+          joined:String(item.createdAt).substr(0, 10)
 
+        });
+      });
+  
     return (
         <Fragment>
             <div className='dashboard_holder students'>
-                {/* Sidebar */}
                 <div className='dSidebar'>
                     <Sidebar />
                 </div>
-                {/* Main Content */}
                 <div className='dashboard_content'>
-                    <div style={{ height: 300, width: '100%' }}>
+          <h1>All Students</h1>
+
+                    {
+                    loading===false?(
+
+                            <div >
                         <DataGrid
                         rows={rows}
                         columns={columns}
@@ -36,6 +171,11 @@ function Students() {
                         autoHeight
                         />
                     </div>
+                        ):(
+                            <Loader/>
+                        )
+                    }
+                    
               
                 </div>
             </div>

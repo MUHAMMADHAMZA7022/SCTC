@@ -16,7 +16,6 @@ import ResetPassword from './Components/Users/ResetPassword';
 import Dashboard from './Components/Pages/Admin/Dashboard';
 
 import Courses from './Components/Pages/Admin/Courses';
-import Allcourses from './Components/Pages/Admin/Allcourses';
 import Sidebar from './Components/Pages/Admin/Sidebar';
 import Students from './Components/Pages/Admin/Students';
 import Seminars from './Components/Pages/Admin/Seminars';
@@ -31,6 +30,8 @@ import RemoveCourses from './Components/Pages/Admin/RemoveCourses';
 import Updatepasword from './Components/Users/updatepassword';
 import ProtectedRoute from './Components/Route/ProtectedRoute';
 import { loadUser } from './redux/action/useraction';
+import AdminCourses from './Components/Pages/Admin/AdminCourses';
+import Loader from './Components/Layout/Loader/loader';
 
 
 function App() {
@@ -43,25 +44,23 @@ const { user, isAuthenticated } = useSelector((state) => state.user);
         families: ["Noto Sans", "sans-serif"],
       },
     });
-   
-     dispatch(loadUser());
-
-   
-
+    dispatch(loadUser());
   }, [dispatch]);
+
+  
   return (
     <div>
       <Router >
         <Header />
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/loader' element={<Loader />} />
           <Route path='/about' element={<About />} />
           <Route path='/signup' element={<SignUp />} />
           <Route path='/login' element={<Login />} />         
           <Route path='/forget' element={<ForgetPassword />} />
           <Route path='/reset/:token' element={<ResetPassword />} />
           <Route path='/courseorder' element={<Courseorder/>} />
-          <Route path='/updatecourse' element={<UpdateCourse />} />
           <Route path='/removecourse' element={<RemoveCourses />} />    
           <Route path='/all/events' element={<Events />} />
           <Route path='/create/event' element={<CreateEvent />} />
@@ -70,7 +69,7 @@ const { user, isAuthenticated } = useSelector((state) => state.user);
           <Route path='/seminars' element={<Seminars />} />
         {/* ADMIN ROUTES */}
           <Route path='/dashboard' element={
-          <ProtectedRoute isAuthenticated={isAuthenticated}  adminRoute={true} isAdmin={user &&user.role==="admin"?true:false}>
+          <ProtectedRoute isAuthenticated={isAuthenticated}  adminRoute={true} isAdmin={user && user.role==="admin"?(true):(false)}>
               <Dashboard />
             </ProtectedRoute>} />
             <Route path='/create/courses' element={
@@ -79,13 +78,17 @@ const { user, isAuthenticated } = useSelector((state) => state.user);
             </ProtectedRoute>} />
             <Route path='/all/course' element={
           <ProtectedRoute isAuthenticated={isAuthenticated}  adminRoute={true} isAdmin={user &&user.role==="admin"?true:false}>
-             <Allcourses />
+             <AdminCourses />
+            </ProtectedRoute>} />
+            <Route path='/updatecourse/:id' element={
+          <ProtectedRoute isAuthenticated={isAuthenticated}  adminRoute={true} isAdmin={user &&user.role==="admin"?true:false}>
+             <UpdateCourse/>
             </ProtectedRoute>} />
         
         {/* NORMAL ROUTES */}
           <Route path='/profile' element={
           <ProtectedRoute isAuthenticated={isAuthenticated}>
-              <Profile />
+            {  isAuthenticated?( <Profile />):(<Login />)}
             </ProtectedRoute>} />
           <Route path='/password/update' element={
           <ProtectedRoute isAuthenticated={isAuthenticated}>

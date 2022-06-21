@@ -17,7 +17,7 @@ try {
     crop: "scale",
   });
 
-//  req.body.user = req.user.id;
+  req.body.user = req.user.id;
   const courses = await Course.create({
     name,
     description,
@@ -42,41 +42,95 @@ try {
 }
 }
 
-// //Getcourse All
-// exports.allcourse = catchasyncerror(async (req, res) => {
-//     //ye searc ki comand di ha k search krey product.find query ha or req.query jo querystr ha
-//     // let resultperpage = 12;
-//     // const productcount = await product.countDocuments();
-//     // let apifeat = new ApiFeatures(product.find(), req.query)
-//     //   .search()
-//     //   .filter()
+//Getcourses All
+exports.allcourses = catchasyncerror(async (req, res) => {
+  const resultperpage = 8;
+  const coursescount = await Course.countDocuments();
 
-//     //   let allproducts  = await apifeat.query;
+  const apiFeature = new ApiFeatures(Course.find(), req.query)
+    .search()
+    .filter();
+  allcourses = await apiFeature.query;
 
-//     //   let filteredProductsCount = allproducts.length;
+  res.status(200).json({
+    success: true,
+    allcourses,
+    coursescount,
+    resultperpage,
+  });
+});
+//get all admin courses
+exports.allcoursesadmin = catchasyncerror(async (req, res) => {
+  const course = await Course.find();
+  res.status(200).json({
+    success: true,
+    course,
+  });
+});
+//one course
+exports.singlecourse = catchasyncerror(async (req, res, next) => {
+  const scourse = await Course.findById(req.params.id);
+  if (!scourse) {
+    return next(new Errorhandler("course Not Found", 404));
+  }
+  res.status(200).json({
+    success: true,
+    scourse,
+  });
+});
 
-//     //   apifeat.pagination(resultperpage);
-//     //    allproducts  = await apifeat.query;
-//     const resultperpage = 8;
-//     const coursecount = await Course.countDocuments();
 
-//     const apiFeature = new ApiFeatures(Course.find(), req.query)
-//       .search()
-//       .filter();
-//     //.pagination(resultperpage)
-//     //  let allproducts = await apiFeature.query.clone();
+// updateCourse -- Admin
+exports.updatecourse = catchasyncerror(async (req, res,next) => {
+  let ucourse = await Course.findById(req.params.id);
+  if (!ucourse) {
+    return next(new Errorhandler("Course Not Found", 404)); //ly class bnae v utils mein phir ye error bnya wa sb sy phir middleare ein erro.js bnae
+  }
+  // //addd avtar cloudinary
+  if (req.body.images !== "") {
 
-//     //  let filteredProductsCount =  allproducts.length;
+    const imageId = ucourse.images.public_id;
 
-//     // apiFeature.pagination(resultperpage);
+    await cloudinary.v2.uploader.destroy(imageId);
 
-//     allcourse = await apiFeature.query;
+    const myCloud = await cloudinary.v2.uploader.upload(req.body.images, {
+      folder: "courses",
+      width: 150,
+      crop: "scale",
+    });
 
-//     res.status(200).json({
-//       success: true,
-//       allproducts,
-//       productcount,
-//       resultperpage,
-//       //  filteredProductsCount,
-//     });
-//   });
+    req.body.images = {
+      public_id: myCloud.public_id,
+      url: myCloud.secure_url,
+    };
+  }
+  ucourse = await Course.findByIdAndUpdate(req.params.id, req.body, {
+    new: true,
+    runValidators: true,
+    useFindAndModify: false,
+  });
+  res.status(200).json({
+    success: true,
+    ucourse,
+    message: "Course Update Successfully",
+  });
+});
+
+// Delete Course---Admin
+exports.deletecourse = catchasyncerror(async (req, res, next) => {
+  const dcourse = await Course.findById(req.params.id);
+  if (!dcourse) {
+    return next(new Errorhandler("Course Not Found", 404));
+  }
+  // Deleting Images From Cloudinary
+  const imageId = dcourse.images.public_id;
+
+  await cloudinary.v2.uploader.destroy(imageId);
+  
+
+  await dcourse.remove();
+  res.status(200).json({
+    success: true,
+    message: "Course Deleted Successfully",
+  });
+});

@@ -45,29 +45,25 @@ const Sidebar = () => {
           <DashboardIcon /> Dashboard
         </p>
       </Link>
-      <Link to={"#"}>
         <TreeView
           defaultCollapseIcon={<ExpandMoreIcon />}
           defaultExpandIcon={<ImportExportIcon />}
         >
           <TreeItem nodeId="1" label="Courses">
-            <Link to="/all/course">
-              <TreeItem nodeId="2" label="All Courses" icon={<PostAddIcon />} />
-            </Link>
-
-            <Link to="/create/courses">
+          <Link to="/create/courses">
               <TreeItem nodeId="3" label="Create" icon={<AddIcon />} />
             </Link>
-
-            <Link to="/removecourse">
-              <TreeItem nodeId="4" label="Remove" icon={<AddIcon />} />
+            <Link to="/all/course">
+              <TreeItem nodeId="2" label="View Courses" icon={<PostAddIcon />} />
             </Link>
 
-            <Link to="/updatecourse">
-              <TreeItem nodeId="5" label="Update" icon={<AddIcon />} />
-            </Link>
+           
           </TreeItem>
         </TreeView>
+        <Link to="/students">
+        <p>
+          <AccessibilityIcon /> Students
+        </p>
       </Link>
       <Link to="/courseorder">
         <p>
@@ -75,11 +71,7 @@ const Sidebar = () => {
          Course Orders
         </p>
       </Link>
-      <Link to="/students">
-        <p>
-          <AccessibilityIcon /> Students
-        </p>
-      </Link>
+
       {/* <Link to="/seminars">
         <p>
           <VideoLabelIcon  />
@@ -92,7 +84,6 @@ const Sidebar = () => {
          Events
         </p>
       </Link> */}
-      <Link to={"#"}>
         <TreeView
           defaultCollapseIcon={<ExpandMoreIcon />}
           defaultExpandIcon={<EventIcon />}
@@ -115,7 +106,6 @@ const Sidebar = () => {
             </Link>
           </TreeItem>
         </TreeView>
-      </Link>
     </div>
   );
 };

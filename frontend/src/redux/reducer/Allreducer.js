@@ -1,9 +1,10 @@
 import { combineReducers } from "redux";
 import {
-  // productsReducer,
-  // productDetailsReducer,
+  ALLcoursesReducer,
+  courseDetailsReducer,
   // productReducer,
   newCourseReducer,
+  updatedeletecourseReducer ,
   // newReviewReducer,
   // productReviewsReducer,
   // reviewReducer,
@@ -23,6 +24,9 @@ const AllReducer = combineReducers({
     forgotPassword: forgotPasswordReducer, 
     allUsers: allUsersReducer,
     newCourse: newCourseReducer,
+    courses: ALLcoursesReducer,
+    course:updatedeletecourseReducer ,
+    courseDetails: courseDetailsReducer
    
   });
   
