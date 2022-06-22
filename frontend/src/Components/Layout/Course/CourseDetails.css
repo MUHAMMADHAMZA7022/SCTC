@@ -1,0 +1,60 @@
+.courseDetails{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+}
+.crs_banner{
+    height: 300px;
+}
+.crs_banner img{
+    display: block;
+}
+
+.crs_banner{
+    overflow: hidden;
+    position: relative;
+    z-index: -1;
+}
+.crs_banner::after{
+    position: absolute;
+    content: ' ';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+}
+.crs_bannerImg img{
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+.banner_content{
+    width: 30%;
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    right: auto;
+    color: #fff;
+    z-index: 1;
+    top: auto;
+}
+.banner_content h2{
+    margin-bottom: 20px;
+    font-size: 20px;
+    line-height: 24px;
+    position: relative;
+    font-weight: 400;
+}
+.banner_content h2::before{
+    position: absolute;
+    content: ' ';
+    bottom: -3px;
+    left: 0;
+    width: 10%;
+    background: var(--greenColor);
+    height: 3px;
+}

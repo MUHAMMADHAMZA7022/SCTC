@@ -17,6 +17,9 @@ import ResetPassword from "./Components/Users/ResetPassword";
 import Dashboard from "./Components/Pages/Admin/Dashboard";
 
 import Courses from "./Components/Pages/Admin/Courses";
+import Courseorder from "./Components/Pages/Admin/Courseorder";
+import CourseDetails from "./Components/Layout/Course/CourseDetails";
+
 import Sidebar from "./Components/Pages/Admin/Sidebar";
 import Students from "./Components/Pages/Admin/Students";
 import Seminars from "./Components/Pages/Admin/Seminars";
@@ -25,7 +28,6 @@ import AdminEvents from "./Components/Pages/Admin/AdminEvent";
 import CreateEvent from "./Components/Pages/Admin/CreateEvent";
 import UpdateEvent from "./Components/Pages/Admin/UpdateEvent";
 
-import Courseorder from "./Components/Pages/Admin/Courseorder";
 
 import UpdateCourse from "./Components/Pages/Admin/UpdateCourse";
 import Updatepasword from "./Components/Users/updatepassword";
@@ -34,6 +36,7 @@ import { loadUser } from "./redux/action/useraction";
 import AdminCourses from "./Components/Pages/Admin/AdminCourses";
 import Loader from "./Components/Layout/Loader/loader";
 import Loader1 from "./Components/Layout/Loader/Courseloader";
+
 
 function App() {
   const dispatch = useDispatch();
@@ -65,6 +68,7 @@ function App() {
           <Route path="/courseorder" element={<Courseorder />} />
           <Route path="/sbr" element={<Sidebar />} />
           <Route path="/seminars" element={<Seminars />} />
+          <Route path="/crsdtl" element={<CourseDetails />} />
           {/* ADMIN ROUTES */}
 
           {/* dashboard */}
