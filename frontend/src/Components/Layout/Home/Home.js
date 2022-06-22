@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect } from "react";
 // import slide1 from '../../../images/bimg1.jpg';
 import bg1 from "../../../images/slide-img-1.jpg";
-import bg2 from "../../../images/slide-img-1.jpg";
+// import bg2 from "../../../images/slide-img-1.jpg";
 import "./Home.css";
 import { Link } from "react-router-dom";
 
