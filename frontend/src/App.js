@@ -7,6 +7,7 @@ import WebFont from "webfontloader";
 // import { loadUser } from "./redux/action/useraction";
 import Header from "./Components/Layout/Header/Header";
 import Home from "./Components/Layout/Home/Home";
+import Course from "./Components/Layout/Course/CourseCard"
 import About from "./Components/Pages/About";
 import SignUp from "./Components/Users/SignUp";
 import Profile from "./Components/Users/Profile";
@@ -32,6 +33,7 @@ import ProtectedRoute from "./Components/Route/ProtectedRoute";
 import { loadUser } from "./redux/action/useraction";
 import AdminCourses from "./Components/Pages/Admin/AdminCourses";
 import Loader from "./Components/Layout/Loader/loader";
+import Loader1 from "./Components/Layout/Loader/Courseloader";
 
 function App() {
   const dispatch = useDispatch();
@@ -52,7 +54,9 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/course" element={<Course/>} />
           <Route path="/loader" element={<Loader />} />
+          <Route path="/loaderr" element={<Loader1 />} />
           <Route path="/about" element={<About />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
