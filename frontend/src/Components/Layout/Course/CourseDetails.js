@@ -17,6 +17,15 @@ function CourseDetails() {
                             <h2>Course Detailed</h2>
                         </div>
                 </div>
+                {/* Single Page Course Details */}
+                <div className='crsDetailsContent'>
+                    <div className='course_img grid'>
+                        <img src={bg3} alt="courseImg" />
+                    </div>
+                    <div className='crsDetail_title'>
+                        <h1>Course Details Title</h1>
+                    </div>
+                </div>
             </div>
         </Fragment>
     )

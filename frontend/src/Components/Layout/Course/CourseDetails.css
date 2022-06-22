@@ -4,6 +4,7 @@
     right: 0;
     left: 0;
     z-index: -1;
+    text-align: center;
 }
 .crs_banner{
     height: 300px;
@@ -57,4 +58,19 @@
     width: 10%;
     background: var(--greenColor);
     height: 3px;
+}
+.crsDetailsContent{
+    padding: 50px 25px;
+}
+.course_img{
+    margin: 0 auto;
+    height: 300px;
+    overflow: hidden;
+}
+.course_img img{
+    display: block;
+}
+.crsDetail_title{
+    padding: 20px 30px;
+    text-align: left;
 }
