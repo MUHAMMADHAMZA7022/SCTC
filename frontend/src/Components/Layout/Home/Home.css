@@ -124,3 +124,69 @@
 .hc_action a:hover{
     color: var(--themeColor);
 }
+/* Home Events Section Styles  */
+.homeEvents{
+    padding: 50px 0px;
+    overflow: hidden;
+}
+.ev_holder{
+    display: inline-block;
+    vertical-align: top;
+    width: calc(33% - 10px);
+    margin: 0 5px 10px 5px;
+}
+.ev_card{
+    float: left;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0px 1px 6px 1px rgba(44, 39, 39, 0.35);
+    border-radius: 3px;
+}
+.ev_img{
+    height: 150px;
+    width: 100%;
+    overflow: hidden;
+}
+.ev_img img{
+    display: block;
+    object-fit: cover;
+}
+.ev_content{
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+}
+.ev_date{
+    width: 20%;
+    background: var(--whiteColor);
+    background: var(--redColor);
+    flex: 1;
+    padding: 15px 0px 10px 0px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.ev_date span{
+    display: block;
+    margin-bottom: 2px;
+}
+.ev_content_holder{
+    width: 80%;
+    flex: 4;
+    background: var(--whiteColor);
+    padding: 5px 10px;
+}
+.ev_content_holder a h3{
+    font-size: 18px;
+    line-height: 20px;
+    margin-bottom: 5px;
+    color: var(--themeColor);
+}
+.ev_content_holder a h3:hover{
+    color: var(--redColor);
+}
+.ev_content_holder span{
+    font-size: 12px;
+    line-height: 16px;
+    color: green;
+}
