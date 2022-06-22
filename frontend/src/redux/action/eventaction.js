@@ -26,16 +26,14 @@ import {
   } from "../Constant/eventconstant";
 
 //Get All COURSE
-export const getProduct =
-  (keyword = "", currentPage = 1, price = [0, 25000], cateogery, ratings = 0) =>
+export const getEvent =
+  () =>
   async (dispatch) => {
     try {
       dispatch({ type:   ALL_EVENT_REQUEST, });
 
-      let link = `/api/vasal/allproducts?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}&ratings[gte]=${ratings}`;
-      if (cateogery) {
-        link = `/api/vasal/allproducts?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}&cateogery=${cateogery}&ratings[gte]=${ratings}`;
-      }
+      let link = `/api/v1/event/allevents`;
+  
       const { data } = await axios.get(link);
 
       dispatch({
@@ -160,6 +158,6 @@ export const deleteProduct = (id) => async (dispatch) => {
 
 
 //clear error
-export const CLEAR_ERROR = () => async (dispatch) => {
+export const CLEAR_ERROR_EVENT = () => async (dispatch) => {
   dispatch({ type: CLEAR_ERRORS });
 };

@@ -3,7 +3,7 @@ import Sidebar from './Sidebar';
 import React, { Fragment, useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
-  CLEAR_ERROR,
+  CLEAR_ERROR_EVENT,
   updateProduct,
   getProductDetails,
 } from "../../../redux/action/eventaction";
@@ -50,12 +50,12 @@ function UpdateCourse() {
     }
         if (error) {
           alert.error(error);
-          dispatch(CLEAR_ERROR());
+          dispatch(CLEAR_ERROR_EVENT());
         }
     
         if (updateError) {
           alert.error(updateError);
-          dispatch(CLEAR_ERROR());
+          dispatch(CLEAR_ERROR_EVENT());
         }
     
         if (isUpdated) {
