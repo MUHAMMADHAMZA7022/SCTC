@@ -1,7 +1,10 @@
 import React, { Fragment, useEffect } from "react";
 // import slide1 from '../../../images/bimg1.jpg';
-import bg1 from "../../../images/slide-img-1.jpg";
-// import bg2 from "../../../images/slide-img-1.jpg";
+import bg1 from '../../../images/slide-img-1.jpg';
+import bg2 from '../../../images/slide-img-2.jpg';
+import bg3 from '../../../images/slide-img-3.jpg';
+import bg4 from '../../../images/slide-img-4.jpg';
+
 import "./Home.css";
 import { Link } from "react-router-dom";
 
@@ -49,7 +52,9 @@ function Home() {
           </div>
 
           {courses ? (
-            courses.map((course) => (
+            courses
+            .slice(0, 6)
+            .map((course) => (
               <CourseCard key={course._id} course={course} />
             ))
           ) : (
@@ -76,6 +81,40 @@ function Home() {
             <Link to="/courses" className="btn_primary">
               View All
             </Link>
+          </div>
+        </section>
+        {/* Home Events Section */}
+        <section className='homeEvents grid'>
+          <div className='section_heading'>
+            <h1>Upcoming Events</h1>
+          </div>
+          <div className='ev_holder'>
+            <div className='ev_card'>
+              <div className='ev_img'>
+                <img src={bg3} alt='#' />
+              </div>
+              <div className='ev_content'>
+                <div className='ev_date'>
+                  <strong>12</strong>
+                  <span className='uppercase'>SEP</span>
+                </div>
+                <div className='ev_content_holder'>
+                  <div className='ev_title'>
+                    <Link to={"#"}>
+                      <h3>Pure Land: Immortals in Chinese Art.</h3>
+                    </Link>
+                  </div>
+                  <div className='ev_time'>
+                    <span>7:30am</span>
+                    <span>-</span>
+                    <span>11:00am</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className='section_btn'>
+            <Link to='/courses' className='btn_primary'>View All</Link>
           </div>
         </section>
       </div>
