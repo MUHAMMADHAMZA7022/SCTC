@@ -22,9 +22,9 @@ function Home({event}) {
                     </Link>
                   </div>
                   <div className='ev_time'>
-                    <span>7:30am</span>
+                    <span>{event.starttime}</span>
                     <span>-</span>
-                    <span>11:00am</span>
+                    <span>{event.endtime}</span>
                   </div>
                 </div>
               </div>
