@@ -3,6 +3,11 @@
     /* background: transparent; */
     padding: 30px 2px;
     text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
 }
 .logo_holder{
     display: inline-block;

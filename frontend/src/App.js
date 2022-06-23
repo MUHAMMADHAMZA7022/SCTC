@@ -5,7 +5,11 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import WebFont from "webfontloader";
 // import { loadUser } from "./redux/action/useraction";
+
 import Header from "./Components/Layout/Header/Header";
+import Footer from "./Components/Layout/Footer/Footer";
+
+
 import Home from "./Components/Layout/Home/Home";
 import Course from "./Components/Layout/Course/CourseCard"
 import About from "./Components/Pages/About";
@@ -19,6 +23,7 @@ import Dashboard from "./Components/Pages/Admin/Dashboard";
 import Courses from "./Components/Pages/Admin/Courses";
 import Courseorder from "./Components/Pages/Admin/Courseorder";
 import CourseDetails from "./Components/Layout/Course/CourseDetails";
+import HomeCourses from "./Components/Layout/Course/HomeCourses";
 
 import Sidebar from "./Components/Pages/Admin/Sidebar";
 import Students from "./Components/Pages/Admin/Students";
@@ -58,7 +63,8 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/course" element={<Course/>} />
+          <Route path="/course" element={<Course />} />
+          <Route path="/courses" element={<HomeCourses />} />
           <Route path="/loader" element={<Loader />} />
           <Route path="/loaderr" element={<Loader1 />} />
           <Route path="/about" element={<About />} />
@@ -199,6 +205,7 @@ function App() {
             }
           />
         </Routes>
+        <Footer />
       </Router>
     </div>
   );

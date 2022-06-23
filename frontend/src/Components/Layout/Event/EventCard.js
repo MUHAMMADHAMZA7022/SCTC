@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom';
- import bg3 from '../../../images/slide-img-3.jpg';
+//  import bg3 from '../../../images/slide-img-3.jpg';
 
 function Home({event}) {
   return (

@@ -1,0 +1,15 @@
+.footer_wrapper{
+    background: var(--themeColor);
+    padding: 50px 20px;
+}
+.footer_holder{
+    display: flex;
+    height: 200px;
+}
+.ft_block{
+    flex: 1;
+}
+.bg1{background-color: rgb(117, 150, 150);}
+.bg2{background-color: rgb(117, 177, 89);}
+.bg3{background-color: rgb(141, 44, 165);}
+.bg4{background-color: rgb(252, 189, 96);}

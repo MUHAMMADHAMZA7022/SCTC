@@ -1,14 +1,13 @@
-.home_wrapper{
+/* .home_wrapper{
     position: absolute;
     top: 0;
     right: 0;
     left: 0;
     z-index: -1;
-}
+} */
 .banner{
     overflow: hidden;
     position: relative;
-    z-index: -1;
 }
 .banner::after{
     position: absolute;

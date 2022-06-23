@@ -1,0 +1,66 @@
+.allCourses_content{
+    display: block;
+    padding: 50px 50px;
+}
+.allCourses_card{
+    display: inline-block;
+    vertical-align: top;
+    width: calc(25% - 20px);
+    box-shadow: var(--boxShadow);
+    overflow: hidden;
+    margin: 0 10px;
+}
+.crs_searchBar{
+    width: 100%;
+    padding: 20px 5px;
+    margin-bottom: 20px;
+    display: flex;
+}
+.crs_searchBar input{
+    display: inline-block;
+    outline: none;
+    border: 1px solid var(--greenColor);
+    text-shadow: none;
+    padding: 10px 5px;
+    flex: 9;
+}
+.crs_searchBar button{
+    flex: 1;
+    display: inline-block;
+    vertical-align: top;
+}
+.allCrs_img{
+    height: 150px;
+    overflow: hidden;
+}
+.allCrs_data{
+    padding: 10px;
+}
+.allCrs_data h2{
+    font-size: 18px;
+    line-height: 22px;
+    color: var(--greenColor);
+    margin-bottom: 10px;
+}
+.allCrs_data span{
+    display: block;
+    margin-bottom: 10px;
+}
+.allCrs_data span.crs_dur{
+    color: var(--greenColor);
+    font-weight: 400;
+    font-size: 14px;
+}
+.allCrs_data span.crs_dur svg{
+    font-size: 1rem;
+    padding-top: 5px;
+}
+.allCrs_data span.crs_amount{
+    color: var(--redColor);
+    font-weight: 700;
+    margin-bottom: 0px;
+}
+.allCrs_data span.crs_amount span{
+    display: inline-block;
+    margin-bottom: 0px;
+}
