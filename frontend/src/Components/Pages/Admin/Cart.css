@@ -1,15 +1,19 @@
-.Cart{
+.cart{
     padding: 100px 50px;
 }
-.cart_holder h1{
+.cart h1{
     padding: 20px 0px;
     font-size: 26px;
     line-height: 30px;
     color: var(--themeColor);
+    margin-bottom: 30px;
+}
+.cart_holder {
+    width: 70%;
+    float: left;
 }
 .cart_courses{
     display: flex;
-    width: 70%;
     float: left;
     border-top: 1px solid var(--lightColor);
     padding: 10px;
@@ -42,11 +46,11 @@
     width: 30%;
     float: left;
     border-top: 1px solid var(--lightColor);
+    border-left: 1px solid var(--greenColor);
     padding: 10px;
 }
 .cart_checkout span.crs_total{
     display: block;
-    margin-bottom: 20px;
     color: var(--lightColor);
     font-size: 1rem;
 }
