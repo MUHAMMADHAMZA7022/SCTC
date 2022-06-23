@@ -3,9 +3,9 @@ import React, { Fragment, useState, useEffect } from "react";
 
 // import Loader from "../Layout/Loader/Loader";
 import { useDispatch, useSelector } from "react-redux";
-import { CLEAR_ERROR, updatePassword } from "../../redux/action/useraction";
+import { CLEAR_ERROR, updatePassword } from "../../../redux/action/useraction";
 import { useAlert } from "react-alert";
-import { UPDATE_PASSWORD_RESET } from "../../redux/Constant/userconstant";
+import { UPDATE_PASSWORD_RESET } from "../../../redux/Constant/userconstant";
 import { useNavigate } from "react-router-dom";
 const UpdatePassword = () => {
   let history = useNavigate();  

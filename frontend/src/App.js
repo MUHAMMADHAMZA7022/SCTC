@@ -11,8 +11,8 @@ import Header from "./Components/Layout/Header/Header";
 
 
 import Home from "./Components/Layout/Home/Home";
-import Course from "./Components/Layout/Course/CourseCard"
-import About from "./Components/Pages/About";
+import Course from "./Components/Pages/Course/CourseCard"
+import About from "./Components/Layout/About/About";
 import SignUp from "./Components/Users/SignUp";
 import Profile from "./Components/Users/Profile";
 import Login from "./Components/Users/Login";
@@ -22,8 +22,8 @@ import Dashboard from "./Components/Pages/Admin/Dashboard";
 
 import Courses from "./Components/Pages/Admin/Courses";
 import Courseorder from "./Components/Pages/Admin/Courseorder";
-import CourseDetails from "./Components/Layout/Course/CourseDetails";
-import HomeCourses from "./Components/Layout/Course/HomeCourses";
+import CourseDetails from "./Components/Pages/Course/CourseDetails";
+import HomeCourses from "./Components/Pages/Course/HomeCourses";
 
 import Sidebar from "./Components/Pages/Admin/Sidebar";
 import Students from "./Components/Pages/Admin/Students";
@@ -32,18 +32,18 @@ import Seminars from "./Components/Pages/Admin/Seminars";
 import AdminEvents from "./Components/Pages/Admin/AdminEvent";
 import CreateEvent from "./Components/Pages/Admin/CreateEvent";
 import UpdateEvent from "./Components/Pages/Admin/UpdateEvent";
-import EventDetails from "./Components/Layout/Event/EventDetails";
+import EventDetails from "./Components/Pages/Event/EventDetails";
 
 
 import UpdateCourse from "./Components/Pages/Admin/UpdateCourse";
-import Updatepasword from "./Components/Users/updatepassword";
+import Updatepasword from "./Components/Pages/Users/updatepassword";
 import ProtectedRoute from "./Components/Route/ProtectedRoute";
 import { loadUser } from "./redux/action/useraction";
 import AdminCourses from "./Components/Pages/Admin/AdminCourses";
 import Loader from "./Components/Layout/Loader/loader";
 import Loader1 from "./Components/Layout/Loader/Courseloader";
 
-import Cart from "./Components/Pages/Admin/Cart";
+import Cart from "./Components/Pages/Cart/Cart";
 
 
 function App() {

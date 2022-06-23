@@ -8,8 +8,8 @@ import bg1 from '../../../images/slide-img-1.jpg';
 import "./Home.css";
 import { Link } from "react-router-dom";
 
-import CourseCard from "../Course/CourseCard";
-import EventCard from "../Event/EventCard";
+import CourseCard from "../../Pages/Course/CourseCard";
+import EventCard from "../../Pages/Event/EventCard";
 import { CLEAR_ERROR, getProduct } from "../../../redux/action/courseaction";
 import { CLEAR_ERROR_EVENT, getEvent } from "../../../redux/action/eventaction";
 import { useSelector, useDispatch } from "react-redux";
