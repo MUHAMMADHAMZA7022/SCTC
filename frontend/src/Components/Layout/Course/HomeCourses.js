@@ -3,7 +3,7 @@ import React, { Fragment } from 'react';
 import evn1 from '../../../images/evn1.jpg';
 import bg3 from '../../../images/slide-img-3.jpg';
 
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './HomeCourses.css';
 
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
@@ -25,6 +25,16 @@ function HomeCourses() {
                 <div className='allCourses_content grid'>
                     {/* Search bar for search the entire courses */}
                     <form className='crs_searchBar'>
+                        <ul className='unstyled filterCategories'>
+                            <li className='ct_btn'>
+                                Categories
+                                <ul className='unstyled ct_list'>
+                                    <li>Biology</li>
+                                    <li>Statical</li>
+                                    <li>Physics</li>
+                                </ul>
+                            </li>
+                        </ul>
                         <input type='search' placeholder='Search your courses' />
                         <button className='btn_primary'>Search</button>
                     </form>
