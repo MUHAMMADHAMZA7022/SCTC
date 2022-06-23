@@ -19,7 +19,7 @@ function Home() {
   const alert = useAlert();
   const dispatch = useDispatch();
   const { courses, error } = useSelector((state) => state.courses);
-  const { events, error:eventerror } = useSelector((state) => state.events);
+  const { events, error: eventerror } = useSelector((state) => state.events);
   useEffect(() => {
     if (error) {
       alert.error(error);
@@ -33,7 +33,7 @@ function Home() {
     }
     dispatch(getEvent());
     dispatch(getProduct());
-  }, [alert, dispatch, error,eventerror]);
+  }, [alert, dispatch, error, eventerror]);
 
   return (
     <Fragment>
@@ -62,10 +62,10 @@ function Home() {
 
           {courses ? (
             courses
-            .slice(0, 6)
-            .map((course) => (
-              <CourseCard key={course._id} course={course} />
-            ))
+              .slice(0, 6)
+              .map((course) => (
+                <CourseCard key={course._id} course={course} />
+              ))
           ) : (
             <Loader1 />
           )}
@@ -98,9 +98,11 @@ function Home() {
             <h1>Upcoming Events</h1>
           </div>
           {events ? (
-            events.map((event) => (
-              <EventCard key={event._id} event={event} />
-            ))
+            events
+              .slice(0, 3)
+              .map((event) => (
+                <EventCard key={event._id} event={event} />
+              ))
           ) : (
             <Loader1 />
           )}

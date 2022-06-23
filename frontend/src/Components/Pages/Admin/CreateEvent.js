@@ -103,7 +103,7 @@ function Courses() {
               accept="image/*"
               onChange={updateProfileDataChange}
             />
-                <textarea
+            <textarea
               placeholder="Event Description"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
@@ -114,11 +114,11 @@ function Courses() {
               type="date"
               placeholder="Event Start Date "
               required
-               value={startdate}
+              value={startdate}
 
               onChange={(e) => setStartdate(e.target.value)}
             />
-        
+
             <input
               type="date"
               placeholder="Event End Date"
@@ -126,7 +126,16 @@ function Courses() {
               value={enddate}
               onChange={(e) => setEnddate(e.target.value)}
             />
-
+            <input
+              type="time"
+              placeholder="Start Time"
+              required
+            />
+            <input
+              type="time"
+              placeholder="End Time"
+              required
+            />
             <input
               type="text"
               placeholder="Organization Name"
@@ -134,7 +143,7 @@ function Courses() {
               value={organization}
               onChange={(e) => setOrganization(e.target.value)}
             />
- <input
+            <input
               type="text"
               placeholder="Event Location"
               required

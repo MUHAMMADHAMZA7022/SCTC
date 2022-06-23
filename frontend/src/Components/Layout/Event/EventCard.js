@@ -14,7 +14,6 @@ function Home({event}) {
               <div className='ev_content'>
                 <div className='ev_date'>
                   <strong>{event.startdate}</strong>
-                  <span className='uppercase'>SEP</span>
                 </div>
                 <div className='ev_content_holder'>
                   <div className='ev_title'>

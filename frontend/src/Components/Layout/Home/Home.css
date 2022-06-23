@@ -105,6 +105,10 @@
     margin-bottom: 20px;
     overflow: auto;
     color: var(--lightColor);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 90%;
 }
 .hc_action{
     position: absolute;
@@ -169,6 +173,10 @@
 .ev_date span{
     display: block;
     margin-bottom: 2px;
+}
+.ev_date strong{
+    font-size: 12px;
+    line-height: 16px;
 }
 .ev_content_holder{
     width: 80%;
