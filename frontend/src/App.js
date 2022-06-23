@@ -12,7 +12,7 @@ import Header from "./Components/Layout/Header/Header";
 
 import Home from "./Components/Layout/Home/Home";
 import Course from "./Components/Layout/Course/CourseCard"
-import About from "./Components/Pages/About";
+import About from "./Components/Layout/About/About";
 import SignUp from "./Components/Pages/Users/SignUp";
 import Profile from "./Components/Pages/Users/Profile";
 import Login from "./Components/Pages/Users/Login";
