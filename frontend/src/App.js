@@ -27,6 +27,7 @@ import Seminars from "./Components/Pages/Admin/Seminars";
 import AdminEvents from "./Components/Pages/Admin/AdminEvent";
 import CreateEvent from "./Components/Pages/Admin/CreateEvent";
 import UpdateEvent from "./Components/Pages/Admin/UpdateEvent";
+import EventDetails from "./Components/Layout/Event/EventDetails";
 
 
 import UpdateCourse from "./Components/Pages/Admin/UpdateCourse";
@@ -69,6 +70,7 @@ function App() {
           <Route path="/sbr" element={<Sidebar />} />
           <Route path="/seminars" element={<Seminars />} />
           <Route path="/crsdtl" element={<CourseDetails />} />
+          <Route path="/evndtl" element={<EventDetails />} />
           {/* ADMIN ROUTES */}
 
           {/* dashboard */}
