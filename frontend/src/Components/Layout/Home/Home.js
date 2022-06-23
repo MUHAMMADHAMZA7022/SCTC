@@ -1,15 +1,17 @@
 import React, { Fragment, useEffect } from "react";
 // import slide1 from '../../../images/bimg1.jpg';
 import bg1 from '../../../images/slide-img-1.jpg';
-import bg2 from '../../../images/slide-img-2.jpg';
-import bg3 from '../../../images/slide-img-3.jpg';
-import bg4 from '../../../images/slide-img-4.jpg';
+// import bg2 from '../../../images/slide-img-2.jpg';
+// import bg3 from '../../../images/slide-img-3.jpg';
+// import bg4 from '../../../images/slide-img-4.jpg';
 
 import "./Home.css";
 import { Link } from "react-router-dom";
 
 import CourseCard from "../Course/CourseCard";
+import EventCard from "../Event/EventCard";
 import { CLEAR_ERROR, getProduct } from "../../../redux/action/courseaction";
+import { CLEAR_ERROR_EVENT, getEvent } from "../../../redux/action/eventaction";
 import { useSelector, useDispatch } from "react-redux";
 import Loader1 from "../Loader/Courseloader";
 import { useAlert } from "react-alert";
@@ -17,14 +19,21 @@ function Home() {
   const alert = useAlert();
   const dispatch = useDispatch();
   const { courses, error } = useSelector((state) => state.courses);
+  const { events, error:eventerror } = useSelector((state) => state.events);
   useEffect(() => {
     if (error) {
       alert.error(error);
 
       dispatch(CLEAR_ERROR);
     }
+    if (eventerror) {
+      alert.error(eventerror);
+
+      dispatch(CLEAR_ERROR_EVENT);
+    }
+    dispatch(getEvent());
     dispatch(getProduct());
-  }, [alert, dispatch, error]);
+  }, [alert, dispatch, error,eventerror]);
 
   return (
     <Fragment>
@@ -88,7 +97,14 @@ function Home() {
           <div className='section_heading'>
             <h1>Upcoming Events</h1>
           </div>
-          <div className='ev_holder'>
+          {events ? (
+            events.map((event) => (
+              <EventCard key={event._id} event={event} />
+            ))
+          ) : (
+            <Loader1 />
+          )}
+          {/* <div className='ev_holder'>
             <div className='ev_card'>
               <div className='ev_img'>
                 <img src={bg3} alt='#' />
@@ -112,7 +128,7 @@ function Home() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
           <div className='section_btn'>
             <Link to='/courses' className='btn_primary'>View All</Link>
           </div>

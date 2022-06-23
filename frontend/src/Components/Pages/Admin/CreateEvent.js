@@ -2,7 +2,7 @@ import "./Dashboard.css";
 import Sidebar from "./Sidebar";
 import React, { Fragment, useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { createEvents, CLEAR_ERROR } from "../../../redux/action/eventaction";
+import { createEvents, CLEAR_ERROR_EVENT } from "../../../redux/action/eventaction";
 import { NEW_EVENT_RESET } from "../../../redux/Constant/eventconstant";
 import { useNavigate } from "react-router-dom";
 import { useAlert } from "react-alert";
@@ -26,7 +26,7 @@ function Courses() {
   useEffect(() => {
     if (error) {
       alert.error(error);
-      dispatch(CLEAR_ERROR());
+      dispatch(CLEAR_ERROR_EVENT());
     }
 
     if (success) {

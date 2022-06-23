@@ -1,9 +1,9 @@
 import React, { Fragment, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
-  CLEAR_ERROR,
   getAdminProduct,
   deleteProduct,
+  CLEAR_ERROR_EVENT,
 } from "../../../redux/action/eventaction";
 import { useAlert } from "react-alert";
 import Sidebar from "./Sidebar";
@@ -50,12 +50,12 @@ let history=useNavigate();
   useEffect(() => {
     if (error) {
       alert.error(error);
-      dispatch(CLEAR_ERROR());
+      dispatch(CLEAR_ERROR_EVENT());
     }
     
     if (deleteError) {
       alert.error(deleteError);
-      dispatch(CLEAR_ERROR());
+      dispatch(CLEAR_ERROR_EVENT());
     }
 
     if (isDeleted) {
