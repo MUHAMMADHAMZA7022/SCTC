@@ -145,6 +145,27 @@ function Courses() {
               value={instructor}
               onChange={(e) => setinstructor(e.target.value)}
             />
+            <input
+              type="text"
+              placeholder="Instructor Field"
+              required
+            />            
+            <textarea
+              placeholder="Instructor Bio"
+              cols="30"
+              rows="1"
+            ></textarea>
+            <input
+              type="text"
+              placeholder="Course Duration"
+              required
+            />    
+            <input
+              type="number"
+              placeholder="Select Deadline"
+              required
+              onChange={(e) => setdeadline(e.target.value)}
+            />
             <select className="selectOpt" onChange={(e) => setcateogery(e.target.value)}>
               <option value="">Choose Category</option>
               {categories.map((cate) => (
@@ -153,12 +174,6 @@ function Courses() {
                 </option>
               ))}
             </select>
-            <input
-              type="number"
-              placeholder="Select Deadline"
-              required
-              onChange={(e) => setdeadline(e.target.value)}
-            />
             {
               loading===true?( <LoadingButton
                 className='btn_primary'
