@@ -4,7 +4,7 @@ import {  useDispatch ,useSelector} from "react-redux";
 import {
 CLEAR_ERROR,
   register,
-} from "../../redux/action/useraction";
+} from "../../../redux/action/useraction";
 import{ Link,useNavigate} from "react-router-dom"
 import { useAlert } from "react-alert";
 function SignUp() {

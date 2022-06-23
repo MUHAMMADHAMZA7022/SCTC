@@ -3,7 +3,7 @@ import React, { Fragment, useState, useEffect } from "react";
 
 // import Loader from "../Layout/Loader/Loader";
 import { useDispatch, useSelector } from "react-redux";
-import { CLEAR_ERROR, resetPassword } from "../../redux/action/useraction";
+import { CLEAR_ERROR, resetPassword } from "../../../redux/action/useraction";
 import { useAlert } from "react-alert";
 import { useNavigate ,useParams} from "react-router-dom";
 

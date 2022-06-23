@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { Link, useNavigate} from "react-router-dom";
 import "./Profile.css";
 import { useDispatch } from "react-redux";
-import { Logout } from "../../redux/action/useraction";
+import { Logout } from "../../../redux/action/useraction";
 import { useAlert } from "react-alert";
 const Profile = () => {
   const dispatch = useDispatch();

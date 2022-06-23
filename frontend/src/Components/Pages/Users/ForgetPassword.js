@@ -1,7 +1,7 @@
 import "./ForgetPassword.css";
 import React, { Fragment, useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { CLEAR_ERROR, forgotPassword} from "../../redux/action/useraction";
+import { CLEAR_ERROR, forgotPassword} from "../../../redux/action/useraction";
 import { useAlert } from "react-alert";
 function ForgetPassword() {
     const dispatch = useDispatch();
