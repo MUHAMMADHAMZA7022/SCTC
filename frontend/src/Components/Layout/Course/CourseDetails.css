@@ -4,7 +4,6 @@
     right: 0;
     left: 0;
     z-index: -1;
-    text-align: center;
 }
 .crs_banner{
     height: 300px;
@@ -33,8 +32,7 @@
     max-height: 100%;
     display: block;
 }
-.banner_content{
-    width: 30%;
+.crsBanner_content{
     position: absolute;
     bottom: 10%;
     left: 10%;
@@ -43,19 +41,20 @@
     z-index: 1;
     top: auto;
 }
-.banner_content h2{
+.crsBanner_content h2{
     margin-bottom: 20px;
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 24px;
+    line-height: 28px;
     position: relative;
     font-weight: 400;
+    letter-spacing: 5px;
 }
-.banner_content h2::before{
+.crsBanner_content h2::before{
     position: absolute;
     content: ' ';
     bottom: -3px;
     left: 0;
-    width: 10%;
+    width: 20%;
     background: var(--greenColor);
     height: 3px;
 }
@@ -71,6 +70,89 @@
     display: block;
 }
 .crsDetail_title{
-    padding: 20px 30px;
+    padding: 20px 0px 20px 0;
     text-align: left;
+    margin-bottom: 10px;
+}
+.crsDetail_title h2{
+    font-size: 22px;
+    line-height: 26px;
+    font-weight: 700;
+    color: var(--redColor);
+}
+.crsDetail_desp{
+    text-align: left;
+    margin-bottom: 20px;
+}
+.crsDetail_desp p{
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 400;
+    color: var(--lightColor);
+}
+.csr_instructor{
+    padding: 20px 0px 20px 0;
+    text-align: left;
+    margin-bottom: 20px;
+}
+.csr_instructor h2{
+    font-size: 22px;
+    line-height: 26px;
+    font-weight: 700;
+    color: var(--redColor);
+    margin-bottom: 20px;
+}
+.csr_instructor h3.ins_name{
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 700;
+    color: var(--greenColor);
+}
+.csr_instructor span.specialized{
+    display: block;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 700;
+    color: var(--redColor);
+    margin-bottom: 10px;
+}
+.csr_instructor p.ins_bio{
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+    color: var(--lightColor);
+    margin-bottom: 10px;
+}
+.crsDetail_action h2{
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    color: var(--greenColor);
+    margin-bottom: 10px;
+}
+.crsDetail_action span{
+    display: inline-block;
+    width: auto;
+    padding: 5px 10px;
+    background: var(--greenColor);
+    font-size: 12px;
+    color: var(--whiteColor);
+    margin-right: 20px;
+    cursor: not-allowed;
+}
+.crsDetail_action span svg{
+    font-size: 15px;
+    padding-top: 5px;
+}
+.crsDetail_action a{
+    display: inline-block;
+    width: auto;
+    padding: 5px 10px;
+    background: var(--redColor);
+    font-size: 12px;
+    color: var(--whiteColor);
+}
+.crsDetail_action a svg{
+    font-size: 15px;
+    padding-top: 5px;
 }
