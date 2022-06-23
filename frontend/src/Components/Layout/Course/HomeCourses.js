@@ -38,15 +38,6 @@ function HomeCourses() {
                         <input type='search' placeholder='Search your courses' />
                         <button className='btn_primary'>Search</button>
                     </form>
-                    {/* Filtering categories for finding the entire courses */}
-                    <div className='categories_filter'>
-                        <Link to={"#"}>Biology</Link>
-                        <Link to={"#"}>Statical</Link>
-                        <Link to={"#"}>Physics</Link>
-                        <Link to={"#"}>Statical</Link>
-                        <Link to={"#"}>Biology</Link>
-                        <Link to={"#"}>Physics</Link>
-                    </div>
                     {/* All courses cards for each course */}
                     <div className='allCourses_card'>
                         <div className='allCrs_img'>
