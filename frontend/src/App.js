@@ -7,7 +7,7 @@ import WebFont from "webfontloader";
 // import { loadUser } from "./redux/action/useraction";
 
 import Header from "./Components/Layout/Header/Header";
-import Footer from "./Components/Layout/Footer/Footer";
+// import Footer from "./Components/Layout/Footer/Footer";
 
 
 import Home from "./Components/Layout/Home/Home";
@@ -75,8 +75,8 @@ function App() {
           <Route path="/courseorder" element={<Courseorder />} />
           <Route path="/sbr" element={<Sidebar />} />
           <Route path="/seminars" element={<Seminars />} />
-          <Route path="/crsdtl" element={<CourseDetails />} />
-          <Route path="/evndtl" element={<EventDetails />} />
+          <Route path="/course/details/:id" element={<CourseDetails />} />
+          <Route path="/event/details/:id" element={<EventDetails />} />
           {/* ADMIN ROUTES */}
 
           {/* dashboard */}
@@ -205,7 +205,7 @@ function App() {
             }
           />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </Router>
     </div>
   );

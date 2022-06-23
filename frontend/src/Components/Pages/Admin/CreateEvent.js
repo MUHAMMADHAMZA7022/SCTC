@@ -18,7 +18,9 @@ function Courses() {
   const [description, setDescription] = useState("");
   const [organization, setOrganization] = useState("");
   const [startdate, setStartdate] = useState("");
+  const [starttime, setStarttime] = useState("");
   const [enddate, setEnddate] = useState("");
+  const [endtime, setEndtime] = useState("");
   const [location, setlocation] = useState("");
   const [images, setImages] = useState();
   const [avatarPreview, setAvatarPreview] = useState("");
@@ -42,7 +44,9 @@ function Courses() {
     const myForm = new FormData();
     myForm.set("name", name);
     myForm.set("startdate", startdate);
+    myForm.set("starttime", starttime);
     myForm.set("enddate", enddate);
+    myForm.set("endtime", endtime);
     myForm.set("description", description);
     myForm.set("organization", organization);
     myForm.set("images", images);
@@ -118,7 +122,14 @@ function Courses() {
 
               onChange={(e) => setStartdate(e.target.value)}
             />
-
+            
+            <input
+              type="time"
+              placeholder="Start Time"
+              required
+              value={starttime}
+              onChange={(e) => setStarttime(e.target.value)}
+            />
             <input
               type="date"
               placeholder="Event End Date"
@@ -126,15 +137,13 @@ function Courses() {
               value={enddate}
               onChange={(e) => setEnddate(e.target.value)}
             />
-            <input
-              type="time"
-              placeholder="Start Time"
-              required
-            />
+           
             <input
               type="time"
               placeholder="End Time"
-              required
+              requireds
+              value={endtime}
+              onChange={(e) => setEndtime(e.target.value)}
             />
             <input
               type="text"

@@ -75,7 +75,7 @@ let history=useNavigate();
           <Sidebar />
         </div>
         <div className="dashboard_content">
-          <h1>All Courses</h1>
+          <h1>All Events</h1>
           {event && event ?(
             event.map((event,key) => 
               <div className="courses_holder"  key={key} course={event}>

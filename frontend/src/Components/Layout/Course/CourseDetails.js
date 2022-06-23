@@ -1,15 +1,42 @@
-import React, { Fragment } from 'react'
 
 import bg3 from '../../../images/slide-img-3.jpg';
-import bg1 from '../../../images/slide-img-1.jpg';
+// import bg1 from '../../../images/slide-img-1.jpg';
 import {Link} from 'react-router-dom';
 
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 import './CourseDetails.css';
+import React, { Fragment, useEffect, } from "react";
+// import Carousel from "react-material-ui-carousel";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  getProductDetails,
+ 
+  CLEAR_ERROR,
+} from "../../../redux/action/courseaction";
+import { useParams } from "react-router-dom";
+import { useAlert } from "react-alert";
 
+// import Loader from "../Layout/Loader/Loader";
+// import Imageload from "../Layout/Loader/imageload";
+// import { addItemsToCart, FavouriteToCart } from "../../redux/action/cartAction";
 function CourseDetails() {
+    const { id } = useParams();
+  const dispatch = useDispatch();
+  const alert = useAlert();
+  const { course, error } = useSelector((state) => state.courseDetails);
+  console.log(course)
+  useEffect(() => {
+    if (error) {
+      alert.error(error);
+      dispatch(CLEAR_ERROR);
+    }
+   
+
+ 
+    dispatch(getProductDetails(id));
+  }, [dispatch, id, error, alert]);
     return (
         <Fragment>
             <div className='courseDetails'>
@@ -23,28 +50,33 @@ function CourseDetails() {
                         </div>
                 </div>
                 {/* Single Page Course Details */}
-                <div className='crsDetailsContent grid'>
+           
+                <div className='crsDetailsContent grid' >
+                    
                     <div className='course_img'>
-                        <img src={bg1} alt="courseImg" />
+                        <img src={course?.images?.url} alt="courseImg" />
                     </div>
                     <div className='crsDetail_title'>
-                        <h2>Course Details Title</h2>
+                        <h2>{course.name}</h2>
                     </div>
                     <div className='crsDetail_desp'>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        <p>{course.description}</p>
                     </div>
                     <div className='csr_instructor'>
-                        <h2>Course Instructor</h2>
-                        <h3 className='ins_name'>Prof. Dr Asif Hanif</h3>
-                        <span className='specialized'>Biostatical Training</span>
-                        <p className='ins_bio'>University of Lahore and Biostatical Department of Health and Sciences Biology of science medical.</p>
+                        <h2>Course instructor</h2>
+                        <h3 className='ins_name'>{course.instructor}</h3>
+                        <span className='specialized'>{course.instructor_field}</span>
+                        <p className='ins_bio'>{course.instructor_bio}</p>
                     </div>
                     <div className='crsDetail_action'>
                         <h2>Course Details</h2>
-                        <span><AccessTimeIcon />1hr</span>
+                        <span><AccessTimeIcon />{course.duration}</span>
                         <Link to="#"><AddShoppingCartIcon />Buy Now</Link>
                     </div>
                 </div>
+                     
+          
+              
             </div>
         </Fragment>
     )

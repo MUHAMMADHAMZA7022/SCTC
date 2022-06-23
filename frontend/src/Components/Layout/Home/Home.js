@@ -62,7 +62,6 @@ function Home() {
 
           {courses ? (
             courses
-              .slice(0, 6)
               .map((course) => (
                 <CourseCard key={course._id} course={course} />
               ))

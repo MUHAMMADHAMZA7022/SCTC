@@ -24,9 +24,19 @@ const eventSechema = new mongoose.Schema({
         required: [true, "Please Enter  Event Start Date"],
 
     },
+    
+    starttime: {
+        type: String,
+        required: [true, "Please Enter  Event Start Time"],
+
+    },
     enddate:{
         type: String,
         required: [true, "Please Enter  Event End Date"],
+    },
+    endtime:{
+        type: String,
+        required: [true, "Please Enter  Event End Time"],
     },
     organization:{
         type: String,

@@ -31,7 +31,9 @@ function UpdateCourse() {
       const [course_file, setcourse_file] = useState("");
       const [cateogery, setcateogery] = useState("");
       const [instructor, setinstructor] = useState("");
-      const [deadline, setdeadline] = useState(0);
+      const [instructor_field, setinstructor_field] = useState("");
+      const [instructor_bio, setinstructor_bio] = useState("");
+      const [duration, setduration] = useState("");
       const [images, setImages] = useState([]);
       const [avatarPreview, setAvatarPreview] = useState("");
     
@@ -61,7 +63,9 @@ function UpdateCourse() {
         setcourse_file(course.course_file);
         setcateogery(course.cateogery);
         setinstructor(course.instructor);
-        setdeadline(course.deadline);
+        setinstructor_field(course.instructor_field);
+        setinstructor_bio(course.instructor_bio);
+        setduration(course.duration);
         setAvatarPreview(course.images.url);
     }
         if (error) {
@@ -98,8 +102,10 @@ function UpdateCourse() {
         myForm.set("price", price);
         myForm.set("description", description);
         myForm.set("cateogery", cateogery);
-        myForm.set("deadline", deadline);
+        myForm.set("duration", duration);
         myForm.set("instructor", instructor);
+        myForm.set("instructor_field", instructor_field);
+        myForm.set("instructor_bio", instructor_bio);
         myForm.set("course_file", course_file);
         myForm.set("images", images);
         // const value = Object.fromEntries(myForm.entries());
@@ -181,6 +187,27 @@ function UpdateCourse() {
                 value={instructor}
                 onChange={(e) => setinstructor(e.target.value)}
               />
+                   <input
+              type="text"
+              placeholder="Instructor Field"
+              required
+              value={instructor_field}
+              onChange={(e) => setinstructor_field(e.target.value)}
+            />            
+            <textarea
+              placeholder="Instructor Bio"
+              cols="30"
+              rows="1"
+              value={instructor_bio}
+              onChange={(e) => setinstructor_bio(e.target.value)}
+            ></textarea>
+            <input
+              type="text"
+              placeholder="Course Duration"
+              required
+              value={duration}
+              onChange={(e) => setduration(e.target.value)}
+            />  
               <select className="selectOpt" value={cateogery} onChange={(e) => setcateogery(e.target.value)}>
                 <option value="">Choose Category</option>
                 {categories.map((cate) => (
@@ -189,13 +216,7 @@ function UpdateCourse() {
                   </option>
                 ))}
               </select>
-              <input
-                type="number"
-                placeholder="Select Deadline"
-                value={deadline}
-                required
-                onChange={(e) => setdeadline(e.target.value)}
-              />
+           
               {
                 loading===true?( <LoadingButton
                   className='btn_primary'

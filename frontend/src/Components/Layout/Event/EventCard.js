@@ -8,16 +8,16 @@ function Home({event}) {
      
               <div className='ev_holder'>
             <div className='ev_card'>
-              <div className='ev_img'>
+              <Link to={`/event/details/${event._id}`} className='ev_img'>
                 <img src={event.images.url} alt='#' />
-              </div>
+              </Link>
               <div className='ev_content'>
                 <div className='ev_date'>
                   <strong>{event.startdate}</strong>
                 </div>
                 <div className='ev_content_holder'>
                   <div className='ev_title'>
-                    <Link to={"#"}>
+                    <Link to={`/event/details/${event._id}`}>
                       <h3>{event.name}</h3>
                     </Link>
                   </div>

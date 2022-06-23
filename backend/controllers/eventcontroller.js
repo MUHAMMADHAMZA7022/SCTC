@@ -8,11 +8,13 @@ const ApiFeatures = require("../utils/apifeatures");
 //createcourse -- Admin
 exports.createevent = async (req, res, next) => {
 try {
-  const { name,description,startdate,enddate,organization,location} =
+  const { name,description,startdate,starttime,enddate,endtime,organization,location} =
   req.body;
   const images = req.body.images;
   const mycloud = await cloudinary.v2.uploader.upload(images,{
     folder: "events",
+    gravity: "faces", crop: "fill",
+    quality: "auto", fetch_format: "auto"
     
   });
 
@@ -21,7 +23,9 @@ try {
     name,
     description,
 startdate,
+starttime,
 enddate,
+endtime,
 organization,
 location,
     images: {
@@ -42,7 +46,6 @@ location,
 
 //Getcourses All
 exports.allevent = catchasyncerror(async (req, res) => {
-  const resultperpage = 8;
   const eventscount = await Event.countDocuments();
 
   const apiFeature = new ApiFeatures(Event.find(), req.query)
@@ -54,7 +57,6 @@ exports.allevent = catchasyncerror(async (req, res) => {
     success: true,
     allevents,
     eventscount,
-    resultperpage,
   });
 });
 //get all admin courses
@@ -93,6 +95,8 @@ exports.updateevent = catchasyncerror(async (req, res,next) => {
 
     const myCloud = await cloudinary.v2.uploader.upload(req.body.images, {
       folder: "events",
+      gravity: "faces", crop: "fill",
+    quality: "auto", fetch_format: "auto"
     });
 
     req.body.images = {

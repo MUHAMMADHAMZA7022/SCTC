@@ -7,15 +7,15 @@ function Home({course}) {
      
           <div className='hc_holder'>
             <div className='hc_card'>
-              <div className='hc_img'>
+              <Link to={`/course/details/${course._id}`} className='hc_img'>
                 <img src={course.images.url} alt='#' />
-              </div>
+              </Link>
               <div className='hc_content'>
                 <h2>{course.name}</h2>
                 <p>{course.description}</p>
                 <div className='hc_action'>
                   <Link to={"#"} className='red_link'>Join now</Link>
-                  <Link to={"#"}>View Details</Link>
+                  <Link to={`/course/details/${course._id}`}>View Details</Link>
                 </div>
               </div>
             </div>

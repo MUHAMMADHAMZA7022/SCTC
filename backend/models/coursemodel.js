@@ -34,10 +34,20 @@ const courseSechema = new mongoose.Schema({
         trim: true,
         required: [true, "Please Enter Course Instructor Name"],
     },
-    deadline:{
+    instructor_field: {
+        type: String,
+        trim: true,
+        required: [true, "Please Enter Course Instructor Field"],
+    },
+     instructor_bio: {
+        type: String,
+        trim: true,
+        required: [true, "Please Enter Course Instructor Bio"],
+    },
+    duration:{
         // type: Number*24*60*60*1000 + Date.now ,
-        type:Number,
-        required: [true, "Please Enter Course Deadline"],
+        type:String,
+        required: [true, "Please Enter Course Duration"],
 
     },
     cateogery: {

@@ -8,13 +8,13 @@ const ApiFeatures = require("../utils/apifeatures");
 //createcourse -- Admin
 exports.createcourse = async (req, res, next) => {
 try {
-  const { name,  course_file, description, price, instructor,  cateogery,deadline } =
+  const { name,  course_file, description, price, instructor,instructor_field,instructor_bio,duration,cateogery } =
   req.body;
   const images = req.body.images;
   const mycloud = await cloudinary.v2.uploader.upload(images,{
     folder: "courses",
-    width: 150,
-    crop: "scale",
+   gravity: "faces", crop: "fill",
+    quality: "auto", fetch_format: "auto"
   });
 
   req.body.user = req.user.id;
@@ -24,7 +24,9 @@ try {
     course_file,
     price,
     instructor,
-    deadline,
+    instructor_field,
+    instructor_bio,
+    duration,
     cateogery,
     images: {
       public_id: mycloud.public_id,
@@ -95,8 +97,8 @@ exports.updatecourse = catchasyncerror(async (req, res,next) => {
 
     const myCloud = await cloudinary.v2.uploader.upload(req.body.images, {
       folder: "courses",
-      width: 150,
-      crop: "scale",
+      gravity: "faces", crop: "fill",
+      quality: "auto", fetch_format: "auto"
     });
 
     req.body.images = {
