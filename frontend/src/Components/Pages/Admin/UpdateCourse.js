@@ -40,18 +40,9 @@ function UpdateCourse() {
     
     
       const categories = [
-        "Womens",
-        "Newinn",
-        "Accessories",
-        "Unstiched",
-        "AClothes",
-        "Replicas",
-        "ReadyToWear",
-        "VaslFeatured",
-        "Bags",
-        "Scarves",
-        "Perfumes",
-        "Cosmetics"
+        "Biology",
+        "Statical",
+        "Biostatics"
       ];
       useEffect(() => {
         if (course && course._id !== productId) {

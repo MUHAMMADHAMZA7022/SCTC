@@ -43,6 +43,8 @@ import AdminCourses from "./Components/Pages/Admin/AdminCourses";
 import Loader from "./Components/Layout/Loader/loader";
 import Loader1 from "./Components/Layout/Loader/Courseloader";
 
+import Cart from "./Components/Pages/Admin/Cart";
+
 
 function App() {
   const dispatch = useDispatch();
@@ -77,6 +79,7 @@ function App() {
           <Route path="/seminars" element={<Seminars />} />
           <Route path="/course/details/:id" element={<CourseDetails />} />
           <Route path="/event/details/:id" element={<EventDetails />} />
+          <Route path="/cart" element={<Cart />} />
           {/* ADMIN ROUTES */}
 
           {/* dashboard */}
