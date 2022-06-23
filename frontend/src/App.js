@@ -43,7 +43,7 @@ import AdminCourses from "./Components/Pages/Admin/AdminCourses";
 import Loader from "./Components/Layout/Loader/loader";
 import Loader1 from "./Components/Layout/Loader/Courseloader";
 
-import Cart from "./Components/Pages/Admin/Cart";
+import Cart from "./Components/Pages/Cart/Cart";
 
 
 function App() {
