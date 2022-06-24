@@ -87,78 +87,109 @@ function Courses() {
             encType="multipart/form-data"
             onSubmit={createProductSubmitHandler}
           >
-            <input
-              type="text"
-              placeholder="Event Name"
-              required
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-            <img
-              src={avatarPreview}
-              alt="Event Preview"
-              className="imageeee"
-            />
-
-            <input
-              type="file"
-              placeholder="Event Image"
-              name="images"
-              accept="image/*"
-              onChange={updateProfileDataChange}
-            />
-            <textarea
-              placeholder="Event Description"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-              cols="30"
-              rows="1"
-            ></textarea>
-            <input
-              type="date"
-              placeholder="Event Start Date "
-              required
-              value={startdate}
-
-              onChange={(e) => setStartdate(e.target.value)}
-            />
-            
-            <input
-              type="time"
-              placeholder="Start Time"
-              required
-              value={starttime}
-              onChange={(e) => setStarttime(e.target.value)}
-            />
-            <input
-              type="date"
-              placeholder="Event End Date"
-              required
-              value={enddate}
-              onChange={(e) => setEnddate(e.target.value)}
-            />
-           
-            <input
-              type="time"
-              placeholder="End Time"
-              requireds
-              value={endtime}
-              onChange={(e) => setEndtime(e.target.value)}
-            />
-            <input
-              type="text"
-              placeholder="Organization Name"
-              required
-              value={organization}
-              onChange={(e) => setOrganization(e.target.value)}
-            />
-            <input
-              type="text"
-              placeholder="Event Location"
-              required
-              value={location}
-              onChange={(e) => setlocation(e.target.value)}
-            />
+            <div class="form__group field">
+              <input
+                className='form__field'
+                type="text"
+                placeholder="Event Name"
+                required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+              <label for="name" className="form__label">Event Name</label>
+            </div>
+            <div class="form__group field">
+              <img
+                src={avatarPreview}
+                alt="Event Preview"
+                className="imageeee"
+              />
+              <input
+                className='form__field'
+                type="file"
+                placeholder="Event Image"
+                name="images"
+                accept="image/*"
+                onChange={updateProfileDataChange}
+              />
+            </div>
+            <div class="form__group field">
+              <textarea
+                className='form__field'
+                placeholder="Event Description"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                cols="30"
+                rows="1"
+              ></textarea>
+              <label for="name" className="form__label">Event Description</label>
+            </div>
+            <div class="form__group field">
+              <input
+                className='form__field'
+                type="date"
+                placeholder="Event Start Date "
+                required
+                value={startdate}
+                onChange={(e) => setStartdate(e.target.value)}
+              />
+              <label for="name" className="form__label">Start Date</label>
+            </div>
+            <div class="form__group field">
+              <input
+                className='form__field'
+                type="time"
+                placeholder="Start Time"
+                required
+                value={starttime}
+                onChange={(e) => setStarttime(e.target.value)}
+              />
+              <label for="name" className="form__label">Start Time</label>
+            </div>
+            <div class="form__group field">
+              <input
+                className='form__field'
+                type="date"
+                placeholder="Event End Date"
+                required
+                value={enddate}
+                onChange={(e) => setEnddate(e.target.value)}
+              />
+              <label for="name" className="form__label">End Date</label>
+            </div>
+            <div class="form__group field">
+              <input
+                className='form__field'
+                type="time"
+                placeholder="End Time"
+                requireds
+                value={endtime}
+                onChange={(e) => setEndtime(e.target.value)}
+              />
+              <label for="name" className="form__label">End Time</label>
+            </div>
+            <div class="form__group field">
+              <input
+                className='form__field'
+                type="text"
+                placeholder="Organization Name"
+                required
+                value={organization}
+                onChange={(e) => setOrganization(e.target.value)}
+              />
+              <label for="name" className="form__label">Organization Name</label>
+            </div>
+            <div class="form__group field">
+              <input
+                className='form__field'
+                type="text"
+                placeholder="Event Location"
+                required
+                value={location}
+                onChange={(e) => setlocation(e.target.value)}
+              />
+              <label for="name" className="form__label">Event Location</label>
+            </div>
             {loading === true ? (
               <LoadingButton
                 className="btn_primary"

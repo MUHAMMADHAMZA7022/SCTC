@@ -12,7 +12,7 @@ function Courses() {
   const dispatch = useDispatch();
   const alert = useAlert();
 
-  const { error, success ,loading} = useSelector((state) => state.newCourse);
+  const { error, success, loading } = useSelector((state) => state.newCourse);
 
   const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
@@ -43,7 +43,7 @@ function Courses() {
     if (success) {
       alert.success("Course Created Successfully");
       history("/all/course");
-      dispatch({ type:NEW_COURSE_RESET });
+      dispatch({ type: NEW_COURSE_RESET });
     }
   }, [dispatch, success, error, alert, history,]);
 
@@ -95,89 +95,124 @@ function Courses() {
         <div className='dashboard_content courses_content'>
           <h1>Create Course</h1>
           <form className='courseForm' encType="multipart/form-data" onSubmit={createProductSubmitHandler}>
-            <input
-              type="text"
-              placeholder="Course Name"
-              required
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-            <input
-              type="text"
-              placeholder="File Url"
-              required
-              value={course_file}
-              onChange={(e) => setcourse_file(e.target.value)}
-            />
-            <textarea
-              placeholder="Course Description"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-              cols="30"
-              rows="1"
-            ></textarea>
-            <input
-              type="number"
-              placeholder=" Course Price"
-              required
-              onChange={(e) => setPrice(e.target.value)}
-            />
-
-
-
-            <img src={avatarPreview} alt="Course Preview" className="imageeee" />
-
-            <input
-              type="file"
-              name="images"
-              accept="image/*"
-              onChange={updateProfileDataChange}
-            />
-            <input
-              type="text"
-              placeholder="Instructor Name"
-              required
-              value={instructor}
-              onChange={(e) => setinstructor(e.target.value)}
-            />
-            <input
-              type="text"
-              placeholder="Instructor Field"
-              required
-              value={instructor_field}
-              onChange={(e) => setinstructor_field(e.target.value)}
-            />            
-            <textarea
-              placeholder="Instructor Bio"
-              cols="30"
-              rows="1"
-              value={instructor_bio}
-              onChange={(e) => setinstructor_bio(e.target.value)}
-            ></textarea>
-            <input
-              type="text"
-              placeholder="Course Duration"
-              required
-              value={duration}
-              onChange={(e) => setduration(e.target.value)}
-            />    
-            <select className="selectOpt" onChange={(e) => setcateogery(e.target.value)}>
-              <option value="">Choose Category</option>
-              {categories.map((cate) => (
-                <option key={cate} value={cate}>
-                  {cate}
-                </option>
-              ))}
-            </select>
+            <div class="form__group field">
+              <input
+                className='form__field'
+                type="text"
+                placeholder="Course Name"
+                required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                name="name"
+                id='name'
+              />
+              <label for="name" className="form__label">Name</label>
+            </div>
+            <div class="form__group field">
+              <input
+                className='form__field'
+                type="text"
+                placeholder="File Url"
+                required
+                value={course_file}
+                onChange={(e) => setcourse_file(e.target.value)}
+              />
+              <label for="fileUrl" className="form__label">File Url</label>
+            </div>
+            <div class="form__group field">
+              <textarea
+                className='form__field'
+                placeholder="Course Description"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                cols="30"
+                rows="1"
+              ></textarea>
+              <label for="name" className="form__label">Course Description</label>
+            </div>
+            <div class="form__group field">
+              <input
+                className='form__field'
+                type="number"
+                placeholder=" Course Price"
+                required
+                onChange={(e) => setPrice(e.target.value)}
+              />
+              <label for="name" className="form__label">Course Price</label>
+            </div>
+            <div class="form__group field">
+              <img src={avatarPreview} alt="Course Preview" className="imageeee" />
+              <input
+                className='form__field'
+                type="file"
+                name="images"
+                accept="image/*"
+                onChange={updateProfileDataChange}
+              />
+            </div>
+            <div class="form__group field">
+              <input
+                className='form__field'
+                type="text"
+                placeholder="Instructor Name"
+                required
+                value={instructor}
+                onChange={(e) => setinstructor(e.target.value)}
+              />
+              <label for="name" className="form__label">Instructor Name</label>
+            </div>
+            <div class="form__group field">
+              <input
+                className='form__field'
+                type="text"
+                placeholder="Instructor Field"
+                required
+                value={instructor_field}
+                onChange={(e) => setinstructor_field(e.target.value)}
+              />
+              <label for="name" className="form__label">Instructor Field</label>
+            </div>
+            <div class="form__group field">
+              <textarea
+                className='form__field'
+                placeholder="Instructor Bio"
+                cols="30"
+                rows="1"
+                value={instructor_bio}
+                onChange={(e) => setinstructor_bio(e.target.value)}
+              ></textarea>
+              <label for="name" className="form__label">Instructor Bio</label>
+            </div>
+            <div class="form__group field">
+              <input
+                className='form__field'
+                type="text"
+                placeholder="Course Duration"
+                required
+                value={duration}
+                onChange={(e) => setduration(e.target.value)}
+              />
+              <label for="name" className="form__label">Course Duration</label>
+            </div>
+            <div class="form__group field">
+              <select className="form__field selectOpt" onChange={(e) => setcateogery(e.target.value)}>
+                <option value="">Choose Category</option>
+                {categories.map((cate) => (
+                  <option key={cate} value={cate}>
+                    {cate}
+                  </option>
+                ))}
+              </select>
+            </div>
             {
-              loading===true?( <LoadingButton
+              loading === true ? (<LoadingButton
                 className='btn_primary'
                 loading
                 loadingPosition="center"
                 variant="outlined"
               >
                 Create
-              </LoadingButton>):(
+              </LoadingButton>) : (
                 <button className='btn_primary'>Create</button>
 
               )
