@@ -1,0 +1,39 @@
+.checkout{
+    padding: 100px 50px;
+}
+.checkout h1{
+    padding: 20px 0px;
+    font-size: 3rem;
+    line-height: normal;
+    color: var(--themeColor);
+    margin-bottom: 30px;
+}
+.checkout_holder{
+    display: flex;
+}
+.checkout_summary h1{
+    padding: 20px 0px;
+    font-size: 26px;
+    line-height: 30px;
+    color: var(--themeColor);
+    margin-bottom: 30px;
+}
+.stdInfo{
+    flex: 1;
+    padding: 0px 20px;
+}
+.checkout_summary{
+    flex: 1;
+    padding: 0px 20px;
+}
+
+.stdInfo p{
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 700;
+    color: var(--redColor);
+    margin-bottom: 5px;
+}
+.stdInfo_form div.lastField{
+    margin-bottom: 30px;
+}

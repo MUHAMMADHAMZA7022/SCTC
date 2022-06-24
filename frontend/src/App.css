@@ -37,7 +37,49 @@
     height: 100%;
     display: block;
   }
-  button.btn_primary,
+
+  /* Button Styles  */
+  
+button.btn_primary,
+.btn_primary {
+  color: var(--themeColor);
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  border: 2px solid var(--themeColor);
+  transition: all 0.5s cubic-bezier(0.42, 0, 0.58, 1);
+  padding: 5px 20px;
+}
+button.btn_primary:hover,
+button.btn_primary:focus,
+.btn_primary:focus, 
+.btn_primary:hover {
+  color: var(--whiteColor) !important;
+  background-color: transparent;
+  text-shadow: nthree;
+}
+.btn_primary:focus:before,
+.btn_primary:hover:before {
+  left: 0%;
+  right: auto;
+  width: 100%;
+}
+.btn_primary:before {
+  display: block;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 100%;
+  width: 0px;
+  z-index: -1;
+  content: '';
+  color: var(--whiteColor) !important;
+  background: var(--themeColor);
+  transition: all 0.5s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+
+  /* button.btn_primary,
   .btn_primary {
     border: none;
     cursor: pointer;
@@ -74,7 +116,6 @@
     right: 0;
     bottom: 0;
     z-index: -1;
-    /* transform: translateX(-102%); */
     left: 0;
     width: 0;
     transition: all ease-in-out 0.3s;
@@ -86,7 +127,7 @@
     width: 100%;
     color: var(--whiteColor);
     transform: translate(0);
-  }
+  } */
   .heading{
     font-size: 24px;
     line-height: 28px;
@@ -153,4 +194,61 @@
 }
 .capitalize{
   text-transform: capitalize;
+}
+
+/* Styles for Form Input Fields */
+
+.form__group {
+  position: relative;
+  padding: 10px 0 0;
+  margin-top: 10px;
+  width: 100%;
+}
+.form__field {
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 1.3rem;
+  color: var(--themeColor);
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+.form__field::placeholder {
+  color: transparent;
+}
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 1rem;
+  cursor: text;
+  top: 20px;
+}
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #9b9b9b;
+}
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  /* border-image: linear-gradient(to right, #11998e, #38ef7d); */
+  border-image: linear-gradient(to right, #002e3b, #ec595f);
+  border-image-slice: 1;
+}
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 0.7rem;
+  color: var(--themeColor);
+  font-weight: 700;
+}
+/* reset input */
+.form__field:required, .form__field:invalid {
+  box-shadow: none;
 }
