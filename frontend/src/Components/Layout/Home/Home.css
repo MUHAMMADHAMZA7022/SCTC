@@ -145,7 +145,8 @@
     box-shadow: 0px 1px 6px 1px rgba(44, 39, 39, 0.35);
     border-radius: 3px;
 }
-.ev_img{
+a.ev_img{
+    display: block;
     height: 150px;
     width: 100%;
     overflow: hidden;
