@@ -71,6 +71,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/course" element={<Course />} />
+          <Route path="/course/:keyword" element={<Course />} />
+          <Route path="/courses/:keyword" element={<HomeCourses />} />
           <Route path="/courses" element={<HomeCourses />} />
           <Route path="/loader" element={<Loader />} />
           <Route path="/loaderr" element={<Loader1 />} />

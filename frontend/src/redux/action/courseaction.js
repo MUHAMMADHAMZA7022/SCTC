@@ -25,14 +25,17 @@ import {
 
 //Get All COURSE
 export const getProduct =
-  (keyword = "", currentPage = 1, cateogery,) =>
+  (keyword = "",  cateogery,) =>
   async (dispatch) => {
     try {
       dispatch({ type:   ALL_COURSE_REQUEST, });
 
-      let link = `/api/v1/course/allcourses?keyword=${keyword}&page=${currentPage}`;
+      let link = `/api/v1/course/allcourses?keyword=${keyword}`;
       if (cateogery) {
-        link = `/api/va1/course/allcourses?keyword=${keyword}&page=${currentPage}&cateogery=${cateogery}`;
+        link = `/api/v1/course/allcourses?keyword=${keyword}&cateogery=${cateogery}`;
+      }
+      else{
+        
       }
       const { data } = await axios.get(link);
 
