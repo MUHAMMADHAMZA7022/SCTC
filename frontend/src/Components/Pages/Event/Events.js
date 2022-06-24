@@ -11,13 +11,9 @@ function Events() {
 
   const alert = useAlert();
   const dispatch = useDispatch();
-<<<<<<< HEAD
-  const { events, error, error: eventerror } = useSelector((state) => state.events);
-=======
-  const {loading, events, error: eventerror } = useSelector((state) => state.events);
->>>>>>> 57ee0d3481fe900ebf283dabda0c1bc82ee68f8c
+  const { loading, events, error: eventerror } = useSelector((state) => state.events);
   useEffect(() => {
-  
+
     if (eventerror) {
       alert.error(eventerror);
 
@@ -27,7 +23,7 @@ function Events() {
   }, [alert, dispatch, eventerror]);
   return (
     <Fragment>
-<<<<<<< HEAD
+
       <div className="events">
         {/* Single Page Banner */}
         <div className='crs_banner'>
@@ -39,7 +35,7 @@ function Events() {
           </div>
         </div>
         <div className="events_holder grid">
-          {events ? (
+          {loading === false ? (
             events
               .map((event) => (
                 <EventCard key={event._id} event={event} />
@@ -49,17 +45,6 @@ function Events() {
           )}
         </div>
       </div>
-=======
-      {loading===false? (
-        events
-          .map((event) => (
-            <EventCard key={event._id} event={event} />
-          ))
-      ) : (
-        <Loader1 />
-      )}
->>>>>>> 57ee0d3481fe900ebf283dabda0c1bc82ee68f8c
-
     </Fragment>
   )
 }
