@@ -37,3 +37,27 @@
 .stdInfo_form div.lastField{
     margin-bottom: 30px;
 }
+.checkout_summary_holder{
+    width: 60%;
+}
+.chk_bar{
+    overflow: hidden;
+    border-bottom: 1px solid var(--lightColor);
+    padding: 10px 0px 20px 0px;
+    margin-bottom: 30px;
+}
+.chk_bar span{
+    color: var(--lightColor);
+    display: inline-block;
+}
+.chk_bar span:first-child{
+    float: left;
+}
+.chk_bar span.chk_prc{
+    float: right;
+}
+.checkout_summary_holder button.btn_primary{
+    width: 100%;
+    display: block;
+    padding: 20px 10px ;
+}

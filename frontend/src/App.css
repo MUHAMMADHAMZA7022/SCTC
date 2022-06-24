@@ -207,7 +207,7 @@ button.btn_primary:focus,
 .form__field {
   width: 100%;
   border: 0;
-  border-bottom: 2px solid #9b9b9b;
+  border-bottom: 2px solid var(--lightColor);
   outline: 0;
   font-size: 1.3rem;
   color: var(--themeColor);
@@ -229,13 +229,14 @@ button.btn_primary:focus,
   display: block;
   transition: 0.2s;
   font-size: 1rem;
-  color: #9b9b9b;
+  color: var(--lightColor);
 }
 .form__field:focus {
   padding-bottom: 6px;
   font-weight: 700;
   border-width: 3px;
   /* border-image: linear-gradient(to right, #11998e, #38ef7d); */
+  /* border-image: linear-gradient(to right, #ec595f, #002e3b, #868686, #5a9f68); */
   border-image: linear-gradient(to right, #002e3b, #ec595f);
   border-image-slice: 1;
 }
