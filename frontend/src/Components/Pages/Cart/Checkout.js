@@ -1,5 +1,4 @@
-import React, { Fragment } from 'react'
-import { Link } from 'react-router-dom';
+import React, { Fragment } from 'react';
 import './Checkout.css';
 
 function Checkout() {

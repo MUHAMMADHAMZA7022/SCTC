@@ -1,8 +1,9 @@
-.allCourses_content{
+.allCourses_content {
     display: block;
     padding: 50px 50px;
 }
-.allCourses_card{
+
+.allCourses_card {
     display: inline-block;
     vertical-align: top;
     width: calc(25% - 20px);
@@ -10,68 +11,82 @@
     overflow: hidden;
     margin: 0 10px 20px 10px;
 }
-.crs_searchBar{
+
+.crs_searchBar {
     width: 100%;
     padding: 20px 5px;
     display: flex;
 }
-.crs_searchBar input{
+
+.crs_searchBar input {
     display: inline-block;
     outline: none;
-    border: 1px solid var(--themeColor);
+    border: 2px solid var(--themeColor);
     text-shadow: none;
     padding: 10px 5px;
     flex: 9;
     border-right: none;
     color: var(--redColor);
 }
-.crs_searchBar button{
+
+.crs_searchBar button {
     flex: 1;
     display: inline-block;
     vertical-align: top;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    overflow: hidden;
 }
-.filterCategories li.ct_btn{
+.filterCategories li.ct_btn {
     display: inline-block;
-    border: 1px solid var(--themeColor);
+    border: 2px solid var(--themeColor);
     padding: 10px 5px;
     border-right: none;
-    color: var(--themeColor); 
-    cursor: pointer;   
+    color: var(--themeColor);
+    cursor: pointer;
     position: relative;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
 }
-.filterCategories li.ct_btn > ul{
+
+.filterCategories li.ct_btn>ul {
     padding: 0px 0px;
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
     background: var(--whiteColor);
-    border: 1px solid var(--themeColor);
+    /* border: 1px solid var(--themeColor); */
     border-top: none;
     visibility: hidden;
     opacity: 0;
     transform: translateY(-100%);
     z-index: -1;
 }
-.filterCategories li.ct_btn:hover .ct_list{
+
+.filterCategories li.ct_btn:hover .ct_list {
     visibility: visible;
     opacity: 1;
     transform: translateY(0);
     z-index: 1;
 }
-.filterCategories li.ct_btn > ul li{
-    border-top: 1px solid var(--themeColor);
+
+.filterCategories li.ct_btn>ul li {
+    /* border-top: 1px solid var(--themeColor); */
     padding: 5px;
 }
-.filterCategories li.ct_btn > ul li:hover{
+
+.filterCategories li.ct_btn>ul li:hover {
     background: var(--themeColor);
-    color: var(--lightColor);
+    color: var(--whiteColor);
 }
-.categories_filter{
+
+.categories_filter {
     overflow: hidden;
     padding: 10px 10px 10px 0px;
 }
-.categories_filter a{
+
+.categories_filter a {
     display: inline-block;
     vertical-align: top;
     padding: 5px 10px;
@@ -80,47 +95,57 @@
     line-height: 20px;
     font-weight: 700;
 }
+
 .categories_filter a:focus,
-.categories_filter a:hover{
+.categories_filter a:hover {
     color: var(--redColor);
 }
-.allCrs_img{
+
+.allCrs_img {
     height: 150px;
     overflow: hidden;
 }
-.allCrs_data{
+
+.allCrs_data {
     padding: 10px;
 }
-.allCrs_data a h2{
+
+.allCrs_data a h2 {
     display: block;
     font-size: 18px;
     line-height: 22px;
     color: var(--greenColor);
     margin-bottom: 10px;
 }
+
 .allCrs_data a h2:hover,
-.allCrs_data a h2:hover{
+.allCrs_data a h2:hover {
     color: var(--redColor);
 }
-.allCrs_data span{
+
+.allCrs_data span {
     display: block;
     margin-bottom: 10px;
 }
-.allCrs_data span.crs_dur{
+
+.allCrs_data span.crs_dur {
     color: var(--greenColor);
     font-weight: 400;
     font-size: 14px;
 }
-.allCrs_data span.crs_dur svg{
+
+.allCrs_data span.crs_dur svg {
     font-size: 1rem;
     padding-top: 5px;
 }
-.allCrs_data span.crs_amount{
+
+.allCrs_data span.crs_amount {
     color: var(--redColor);
     font-weight: 700;
     margin-bottom: 0px;
 }
-.allCrs_data span.crs_amount span{
+
+.allCrs_data span.crs_amount span {
     display: inline-block;
     margin-bottom: 0px;
 }

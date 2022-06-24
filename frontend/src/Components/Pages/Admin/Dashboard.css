@@ -54,7 +54,7 @@
     color: var(--themeColor);
     margin-bottom: 20px;
 }
-
+/* 
 .courseForm textarea,
 .courseForm input{
     width: 100%;
@@ -67,7 +67,7 @@
     color: var(--themeColor);
     overflow: hidden;
     margin-bottom: 10px;
-}
+} */
 .imageeee {
     width: 20vmax;
     border-radius: 0%;
@@ -75,7 +75,7 @@
     padding: 50px;
 }
 
-.courseForm textarea{
+/* .courseForm textarea{
     padding: -2px 2px 0px 5px;
 }
 .courseForm select.selectOpt{
@@ -89,7 +89,7 @@
     color: var(--themeColor);
     overflow: hidden;
     margin-bottom: 10px;
-}
+} */
 
 .dashboard_sidebar .dList ul li{
     overflow: hidden;

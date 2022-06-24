@@ -18,7 +18,7 @@ function HomeCourses() {
                         <img src={bg3} alt="banner" />
                     </div>
                     <div className="crsBanner_content">
-                        <h2>Courses</h2>
+                        <h2>All Courses</h2>
                     </div>
                 </div>
                 {/* Single Page Courses Content */}

@@ -1,4 +1,6 @@
 import React, { Fragment, useEffect } from "react";
+import './Events.css'
+import bg3 from '../../../images/slide-img-3.jpg';
 
 import EventCard from "../../Pages/Event/EventCard";
 import { CLEAR_ERROR, getProduct } from "../../../redux/action/courseaction";
@@ -10,8 +12,7 @@ function Events() {
 
   const alert = useAlert();
   const dispatch = useDispatch();
-  const { courses, error } = useSelector((state) => state.courses);
-  const { events, error: eventerror } = useSelector((state) => state.events);
+  const { events, error, error: eventerror } = useSelector((state) => state.events);
   useEffect(() => {
     if (error) {
       alert.error(error);
@@ -28,14 +29,27 @@ function Events() {
   }, [alert, dispatch, error, eventerror]);
   return (
     <Fragment>
-      {events ? (
-        events
-          .map((event) => (
-            <EventCard key={event._id} event={event} />
-          ))
-      ) : (
-        <Loader1 />
-      )}
+      <div className="events">
+        {/* Single Page Banner */}
+        <div className='crs_banner'>
+          <div className='crs_bannerImg'>
+            <img src={bg3} alt="banner" />
+          </div>
+          <div className="crsBanner_content">
+            <h2>All Events</h2>
+          </div>
+        </div>
+        <div className="events_holder grid">
+          {events ? (
+            events
+              .map((event) => (
+                <EventCard key={event._id} event={event} />
+              ))
+          ) : (
+            <Loader1 />
+          )}
+        </div>
+      </div>
 
     </Fragment>
   )
