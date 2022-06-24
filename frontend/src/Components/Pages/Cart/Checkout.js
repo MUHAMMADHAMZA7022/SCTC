@@ -4,7 +4,7 @@ function Checkout() {
     return (
         <Fragment>
             <div className='cart'>
-                <h1>Checkout</h1>
+                <h1>This Checkout page for cart</h1>
                 <div className='cart_holder'>
                 </div>
                 <div className='cart_checkout'>
