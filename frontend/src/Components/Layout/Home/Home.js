@@ -8,6 +8,10 @@ import bg1 from '../../../images/slide-img-1.jpg';
 import "./Home.css";
 import { Link } from "react-router-dom";
 
+<<<<<<< HEAD
+=======
+// import CourseCard from "../Course/CourseCard";
+>>>>>>> 89a05ce3ad98114f92069342389d20649571fc82
 import CourseCard from "../../Pages/Course/CourseCard";
 import EventCard from "../../Pages/Event/EventCard";
 import { CLEAR_ERROR, getProduct } from "../../../redux/action/courseaction";
@@ -132,7 +136,7 @@ function Home() {
             </div>
           </div> */}
           <div className='section_btn'>
-            <Link to='/courses' className='btn_primary'>View All</Link>
+            <Link to='/events' className='btn_primary'>View All</Link>
           </div>
         </section>
       </div>

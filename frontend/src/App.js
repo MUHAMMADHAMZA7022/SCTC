@@ -11,7 +11,12 @@ import Header from "./Components/Layout/Header/Header";
 
 
 import Home from "./Components/Layout/Home/Home";
+<<<<<<< HEAD
 import Course from "./Components/Pages/Course/CourseCard"
+=======
+// import Course from "./Components/Layout/Course/CourseCard"
+import Course from "./Components/Pages/Course/CourseCard";
+>>>>>>> 89a05ce3ad98114f92069342389d20649571fc82
 import About from "./Components/Layout/About/About";
 import SignUp from "./Components/Pages/Users/SignUp";
 import Profile from "./Components/Pages/Users/Profile";
@@ -22,6 +27,11 @@ import Dashboard from "./Components/Pages/Admin/Dashboard";
 
 import Courses from "./Components/Pages/Admin/Courses";
 import Courseorder from "./Components/Pages/Admin/Courseorder";
+<<<<<<< HEAD
+=======
+// import CourseDetails from "./Components/Layout/Course/CourseDetails";
+// import HomeCourses from "./Components/Layout/Course/HomeCourses";
+>>>>>>> 89a05ce3ad98114f92069342389d20649571fc82
 import CourseDetails from "./Components/Pages/Course/CourseDetails";
 import HomeCourses from "./Components/Pages/Course/HomeCourses";
 
@@ -44,6 +54,7 @@ import Loader from "./Components/Layout/Loader/loader";
 import Loader1 from "./Components/Layout/Loader/Courseloader";
 
 import Cart from "./Components/Pages/Cart/Cart";
+import Checkout from "./Components/Pages/Cart/Checkout";
 
 
 function App() {
@@ -80,6 +91,7 @@ function App() {
           <Route path="/course/details/:id" element={<CourseDetails />} />
           <Route path="/event/details/:id" element={<EventDetails />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
           {/* ADMIN ROUTES */}
 
           {/* dashboard */}
