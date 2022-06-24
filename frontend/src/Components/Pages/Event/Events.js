@@ -1,7 +1,6 @@
 import React, { Fragment, useEffect } from "react";
 
 import EventCard from "../../Pages/Event/EventCard";
-import { CLEAR_ERROR, getProduct } from "../../../redux/action/courseaction";
 import { CLEAR_ERROR_EVENT, getEvent } from "../../../redux/action/eventaction";
 import { useSelector, useDispatch } from "react-redux";
 import Loader1 from "../../Layout/Loader/loader";
@@ -10,25 +9,19 @@ function Events() {
 
   const alert = useAlert();
   const dispatch = useDispatch();
-  const { courses, error } = useSelector((state) => state.courses);
-  const { events, error: eventerror } = useSelector((state) => state.events);
+  const {loading, events, error: eventerror } = useSelector((state) => state.events);
   useEffect(() => {
-    if (error) {
-      alert.error(error);
-
-      dispatch(CLEAR_ERROR);
-    }
+  
     if (eventerror) {
       alert.error(eventerror);
 
       dispatch(CLEAR_ERROR_EVENT);
     }
     dispatch(getEvent());
-    dispatch(getProduct());
-  }, [alert, dispatch, error, eventerror]);
+  }, [alert, dispatch, eventerror]);
   return (
     <Fragment>
-      {events ? (
+      {loading===false? (
         events
           .map((event) => (
             <EventCard key={event._id} event={event} />
