@@ -1,6 +1,6 @@
 import React from "react";
 import { css } from "@emotion/react";
-import SyncLoader from "react-spinners/FadeLoader";
+import RingLoader from "react-spinners/MoonLoader";
 import "./Loader.css";
 const Loader = () => {
     const override = css`
@@ -11,7 +11,7 @@ const Loader = () => {
   return (
       <div className="s">
        
-          <SyncLoader   height={30} color='grey'  css={override} />
+          <RingLoader  size={70} color='black'  css={override} />
       </div>
   );
 };

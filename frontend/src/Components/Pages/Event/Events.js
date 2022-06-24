@@ -3,7 +3,6 @@ import './Events.css'
 import bg3 from '../../../images/slide-img-3.jpg';
 
 import EventCard from "../../Pages/Event/EventCard";
-import { CLEAR_ERROR, getProduct } from "../../../redux/action/courseaction";
 import { CLEAR_ERROR_EVENT, getEvent } from "../../../redux/action/eventaction";
 import { useSelector, useDispatch } from "react-redux";
 import Loader1 from "../../Layout/Loader/loader";
@@ -12,23 +11,23 @@ function Events() {
 
   const alert = useAlert();
   const dispatch = useDispatch();
+<<<<<<< HEAD
   const { events, error, error: eventerror } = useSelector((state) => state.events);
+=======
+  const {loading, events, error: eventerror } = useSelector((state) => state.events);
+>>>>>>> 57ee0d3481fe900ebf283dabda0c1bc82ee68f8c
   useEffect(() => {
-    if (error) {
-      alert.error(error);
-
-      dispatch(CLEAR_ERROR);
-    }
+  
     if (eventerror) {
       alert.error(eventerror);
 
       dispatch(CLEAR_ERROR_EVENT);
     }
     dispatch(getEvent());
-    dispatch(getProduct());
-  }, [alert, dispatch, error, eventerror]);
+  }, [alert, dispatch, eventerror]);
   return (
     <Fragment>
+<<<<<<< HEAD
       <div className="events">
         {/* Single Page Banner */}
         <div className='crs_banner'>
@@ -50,6 +49,16 @@ function Events() {
           )}
         </div>
       </div>
+=======
+      {loading===false? (
+        events
+          .map((event) => (
+            <EventCard key={event._id} event={event} />
+          ))
+      ) : (
+        <Loader1 />
+      )}
+>>>>>>> 57ee0d3481fe900ebf283dabda0c1bc82ee68f8c
 
     </Fragment>
   )
