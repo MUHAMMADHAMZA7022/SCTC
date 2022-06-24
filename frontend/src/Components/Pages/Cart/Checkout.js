@@ -31,17 +31,20 @@ function Checkout() {
                                 <input type="number" className='form__field' placeholder="Phone No" name="phoneNo" id='phoneNo' required />
                                 <label for="phoneNo" className="form__label">Phone No</label>
                             </div>
-                            <button className='btn_primary'>Register</button>
+                            <button className='btn_primary'>Checkout</button>
                         </form>
                     </div>
                     <div className='checkout_summary'>
                         <h1>Summary</h1>
-                        <div className='chk_bar'>
-                            <span>Total price:</span>
-                            <span className='chk_prc'>
-                                <span>$</span>
-                                88
-                            </span>
+                        <div className='checkout_summary_holder'>
+                            <div className='chk_bar'>
+                                <span>Total price:</span>
+                                <span className='chk_prc'>
+                                    <span>$</span>
+                                    88
+                                </span>
+                            </div>
+                            <button className='btn_primary'>Complete Checkout</button>
                         </div>
                     </div>
                 </div>
