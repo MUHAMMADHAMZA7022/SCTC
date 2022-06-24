@@ -36,6 +36,7 @@ import AdminEvents from "./Components/Pages/Admin/AdminEvent";
 import CreateEvent from "./Components/Pages/Admin/CreateEvent";
 import UpdateEvent from "./Components/Pages/Admin/UpdateEvent";
 import EventDetails from "./Components/Pages/Event/EventDetails";
+import Events from "./Components/Pages/Event/Events";
 
 
 import UpdateCourse from "./Components/Pages/Admin/UpdateCourse";
@@ -85,6 +86,7 @@ function App() {
           <Route path="/event/details/:id" element={<EventDetails />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/events" element={<Events />} />
           {/* ADMIN ROUTES */}
 
           {/* dashboard */}
