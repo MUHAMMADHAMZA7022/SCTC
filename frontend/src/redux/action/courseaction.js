@@ -34,9 +34,6 @@ export const getProduct =
       if (cateogery) {
         link = `/api/v1/course/allcourses?keyword=${keyword}&cateogery=${cateogery}`;
       }
-      else{
-        
-      }
       const { data } = await axios.get(link);
 
       dispatch({

@@ -32,9 +32,7 @@ function HomeCourses() {
       history("/courses");
     }
   };
-  const searchHandlercato = (cato) => {
-   setcateogery(cato)
-  };
+
   const {
     courses,
     loading,
@@ -68,7 +66,7 @@ console.log(cateogery)
           {/* Search bar for search the entire courses */}
           <form className="crs_searchBar" onSubmit={searchSubmitHandler}>
             <ul className="unstyled filterCategories">
-              <li className="ct_btn">
+              <li className="ct_btn" onMouseEnter={() => setcateogery("")} >
                 Categories
                 <ul className="unstyled ct_list">
                   {
@@ -76,7 +74,10 @@ console.log(cateogery)
                     <li
                       className="category-link"
                       key={cato}
-                      onMouseEnter={() => searchHandlercato(cato)}
+                     
+                
+                      onClick={() => setcateogery(cato)}
+                 
                     >
                       {cato}
                     </li>
