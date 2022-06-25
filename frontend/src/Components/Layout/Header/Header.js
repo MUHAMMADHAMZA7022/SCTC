@@ -5,6 +5,8 @@ import {Link,useNavigate} from 'react-router-dom';
 import { useDispatch,useSelector } from "react-redux";
 import { Logout } from "../../../redux/action/useraction";
 import { useAlert } from "react-alert";
+// import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 function Header() {
   const dispatch = useDispatch();
@@ -38,6 +40,7 @@ let history=useNavigate();
             <li><Link to='/about'>About</Link></li>
             <li><Link to='/events'>Events</Link></li>
             <li><Link to='/contact'>Contact</Link></li>
+            <li><Link to='/cart'><ShoppingCartOutlinedIcon /></Link></li>
             {
               !isAuthenticated ? (
                 <li><Link to='/login' className='nav_btn'>Sign In</Link></li>
