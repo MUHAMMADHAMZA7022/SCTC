@@ -1,5 +1,5 @@
 // import evn1 from "../../../images/evn1.jpg";
-// import bg3 from "../../../images/slide-img-3.jpg";
+import bg3 from "../../../images/slide-img-3.jpg";
 
 // import { Link } from "react-router-dom";
 import "./HomeCourses.css";
@@ -55,14 +55,14 @@ console.log(cateogery)
     <Fragment>
       <div className="eventsDetails">
         {/* Single Page Banner */}
-        {/* <div className="crs_banner">
+        <div className="crs_banner">
           <div className="crs_bannerImg">
             <img src={bg3} alt="banner" />
           </div>
           <div className="crsBanner_content">
             <h2>Courses</h2>
           </div>
-        </div> */}
+        </div>
         {/* Single Page Courses Content */}
         <div className="allCourses_content grid">
           {/* Search bar for search the entire courses */}
