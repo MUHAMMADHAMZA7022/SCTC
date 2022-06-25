@@ -7,7 +7,7 @@ import { NEW_EVENT_RESET } from "../../../redux/Constant/eventconstant";
 import { useNavigate } from "react-router-dom";
 import { useAlert } from "react-alert";
 import { LoadingButton } from "@mui/lab";
-import moment from "moment"
+// import moment from "moment"
 function Courses() {
   let history = useNavigate();
   const dispatch = useDispatch();
