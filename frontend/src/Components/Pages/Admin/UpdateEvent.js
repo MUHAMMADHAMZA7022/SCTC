@@ -29,9 +29,7 @@ function UpdateCourse() {
       const [description, setDescription] = useState("");
       const [organization, setOrganization] = useState("");
       const [startdate, setStartdate] = useState("");
-      const [starttime, setStarttime] = useState("");
       const [enddate, setEnddate] = useState("");
-      const [endtime, setEndtime] = useState("");
       const [location, setlocation] = useState("");
       const [images, setImages] = useState([]);
       const [avatarPreview, setAvatarPreview] = useState("");
@@ -45,9 +43,8 @@ function UpdateCourse() {
         setName(event.name);
         setDescription(event.description);
         setStartdate(event.startdate);
-        setStarttime(event.starttime);
         setEnddate(event.enddate);
-        setEndtime(event.endtime);
+        console.log(event.enddate)
         setlocation(event.location);
         setOrganization(event.organization);
         setAvatarPreview(event.images.url);
@@ -84,9 +81,7 @@ function UpdateCourse() {
         const myForm = new FormData();
         myForm.set("name", name);
         myForm.set("startdate", startdate);
-        myForm.set("starttime", starttime);
         myForm.set("enddate", enddate);
-        myForm.set("endtime", endtime);
         myForm.set("description", description);
         myForm.set("organization", organization);
         myForm.set("images", images);
@@ -148,7 +143,7 @@ function UpdateCourse() {
               rows="1"
             ></textarea>
           <input
-              type="date"
+              type="datetime-local"
               placeholder="Event Start Date "
               required
               value={startdate}
@@ -156,28 +151,16 @@ function UpdateCourse() {
               onChange={(e) => setStartdate(e.target.value)}
             />
             
+           
             <input
-              type="time"
-              placeholder="Start Time"
-              required
-              value={starttime}
-              onChange={(e) => setStarttime(e.target.value)}
-            />
-            <input
-              type="date"
+              type="datetime-local"
               placeholder="Event End Date"
               required
+              min={startdate}
               value={enddate}
               onChange={(e) => setEnddate(e.target.value)}
             />
            
-            <input
-              type="time"
-              placeholder="End Time"
-              required
-              value={endtime}
-              onChange={(e) => setEndtime(e.target.value)}
-            />
 
             <input
               type="text"

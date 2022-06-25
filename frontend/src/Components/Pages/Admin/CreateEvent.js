@@ -7,6 +7,7 @@ import { NEW_EVENT_RESET } from "../../../redux/Constant/eventconstant";
 import { useNavigate } from "react-router-dom";
 import { useAlert } from "react-alert";
 import { LoadingButton } from "@mui/lab";
+import moment from "moment"
 function Courses() {
   let history = useNavigate();
   const dispatch = useDispatch();
@@ -18,9 +19,7 @@ function Courses() {
   const [description, setDescription] = useState("");
   const [organization, setOrganization] = useState("");
   const [startdate, setStartdate] = useState("");
-  const [starttime, setStarttime] = useState("");
   const [enddate, setEnddate] = useState("");
-  const [endtime, setEndtime] = useState("");
   const [location, setlocation] = useState("");
   const [images, setImages] = useState();
   const [avatarPreview, setAvatarPreview] = useState("");
@@ -44,9 +43,7 @@ function Courses() {
     const myForm = new FormData();
     myForm.set("name", name);
     myForm.set("startdate", startdate);
-    myForm.set("starttime", starttime);
     myForm.set("enddate", enddate);
-    myForm.set("endtime", endtime);
     myForm.set("description", description);
     myForm.set("organization", organization);
     myForm.set("images", images);
@@ -127,7 +124,7 @@ function Courses() {
             <div class="form__group field">
               <input
                 className='form__field'
-                type="date"
+                type="datetime-local"
                 placeholder="Event Start Date "
                 required
                 value={startdate}
@@ -135,39 +132,31 @@ function Courses() {
               />
               <label for="name" className="form__label">Start Date</label>
             </div>
+          
             <div class="form__group field">
-              <input
+              {/* <input
                 className='form__field'
-                type="time"
-                placeholder="Start Time"
-                required
-                value={starttime}
-                onChange={(e) => setStarttime(e.target.value)}
-              />
-              <label for="name" className="form__label">Start Time</label>
-            </div>
-            <div class="form__group field">
-              <input
-                className='form__field'
-                type="date"
+                type="datetime-local"
                 placeholder="Event End Date"
                 required
+                min={startdate}
                 value={enddate}
                 onChange={(e) => setEnddate(e.target.value)}
-              />
+              /> */}
+
+
+
+
+<input 
+type="datetime-local" 
+placeholder="Event End Date"
+required
+value={enddate} 
+className="form__field" 
+onChange={(e) => setEnddate(e.target.value)} />
               <label for="name" className="form__label">End Date</label>
             </div>
-            <div class="form__group field">
-              <input
-                className='form__field'
-                type="time"
-                placeholder="End Time"
-                requireds
-                value={endtime}
-                onChange={(e) => setEndtime(e.target.value)}
-              />
-              <label for="name" className="form__label">End Time</label>
-            </div>
+            
             <div class="form__group field">
               <input
                 className='form__field'

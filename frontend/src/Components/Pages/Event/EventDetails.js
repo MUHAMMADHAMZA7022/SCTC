@@ -60,10 +60,10 @@ function EventDetails() {
                     <div className='evn_time'>
                         <h2>Start Time</h2>
                         <span className='evnt_date'><CalendarMonthOutlinedIcon />{event.startdate}</span>
-                        <span className='evnt_time'><AccessTimeIcon />{event.starttime}</span>
+                        <span className='evnt_time'><AccessTimeIcon />{event.startdate.substr(11, 19)}</span>
                         <h2>Ending Time</h2>
                         <span className='evnt_date'><CalendarMonthOutlinedIcon />{event.enddate}</span>
-                        <span className='evnt_time'><AccessTimeIcon />{event.endtime}</span>
+                        <span className='evnt_time'><AccessTimeIcon />{new Date(event.startdate.substr(11, 19))}</span>
                         <h2>Event Location</h2>
                         <span className='evnt_location'><LocationOnIcon />{event.location}</span>
                     </div>

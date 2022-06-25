@@ -22,9 +22,9 @@ function Home({event}) {
                     </Link>
                   </div>
                   <div className='ev_time'>
-                    <span>{event.starttime}</span>
+                    <span>{String(event.startdate).substr(11,8)}</span>
                     <span>-</span>
-                    <span>{event.endtime}</span>
+                    <span>{String(event.enddate).substr(11,8)}</span>
                   </div>
                 </div>
               </div>
