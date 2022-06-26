@@ -9,6 +9,7 @@
     --boxBorder: rgb(0 0 0 / 10%);
     --redColor: #ec595f;
     --greenColor: #5a9f68;
+    --curve: 40;
   }
   * {
     margin: 0;

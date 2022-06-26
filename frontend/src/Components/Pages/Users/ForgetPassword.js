@@ -1,10 +1,10 @@
 import "./ForgetPassword.css";
 import React, { Fragment, useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { CLEAR_ERROR, forgotPassword} from "../../../redux/action/useraction";
+import { CLEAR_ERROR, forgotPassword } from "../../../redux/action/useraction";
 import { useAlert } from "react-alert";
 function ForgetPassword() {
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const alert = useAlert();
 
   const { error, message } = useSelector(
@@ -33,36 +33,35 @@ function ForgetPassword() {
     }
   }, [dispatch, error, alert, message]);
 
-    return (
-        <Fragment>
-            {/* Forget Form */}
-            <div className='forgetformHolder'>
-                <div className='forgetHolder'>
-                    <h1>Forget Password</h1>
-                    <form className="forgetForm" onSubmit={forgotPasswordSubmit}>
-                        {/* Email */}
-                        <div className="group_field">
-                            <label htmlFor="email">
-                                Email<span>*</span>
-                            </label>
-                            <input
-                                type='email'
-                                placeholder="Email"
-                                
-                  name="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                                required
-                            />
-                        </div>
-                        <div className="group_field">
-                            <button className='btn_primary'>Forget Password</button>
-                        </div>
-                    </form>
-                </div>
+  return (
+    <Fragment>
+      {/* Forget Form */}
+      <div className='forgetformHolder'>
+        <div className='forgetHolder'>
+          <h1>Forget Password</h1>
+          <form className="forgetForm" onSubmit={forgotPasswordSubmit}>
+            {/* Email */}
+            <div class="form__group field">
+              <input
+                className='form__field'
+                type='email'
+                placeholder="Email"
+
+                name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <label for="name" className="form__label">Password</label>
             </div>
-        </Fragment>
-    )
+            <div className="group_field">
+              <button className='btn_primary'>Forget Password</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </Fragment>
+  )
 }
 
 export default ForgetPassword
