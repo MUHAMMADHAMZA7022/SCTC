@@ -33,8 +33,10 @@ function UpdateCourse() {
       const [location, setlocation] = useState("");
       const [images, setImages] = useState([]);
       const [avatarPreview, setAvatarPreview] = useState("");
-    
-    
+      var st=String(event.startdate)
+       
+      console.log(st)
+    // console.log(new Date(String(event.startdate)).toISOString().substr(0,16))
     
       useEffect(() => {
         if (event && event._id !== productId) {
@@ -42,9 +44,9 @@ function UpdateCourse() {
         } else {
         setName(event.name);
         setDescription(event.description);
-        setStartdate(event.startdate);
-        setEnddate(event.enddate);
-        console.log(event.enddate)
+        setStartdate(new Date (String(event.startdate)).toISOString().substr(0,16));
+        setEnddate(new Date (String(event.enddate)).toISOString().substr(0,16));
+        // console.log(event.enddate)
         setlocation(event.location);
         setOrganization(event.organization);
         setAvatarPreview(event.images.url);
@@ -66,6 +68,7 @@ function UpdateCourse() {
         }
       }, [
         dispatch,
+    
         alert,
         error,
         history,

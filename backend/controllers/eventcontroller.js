@@ -10,6 +10,9 @@ exports.createevent = async (req, res, next) => {
 try {
   const { name,description,startdate,enddate,organization,location} =
   req.body;
+   var st=new Date(startdate).toLocaleString('default', {hour12: true});
+   var et=new Date(enddate).toLocaleString('default', { hour12: true});
+  
   const images = req.body.images;
   const mycloud = await cloudinary.v2.uploader.upload(images,{
     folder: "events",
@@ -17,14 +20,15 @@ try {
     quality: "auto", fetch_format: "auto"
     
   });
-
+// console.log(st)
+// console.log(startdate)
   req.body.user = req.user.id;
   const courses = await Event.create({
     name,
     description,
-startdate,
+startdate:st,
 
-enddate,
+enddate:et,
 
 organization,
 location,
@@ -86,6 +90,9 @@ exports.updateevent = catchasyncerror(async (req, res,next) => {
   if (!uevent) {
     return next(new Errorhandler("Event Not Found", 404)); //ly class bnae v utils mein phir ye error bnya wa sb sy phir middleare ein erro.js bnae
   }
+ 
+
+  // console.log(dat)
   // //addd avtar cloudinary
   if (req.body.images !== "") {
 
@@ -104,6 +111,11 @@ exports.updateevent = catchasyncerror(async (req, res,next) => {
       url: myCloud.secure_url,
     };
   }
+  req.body.startdate=new Date(req.body.startdate).toLocaleString([], { hour12: true});
+  req.body.enddate=new Date(req.body.enddate).toLocaleString([], { hour12: true});
+  // console.log(req.body.startdate)
+  // console.log(req.body.enddate)
+  // var et=new Date(enddate).toLocaleString([], { hour12: true});
   uevent = await Event.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
     runValidators: true,

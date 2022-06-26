@@ -13,7 +13,7 @@ function Home({event}) {
               </Link>
               <div className='ev_content'>
                 <div className='ev_date'>
-                  <strong>{event.startdate}</strong>
+                  <strong>{String(event.startdate).substr(0,9)}</strong>
                 </div>
                 <div className='ev_content_holder'>
                   <div className='ev_title'>
@@ -22,9 +22,9 @@ function Home({event}) {
                     </Link>
                   </div>
                   <div className='ev_time'>
-                    <span>{String(event.startdate).substr(11,8)}</span>
+                    <span>{String(event.startdate).substr(11,10)}</span>
                     <span>-</span>
-                    <span>{String(event.enddate).substr(11,8)}</span>
+                    <span>{String(event.enddate).substr(11,10)}</span>
                   </div>
                 </div>
               </div>
