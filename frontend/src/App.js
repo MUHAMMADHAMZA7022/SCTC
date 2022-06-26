@@ -14,6 +14,7 @@ import Home from "./Components/Layout/Home/Home";
 // import Course from "./Components/Layout/Course/CourseCard"
 import Course from "./Components/Pages/Course/CourseCard";
 import About from "./Components/Layout/About/About";
+import Services from "./Components/Pages/Services/Services";
 import SignUp from "./Components/Pages/Users/SignUp";
 import Profile from "./Components/Pages/Users/Profile";
 import Login from "./Components/Pages/Users/Login";
@@ -89,6 +90,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/events" element={<Events />} />
+          <Route path="/services" element={<Services />} />
           {/* ADMIN ROUTES */}
 
           {/* dashboard */}

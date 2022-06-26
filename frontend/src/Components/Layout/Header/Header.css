@@ -1,6 +1,7 @@
 .header_holder{
-    background-color: rgba(0, 46, 59, 0.3);
+    /* background-color: rgba(0, 46, 59, 0.3); */
     /* background: transparent; */
+    background: var(--whiteColor);
     padding: 30px 2px;
     text-align: center;
     /* position: absolute;
@@ -15,6 +16,7 @@
     vertical-align: top;
     margin-right: 10%;
     color: white;
+    width: 3%;
 }
 .navbar{
     display: inline-block;
@@ -23,26 +25,35 @@
 /* .nav_list{
     overflow: hidden;
 } */
+.nav_list{
+    position: relative;
+}
 .nav_list li{
     float: left;
 }
 .nav_list li a{
     display: inline-block;
     padding: 5px 20px;
-    color: var(--whiteColor);
-    font-weight: 400;
+    color: var(--themeColor);
+    font-weight: 700;
     font-size: 14px;
 }
 .nav_list li a.nav_btn{
     background: var(--redColor);
+    color: var(--themeColor);
+}
+.nav_list li a.nav_btn:focus,
+.nav_list li a.nav_btn:hover{
+    background: var(--themeColor);
+    color: var(--whiteColor);
 }
 .nav_list li a:focus,
 .nav_list li a:hover{
-    color: #0009;
+    color: var(--redColor);
 }
 .nav_list li a.profile_box{
-    width: 15px;
-    height: 15px;
+    width: auto;
+    height: 2rem;
     border-radius: 100%;
     margin: 0.2rem 0 0 1rem;
     background-image: url(../../../images/Profile.png);
@@ -54,14 +65,33 @@
 .nav_list li{
     position: relative;
 }
+
+.nav_list li.cart_icon a svg{
+    font-size: 1.3rem;
+}
+.nav_list li#pr_item{
+    position: absolute;
+    top: -5px;
+    right: -10%;
+}
 .nav_list li ul.pr_list {
     overflow: hidden;
-    background: rgba(0, 46, 59, 0.6);;
+    /* background: rgba(0, 46, 59, 0.6); */
+    background: var(--whiteColor);
     position: absolute;
-    top: 90%;
+    top: 0;
     left: -15%;
     z-index: 2;
     text-align: left;
+    /* display: none; */
+    visibility: hidden;
+    opacity: 0;
+    box-shadow: var(--boxShadow);
+}
+.nav_list li.pr_box ul.pr_list{
+    visibility: visible;
+    opacity: 1;
+    top: 90%;
 }
 .nav_list li ul.pr_list li{
     float: none;
@@ -71,17 +101,14 @@
     display: block;
     overflow: hidden;
 }
-.nav_list li.pr_box ul.pr_list li{
-    display: block;
-}
-.nav_list li.pr_box ul.pr_list{
+/* .nav_list li.pr_box ul.pr_list li{
     display: none;
-}
+} */
 .nav_list li ul.pr_list li button.logoutBtn{
     display: inline-block;
-    padding: 10px 15px;
-    color: var(--whiteColor);
-    font-weight: 400;
+    padding: 10px 20px;
+    color: var(--themeColor);
+    font-weight: 700;
     font-size: 14px;
     background: none;
     outline: none;
@@ -91,5 +118,5 @@
 }
 .nav_list li ul.pr_list li button.logoutBtn:focus,
 .nav_list li ul.pr_list li button.logoutBtn:hover{
-    color: #444;
+    color: var(--redColor);
 }

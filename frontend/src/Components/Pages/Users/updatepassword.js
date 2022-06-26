@@ -8,7 +8,7 @@ import { useAlert } from "react-alert";
 import { UPDATE_PASSWORD_RESET } from "../../../redux/Constant/userconstant";
 import { useNavigate } from "react-router-dom";
 const UpdatePassword = () => {
-  let history = useNavigate();  
+  let history = useNavigate();
 
   const dispatch = useDispatch();
   const alert = useAlert();
@@ -59,41 +59,38 @@ const UpdatePassword = () => {
               </div>
             </div>
             <form className="signinForm" onSubmit={updatePasswordSubmit}>
-              <div className="group_field">
-                <label htmlFor="password">
-                  Old Password<span>*</span>
-                </label>
+              <div class="form__group field">
                 <input
+                  className='form__field'
                   type="password"
                   placeholder="Old Password"
                   required
                   value={oldpassword}
                   onChange={(e) => setOldPassword(e.target.value)}
                 />
+                <label for="name" className="form__label">Old Password</label>
               </div>
-              <div className="group_field">
-                <label htmlFor="password">
-                  New Password<span>*</span>
-                </label>
+              <div class="form__group field">
                 <input
+                  className='form__field'
                   type="password"
                   placeholder="New Password"
                   required
                   value={newpassword}
                   onChange={(e) => setNewPassword(e.target.value)}
                 />
+                <label for="name" className="form__label">New Password</label>
               </div>
-              <div className="group_field">
-                <label htmlFor="password">
-                  Conform Password<span>*</span>
-                </label>
+              <div class="form__group field">
                 <input
+                  className='form__field'
                   type="password"
-                  placeholder="Conform Password"
+                  placeholder="Confirm Password"
                   required
                   value={conformpassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                 />
+                <label for="name" className="form__label">Confirm Password</label>
               </div>
 
               <div className="row group_field e_btn">
