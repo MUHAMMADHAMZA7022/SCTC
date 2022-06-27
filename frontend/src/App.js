@@ -29,6 +29,8 @@ import Courseorder from "./Components/Pages/Admin/Courseorder";
 import CourseDetails from "./Components/Pages/Course/CourseDetails";
 import HomeCourses from "./Components/Pages/Course/HomeCourses";
 
+import CreateService from "./Components/Pages/Admin/CreateService";
+
 import Sidebar from "./Components/Pages/Admin/Sidebar";
 import Students from "./Components/Pages/Admin/Students";
 import Seminars from "./Components/Pages/Admin/Seminars";
@@ -91,6 +93,7 @@ function App() {
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/events" element={<Events />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/createservice" element={<CreateService />} />
           {/* ADMIN ROUTES */}
 
           {/* dashboard */}

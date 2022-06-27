@@ -96,13 +96,13 @@ function Courses() {
               <label for="name" className="form__label">Event Name</label>
             </div>
             <div class="form__group field">
-           { images?(
-            <img
-                src={avatarPreview}
-                alt="Event Preview"
-                className="imageeee"
-              />
-            ):(null)}
+              {images ? (
+                <img
+                  src={avatarPreview}
+                  alt="Event Preview"
+                  className="imageeee"
+                />
+              ) : (null)}
               <input
                 className='form__field'
                 type="file"
@@ -134,7 +134,7 @@ function Courses() {
               />
               <label for="name" className="form__label">Start Date</label>
             </div>
-          
+
             <div class="form__group field">
               {/* <input
                 className='form__field'
@@ -149,17 +149,17 @@ function Courses() {
 
 
 
-<input 
-type="datetime-local" 
-placeholder="Event End Date"
-required
-min={startdate}
-value={enddate} 
-className="form__field" 
-onChange={(e) => setEnddate(e.target.value)} />
+              <input
+                type="datetime-local"
+                placeholder="Event End Date"
+                required
+                min={startdate}
+                value={enddate}
+                className="form__field"
+                onChange={(e) => setEnddate(e.target.value)} />
               <label for="name" className="form__label">End Date</label>
             </div>
-            
+
             <div class="form__group field">
               <input
                 className='form__field'

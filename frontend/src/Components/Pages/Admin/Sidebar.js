@@ -45,22 +45,33 @@ const Sidebar = () => {
           <DashboardIcon /> Dashboard
         </p>
       </Link>
-        <TreeView
-          defaultCollapseIcon={<ExpandMoreIcon />}
-          defaultExpandIcon={<ImportExportIcon />}
-        >
-          <TreeItem nodeId="1" label="Courses">
+      <TreeView
+        defaultCollapseIcon={<ExpandMoreIcon />}
+        defaultExpandIcon={<ImportExportIcon />}
+      >
+        <TreeItem nodeId="1" label="Courses">
           <Link to="/create/courses">
-              <TreeItem nodeId="3" label="Create" icon={<AddIcon />} />
-            </Link>
-            <Link to="/all/course">
-              <TreeItem nodeId="2" label="View Courses" icon={<PostAddIcon />} />
-            </Link>
-
-           
-          </TreeItem>
-        </TreeView>
-        <Link to="/students">
+            <TreeItem nodeId="3" label="Create" icon={<AddIcon />} />
+          </Link>
+          <Link to="/all/course">
+            <TreeItem nodeId="2" label="View Courses" icon={<PostAddIcon />} />
+          </Link>
+        </TreeItem>
+      </TreeView>
+      <TreeView
+        defaultCollapseIcon={<ExpandMoreIcon />}
+        defaultExpandIcon={<ImportExportIcon />}
+      >
+        <TreeItem nodeId="1" label="Services">
+          <Link to="/createservice">
+            <TreeItem nodeId="3" label="Create" icon={<AddIcon />} />
+          </Link>
+          <Link to="/all/services">
+            <TreeItem nodeId="2" label="View Services" icon={<PostAddIcon />} />
+          </Link>
+        </TreeItem>
+      </TreeView>
+      <Link to="/students">
         <p>
           <AccessibilityIcon /> Students
         </p>
@@ -68,7 +79,7 @@ const Sidebar = () => {
       <Link to="/courseorder">
         <p>
           <ListAltIcon />
-         Course Orders
+          Course Orders
         </p>
       </Link>
 
@@ -84,21 +95,21 @@ const Sidebar = () => {
          Events
         </p>
       </Link> */}
-        <TreeView
-          defaultCollapseIcon={<ExpandMoreIcon />}
-          defaultExpandIcon={<EventIcon />}
-        >
-          <TreeItem nodeId="1" label="Events">
-            <Link to="/all/events">
-              <TreeItem nodeId="2" label="All Events" icon={<PostAddIcon />} />
-            </Link>
+      <TreeView
+        defaultCollapseIcon={<ExpandMoreIcon />}
+        defaultExpandIcon={<EventIcon />}
+      >
+        <TreeItem nodeId="1" label="Events">
+          <Link to="/all/events">
+            <TreeItem nodeId="2" label="All Events" icon={<PostAddIcon />} />
+          </Link>
 
-            <Link to="/create/event">
-              <TreeItem nodeId="3" label="Create" icon={<AddIcon />} />
-            </Link>
+          <Link to="/create/event">
+            <TreeItem nodeId="3" label="Create" icon={<AddIcon />} />
+          </Link>
 
-          </TreeItem>
-        </TreeView>
+        </TreeItem>
+      </TreeView>
     </div>
   );
 };
