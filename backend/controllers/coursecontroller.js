@@ -48,8 +48,7 @@ try {
 exports.allcourses = catchasyncerror(async (req, res) => {
   const resultperpage = 8;
   const coursescount = await Course.countDocuments();
-
-  const apiFeature = new ApiFeatures(Course.find(), req.query)
+  const apiFeature = new ApiFeatures(Course.find().sort( { _id : -1 }), req.query)
     .search()
     .filter();
   allcourses = await apiFeature.query;
@@ -58,15 +57,15 @@ exports.allcourses = catchasyncerror(async (req, res) => {
     success: true,
     allcourses,
     coursescount,
-    resultperpage,
+    resultperpage
   });
 });
 //get all admin courses
 exports.allcoursesadmin = catchasyncerror(async (req, res) => {
-  const course = await Course.find();
+  const latestcourse = await Course.find().sort( { _id : -1 });
   res.status(200).json({
     success: true,
-    course,
+    latestcourse,
   });
 });
 //one course

@@ -34,9 +34,7 @@ function Events() {
             <h2>All Events</h2>
           </div>
         </div>
-      {
-        oldevent?
-        (
+   
           <div className="events_holder grid">
           {loading === false&&oldevent ? (
             oldevent
@@ -47,10 +45,7 @@ function Events() {
             <Loader1 />
           )}
         </div>
-        ):(
-          <h1>No NeW Event</h1>
-        )
-      }
+      
       </div>
     </Fragment>
   )

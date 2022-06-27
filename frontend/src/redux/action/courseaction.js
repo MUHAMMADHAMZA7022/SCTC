@@ -56,7 +56,7 @@ export const getAdminProduct = () => async (dispatch) => {
 
     dispatch({
       type:   ADMIN_COURSE_SUCCESS,
-      payload: data.course,
+      payload: data.latestcourse,
     });
   } catch (error) {
     dispatch({

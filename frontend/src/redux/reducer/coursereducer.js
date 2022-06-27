@@ -39,7 +39,7 @@ export const ALLcoursesReducer = (state = { courses: [] }, action) => {
         loading: false,
         courses: action.payload.allcourses,
         coursesCount: action.payload.coursescount,
-        resultperpage: action.payload.resultperpage,
+        // resultperpage: action.payload.resultperpage,
         // filteredCoursesCount: action.payload.filteredCoursesCount,
       };
     case ADMIN_COURSE_SUCCESS:
