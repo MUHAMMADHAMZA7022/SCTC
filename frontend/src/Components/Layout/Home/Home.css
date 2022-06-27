@@ -198,3 +198,88 @@ a.ev_img{
     line-height: 16px;
     color: green;
 }
+
+.find_course{
+    padding: 20px 50px;
+    background: var(--themeColor);
+}
+.find_course h2{
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    display: block;
+    color: var(--whiteColor);
+    padding: 20px 10px;
+    border-bottom: 1px solid var(--lightColor);
+    margin-bottom: 20px;
+}
+.fCrs_cate{
+    display: inline-block;
+    vertical-align: top;
+    width: 40%;
+    padding: 10px 20px;
+}
+.fCrs_cate h3{
+    font-size: 18px;
+    line-height: 22px;
+    color: var(--whiteColor);
+    margin-bottom: 10px;
+}
+.fCrs_cate ul li{
+    margin-bottom: 5px;
+}
+.fCrs_cate ul li span svg{
+    fill: var(--whiteColor);
+    padding-top: 10px;
+}
+.fCrs_cate ul li a{
+    color: var(--whiteColor);
+    font-weight: 400;
+    font-size: 16px;
+}
+.fCrs_cate ul li:hover svg{
+    fill: var(--redColor);
+    padding-left: 5px;
+    transition: all ease-in-out .2s;
+}
+.fCrs_cate ul li a:focus,
+.fCrs_cate ul li a:hover{
+    color: var(--redColor);
+}
+.find_coursesFormHolder{
+    display: inline-block;
+    vertical-align: top;
+    width: 60%;
+}
+.find_coursesFormHolder form{
+    padding: 20px;
+}
+.find_coursesFormHolder form input{
+    outline: none;
+    border: none;
+    border-radius: 0px;
+    box-shadow: none;
+    text-shadow: none;
+    width: 100%;
+    padding: 15px 10px;
+    color: var(--redColor);
+}
+.find_coursesFormHolder form button{
+    float: right;
+    outline: none;
+    text-shadow: none;
+    padding: 10px;
+    background: transparent;
+    border: 0px;
+    color: var(--redColor);
+    cursor: pointer;
+}
+.find_coursesFormHolder form button svg {
+    font-size: 35px;
+    height: 12px;
+    width: 20px;
+}
+.find_coursesFormHolder form button:focus,
+.find_coursesFormHolder form button:hover{
+    color: var(--whiteColor);
+}

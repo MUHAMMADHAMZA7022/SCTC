@@ -9,7 +9,18 @@
 .ft_block{
     flex: 1;
 }
-.bg1{background-color: rgb(117, 150, 150);}
 .bg2{background-color: rgb(117, 177, 89);}
 .bg3{background-color: rgb(141, 44, 165);}
 .bg4{background-color: rgb(252, 189, 96);}
+.footerlogo_holder{
+    width: 50%;
+    margin-bottom: 10px;
+}
+.ft_block p{
+    color: var(--lightColor);
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 10px;
+    font-weight: 400;
+    padding: 10px 30px 10px 0px;
+}

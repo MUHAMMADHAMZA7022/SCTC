@@ -7,7 +7,7 @@ import WebFont from "webfontloader";
 // import { loadUser } from "./redux/action/useraction";
 
 import Header from "./Components/Layout/Header/Header";
-// import Footer from "./Components/Layout/Footer/Footer";
+import Footer from "./Components/Layout/Footer/Footer";
 
 
 import Home from "./Components/Layout/Home/Home";
@@ -219,7 +219,7 @@ function App() {
             }
           />
         </Routes>
-        {/* <Footer /> */}
+        <Footer />
       </Router>
     </div>
   );
