@@ -18,7 +18,7 @@ const Products = () => {
   const dispatch = useDispatch();
 
   const alert = useAlert();
-  const { event, error,} = useSelector((state) => state.events);
+  const { latestevent, error,} = useSelector((state) => state.events);
  
 let history=useNavigate();
 
@@ -76,8 +76,8 @@ let history=useNavigate();
         </div>
         <div className="dashboard_content">
           <h1>All Events</h1>
-          {event && event ?(
-            event.map((event,key) => 
+          {latestevent && latestevent ?(
+            latestevent.map((event,key) => 
               <div className="courses_holder"  key={key} course={event}>
               <div className="course_card"   >
                 <div className="cr_img">

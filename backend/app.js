@@ -23,6 +23,7 @@ app.use(
     useTempFiles: true,
   })
 );
+
 const errormiddleware = require("./middleware/error");
 // usser routes
 const user = require("./routers/userroute");
@@ -30,9 +31,12 @@ app.use("/api/v1/user", user);
 // course routes
 const course = require("./routers/courseroute");
 app.use("/api/v1/course", course); 
-
+// event routes
 const event = require("./routers/eventroute");
 app.use("/api/v1/event", event); 
+//service routes
+const service = require("./routers/userroute");
+app.use("/api/v1/service", service); 
 
 app.use(errormiddleware);
 module.exports = app;

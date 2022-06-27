@@ -52,23 +52,23 @@ location,
 exports.allevent = catchasyncerror(async (req, res) => {
   const eventscount = await Event.countDocuments();
 
-  const apiFeature = new ApiFeatures(Event.find(), req.query)
-    .search()
-    .filter();
-  allevents = await apiFeature.query;
+  const latestevent = await Event.find().sort( { _id : -1 });
+  const oldevent = await Event.find();
+  
 
   res.status(200).json({
     success: true,
-    allevents,
+    latestevent,
+    oldevent,
     eventscount,
   });
 });
 //get all admin courses
 exports.alleventsadmin = catchasyncerror(async (req, res) => {
-  const event = await Event.find();
+  const latestevent = await Event.find().sort( { _id : -1 });
   res.status(200).json({
     success: true,
-    event,
+    latestevent,
   });
 });
 //one course

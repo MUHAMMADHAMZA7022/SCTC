@@ -37,15 +37,15 @@ import {
       case ALL_EVENT_SUCCESS:
         return {
           loading: false,
-          events: action.payload.allevents,
+          latestevent: action.payload.latestevent,
+          oldevent: action.payload.oldevent,
           eventsCount: action.payload.eventscount,
-          resultperpage: action.payload.resultperpage,
-          filteredEventCount: action.payload.filteredEventCount,
+
         };
       case ADMIN_EVENT_SUCCESS:
         return {
           loading: false,
-          event: action.payload,
+          latestevent: action.payload.latestevent,
         };
       case ALL_EVENT_FAIL:
       case ADMIN_EVENT_FAIL:

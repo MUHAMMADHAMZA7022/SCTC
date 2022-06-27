@@ -21,7 +21,7 @@ function Home() {
   const alert = useAlert();
   const dispatch = useDispatch();
   const { courses, error } = useSelector((state) => state.courses);
-  const { events, error: eventerror } = useSelector((state) => state.events);
+  const { latestevent, error: eventerror } = useSelector((state) => state.events);
   useEffect(() => {
     if (error) {
       alert.error(error);
@@ -122,8 +122,8 @@ function Home() {
           <div className='section_heading'>
             <h1>Upcoming Events</h1>
           </div>
-          {events ? (
-            events
+          {latestevent ? (
+            latestevent
               .slice(0, 3)
               .map((event) => (
                 <EventCard key={event._id} event={event} />
