@@ -11,7 +11,7 @@ function Events() {
 
   const alert = useAlert();
   const dispatch = useDispatch();
-  const { loading, oldevent, error: eventerror } = useSelector((state) => state.events);
+  const { loading, latestevent, error: eventerror } = useSelector((state) => state.events);
   useEffect(() => {
 
     if (eventerror) {
@@ -36,8 +36,8 @@ function Events() {
         </div>
    
           <div className="events_holder grid">
-          {loading === false&&oldevent ? (
-            oldevent
+          {loading === false&&latestevent ? (
+            latestevent
               .map((event) => (
                 <EventCard key={event._id} event={event} />
               ))

@@ -35,7 +35,7 @@ app.use("/api/v1/course", course);
 const event = require("./routers/eventroute");
 app.use("/api/v1/event", event); 
 //service routes
-const service = require("./routers/userroute");
+const service = require("./routers/serviceroute");
 app.use("/api/v1/service", service); 
 
 app.use(errormiddleware);

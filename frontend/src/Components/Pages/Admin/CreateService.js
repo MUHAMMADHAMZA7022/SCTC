@@ -18,10 +18,6 @@ function CreateService() {
 
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const [organization, setOrganization] = useState("");
-  const [startdate, setStartdate] = useState("");
-  const [enddate, setEnddate] = useState("");
-  const [location, setlocation] = useState("");
   const [images, setImages] = useState();
   const [avatarPreview, setAvatarPreview] = useState("");
 
@@ -33,7 +29,7 @@ function CreateService() {
 
     if (success) {
       alert.success("Event Created Successfully");
-      history("/all/events");
+      history("/all/services");
       dispatch({ type: NEW_EVENT_RESET });
     }
   }, [dispatch, success, error, alert, history]);
@@ -43,12 +39,10 @@ function CreateService() {
 
     const myForm = new FormData();
     myForm.set("name", name);
-    myForm.set("startdate", startdate);
-    myForm.set("enddate", enddate);
+
     myForm.set("description", description);
-    myForm.set("organization", organization);
+
     myForm.set("images", images);
-    myForm.set("location", location);
     // const value = Object.fromEntries(myForm.entries());
     // value.topics = myForm.getAll("topics");
     const value = Object.fromEntries(myForm.entries());
@@ -99,7 +93,7 @@ function CreateService() {
               />
               <label for="name" className="form__label">Service Title</label>
             </div>
-            <div class="form__group field">
+            <div className="form__group field">
               <textarea
                 className='form__field'
                 placeholder="Service Description"

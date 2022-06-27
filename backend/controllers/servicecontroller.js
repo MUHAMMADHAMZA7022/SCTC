@@ -41,23 +41,19 @@ try {
 exports.allservice = catchasyncerror(async (req, res) => {
   const servicecount = await Service.countDocuments();
 
-  const apiFeature = new ApiFeatures(Service.find(), req.query)
-    .search()
-    .filter();
-  allservice = await apiFeature.query;
-
+  const latestservice = await Service.find().sort( { _id : -1 });
   res.status(200).json({
     success: true,
-    allservice,
+    latestservice,
     servicecount,
   });
 });
 //get all admin courses
 exports.allservicesadmin = catchasyncerror(async (req, res) => {
-  const service = await Service.find();
+  const latestservice = await Service.find().sort( { _id : -1 });
   res.status(200).json({
     success: true,
-    service,
+    latestservice,
   });
 });
 //one course
@@ -74,7 +70,7 @@ exports.singleservice = catchasyncerror(async (req, res, next) => {
 
 
 // updateCourse -- Admin
-exports.updateevent = catchasyncerror(async (req, res,next) => {
+exports.updateservice = catchasyncerror(async (req, res,next) => {
   let uservice = await Service.findById(req.params.id);
   if (!uservice) {
     return next(new Errorhandler("Service Not Found", 404)); //ly class bnae v utils mein phir ye error bnya wa sb sy phir middleare ein erro.js bnae
