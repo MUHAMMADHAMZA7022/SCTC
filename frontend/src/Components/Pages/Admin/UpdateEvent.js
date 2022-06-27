@@ -129,11 +129,16 @@ function UpdateCourse() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
-              
+              {
+                images?(
+                  
               <img src={avatarPreview} alt="Event Preview" className="imageeee" />
   
+                ):null
+              }
               <input
                 type="file"
+                required
                 name="images"
                 accept="image/*"
                 onChange={updateProfileDataChange}

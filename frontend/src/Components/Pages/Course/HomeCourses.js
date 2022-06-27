@@ -101,14 +101,7 @@ console.log(cateogery)
             <Loader1 />
           )}
 
-          {/* <Link to="#">
-                                <h2>Computing & IT and Mathmetics</h2>
-                            </Link>
-                            <span className='crs_dur'><AccessTimeIcon /> 3 weeks</span>
-                            <span className='crs_amount'>
-                                <span>$</span>
-                                299.99
-                            </span> */}
+ 
         </div>
       </div>
       {/* </div> */}

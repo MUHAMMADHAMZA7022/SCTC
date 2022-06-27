@@ -111,8 +111,8 @@ exports.updateevent = catchasyncerror(async (req, res,next) => {
       url: myCloud.secure_url,
     };
   }
-  req.body.startdate=new Date(req.body.startdate).toLocaleString([], { hour12: true});
-  req.body.enddate=new Date(req.body.enddate).toLocaleString([], { hour12: true});
+  req.body.startdate=new Date(req.body.startdate).toLocaleString('default', { hour12: true});
+  req.body.enddate=new Date(req.body.enddate).toLocaleString('default', { hour12: true});
   // console.log(req.body.startdate)
   // console.log(req.body.enddate)
   // var et=new Date(enddate).toLocaleString([], { hour12: true});

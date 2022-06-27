@@ -34,8 +34,11 @@ function Events() {
             <h2>All Events</h2>
           </div>
         </div>
-        <div className="events_holder grid">
-          {loading === false ? (
+      {
+        events?
+        (
+          <div className="events_holder grid">
+          {loading === false&&events ? (
             events
               .map((event) => (
                 <EventCard key={event._id} event={event} />
@@ -44,6 +47,10 @@ function Events() {
             <Loader1 />
           )}
         </div>
+        ):(
+          <h1>No NeW Event</h1>
+        )
+      }
       </div>
     </Fragment>
   )

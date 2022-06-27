@@ -14,7 +14,7 @@ function Home({course}) {
                 <h2>{course.name}</h2>
                 <p>{course.description}</p>
                 <div className='hc_action'>
-                  <Link to={"#"} className='red_link'>Join now</Link>
+                  <Link to={"#"} className='red_link'>Buy now</Link>
                   <Link to={`/course/details/${course._id}`}>View Details</Link>
                 </div>
               </div>

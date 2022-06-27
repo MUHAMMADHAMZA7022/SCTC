@@ -96,11 +96,13 @@ function Courses() {
               <label for="name" className="form__label">Event Name</label>
             </div>
             <div class="form__group field">
-              <img
+           { images?(
+            <img
                 src={avatarPreview}
                 alt="Event Preview"
                 className="imageeee"
               />
+            ):(null)}
               <input
                 className='form__field'
                 type="file"
@@ -151,6 +153,7 @@ function Courses() {
 type="datetime-local" 
 placeholder="Event End Date"
 required
+min={startdate}
 value={enddate} 
 className="form__field" 
 onChange={(e) => setEnddate(e.target.value)} />

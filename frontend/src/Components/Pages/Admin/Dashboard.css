@@ -69,10 +69,10 @@
     margin-bottom: 10px;
 } */
 .imageeee {
-    width: 20vmax;
+    width: 10vmax;
     border-radius: 0%;
     border: 1px solid var(--themeColor);
-    padding: 50px;
+    /* padding: 50px; */
 }
 
 /* .courseForm textarea{

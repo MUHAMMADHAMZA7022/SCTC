@@ -59,11 +59,11 @@ function EventDetails() {
                     </div>
                     <div className='evn_time'>
                         <h2>Start Time</h2>
-                        <span className='evnt_date'><CalendarMonthOutlinedIcon />{String(event.startdate).substr(0,9)}</span>
-                        <span className='evnt_time'><AccessTimeIcon />{String(event.startdate).substr(11,10)}</span>
+                        <span className='evnt_date'><CalendarMonthOutlinedIcon />{String(event.startdate).substr(0,8)}</span>
+                        <span className='evnt_time'><AccessTimeIcon />{String(event.startdate).substr(10,11)}</span>
                         <h2>Ending Time</h2>
-                        <span className='evnt_date'><CalendarMonthOutlinedIcon />{String(event.enddate).substr(0,9)}</span>
-                        <span className='evnt_time'><AccessTimeIcon />{String(event.enddate).substr(11,10)}</span>
+                        <span className='evnt_date'><CalendarMonthOutlinedIcon />{String(event.enddate).substr(0,8)}</span>
+                        <span className='evnt_time'><AccessTimeIcon />{String(event.enddate).substr(10,11)}</span>
                         <h2>Event Location</h2>
                         <span className='evnt_location'><LocationOnIcon />{event.location}</span>
                     </div>
