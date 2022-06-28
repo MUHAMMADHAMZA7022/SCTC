@@ -66,9 +66,18 @@ console.log(cateogery)
           {/* Search bar for search the entire courses */}
           <form className="crs_searchBar" onSubmit={searchSubmitHandler}>
             <ul className="unstyled filterCategories">
-              <li className="ct_btn" onMouseEnter={() => setcateogery("")} >
+              <li className="ct_btn"  >
                 Categories
                 <ul className="unstyled ct_list">
+                <li
+                      className="category-link"
+                     
+                
+                      onMouseEnter={() => dispatch(getProduct())}
+                 
+                    >
+                    ALL
+                    </li>
                   {
                   cateogories.map((cato) => (
                     <li
@@ -76,12 +85,13 @@ console.log(cateogery)
                       key={cato}
                      
                 
-                      onClick={() => setcateogery(cato)}
+                      onMouseEnter={() => setcateogery(cato)}
                  
                     >
                       {cato}
                     </li>
                   ))}
+                 
                 </ul>
               </li>
             </ul>

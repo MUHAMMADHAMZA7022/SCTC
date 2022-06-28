@@ -141,7 +141,13 @@ function Courses() {
               <label for="name" className="form__label">Course Price</label>
             </div>
             <div class="form__group field">
-              <img src={avatarPreview} alt="Course Preview" className="imageeee" />
+            {images ? (
+                <img
+                  src={avatarPreview}
+                  alt="Course Preview"
+                  className="imageeee"
+                />
+              ) : (null)}
               <input
                 className='form__field'
                 type="file"

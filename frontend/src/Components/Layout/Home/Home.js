@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment, useEffect,useState } from "react";
 // import slide1 from '../../../images/bimg1.jpg';
 import bg1 from '../../../images/sctc1.jpg';
 // import bg2 from '../../../images/slide-img-2.jpg';
@@ -6,7 +6,7 @@ import bg1 from '../../../images/sctc1.jpg';
 // import bg4 from '../../../images/slide-img-4.jpg';
 
 import "./Home.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import SearchIcon from '@mui/icons-material/Search';
 
@@ -18,10 +18,23 @@ import { useSelector, useDispatch } from "react-redux";
 import Loader1 from "../Loader/Courseloader";
 import { useAlert } from "react-alert";
 function Home() {
+  const history=useNavigate();
   const alert = useAlert();
   const dispatch = useDispatch();
+
   const { courses, error } = useSelector((state) => state.courses);
   const { latestevent, error: eventerror } = useSelector((state) => state.events);
+  const [cateogery, setcateogery] = useState("");
+  const [keyword, setKeyword] = useState("");
+const cateogories = ["Biology", "Statical", "Physics"];
+  const searchSubmitHandler = (e) => {
+    e.preventDefault();
+    if (keyword.trim()) {
+      history(`/${keyword}`);
+    } else {
+      history("/");
+    }
+  };
   useEffect(() => {
     if (error) {
       alert.error(error);
@@ -34,8 +47,8 @@ function Home() {
       dispatch(CLEAR_ERROR_EVENT);
     }
     dispatch(getEvent());
-    dispatch(getProduct());
-  }, [alert, dispatch, error, eventerror]);
+    dispatch(getProduct(keyword, cateogery));
+  }, [alert, dispatch, error, eventerror,keyword, cateogery]);
 
   return (
     <Fragment>
@@ -57,6 +70,50 @@ function Home() {
             </Link>
           </div>
         </div>
+        
+        {/* Find Courses Section */}
+        <section className='homeEvents grid'>
+          <div className='section_heading'>
+            <h1>Find Your Courses</h1>
+          </div>
+          <div className="find_course grid">
+            <h2>Find a Course</h2>
+            <div className="fCrs_cate">
+              <h3>Browse Courses</h3>
+              <ul className="unstyled">
+              <li
+                      className="category-link"
+                     
+                
+                      onClick={() => dispatch(getProduct())}
+                 
+                    ><span><ArrowRightAltIcon /></span><Link to={"#"}>
+                      ALL
+                      </Link> </li>
+              {
+                  cateogories.map((cato) => (
+                    <li
+                      className="category-link"
+                      key={cato}
+                     
+                
+                      onClick={() => setcateogery(cato)}
+                 
+                    ><span><ArrowRightAltIcon /></span><Link to={"#"}>
+                      {cato}
+                      </Link> </li>
+                  ))}
+                   
+              </ul>
+            </div>
+            <div className="find_coursesFormHolder">
+              <form className="find_coursesForm" onClick={searchSubmitHandler}>
+                <input type={"text"} placeholder={"I want to study"}   onChange={(e) => setKeyword(e.target.value)}/>
+                <button><SearchIcon />Search Courses</button>
+              </form>
+            </div>
+          </div>
+        </section>
         <section className="homeCourses grid">
           <div className="section_heading">
             <h1>Latest Courses to join</h1>
@@ -92,29 +149,6 @@ function Home() {
             <Link to="/courses" className="btn_primary">
               View All
             </Link>
-          </div>
-        </section>
-        {/* Find Courses Section */}
-        <section className='homeEvents grid'>
-          <div className='section_heading'>
-            <h1>Find Your Courses</h1>
-          </div>
-          <div className="find_course grid">
-            <h2>Find a Course</h2>
-            <div className="fCrs_cate">
-              <h3>Browse Courses</h3>
-              <ul className="unstyled">
-                <li><span><ArrowRightAltIcon /></span><Link to={"#"}>Bio Statistical</Link></li>
-                <li><span><ArrowRightAltIcon /></span><Link to={"#"}>Bio Chemistry</Link></li>
-                <li><span><ArrowRightAltIcon /></span><Link to={"#"}>Biology</Link></li>
-              </ul>
-            </div>
-            <div className="find_coursesFormHolder">
-              <form className="find_coursesForm">
-                <input type={"text"} placeholder={"I want to study"} />
-                <button><SearchIcon />Search Courses</button>
-              </form>
-            </div>
           </div>
         </section>
         {/* Home Events Section */}

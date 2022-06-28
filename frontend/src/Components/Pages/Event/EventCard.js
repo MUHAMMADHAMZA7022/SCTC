@@ -22,9 +22,10 @@ function Home({event}) {
                     </Link>
                   </div>
                   <div className='ev_time'>
-                    <span>{String(event.startdate).substr(10,11)}</span>
+                    <span>{String(event.startdate).substr(10,4)}{String(event.startdate).substr(17,11)}</span>
                     <span>-</span>
-                    <span>{String(event.enddate).substr(10,11)}</span>
+                    <span>{String(event.enddate).substr(10,4)}{String(event.enddate).substr(17,11)}</span>
+    
                   </div>
                 </div>
               </div>

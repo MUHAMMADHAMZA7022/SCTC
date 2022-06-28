@@ -29,9 +29,10 @@ export const getProduct =
   async (dispatch) => {
     try {
       dispatch({ type:   ALL_COURSE_REQUEST, });
+ let link = `/api/v1/course/allcourses?keyword=${keyword}`;
+      
 
-      let link = `/api/v1/course/allcourses?keyword=${keyword}`;
-      if (cateogery) {
+     if (cateogery) {
         link = `/api/v1/course/allcourses?keyword=${keyword}&cateogery=${cateogery}`;
       }
       const { data } = await axios.get(link);
