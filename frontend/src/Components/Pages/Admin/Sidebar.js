@@ -64,7 +64,7 @@ const Sidebar = () => {
         defaultExpandIcon={<DesignServicesIcon />}
       >
         <TreeItem nodeId="1" label="Services">
-          <Link to="/createservice">
+          <Link to="/create/service">
             <TreeItem nodeId="3" label="Create" icon={<AddIcon />} />
           </Link>
           <Link to="/all/services">
