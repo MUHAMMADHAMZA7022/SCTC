@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState, Fragment } from "react";
 
 const Clock = () => {
   const [timerDays, setTimerDays] = useState();
@@ -13,7 +13,7 @@ const Clock = () => {
  interval=setInterval(()=>{
     const now = new Date().getTime();
 
-    const distance =  now-countDownDate;
+    const distance =  countDownDate-now;
 
     const days = Math.floor(distance / (24 * 60 * 60 * 1000));
     const hours = Math.floor(
@@ -34,6 +34,7 @@ if (distance < 0) {
     setTimerSeconds( seconds);
   }
  },1000);
+ 
 
 
   return (

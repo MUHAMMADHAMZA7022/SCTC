@@ -17,6 +17,7 @@ import { CLEAR_ERROR_EVENT, getEvent } from "../../../redux/action/eventaction";
 import { useSelector, useDispatch } from "react-redux";
 import Loader1 from "../Loader/Courseloader";
 import { useAlert } from "react-alert";
+import BannerCard from "../../Pages/Event/baneercard";
 function Home() {
   const history = useNavigate();
   const alert = useAlert();
@@ -68,27 +69,16 @@ function Home() {
             <Link to="#" className="btn_primary">
               Check Events
             </Link> */}
-            <div className="countDown">
-              <h2>
-                16
-                <span>Days</span>
-              </h2>
-              <span className="dot">.</span>
-              <h2>
-                23
-                <span>Hrs</span>
-              </h2>
-              <span className="dot">.</span>
-              <h2>
-                49
-                <span>Mins</span>
-              </h2>
-              <span className="dot">.</span>
-              <h2>
-                58
-                <span>Secs</span>
-              </h2>
-            </div>
+                {latestevent &&
+            latestevent
+              .slice(0, 1)
+              .map((event) => (
+                <BannerCard key={event._id} event={event} />
+
+              ))
+         }
+            
+
           </div>
         </div>
 
@@ -181,6 +171,7 @@ function Home() {
               .slice(0, 3)
               .map((event) => (
                 <EventCard key={event._id} event={event} />
+                
               ))
           ) : (
             <Loader1 />
