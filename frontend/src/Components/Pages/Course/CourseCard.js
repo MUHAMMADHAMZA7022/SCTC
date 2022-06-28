@@ -1,10 +1,20 @@
-import React, { Fragment } from 'react'
+import React, { Fragment ,useState} from 'react'
 import { Link } from 'react-router-dom';
+import Loader1 from "../../Layout/Loader/Courseloader"
 
 function Home({course}) {
+const [loaded, setLoaded] = useState(false);
+
+  setTimeout(() => {
+    setLoaded(true);
+  }, 1000);
   return (
     <Fragment>
-     
+           {loaded ? (
+    <>
+
+
+   
           <div className='hc_holder'>
             <div className='hc_card'>
               <Link to={`/course/details/${course._id}`} className='hc_img'>
@@ -20,6 +30,15 @@ function Home({course}) {
               </div>
             </div>
           </div>
+
+    </>
+
+    ) : (
+        <>
+          {/* <Imageload /> */}
+          <Loader1 />
+        </>
+      )}
     </Fragment>
   )
 }
