@@ -55,6 +55,8 @@ import Loader1 from "./Components/Layout/Loader/Courseloader";
 import Cart from "./Components/Pages/Cart/Cart";
 import Checkout from "./Components/Pages/Cart/Checkout";
 
+import Countdown from "./Components/Pages/Event/Countdown";
+
 
 function App() {
   const dispatch = useDispatch();
@@ -95,6 +97,7 @@ function App() {
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/events" element={<Events />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/count" element={<Countdown />} />
           {/* ADMIN ROUTES */}
 
           {/* dashboard */}

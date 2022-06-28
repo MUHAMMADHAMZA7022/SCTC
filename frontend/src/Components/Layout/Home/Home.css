@@ -26,28 +26,31 @@
     display: block;
 }
 .banner_content{
-    width: 40%;
     position: absolute;
-    top: 50%;
-    left: calc(50% - 100px);
-    right: auto;
+    top: 40%;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
     color: #fff;
     z-index: 1;
+    text-align: center;
 }
 .banner_content h2{
-    margin-bottom: 20px;
-    font-size: 20px;
-    line-height: 24px;
-    position: relative;
+    font-size: 5rem;
+    line-height: normal;
+    display: inline-block;
+    margin-right: 3px;
 }
-.banner_content h2::before{
-    position: absolute;
-    content: ' ';
-    bottom: -10px;
-    left: 0;
-    width: 10%;
-    background: #fff;
-    height: 5px;
+.banner_content h2 span{
+    font-size: 1rem;
+    color: var(--greenColor);
+}
+.banner_content span.dot{
+    font-size: 3rem;
+    margin: 0 10px;
+    display: inline-block;
+    color: var(--redColor);
 }
 .banner_content p{
     margin-bottom: 20px;

@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect,useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 // import slide1 from '../../../images/bimg1.jpg';
 import bg1 from '../../../images/sctc1.jpg';
 // import bg2 from '../../../images/slide-img-2.jpg';
@@ -18,7 +18,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Loader1 from "../Loader/Courseloader";
 import { useAlert } from "react-alert";
 function Home() {
-  const history=useNavigate();
+  const history = useNavigate();
   const alert = useAlert();
   const dispatch = useDispatch();
 
@@ -26,7 +26,7 @@ function Home() {
   const { latestevent, error: eventerror } = useSelector((state) => state.events);
   const [cateogery, setcateogery] = useState("");
   const [keyword, setKeyword] = useState("");
-const cateogories = ["Biology", "Statical", "Physics",];
+  const cateogories = ["Biology", "Statical", "Physics",];
   const searchSubmitHandler = (e) => {
     e.preventDefault();
     if (keyword.trim()) {
@@ -48,7 +48,7 @@ const cateogories = ["Biology", "Statical", "Physics",];
     }
     dispatch(getEvent());
     dispatch(getProduct(keyword, cateogery));
-  }, [alert, dispatch, error, eventerror,keyword, cateogery]);
+  }, [alert, dispatch, error, eventerror, keyword, cateogery]);
 
   return (
     <Fragment>
@@ -59,7 +59,7 @@ const cateogories = ["Biology", "Statical", "Physics",];
             <img src={bg1} alt="slide1" />
           </div>
           <div className="banner_content">
-            <h2>Starting in september 2016?</h2>
+            {/* <h2>Starting in september 2016?</h2>
             <p>
               Read our guide to new find out everything you need to know about
               registering as a student, getting to us, welcome events and
@@ -67,10 +67,31 @@ const cateogories = ["Biology", "Statical", "Physics",];
             </p>
             <Link to="#" className="btn_primary">
               Check Events
-            </Link>
+            </Link> */}
+            <div className="countDown">
+              <h2>
+                16
+                <span>Days</span>
+              </h2>
+              <span className="dot">.</span>
+              <h2>
+                23
+                <span>Hrs</span>
+              </h2>
+              <span className="dot">.</span>
+              <h2>
+                49
+                <span>Mins</span>
+              </h2>
+              <span className="dot">.</span>
+              <h2>
+                58
+                <span>Secs</span>
+              </h2>
+            </div>
           </div>
         </div>
-        
+
         {/* Find Courses Section */}
         <section className='homeEvents grid'>
           <div className='section_heading'>
@@ -81,33 +102,33 @@ const cateogories = ["Biology", "Statical", "Physics",];
             <div className="fCrs_cate">
               <h3>Browse Courses</h3>
               <ul className="unstyled">
-              {
+                {
                   cateogories.map((cato) => (
                     <li
                       className="category-link"
                       key={cato}
-                     
-                
+
+
                       onClick={() => setcateogery(cato)}
-                 
+
                     ><span><ArrowRightAltIcon /></span><Link to={"#"}>
-                      {cato}
+                        {cato}
                       </Link> </li>
                   ))}
-                   <li
-                      className="category-link"
-                     
-                
-                      onClick={() => dispatch(getProduct())}
-                 
-                    ><span><ArrowRightAltIcon /></span><Link to={"#"}>
-                      ALL
-                      </Link> </li>
+                <li
+                  className="category-link"
+
+
+                  onClick={() => dispatch(getProduct())}
+
+                ><span><ArrowRightAltIcon /></span><Link to={"#"}>
+                    ALL
+                  </Link> </li>
               </ul>
             </div>
             <div className="find_coursesFormHolder">
               <form className="find_coursesForm" onClick={searchSubmitHandler}>
-                <input type={"text"} placeholder={"I want to study"}   onChange={(e) => setKeyword(e.target.value)}/>
+                <input type={"text"} placeholder={"I want to study"} onChange={(e) => setKeyword(e.target.value)} />
                 <button><SearchIcon />Search Courses</button>
               </form>
             </div>
