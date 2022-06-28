@@ -74,7 +74,7 @@ try {
   const { data } = await axios.get(`/api/v1/service/singleservice/${id}`);
   dispatch({
     type: SERVICE_DETAILS_SUCCESS,
-    payload: data.sservice,
+    payload: data.service,
   });
 } catch (error) {
   dispatch({

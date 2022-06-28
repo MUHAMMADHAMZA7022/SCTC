@@ -44,6 +44,7 @@ import Events from "./Components/Pages/Event/Events";
 
 
 import UpdateCourse from "./Components/Pages/Admin/UpdateCourse";
+import UpdateService from "./Components/Pages/Admin/UpdateService";
 import Updatepasword from "./Components/Pages/Users/updatepassword";
 import ProtectedRoute from "./Components/Route/ProtectedRoute";
 import { loadUser } from "./redux/action/useraction";
@@ -94,8 +95,6 @@ function App() {
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/events" element={<Events />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/createservice" element={<CreateService />} />
-          <Route path="/all/services" element={<AdminServices />} />
           {/* ADMIN ROUTES */}
 
           {/* dashboard */}
@@ -199,6 +198,48 @@ function App() {
                 isAdmin={user && user.role === "admin" ? true : false}
               >
                 {isAuthenticated ? <UpdateEvent /> : <Login />}
+              </ProtectedRoute>
+            }
+          />
+
+
+          {/* ALL SERVICE ROUTES */}
+          
+          <Route
+            path="/all/services"
+            element={
+              <ProtectedRoute
+                isAuthenticated={isAuthenticated}
+                adminRoute={true}
+                isAdmin={user && user.role === "admin" ? true : false}
+              >
+                <AdminServices/>
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/create/service"
+            element={
+              <ProtectedRoute
+                isAuthenticated={isAuthenticated}
+                adminRoute={true}
+                isAdmin={user && user.role === "admin" ? true : false}
+              >
+                <CreateService />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/updateservice/:id"
+            element={
+              <ProtectedRoute
+                isAuthenticated={isAuthenticated}
+                adminRoute={true}
+                isAdmin={user && user.role === "admin" ? true : false}
+              >
+                {isAuthenticated ? <UpdateService /> : <Login />}
               </ProtectedRoute>
             }
           />
