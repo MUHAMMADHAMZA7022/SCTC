@@ -126,7 +126,8 @@ const cateogories = ["Biology", "Statical", "Physics"];
                 <CourseCard key={course._id} course={course} />
               ))
           ) : (
-            <Loader1 />
+           <Loader1/>
+           
           )}
 
           {/* <div className='hc_holder'>
