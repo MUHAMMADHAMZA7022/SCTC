@@ -30,6 +30,7 @@ import CourseDetails from "./Components/Pages/Course/CourseDetails";
 import HomeCourses from "./Components/Pages/Course/HomeCourses";
 
 import CreateService from "./Components/Pages/Admin/CreateService";
+import AdminServices from "./Components/Pages/Admin/AdminServices";
 
 import Sidebar from "./Components/Pages/Admin/Sidebar";
 import Students from "./Components/Pages/Admin/Students";
@@ -94,6 +95,7 @@ function App() {
           <Route path="/events" element={<Events />} />
           <Route path="/services" element={<Services />} />
           <Route path="/createservice" element={<CreateService />} />
+          <Route path="/all/services" element={<AdminServices />} />
           {/* ADMIN ROUTES */}
 
           {/* dashboard */}
