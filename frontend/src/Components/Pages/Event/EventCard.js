@@ -10,6 +10,7 @@ function Home({event}) {
             <div className='ev_card'>
               <Link to={`/event/details/${event._id}`} className='ev_img'>
                 <img src={event.images.url} alt='#' />
+                
               </Link>
               <div className='ev_content'>
                 <div className='ev_date'>
@@ -25,6 +26,7 @@ function Home({event}) {
                     <span>{String(event.startdate).substr(10,4)}{String(event.startdate).substr(17,11)}</span>
                     <span>-</span>
                     <span>{String(event.enddate).substr(10,4)}{String(event.enddate).substr(17,11)}</span>
+                   
     
                   </div>
                 </div>
