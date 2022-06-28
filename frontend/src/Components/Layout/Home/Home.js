@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect } from "react";
 // import slide1 from '../../../images/bimg1.jpg';
-import bg1 from '../../../images/slide-img-1.jpg';
+import bg1 from '../../../images/sctc1.jpg';
 // import bg2 from '../../../images/slide-img-2.jpg';
 // import bg3 from '../../../images/slide-img-3.jpg';
 // import bg4 from '../../../images/slide-img-4.jpg';
