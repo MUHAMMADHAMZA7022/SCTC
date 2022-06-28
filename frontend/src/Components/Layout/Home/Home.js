@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect,useState } from "react";
 // import slide1 from '../../../images/bimg1.jpg';
-import bg1 from '../../../images/sctc1.jpg';
+import bg1 from '../../../images/slide-img-1.jpg';
 // import bg2 from '../../../images/slide-img-2.jpg';
 // import bg3 from '../../../images/slide-img-3.jpg';
 // import bg4 from '../../../images/slide-img-4.jpg';
@@ -26,7 +26,7 @@ function Home() {
   const { latestevent, error: eventerror } = useSelector((state) => state.events);
   const [cateogery, setcateogery] = useState("");
   const [keyword, setKeyword] = useState("");
-const cateogories = ["Biology", "Statical", "Physics"];
+const cateogories = ["Biology", "Statical", "Physics",];
   const searchSubmitHandler = (e) => {
     e.preventDefault();
     if (keyword.trim()) {
@@ -81,15 +81,6 @@ const cateogories = ["Biology", "Statical", "Physics"];
             <div className="fCrs_cate">
               <h3>Browse Courses</h3>
               <ul className="unstyled">
-              <li
-                      className="category-link"
-                     
-                
-                      onClick={() => dispatch(getProduct())}
-                 
-                    ><span><ArrowRightAltIcon /></span><Link to={"#"}>
-                      ALL
-                      </Link> </li>
               {
                   cateogories.map((cato) => (
                     <li
@@ -103,7 +94,15 @@ const cateogories = ["Biology", "Statical", "Physics"];
                       {cato}
                       </Link> </li>
                   ))}
-                   
+                   <li
+                      className="category-link"
+                     
+                
+                      onClick={() => dispatch(getProduct())}
+                 
+                    ><span><ArrowRightAltIcon /></span><Link to={"#"}>
+                      ALL
+                      </Link> </li>
               </ul>
             </div>
             <div className="find_coursesFormHolder">
@@ -126,8 +125,7 @@ const cateogories = ["Biology", "Statical", "Physics"];
                 <CourseCard key={course._id} course={course} />
               ))
           ) : (
-           <Loader1/>
-           
+            <Loader1 />
           )}
 
           {/* <div className='hc_holder'>
