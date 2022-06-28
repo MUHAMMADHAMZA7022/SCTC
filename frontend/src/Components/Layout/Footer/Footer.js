@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import './Footer.css';
 import logo from '../../../images/sctc_logo.png'
+import {Link} from 'react-router-dom';
 
 function Footer() {
   return (
@@ -13,7 +14,18 @@ function Footer() {
             </div>
             <p>Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet,</p>
           </div>
-          <div className='ft_block bg2'>block2</div>
+          <div className='ft_block bg2'>
+            <div className='ft_title'>
+              <h2>Contact Details</h2>
+            </div>
+            <div className='ft_list'>
+              <ul className='unstyled'>
+                <li>
+                  <address>4048 Mutton Town Road</address>
+                </li>
+              </ul>
+            </div>
+          </div>
           <div className='ft_block bg3'>block3</div>
           <div className='ft_block bg4'>block4</div>
         </div>

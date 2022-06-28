@@ -35,6 +35,7 @@ import ImportExportIcon from "@mui/icons-material/ImportExport";
 import ListAltIcon from "@mui/icons-material/ListAlt";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import AccessibilityIcon from '@mui/icons-material/Accessibility';
+import DesignServicesIcon from '@mui/icons-material/DesignServices';
 // import VideoLabelIcon from '@mui/icons-material/VideoLabel';
 import EventIcon from '@mui/icons-material/Event';
 const Sidebar = () => {
@@ -60,7 +61,7 @@ const Sidebar = () => {
       </TreeView>
       <TreeView
         defaultCollapseIcon={<ExpandMoreIcon />}
-        defaultExpandIcon={<ImportExportIcon />}
+        defaultExpandIcon={<DesignServicesIcon />}
       >
         <TreeItem nodeId="1" label="Services">
           <Link to="/createservice">
