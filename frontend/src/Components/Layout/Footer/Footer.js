@@ -23,6 +23,9 @@ function Footer() {
                 <li>
                   <address>4048 Mutton Town Road</address>
                 </li>
+                <li>
+                  <Link to="tel:+923209455811">+92 320 9455811</Link>
+                </li> 
               </ul>
             </div>
           </div>
