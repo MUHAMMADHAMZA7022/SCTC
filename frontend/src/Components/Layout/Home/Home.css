@@ -8,6 +8,7 @@
 .banner{
     overflow: hidden;
     position: relative;
+    height: 40rem;
 }
 .banner::after{
     position: absolute;
