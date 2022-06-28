@@ -40,10 +40,10 @@ function Services() {
           </div>
         </div>
         {/* Main Content */}
+        <div className="service_cards">
 
         {loading === false && latestservice ? (
           latestservice.map((service, key) => (
-            <div className="service_cards">
               <div className="srvc_card" key={key} service={service}>
                 <Link to={"#"}>
                   <img
@@ -61,12 +61,13 @@ function Services() {
                   </div>
                 </Link>
               </div>
-            </div>
           ))
         ) : (
           <Loader1 />
         )}
       </div>
+      </div>
+
     </Fragment>
   );
 }
