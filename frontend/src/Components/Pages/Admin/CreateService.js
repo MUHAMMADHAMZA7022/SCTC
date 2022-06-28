@@ -2,8 +2,8 @@ import "./Dashboard.css";
 import Sidebar from "./Sidebar";
 import React, { Fragment, useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { createEvents, CLEAR_ERROR_EVENT } from "../../../redux/action/eventaction";
-import { NEW_EVENT_RESET } from "../../../redux/Constant/eventconstant";
+import { createService, CLEAR_ERROR_SERVICE } from "../../../redux/action/serviceaction";
+import { NEW_SERVICE_RESET } from "../../../redux/Constant/serviceconstant";
 import { useNavigate } from "react-router-dom";
 import { useAlert } from "react-alert";
 import { LoadingButton } from "@mui/lab";
@@ -14,7 +14,7 @@ function CreateService() {
   const dispatch = useDispatch();
   const alert = useAlert();
 
-  const { error, success, loading } = useSelector((state) => state.newEvent);
+  const { error, success, loading } = useSelector((state) => state.newService);
 
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
@@ -24,13 +24,13 @@ function CreateService() {
   useEffect(() => {
     if (error) {
       alert.error(error);
-      dispatch(CLEAR_ERROR_EVENT());
+      dispatch(CLEAR_ERROR_SERVICE());
     }
 
     if (success) {
-      alert.success("Event Created Successfully");
+      alert.success("SERVICE Created Successfully");
       history("/all/services");
-      dispatch({ type: NEW_EVENT_RESET });
+      dispatch({ type: NEW_SERVICE_RESET });
     }
   }, [dispatch, success, error, alert, history]);
 
@@ -46,7 +46,7 @@ function CreateService() {
     // const value = Object.fromEntries(myForm.entries());
     // value.topics = myForm.getAll("topics");
     const value = Object.fromEntries(myForm.entries());
-    dispatch(createEvents(value));
+    dispatch(createService(value));
   };
 
   const updateProfileDataChange = (e) => {
@@ -61,8 +61,7 @@ function CreateService() {
 
     reader.readAsDataURL(e.target.files[0]);
     setImages(reader.result);
-    console.log(images);
-    console.log(avatarPreview);
+
   };
 
 
@@ -108,7 +107,7 @@ function CreateService() {
               {images ? (
                 <img
                   src={avatarPreview}
-                  alt="Event Preview"
+                  alt="Service Preview"
                   className="imageeee"
                 />
               ) : (null)}

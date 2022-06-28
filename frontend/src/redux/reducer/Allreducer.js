@@ -12,6 +12,12 @@ import {
   updatedeleteeventReducer ,
 } from "./eventreducer";
 import {
+  ALLservicesReducer,
+  serviceDetailsReducer,
+  newServiceReducer,
+  updatedeleteserviceReducer ,
+} from "./servicereducer";
+import {
     allUsersReducer,
     userReducer,
     profileReducer,
@@ -35,7 +41,11 @@ const AllReducer = combineReducers({
     events: ALLeventsReducer,
     event:updatedeleteeventReducer ,
     eventDetails: eventDetailsReducer,
-   
+   //service
+   newService: newServiceReducer,
+   services: ALLservicesReducer,
+   service:updatedeleteserviceReducer ,
+   serviceDetails: serviceDetailsReducer,
   });
   
   export default AllReducer;
