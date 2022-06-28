@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import './Footer.css';
 import logo from '../../../images/sctc_logo.png'
-import {Link} from 'react-router-dom';
 
 function Footer() {
   return (
@@ -24,7 +23,11 @@ function Footer() {
                   <address>4048 Mutton Town Road</address>
                 </li>
                 <li>
-                  <Link to="tel:+923209455811">+92 320 9455811</Link>
+                  <a href="tel:+923209455811">+92 320 9455811</a>
+                  <span>+92 320 9455811</span>
+                </li> 
+                <li>
+                  <span>info@sctc.com.pk</span>
                 </li> 
               </ul>
             </div>
