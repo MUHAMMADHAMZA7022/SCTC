@@ -18,6 +18,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Loader1 from "../Loader/Courseloader";
 import { useAlert } from "react-alert";
 import BannerCard from "../../Pages/Event/baneercard";
+
 function Home() {
   const history = useNavigate();
   const alert = useAlert();
