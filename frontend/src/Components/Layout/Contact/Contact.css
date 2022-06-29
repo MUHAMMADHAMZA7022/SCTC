@@ -55,24 +55,31 @@
     overflow: hidden;
 }
 .ct_icon{
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
     border-radius: 100%;
     background: var(--greenColor);
     text-align: center;
-    float: left;
     margin-right: 10px;
+    float: left;
 }
 .ct_icon svg{
     display: inline-block;
     text-align: center;
     height: 100%;
-    color: var(--whiteColor);
-    font-size: 3rem;
+    fill: var(--whiteColor);
+    font-size: 2rem;
+}
+.ct_box:hover .ct_icon{
+    background: var(--redColor);
+}
+.ct_icon:hover svg{
+    fill: var(--whiteColor);
 }
 .ct_text{
     padding: 10px 0 0 0;
     float: left;
+    width: 70%;
 }
 .ct_text h3{
     font-size: 20px;

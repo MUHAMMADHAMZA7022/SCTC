@@ -5,6 +5,9 @@ import bg1 from '../../../images/sctc1.jpg';
 // import bg3 from '../../../images/slide-img-3.jpg';
 // import bg4 from '../../../images/slide-img-4.jpg';
 
+import MapsHomeWorkIcon from '@mui/icons-material/MapsHomeWork';
+import FaxIcon from '@mui/icons-material/Fax';
+import MarkEmailUnreadIcon from '@mui/icons-material/MarkEmailUnread';
 import "./Home.css";
 import { Link, useNavigate } from "react-router-dom";
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
@@ -18,6 +21,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Loader1 from "../Loader/Courseloader";
 import { useAlert } from "react-alert";
 import BannerCard from "../../Pages/Event/baneercard";
+
 function Home() {
   const history = useNavigate();
   const alert = useAlert();
@@ -69,19 +73,50 @@ function Home() {
             <Link to="#" className="btn_primary">
               Check Events
             </Link> */}
-                {latestevent &&
-            latestevent
-              .slice(0, 1)
-              .map((event) => (
-                <BannerCard key={event._id} event={event} />
+            {latestevent &&
+              latestevent
+                .slice(0, 1)
+                .map((event) => (
+                  <BannerCard key={event._id} event={event} />
 
-              ))
-         }
-            
+                ))
+            }
+
 
           </div>
         </div>
-
+        {/* Discover Section */}
+        <section className="discover">
+          <div className='contact_boxes grid'>
+            <div className='ct_box'>
+              <div className='ct_icon'>
+                <MapsHomeWorkIcon />
+              </div>
+              <div className='ct_text'>
+                <Link className="ct_title" to={"/contact"}>Maps & Location</Link>
+                <p>Come and garb your knowledge whenever you want.</p>
+              </div>
+            </div>
+            <div className='ct_box'>
+              <div className='ct_icon'>
+                <FaxIcon />
+              </div>
+              <div className='ct_text'>
+              <Link className="ct_title" to={"/events"}>Our Events</Link>
+              <p>See what's on at our great Knowledge Hub.</p>
+              </div>
+            </div>
+            <div className='ct_box'>
+              <div className='ct_icon'>
+                <MarkEmailUnreadIcon />
+              </div>
+              <div className='ct_text'>
+              <Link className="ct_title" to={"/about"}>Heritage</Link>
+              <p>Learn more about SCTC and history.</p>
+              </div>
+            </div>
+          </div>
+        </section>
         {/* Find Courses Section */}
         <section className='homeEvents grid'>
           <div className='section_heading'>
@@ -171,7 +206,7 @@ function Home() {
               .slice(0, 3)
               .map((event) => (
                 <EventCard key={event._id} event={event} />
-                
+
               ))
           ) : (
             <Loader1 />
