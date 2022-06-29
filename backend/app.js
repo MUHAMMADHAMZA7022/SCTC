@@ -37,7 +37,9 @@ app.use("/api/v1/event", event);
 //service routes
 const service = require("./routers/serviceroute");
 app.use("/api/v1/service", service); 
-
+//order routes
+const order = require("./routers/orderroute");
+app.use("/api/v1/order", order); 
 app.use(errormiddleware);
 module.exports = app;
 

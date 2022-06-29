@@ -2,27 +2,24 @@ import {
   ADD_TO_CART,
   REMOVE_CART_ITEM,
   CART_RESET,
-  FAVOURITE_TO_CART,
-  FAVOURITE_REMOVE_CART_ITEM,
-  FAVOURITE_RESET,
-  SAVE_SHIPPING_INFO,
-} from "../constant/cartConstants";
+  CHECK_OUT ,
+} from "../Constant/cartconstants";
 
 export const cartReducer = (
-  state = { cartItems: [], shippingInfo: {}, favouriteItems: [] },
+  state = { cartItems: [], checkout: {} },
   action
 ) => {
   switch (action.type) {
     case ADD_TO_CART:
       const item = action.payload;
       const isItemExist = state.cartItems.find(
-        (i) => i.product === item.product
+        (i) => i.course === item.course
       );
       if (isItemExist) {
         return {
           ...state,
           cartItems: state.cartItems.map((i) =>
-            i.product === isItemExist.product ? item : i
+            i.course === isItemExist.course ? item : i
           ),
         };
       } else {
@@ -35,7 +32,7 @@ export const cartReducer = (
     case REMOVE_CART_ITEM:
       return {
         ...state,
-        cartItems: state.cartItems.filter((i) => i.product !== action.payload),
+        cartItems: state.cartItems.filter((i) => i.course !== action.payload),
       };
     case CART_RESET:
       return {
@@ -43,45 +40,11 @@ export const cartReducer = (
         success: false,
       };
 
-    case SAVE_SHIPPING_INFO:
+    case CHECK_OUT :
       return {
         ...state,
-        shippingInfo: action.payload,
+        checkout: action.payload,
       };
-
-    case FAVOURITE_TO_CART:
-      const ite = action.payload;
-      const isIteExist = state.favouriteItems.find(
-        (i) => i.product === ite.product
-      );
-      if (isIteExist) {
-        return {
-          ...state,
-          favouriteItems: state.favouriteItems.map((i) =>
-            i.product === isIteExist.product ? ite : i
-          ),
-        };
-      } else {
-        return {
-          ...state,
-          favouriteItems: [...state.favouriteItems, ite],
-        };
-      }
-
-    case FAVOURITE_REMOVE_CART_ITEM:
-      return {
-        ...state,
-        favouriteItems: state.favouriteItems.filter(
-          (i) => i.product !== action.payload
-        ),
-      };
-    case FAVOURITE_RESET:
-      return {
-        ...state,
-        success: false,
-      };
-
-    default:
-      return state;
-  }
-};
+      default:
+        return state;
+  }}

@@ -26,7 +26,7 @@ import {
   CHECK_EMAIL_DETAILS_SUCCESS,
   CHECK_EMAIL_DETAILS_FAIL,
   CLEAR_ERRORS,
-} from "../constant/orderconstant";
+} from "../Constant/orderconstant";
 
 export const newOrderReducer = (state = {}, action) => {
   switch (action.type) {

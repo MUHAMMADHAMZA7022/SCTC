@@ -24,7 +24,7 @@ import {
   CHECK_EMAIL_DETAILS_SUCCESS,
   CHECK_EMAIL_DETAILS_FAIL,
   CLEAR_ERRORS,
-} from "../constant/orderconstant";
+} from "../Constant/orderconstant";
 
 import axios from "axios";
 
@@ -38,7 +38,7 @@ export const createOrder = (order) => async (dispatch) => {
         "Content-Type": "application/json",
       },
     };
-    const { data } = await axios.post("/api/vasal/order/new", order, config);
+    const { data } = await axios.post("/api/v1/order/order/new", order, config);
 
     dispatch({ type: CREATE_ORDER_SUCCESS, payload: data });
   } catch (error) {
@@ -54,7 +54,7 @@ export const myOrders = () => async (dispatch) => {
   try {
     dispatch({ type: MY_ORDERS_REQUEST });
 
-    const { data } = await axios.get("/api/vasal/orders/me");
+    const { data } = await axios.get("/api/v1/order/orders/me");
 
     dispatch({ type: MY_ORDERS_SUCCESS, payload: data.orders });
   } catch (error) {
@@ -70,7 +70,7 @@ export const getAllOrders = () => async (dispatch) => {
   try {
     dispatch({ type: ALL_ORDERS_REQUEST });
 
-    const { data } = await axios.get("/api/vasal/admin/orders");
+    const { data } = await axios.get("/api/v1/order/admin/orders");
 
     dispatch({ type: ALL_ORDERS_SUCCESS, payload: data.orders });
   } catch (error) {
@@ -92,7 +92,7 @@ export const updateOrder = (id, order) => async (dispatch) => {
       },
     };
     const { data } = await axios.put(
-      `/api/vasal/admin/order/${id}`,
+      `/api/v1/order/admin/order/${id}`,
       order,
       config
     );
@@ -111,7 +111,7 @@ export const deleteOrder = (id) => async (dispatch) => {
   try {
     dispatch({ type: DELETE_ORDER_REQUEST });
 
-    const { data } = await axios.delete(`/api/vasal/admin/order/${id}`);
+    const { data } = await axios.delete(`/api/v1/order/admin/order/${id}`);
 
     dispatch({ type: DELETE_ORDER_SUCCESS, payload: data.success });
   } catch (error) {
@@ -127,7 +127,7 @@ export const getOrderDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: ORDER_DETAILS_REQUEST });
 
-    const { data } = await axios.get(`/api/vasal/order/${id}`);
+    const { data } = await axios.get(`/api/v1/order/order/${id}`);
 
     dispatch({ type: ORDER_DETAILS_SUCCESS, payload: data.order });
   } catch (error) {
@@ -142,7 +142,7 @@ export const getrandomDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: CHECK_ORDER_DETAILS_REQUEST });
 
-    const { data } = await axios.get(`/api/vasal/check/order/${id}`);
+    const { data } = await axios.get(`/api/v1/order/check/order/${id}`);
 
     dispatch({ type: CHECK_ORDER_DETAILS_SUCCESS, payload: data.order });
   } catch (error) {
@@ -157,7 +157,7 @@ export const getrandomemail = (user) => async (dispatch) => {
   try {
     dispatch({ type: CHECK_EMAIL_DETAILS_REQUEST });
 
-    const { data } = await axios.get(`/api/vasal/check/order/email/${user}`);
+    const { data } = await axios.get(`/api/v1/order/check/order/email/${user}`);
 
     dispatch({ type: CHECK_EMAIL_DETAILS_SUCCESS, payload: data.order });
   } catch (error) {

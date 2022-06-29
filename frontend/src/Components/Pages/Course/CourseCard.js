@@ -1,7 +1,24 @@
-import React, { Fragment } from 'react'
+import React, { Fragment ,useEffect,} from 'react'
 import { Link } from 'react-router-dom';
-
+import { useAlert } from "react-alert";
+import { CLEAR_ERROR } from "../../../redux/action/courseaction";
+import { addItemsToCart } from "../../../redux/action/cartaction";
+import { useDispatch,useSelector } from 'react-redux';
 function Home({course}) {
+  const { error } = useSelector((state) => state.courseDetails);
+  const alert = useAlert();
+  const dispatch = useDispatch();
+  const addToCartHandler = () => {
+ 
+    dispatch(addItemsToCart(course._id));
+    alert.success("Item Added To Cart");
+  };
+  useEffect(() => {
+    if (error) {
+      alert.error(error);
+      dispatch(CLEAR_ERROR);
+    }
+  }, [dispatch, alert, error]);
   return (
     <Fragment>
      
@@ -14,7 +31,7 @@ function Home({course}) {
                 <h2>{course.name}</h2>
                 <p>{course.description}</p>
                 <div className='hc_action'>
-                  <Link to={"#"} className='red_link'>Buy now</Link>
+                  <Link to={"#"} className='red_link' onClick={() => addToCartHandler()}>Buy now</Link>
                   <Link to={`/course/details/${course._id}`}>View Details</Link>
                 </div>
               </div>

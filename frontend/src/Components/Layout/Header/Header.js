@@ -12,6 +12,7 @@ import logo from '../../../images/sctc_logo.png';
 
 function Header() {
   const dispatch = useDispatch();
+  const { cartItems } = useSelector((state) => state.cart);
   const alert = useAlert();
 let history=useNavigate();
   const { user, isAuthenticated } = useSelector((state) => state.user);
@@ -55,7 +56,20 @@ let history=useNavigate();
             <li><Link to='/services'>Services</Link></li>
             <li><Link to='/about'>About</Link></li>
             <li><Link to='/contact'>Contact</Link></li>
-            <li className='cart_icon'><Link to='/cart'><ShoppingCartOutlinedIcon /></Link></li>
+            <li>
+            <Link
+              to="/cart"
+              style={{ color: cartItems.length > 0 ? "red" : "unset" }}
+            >
+              <ShoppingCartOutlinedIcon
+                style={{ color: cartItems.length > 0 ? "red" : "unset" }}
+              />{" "}
+              <sup style={{ color: cartItems.length > 0 ? "red" : "unset" }}>
+                {" "}
+                {cartItems.length > 0 ? cartItems.length : null}
+              </sup>
+            </Link>
+          </li>
             {
               !isAuthenticated ? (
                 <li><Link to='/login' className='nav_btn'>Sign In</Link></li>

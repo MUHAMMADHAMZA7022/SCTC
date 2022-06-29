@@ -57,6 +57,9 @@ import Cart from "./Components/Pages/Cart/Cart";
 import Checkout from "./Components/Pages/Cart/Checkout";
 
 import Countdown from "./Components/Pages/Event/Countdown";
+import ConfirmOrder from "./Components/Pages/Cart/confirmorder";
+import Payment from "./Components/Pages/Cart/payment";
+import Ordersuccess from "./Components/Pages/Cart/ordersuccess";
 
 
 function App() {
@@ -96,6 +99,10 @@ function App() {
           <Route path="/event/details/:id" element={<EventDetails />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/order/confirm" element={<ConfirmOrder />} />
+          <Route path="/process/payment" element={<Payment />} />
+          <Route path="/success" element={<Ordersuccess />} />
+
           <Route path="/events" element={<Events />} />
           <Route path="/services" element={<Services />} />
           <Route path="/count" element={<Countdown />} />

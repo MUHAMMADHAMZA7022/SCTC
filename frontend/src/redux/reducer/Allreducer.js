@@ -24,8 +24,18 @@ import {
     forgotPasswordReducer,
     userDetailsReducer,
   } from "./userreducer";
-  
+  import {
+    newOrderReducer,
+    myOrdersReducer,
+    orderReducer,
+    orderDetailsReducer,
+    allOrdersReducer,
+    // randomDetailsReducer,
+    randomemailReducer,
+  } from "./orderreducer";
+  import { cartReducer } from "./cartreducer";
 const AllReducer = combineReducers({
+  //users
     userDetails: userDetailsReducer,
     user: userReducer,
     profile: profileReducer,
@@ -46,6 +56,16 @@ const AllReducer = combineReducers({
    services: ALLservicesReducer,
    service:updatedeleteserviceReducer ,
    serviceDetails: serviceDetailsReducer,
+   //orders
+   newOrder: newOrderReducer,
+   myOrders: myOrdersReducer,
+   orderDetails: orderDetailsReducer,
+   // unknownorder: randomDetailsReducer,
+   randomemail: randomemailReducer,
+   allOrders: allOrdersReducer,
+   order: orderReducer,
+   //cart
+   cart: cartReducer,
   });
   
   export default AllReducer;
