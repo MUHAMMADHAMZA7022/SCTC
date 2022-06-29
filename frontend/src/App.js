@@ -14,6 +14,7 @@ import Home from "./Components/Layout/Home/Home";
 // import Course from "./Components/Layout/Course/CourseCard"
 import Course from "./Components/Pages/Course/CourseCard";
 import About from "./Components/Layout/About/About";
+import Contact from "./Components/Layout/Contact/Contact";
 import Services from "./Components/Pages/Services/Services";
 import SignUp from "./Components/Pages/Users/SignUp";
 import Profile from "./Components/Pages/Users/Profile";
@@ -98,6 +99,7 @@ function App() {
           <Route path="/events" element={<Events />} />
           <Route path="/services" element={<Services />} />
           <Route path="/count" element={<Countdown />} />
+          <Route path="/contact" element={<Contact />} />
           {/* ADMIN ROUTES */}
 
           {/* dashboard */}

@@ -75,7 +75,7 @@ let history=useNavigate();
           <Sidebar />
         </div>
         <div className="dashboard_content">
-          <h1>All Service</h1>
+          <h1>All Services</h1>
           {latestservice && latestservice ?(
             latestservice.map((service,key) => 
               <div className="courses_holder"  key={key} course={service}>
