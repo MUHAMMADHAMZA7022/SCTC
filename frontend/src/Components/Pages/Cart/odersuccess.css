@@ -13,16 +13,38 @@
   }
   .orderSuccess > svg {
     font-size: 7vmax;
-    color: #444;
+    color: var(--redColor);
   }
-  .orderSuccess > p {
-    font-size: 2vmax;
+  .orderSuccess p {
+    color: var(--greenColor);
+    font-size: 2rem;
   }
   .orderSuccess > a {
     display: inline-block;
     text-decoration: none;
   }
-  
+  .order_detailed{
+    padding: 30px 30px;
+    float: left;
+  }
+  .order_detailed span{
+    text-align: left;
+    display: block;
+    color: var(--themeColor);
+    margin-bottom: 20px;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+  .order_detailed span p{
+    font-size: 1rem;
+    display: inline-block;
+    color: var(--redColor);
+  }
+  .order_detailed span strong{
+    font-size: 12px;
+    display: inline-block;
+    color: var(--greenColor);
+  }
   @media screen and (max-width: 768px) {
     .orderSuccess > a {
       padding: 3vw 6vw;

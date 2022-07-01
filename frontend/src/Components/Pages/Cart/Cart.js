@@ -24,41 +24,45 @@ function Cart() {
 
   return (
     <Fragment>
-      {cartItems.length === 0 ? (
-        <div className="emptyCart">
-          <RemoveShoppingCartOutlinedIcon />
-          <Typography>No Course in Your Cart</Typography>
-          <Link className="btn_primary" to="/courses">
-            View Course
-          </Link>
-        </div>
-      ) : (
-        <Fragment>
-          <div className="cart">
-            <h1>Shopping Cart</h1>
-
-            {cartItems &&
-              cartItems.map((item, key) => (
-                <CartItem
-                  item={item}
-                  deleteCartItems={deleteCartItems}
-                  key={key}
-                />
-              ))}
-
-            <div className="cart_checkout">
-              <span className="crs_total">Total:</span>
-              <span className="checkout_price">
-                <span>PKR</span>
-                {`${cartItems.reduce((acc, item) => acc + item.price, 0)}`}
-              </span>
-              <button className="btn_primary" onClick={checkoutHandler}>
-                Checkout
-              </button>
-            </div>
+      <div className="course_cart">
+        {cartItems.length === 0 ? (
+          <div className="emptyCart grid">
+            <RemoveShoppingCartOutlinedIcon />
+            <Typography>No Course in Your Cart</Typography>
+            <Link className="btn_primary" to="/courses">
+              View Course
+            </Link>
           </div>
-        </Fragment>
-      )}
+        ) : (
+          <Fragment>
+            <div className="cart">
+              <h1>Joined Course Cart</h1>
+
+              <div className="cart_allCourses">
+                {cartItems &&
+                  cartItems.map((item, key) => (
+                    <CartItem
+                      item={item}
+                      deleteCartItems={deleteCartItems}
+                      key={key}
+                    />
+                  ))}
+              </div>
+
+              <div className="cart_checkout">
+                <span className="crs_total">Total:</span>
+                <span className="checkout_price">
+                  {`${cartItems.reduce((acc, item) => acc + item.price, 0)}`}
+                  <span className="currency">PKR</span>
+                </span>
+                <button className="btn_primary" onClick={checkoutHandler}>
+                  Checkout
+                </button>
+              </div>
+            </div>
+          </Fragment>
+        )}
+      </div>
     </Fragment>
   );
 }

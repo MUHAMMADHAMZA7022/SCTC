@@ -1,5 +1,5 @@
 .checkout{
-    padding: 100px 50px;
+    padding: 50px 50px;
 }
 .checkout h1{
     padding: 20px 0px;
@@ -38,7 +38,7 @@
     margin-bottom: 30px;
 }
 .checkout_summary_holder{
-    width: 60%;
+    width: 100%;
 }
 .chk_bar{
     overflow: hidden;
@@ -50,14 +50,29 @@
     color: var(--lightColor);
     display: inline-block;
 }
-.chk_bar span:first-child{
-    float: left;
-}
 .chk_bar span.chk_prc{
     float: right;
 }
-.checkout_summary_holder button.btn_primary{
+.checkout_summary_holder button.btn_primary,
+.stdInfo_form button.btn_primary{
     width: 100%;
     display: block;
-    padding: 20px 10px ;
+    padding: 10px 25px ;
+}
+.chk_bar span.chk_currency{
+    float: right ;
+    color: var(--greenColor);
+    font-size: 12px;
+}
+.stdForm_holder{
+    display: flex;
+}
+.chk_formHolder{
+    flex: 2;
+    padding: 10px;
+    margin-right: 20px;
+}
+.checkout_summary{
+    flex: 1;
+    box-shadow: var(--boxShadow);
 }

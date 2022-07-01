@@ -55,6 +55,7 @@ import Loader1 from "./Components/Layout/Loader/Courseloader";
 
 import Cart from "./Components/Pages/Cart/Cart";
 import Checkout from "./Components/Pages/Cart/Checkout";
+import ViewOrder from "./Components/Pages/Cart/ViewOrder";
 
 import Countdown from "./Components/Pages/Event/Countdown";
 import ConfirmOrder from "./Components/Pages/Cart/confirmorder";
@@ -106,6 +107,7 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/count" element={<Countdown />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/vieworder" element={<ViewOrder />} />
           {/* ADMIN ROUTES */}
           {/* dashboard */}
           <Route

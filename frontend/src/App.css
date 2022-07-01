@@ -50,6 +50,7 @@ button.btn_primary,
   border: 2px solid var(--themeColor);
   transition: all 0.5s cubic-bezier(0.42, 0, 0.58, 1);
   padding: 5px 20px;
+  text-transform: capitalize;
 }
 button.btn_primary:hover,
 button.btn_primary:focus,
@@ -160,6 +161,7 @@ button.btn_primary:focus,
   line-height: 24px;
   position: relative;
   color: var(--themeColor);
+  text-transform: capitalize;
 }
 .section_heading h1::before{
   position: absolute;
@@ -182,10 +184,10 @@ button.btn_primary:focus,
 }
 /* COMMON ADMIN CLASS STUDENT PAGE ADMIN COLOR GREEN OR RED */
 .greenColor{
-  color: green;
+  color: var(--greenColor);
 }
 .redColor{
-  color: red;
+  color:var(--redColor);
 }
 .uppercase{
   text-transform: uppercase;

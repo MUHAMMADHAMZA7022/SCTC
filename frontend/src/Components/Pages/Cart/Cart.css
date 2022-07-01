@@ -1,6 +1,12 @@
-.cart{
-    padding: 100px 50px;
+
+.course_cart{
+    padding: 50px 50px;
+    text-align: center;
+    overflow: hidden;
 }
+/* .cart{
+    padding: 100px 50px;
+} */
 .cart h1{
     padding: 20px 0px;
     font-size: 26px;
@@ -8,18 +14,34 @@
     color: var(--themeColor);
     margin-bottom: 30px;
 }
-.cart_holder {
+.emptyCart svg{
+    margin-bottom: 10px;
+    font-size: 3rem;
+    color: var(--redColor);
+}
+.emptyCart p{
+    margin-bottom: 20px;
+    color: var(--lightColor);
+    font-weight: 700;
+}
+.cart_allCourses{
     width: 70%;
     float: left;
+    border-top: 1px solid var(--lightColor);
+}
+.cart_holder {
+    overflow: hidden;
 }
 .cart_courses{
     display: flex;
     float: left;
-    border-top: 1px solid var(--lightColor);
-    padding: 10px;
+    padding: 20px;
+    width: 100%;
+    border-bottom: 1px solid var(--greenColor);
 }
 .cart_crs_img{
     flex: 1;
+    /* max-height: 100px; */
 }
 .cart_crs{
     flex: 8;
@@ -29,8 +51,10 @@
     display: flex;
 }
 .cart_crs_title{
-    flex: 10;
+    flex: 3;
     flex-flow: column-reverse;
+    text-align: left;
+    text-transform: capitalize;
 }
 .cart_remove_btn{
     flex: 1;
@@ -53,6 +77,12 @@
     display: block;
     color: var(--lightColor);
     font-size: 1rem;
+    text-align: left;
+}
+.cart_checkout span.currency{
+    font-size: 2rem;
+    text-align: left;
+    color: var(--greenColor);
 }
 .cart_checkout span.checkout_price{
     color: #000;
@@ -60,13 +90,14 @@
     display: block;
     margin-bottom: 20px;
     font-weight: 800;
+    text-align: left;
 }
 span.checkout_price span{
     display: inline-block;
 }
 .cart_checkout button.btn_primary{
-    padding: 15px 50px;
-    width: 60%;
+    padding: 10px 30px;
+    width: 100%;
     display: block;
     font-size: 20px;
     font-weight: 800;

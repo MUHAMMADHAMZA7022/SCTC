@@ -16,22 +16,24 @@ const OrderSuccess = (props) => {
         <CheckCircleIcon />
         <Typography>Your Order has been Placed successfully </Typography>
         {/* <h1> {props.newOrder && props.newOrder.order._id}</h1> */}
-        <span>ORDER NUMBER | {props.newOrder && props.newOrder.order._id}</span>
-        <span>DATE | {props.newOrder && props.newOrder.order.createdAt}</span>
-        <span>
-          TOTAL | RS {props.newOrder && props.newOrder.order.totalPrice}
-        </span>
-        <span>
-          PAYMENT METHOD |{" "}
-          {props.newOrder && props.newOrder.order.paymentInfo.id}
-        </span>
+        <div className="order_detailed">
+          <span><p>ORDER NUMBER</p> : {props.newOrder && props.newOrder.order._id}</span>
+          <span><p>DATE & Time</p> : {props.newOrder && props.newOrder.order.createdAt}</span>
+          <span>
+            <p>TOTAL</p> : {props.newOrder && props.newOrder.order.totalPrice} <strong className="crncy">PKR</strong>
+          </span>
+          <span>
+            <p>PAYMENT METHOD </p>:{" "}
+            {props.newOrder && props.newOrder.order.paymentInfo.id}
+          </span>
+        </div>
         <Link
           to={
             isAuthenticated
               ? "/orders"
               : props.newOrder
-              ? `/check/order/email/${props.newOrder.order._id}`
-              : "/check/order/email"
+                ? `/check/order/email/${props.newOrder.order._id}`
+                : "/check/order/email"
           }
           className="btn_primary"
         >

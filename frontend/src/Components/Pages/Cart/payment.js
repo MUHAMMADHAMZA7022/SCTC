@@ -3,12 +3,12 @@ import CheckoutSteps from "../Cart/checkoutsteps";
 import { useSelector, useDispatch, connect } from "react-redux";
 import { useAlert } from "react-alert";
 import { createOrder, clearErrors } from "../../../redux/action/orderaction";
- import { RESETCart } from "../../../redux/action/cartAction";
+import { RESETCart } from "../../../redux/action/cartAction";
 
 import "./payment.css";
 import { useNavigate } from "react-router-dom";
 const Payment = () => {
-  let history=useNavigate()
+  let history = useNavigate()
   const orderInfo = JSON.parse(sessionStorage.getItem("orderInfo"));
   const dispatch = useDispatch();
   const alert = useAlert();
@@ -38,7 +38,7 @@ const Payment = () => {
 
     dispatch(createOrder(order)).then(function (result) {
     });
-dispatch(RESETCart)
+    dispatch(RESETCart)
     history("/success");
   };
   useEffect(() => {
@@ -56,12 +56,10 @@ dispatch(RESETCart)
           <div className="section_heading">
             <div className="homeHeading">
               <h2>
-                <b>PAyment Info</b>
+                <b>Payment Info</b>
               </h2>
             </div>
           </div>
-
-    
           <div className="ftotal_prc">
             <span>
               <b>TOTAL</b>
@@ -71,6 +69,7 @@ dispatch(RESETCart)
             </span>
           </div>
           <div className="payment_accordian">
+            <h3>Please check one method how do you want to pay and checkout the given details of Accounts*</h3>
             <form action="submit">
               <div className="pa_box">
                 <div className="pa_text">
@@ -127,7 +126,7 @@ dispatch(RESETCart)
                   </label>
                 </div>
               </div>
-             
+
             </form>
 
             {/* <Collapsible
@@ -150,7 +149,7 @@ dispatch(RESETCart)
           <form className="paymentForm" onSubmit={(e) => submitHandler(e)}>
             <input
               type="submit"
-              className="paymentFormBtn btn_primary"
+              className="paymentFormBtn"
               disabled={!selectedval}
             />
           </form>

@@ -5,7 +5,7 @@ import "./confirmorder.css";
 import { Link, useNavigate } from "react-router-dom";
 import { Typography } from "@mui/material";
 const ConfirmOrder = () => {
-    let history=useNavigate();
+  let history = useNavigate();
   const { checkout, cartItems } = useSelector((state) => state.cart);
   // const { user } = useSelector((state) => state.user);
 
@@ -59,7 +59,7 @@ const ConfirmOrder = () => {
             <div className="confirmCartItemsContainer">
               {cartItems &&
                 cartItems.map((item) => (
-                  <div key={item.course}>
+                  <div key={item.course} className='cartConfirm_courses'>
                     <img src={item.image} alt="Product" />
                     <Link to={`/onecourse/${item.course}`}>
                       {item.name}
@@ -74,20 +74,20 @@ const ConfirmOrder = () => {
         </div>
         {/*  */}
         <div className="checkout_summary">
-                <h1>Summary</h1>
-                <div className="checkout_summary_holder">
-                  <div className="chk_bar">
-                    <span>Total price:</span>
-                    <span className="chk_prc">
-                      <span>PKR</span>
-                      {subtotal}
-                    </span>
-                  </div>
-                  <button type="submit" className="btn_primary" onClick={proceedToPayment}>
-                    Complete Checkout
-                  </button>
-                </div>
-              </div>
+          <h1>Summary</h1>
+          <div className="checkout_summary_holder">
+            <div className="chk_bar">
+              <span>Total price:</span>
+              <span className="chk_prc">
+                {subtotal}
+                <span className="chk_currency">PKR</span>
+              </span>
+            </div>
+            <button type="submit" className="btn_primary" onClick={proceedToPayment}>
+              Confirm Order
+            </button>
+          </div>
+        </div>
       </div>
     </Fragment>
   );

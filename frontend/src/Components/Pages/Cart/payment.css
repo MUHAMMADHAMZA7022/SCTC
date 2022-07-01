@@ -33,25 +33,22 @@
     font-size: 1.6vmax;
     color: rgba(0, 0, 0, 0.623);
   }
-  .paymentFormBtn {
+  .paymentForm input.paymentFormBtn{
     width: 100%;
     cursor: pointer;
     outline: none;
     box-shadow: none;
-  }
-  .paymentForm{
-    text-align: center;
-  }
-  input[type="submit"]{
     width: 100%;
-    cursor: pointer;
-    outline: none;
-    box-shadow: none;
-    width: 50%;
     margin: 0 auto;
+    text-shadow: none;
+    background: var(--whiteColor);
+    color: var(--themeColor);
+    border: 1px solid var(--themeColor);
+    padding: 10px;
   }
-  input[type="submit"]:hover{
-    background-color: #444;
+  .paymentForm input.paymentFormBtn:hover{
+    background: var(--themeColor);
+    color: var(--whiteColor);
   }
   .order_info {
     width: 50%;
@@ -113,6 +110,9 @@
   .ftotal_prc span {
     border-top: none;
   }
+  .ftotal_prc span b{
+    color: var(--lightColor);
+  }
   .shipping_fee {
     border-bottom: 1px solid #4443;
     padding: 10px 2px 30px 2px;
@@ -131,6 +131,11 @@
   }
   .shipping_fee p {
     float: left;
+  }
+  .payment_accordian h3{
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--redColor);
   }
   .payment_accordian div.Collapsible,
   .payment_accordian div.Collapsible.accordian_footer {
@@ -159,22 +164,23 @@
     background: #fffff5;
     display: none;
     width: 100%;
-    color: var(--themeColor);
     opacity: 0.8;
-    font-weight: 400;
+    font-weight: 700;
     font-size: 12px;
     line-height: 14px;
     padding: 20px;
   }
   
   #demo:checked + label.pa_lbl {
-    color: var(--themeColor);
+    color: var(--themColor);
     display: block;
   }
   
   label.lShow {
+    color: var(--greenColor);
+    cursor: pointer;
     display: block;
-    font-weight: 400;
+    font-weight: 700;
     font-size: 14px;
     padding: 0;
     position: absolute;
