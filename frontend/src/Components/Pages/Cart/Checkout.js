@@ -4,7 +4,7 @@ import CheckoutSteps from "../Cart/checkoutsteps";
 import { useNavigate } from "react-router-dom";
 import { useAlert } from "react-alert";
 import { useSelector, useDispatch } from "react-redux";
-import { savecheckout} from "../../../redux/action/cartaction";
+import { savecheckout} from "../../../redux/action/cartAction";
 
 function Checkout() {
   let history = useNavigate();

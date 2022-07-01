@@ -32,8 +32,8 @@ import {
     allOrdersReducer,
     // randomDetailsReducer,
     randomemailReducer,
-  } from "./orderreducer";
-  import { cartReducer } from "./cartreducer";
+  } from "./orderReducer";
+  import { cartReducer } from "./cartReducer";
 const AllReducer = combineReducers({
   //users
     userDetails: userDetailsReducer,

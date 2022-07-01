@@ -3,7 +3,7 @@ import CheckoutSteps from "../Cart/checkoutsteps";
 import { useSelector, useDispatch, connect } from "react-redux";
 import { useAlert } from "react-alert";
 import { createOrder, clearErrors } from "../../../redux/action/orderaction";
- import { RESETCart } from "../../../redux/action/cartaction";
+ import { RESETCart } from "../../../redux/action/cartAction";
 
 import "./payment.css";
 import { useNavigate } from "react-router-dom";

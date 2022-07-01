@@ -3,7 +3,7 @@ import {
   REMOVE_CART_ITEM,
   CART_RESET,
   CHECK_OUT ,
-} from "../Constant/cartconstants";
+} from "../Constant/cartConstants";
 import axios from "axios";
 
 // Add to Cart

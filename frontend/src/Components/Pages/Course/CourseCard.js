@@ -2,7 +2,7 @@ import React, { Fragment ,useEffect,} from 'react'
 import { Link } from 'react-router-dom';
 import { useAlert } from "react-alert";
 import { CLEAR_ERROR } from "../../../redux/action/courseaction";
-import { addItemsToCart } from "../../../redux/action/cartaction";
+import { addItemsToCart } from "../../../redux/action/cartAction";
 import { useDispatch,useSelector } from 'react-redux';
 function Home({course}) {
   const { error } = useSelector((state) => state.courseDetails);

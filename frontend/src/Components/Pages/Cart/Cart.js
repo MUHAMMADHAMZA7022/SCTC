@@ -3,7 +3,7 @@ import "./Cart.css";
 import CartItem from "./cartitem";
 import { Typography } from "@mui/material";
 import { useSelector, useDispatch } from "react-redux";
-import { removeItemsFromCart } from "../../../redux/action/cartaction";
+import { removeItemsFromCart } from "../../../redux/action/cartAction";
 import { Link, useNavigate } from "react-router-dom";
 import RemoveShoppingCartOutlinedIcon from "@mui/icons-material/RemoveShoppingCartOutlined";
 function Cart() {
