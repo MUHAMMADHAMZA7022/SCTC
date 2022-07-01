@@ -108,7 +108,6 @@ function App() {
           <Route path="/count" element={<Countdown />} />
           <Route path="/contact" element={<Contact />} />
           {/* ADMIN ROUTES */}
-
           {/* dashboard */}
           <Route
             path="/dashboard"
