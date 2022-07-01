@@ -1,44 +1,170 @@
-import React, { Fragment } from 'react'
 import "./Dashboard.css";
 import Sidebar from './Sidebar';
 
 import { DataGrid } from '@mui/x-data-grid';
+import React, { Fragment, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { useAlert } from "react-alert";
+import Button from '@mui/material/Button';
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from "@mui/icons-material/Edit";
 
-function Courseorder() {
-    const columns = [
-        { field: 'col1', headerName: 'Title', width: 150 },
-        { field: 'col2', headerName: 'Price', width: 150 },
-        { field: 'col3', headerName: 'Status', width: 150 },
-        { field: 'col4', headerName: 'Category', width: 150 }
-    ];
+import {
+  deleteOrder,
+  getAllOrders,
+  clearErrors,
+} from "../../../redux/action/orderaction";
+import { DELETE_ORDER_RESET } from "../../../redux/Constant/orderconstant";
+import Loader from "../../Layout/Loader/loader";
+import { confirmAlert } from 'react-confirm-alert'; // Import
+import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
+const OrderList = () => {
+    let history=useNavigate()
+  const dispatch = useDispatch();
 
-    const rows = [
-        { id: 1, col1: 'Bio', col2: '380$', col3: 'Approved', col4: 'BioStat' },
-        { id: 2, col1: 'Physics', col2: '340$', col3: 'Pending', col4: 'BioChemistry' },
-        { id: 3, col1: 'Maths', col2: '320$', col3: 'Cancelled', col4: 'Organic' }
-    ];
+  const alert = useAlert();
 
-    return (
-        <Fragment>
-            <div className='dashboard_holder students'>
-                {/* Sidebar */}
+  const {loading, error, orders } = useSelector((state) => state.allOrders);
+
+  const { error: deleteError, isDeleted } = useSelector((state) => state.order);
+
+  const deleteOrderHandler = (id) => {
+    confirmAlert({
+        title: ' Delete Order',
+        message: `Are you sure to delete this order.`,
+        buttons: [
+          {
+            label: 'Yes',
+            onClick: () => {
+              loading===true?(<Loader />):(
+  dispatch(deleteOrder(id))
+
+              );
+            }   
+          },
+          {
+            label: 'No',
+            onclose: () => {}
+          }
+        ]
+      });
+  };
+
+  useEffect(() => {
+    if (error) {
+      alert.error(error);
+      dispatch(clearErrors());
+    }
+
+    if (deleteError) {
+      alert.error(deleteError);
+      dispatch(clearErrors());
+    }
+
+    if (isDeleted) {
+      alert.success("Order Deleted Successfully");
+      history("/courseorder");
+      dispatch({ type: DELETE_ORDER_RESET });
+    }
+
+    dispatch(getAllOrders());
+  }, [dispatch, alert, error, deleteError, history, isDeleted]);
+
+  const columns = [
+    { field: "id", headerName: "Order ID", minWidth: 300, flex: 1 },
+
+    {
+      field: "status",
+      headerName: "Status",
+      minWidth: 150,
+      flex: 0.5,
+      cellClassName: (params) => {
+        return params.getValue(params.id, "status") === "Delivered"
+          ? "greenColor"
+          : "redColor";
+      },
+    },
+    {
+      field: "itemsQty",
+      headerName: "Items Qty",
+      type: "number",
+      minWidth: 150,
+      flex: 0.4,
+    },
+
+    {
+      field: "amount",
+      headerName: "Amount",
+      type: "number",
+      minWidth: 270,
+      flex: 0.5,
+    },
+
+    {
+      field: "actions",
+      flex: 0.3,
+      headerName: "Actions",
+      minWidth: 150,
+      type: "number",
+      sortable: false,
+      renderCell: (params) => {
+        const i=params.getValue(params.id, "id")
+        return (
+          <Fragment>
+            <Link to={`/admin/order/${i}`}>
+              <EditIcon />
+            </Link>
+
+            <Button
+              onClick={() =>
+                deleteOrderHandler(i)
+              }
+            >
+              <DeleteIcon />
+            </Button>
+          </Fragment>
+        );
+      },
+    },
+  ];
+
+  const rows = [];
+
+  orders &&
+    orders.forEach((item) => {
+      rows.push({
+        id: item._id,
+        itemsQty: item.orderItems.length,
+        amount: item.totalPrice,
+        status: item.orderStatus,
+      });
+    });
+
+  return (
+    <Fragment>
+ <div className='dashboard_holder students'>
                 <div className='dSidebar'>
                     <Sidebar />
                 </div>
-                {/* Main Content */}
                 <div className='dashboard_content'>
-                    <div style={{ height: 300, width: '100%' }}>
-                        <DataGrid
-                            rows={rows}
-                            columns={columns}
-                            disableSelectionOnClick
-                            autoHeight
-                        />
-                    </div>
-                </div>
-            </div>
-        </Fragment>
-    )
-}
+          <h1>All Orders</h1>
 
-export default Courseorder
+          { loading===false ? (
+               <DataGrid
+               rows={rows}
+               columns={columns}
+               disableSelectionOnClick
+               className="productListTable"
+               autoHeight
+             />
+          ) : ( 
+          <Loader/>
+           )} 
+        </div>
+      </div>
+    </Fragment>
+  );
+};
+
+export default OrderList;

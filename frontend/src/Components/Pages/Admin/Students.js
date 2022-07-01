@@ -154,6 +154,7 @@ let history = useNavigate();
     return (
         <Fragment>
             <div className='dashboard_holder students'>
+                {/* Sidebar */}
                 <div className='dSidebar'>
                     <Sidebar />
                 </div>

@@ -61,7 +61,7 @@ import Countdown from "./Components/Pages/Event/Countdown";
 import ConfirmOrder from "./Components/Pages/Cart/confirmorder";
 import Payment from "./Components/Pages/Cart/payment";
 import Ordersuccess from "./Components/Pages/Cart/ordersuccess";
-
+import ProcessOrder from "./Components/Pages/Admin/processorder"
 
 function App() {
   const dispatch = useDispatch();
@@ -252,6 +252,20 @@ function App() {
                 isAdmin={user && user.role === "admin" ? true : false}
               >
                 {isAuthenticated ? <UpdateService /> : <Login />}
+              </ProtectedRoute>
+            }
+          />
+
+          {/* //orders for admin*/}
+          <Route
+            path="/admin/order/:id"
+            element={
+              <ProtectedRoute
+                isAuthenticated={isAuthenticated}
+                adminRoute={true}
+                isAdmin={user && user.role === "admin" ? true : false}
+              >
+                {isAuthenticated ? <ProcessOrder/> : <Login />}
               </ProtectedRoute>
             }
           />
