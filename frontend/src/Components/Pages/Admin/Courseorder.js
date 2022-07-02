@@ -20,35 +20,35 @@ import Loader from "../../Layout/Loader/loader";
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 const OrderList = () => {
-    let history=useNavigate()
+  let history = useNavigate()
   const dispatch = useDispatch();
 
   const alert = useAlert();
 
-  const {loading, error, orders } = useSelector((state) => state.allOrders);
+  const { loading, error, orders } = useSelector((state) => state.allOrders);
 
   const { error: deleteError, isDeleted } = useSelector((state) => state.order);
 
   const deleteOrderHandler = (id) => {
     confirmAlert({
-        title: ' Delete Order',
-        message: `Are you sure to delete this order.`,
-        buttons: [
-          {
-            label: 'Yes',
-            onClick: () => {
-              loading===true?(<Loader />):(
-  dispatch(deleteOrder(id))
+      title: ' Delete Order',
+      message: `Are you sure to delete this order.`,
+      buttons: [
+        {
+          label: 'Yes',
+          onClick: () => {
+            loading === true ? (<Loader />) : (
+              dispatch(deleteOrder(id))
 
-              );
-            }   
-          },
-          {
-            label: 'No',
-            onclose: () => {}
+            );
           }
-        ]
-      });
+        },
+        {
+          label: 'No',
+          onclose: () => { }
+        }
+      ]
+    });
   };
 
   useEffect(() => {
@@ -109,7 +109,7 @@ const OrderList = () => {
       type: "number",
       sortable: false,
       renderCell: (params) => {
-        const i=params.getValue(params.id, "id")
+        const i = params.getValue(params.id, "id")
         return (
           <Fragment>
             <Link to={`/admin/order/${i}`}>
@@ -143,24 +143,24 @@ const OrderList = () => {
 
   return (
     <Fragment>
- <div className='dashboard_holder students'>
-                <div className='dSidebar'>
-                    <Sidebar />
-                </div>
-                <div className='dashboard_content'>
+      <div className='dashboard_holder students'>
+        <div className='dSidebar'>
+          <Sidebar />
+        </div>
+        <div className='dashboard_content'>
           <h1>All Ordered Courses</h1>
 
-          { loading===false ? (
-               <DataGrid
-               rows={rows}
-               columns={columns}
-               disableSelectionOnClick
-               className="productListTable"
-               autoHeight
-             />
-          ) : ( 
-          <Loader/>
-           )} 
+          {loading === false ? (
+            <DataGrid
+              rows={rows}
+              columns={columns}
+              disableSelectionOnClick
+              className="productListTable"
+              autoHeight
+            />
+          ) : (
+            <Loader />
+          )}
         </div>
       </div>
     </Fragment>
