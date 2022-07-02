@@ -29,23 +29,23 @@ const Payment = () => {
   const handlechange = (e) => {
     setselectedval(e.target.value);
   };
-  // if (!selectedval) {
-  //   alert("Select 1 " + selectedval + " Input");
-  // }
+  
   const submitHandler = async (e) => {
     e.preventDefault();
 
     dispatch(createOrder(order)).then(function (result) {
     });
-    dispatch(RESETCart)
+    dispatch(RESETCart())
     history("/success");
+  
   };
   useEffect(() => {
     if (error) {
       alert.error(error);
       dispatch(clearErrors());
     }
-  }, [dispatch, error, alert]);
+  
+  }, [dispatch, error,history, alert]);
 
   return (
     <Fragment>

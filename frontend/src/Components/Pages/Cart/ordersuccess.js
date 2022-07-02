@@ -1,14 +1,12 @@
-import React, { Fragment } from "react";
+import React, { Fragment, } from "react";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import "./odersuccess.css";
 import { Typography } from "@mui/material";
 import { Link } from "react-router-dom";
-import { useSelector, connect } from "react-redux";
+import { useSelector, connect} from "react-redux";
 
 const OrderSuccess = (props) => {
   const { isAuthenticated } = useSelector((state) => state.user);
-
-  console.log(props.newOrder);
   return (
     <Fragment>
       {/* {props.newOrder ? ( */}
