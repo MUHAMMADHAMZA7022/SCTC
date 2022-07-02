@@ -232,12 +232,13 @@ const ProcessOrder = ({ match }) => {
 
                
               </div>
+             { order.orderStatus === "Verified"?(
               <form className="sendLink_form">
                   <h2>Please enter the student's email address and file url to send*</h2>
                   <input type={"email"} placeholder="Enter Student Email" />
                   <input type={"url"} placeholder="Enter File Url" />
                   <button className="btn_primary">Send Url</button>
-                </form>
+                </form>):(null)}
             </div>
           )}
         </div>
