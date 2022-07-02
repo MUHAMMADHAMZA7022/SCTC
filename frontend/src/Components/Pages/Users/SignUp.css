@@ -1,18 +1,37 @@
 .formHolder{
     display: flex;
-    padding: 0px 200px;
+    /* padding: 0px 200px; */
 }
 .signUpImg{
     flex: 1;
-    background: #000;
+    position: relative;
+}
+.signUpImg::after{
+    position: absolute;
+    content: " ";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 46, 59, 0.4);
 }
 .signupHolder{
     flex: 1;
+    background: rgba(255, 255, 255, 0.4);
     padding: 50px;
 }
 .signupHolder h1{
     font-size: 30px;
     margin-bottom: 20px;
+}
+.signupForm a.acc_link{
+    color: var(--themeColor);
+    font-size: 12px;
+    float: right;
+}
+.signupForm a.acc_link:focus,
+.signupForm a.acc_link:hover{
+    color: var(--redColor);
 }
 .group_field{
     width: 60%;

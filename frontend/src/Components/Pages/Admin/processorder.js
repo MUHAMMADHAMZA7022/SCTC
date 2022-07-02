@@ -145,8 +145,8 @@ const ProcessOrder = ({ match }) => {
                           <p
                             className={
                               order.orderStatus && order.orderStatus === "Pending"
-                                ? "redColor"
-                                : "greenColor"
+                                ? "greenColor"
+                                : "redColor"
                             }
                           >
                             {order.orderStatus && order.orderStatus}

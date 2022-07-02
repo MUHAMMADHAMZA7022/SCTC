@@ -1,18 +1,45 @@
 .formHolder{
-    display: flex;
-    padding: 0px 200px;
+    padding: 50px;
+    background: rgba(0, 46, 59, 0.2);
 }
 .loginImg{
     flex: 1;
-    background: #000;
+    position: relative;
+}
+.loginImg::after{
+    position: absolute;
+    content: " ";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 46, 59, 0.4);
 }
 .loginHolder{
     flex: 1;
+    /* background: var(--whiteColor); */
+    background: rgba(255, 255, 255, 0.4);
     padding: 50px;
 }
 .loginHolder h1{
     font-size: 30px;
     margin-bottom: 20px;
+}
+.formHolder div.grid{
+    box-shadow: var(--boxShadow);
+    display: flex;
+}
+.loginForm  a.acc_link{
+    color: var(--themeColor);
+    font-size: 12px;
+    float: right;
+}
+.loginForm a.acc_link:focus,
+.loginForm a.acc_link:hover{
+    color: var(--redColor);
+}
+.loginForm .group_field{
+    width: 100%;
 }
 .group_field{
     width: 60%;

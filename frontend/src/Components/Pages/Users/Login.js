@@ -1,6 +1,7 @@
 import "./Login.css";
 import React, { Fragment, useState, useEffect } from "react";
 import "./SignUp.css";
+import logInImg from '../../../images/sctc3.jpg';
 import { useDispatch, useSelector } from "react-redux";
 import {
 
@@ -41,7 +42,10 @@ function Login() {
         <Fragment>
             {/* Login Form */}
             <div className='formHolder'>
-                <div className='loginImg'></div>
+                <div className="grid">
+                <div className='loginImg'>
+                    <img src={logInImg} alt="loginImg" />
+                </div>
                 <div className='loginHolder'>
                     <h1>Log In</h1>
                     <form className="loginForm" onSubmit={loginSubmit}>
@@ -73,13 +77,14 @@ function Login() {
                             <label for="name" className="form__label">Password</label>
                         </div>
                         <div className="group_field">
-                            <button className='btn_primary' >Login</button><br></br><br></br>
-                            <Link to={"/signup"}>Go To Register Page</Link>
+                            <button className='btn_primary' >Login</button>
+                            <Link to={"/signup"} className="acc_link">Doesn't have an Account?</Link>
 
                         </div>
 
                     </form>
                 </div>
+            </div>
             </div>
         </Fragment>
     )
