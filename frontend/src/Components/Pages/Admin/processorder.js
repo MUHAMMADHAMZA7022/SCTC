@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 // import MetaData from "../Layout/Metadata";
-import { Link,  useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Typography } from '@mui/material';
 import SideBar from "./Sidebar";
 import {
@@ -11,13 +11,12 @@ import {
 import { useSelector, useDispatch } from "react-redux";
 import Loader from "../../Layout/Loader/loader";
 import { useAlert } from "react-alert";
-import AccountTreeIcon from "@mui/icons-material/AccountTree";
-import Button from '@mui/material/Button';
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import { UPDATE_ORDER_RESET } from "../../../redux/Constant/orderconstant";
 import "./processorder.css";
 
-const ProcessOrder = ({match}) => {
-  const id=useParams().id;
+const ProcessOrder = ({ match }) => {
+  const id = useParams().id;
   const { order, error, loading } = useSelector((state) => state.orderDetails);
   const { error: updateError, isUpdated } = useSelector((state) => state.order);
   const updateOrderSubmitHandler = (e) => {
@@ -55,8 +54,10 @@ const ProcessOrder = ({match}) => {
   return (
     <Fragment>
       {/* <MetaData title="Process Order" /> */}
-      <div className="dashboard">
-        <SideBar />
+      <div className="dashboard processOrder">
+        <div className="dSidebar">
+          <SideBar />
+        </div>
         <div className="newProductContainer">
           {loading ? (
             <Loader />
@@ -64,76 +65,118 @@ const ProcessOrder = ({match}) => {
             <div
               className="confirmOrderPage"
               style={{
-                display: order.orderStatus === "Delivered" ? "block" : "grid",
+                // display: order.orderStatus === "Delivered" ? "block" : "grid",
               }}
             >
               <div>
                 <div className="confirmshippingArea">
-                  <Typography>CheckOut Info</Typography>
+                  <Typography>Checkout Info</Typography>
                   <div className="orderDetailsContainerBox">
-                    <div>
-                      <p>Name:</p>
-                      <span>{order.user && order.checkout.name}</span>
+                    <div className="pro_box">
+                      <div className="proOrder_dtl">
+                        <p>Name:</p>
+                      </div>
+                      <div className="proOrder_dtlSub">
+                        <span>{order.user && order.checkout.name}</span>
+                      </div>
                     </div>
-                    <div>
-                      <p>Email:</p>
-                      <span>{order.user && order.user}</span>
+                    <div className="pro_box">
+                      <div className="proOrder_dtl">
+                        <p>Email:</p>
+                      </div>
+                      <div className="proOrder_dtlSub">
+                        <span>{order.user && order.user}</span>
+                      </div>
                     </div>
-                    <div>
-                      <p>Phone:</p>
-                      <span>
-                        {order.checkout && order.checkout.phoneNo}
-                      </span>
+                    <div className="pro_box">
+                      <div className="proOrder_dtl">
+                        <p>Phone:</p>
+                      </div>
+                      <div className="proOrder_dtlSub">
+                        <span>
+                          {order.checkout && order.checkout.phoneNo}
+                        </span>
+                      </div>
                     </div>
-                    <div>
-                      <p>University:</p>
-                      <span>
-                        {order.checkout && order.checkout.university}
-                      </span>
+                    <div className="pro_box">
+                      <div className="proOrder_dtl">
+                        <p>University:</p>
+                      </div>
+                      <div className="proOrder_dtlSub">
+                        <span>
+                          {order.checkout && order.checkout.university}
+                        </span>
+                      </div>
                     </div>
                   </div>
 
-                  <Typography>Payment</Typography>
+                  <Typography>Payment Status</Typography>
                   <div className="orderDetailsContainerBox">
-                    <div>
-                      <p
-                        className={
-                          order.paymentInfo &&
-                          order.paymentInfo.status === "succeeded"
-                            ? "greenColor"
-                            : "redColor"
-                        }
-                      >
-                        {order.paymentInfo &&
-                        order.paymentInfo.status === "succeeded"
-                          ? "PAID"
-                          : "NOT PAID"}
-                      </p>
+                    <div className="pro_box">
+                      <div className="proOrder_dtl">
+                        <p
+                          className={
+                            order.paymentInfo &&
+                              order.paymentInfo.status === "succeeded"
+                              ? "greenColor"
+                              : "redColor"
+                          }
+                        >
+                          {order.paymentInfo &&
+                            order.paymentInfo.status === "succeeded"
+                            ? "PAID"
+                            : "NOT PAID"}
+                        </p>
+                      </div>
                     </div>
 
+                    <div className="pro_box">
+                      <div className="proOrder_dtl">
+                        <p>Amount:</p>
+                      </div>
+                      <div className="proOrder_dtlSub">
+                        <span>{order.totalPrice && order.totalPrice}</span>
+                      </div>
+                    </div>
                     <div>
-                      <p>Amount:</p>
-                      <span>{order.totalPrice && order.totalPrice}</span>
+                      <div className="verification_status">
+                        <h3>Payment Verification</h3>
+                        <div className="proOrder_dtlSub">
+                          <p
+                            className={
+                              order.orderStatus && order.orderStatus === "Pending"
+                                ? "redColor"
+                                : "greenColor"
+                            }
+                          >
+                            {order.orderStatus && order.orderStatus}
+                          </p>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
-                  <Typography>Order Status</Typography>
+                  {/* <Typography>Order Status</Typography>
                   <div className="orderDetailsContainerBox">
                     <div>
-                      <p
-                        className={
-                          order.orderStatus && order.orderStatus === "Delivered"
-                            ? "greenColor"
-                            : "redColor"
-                        }
-                      >
-                        {order.orderStatus && order.orderStatus}
-                      </p>
+                      <div className="proOrder_dtl">
+                        <p
+                          className={
+                            order.orderStatus && order.orderStatus === "Pending"
+                              ? "greenColor"
+                              : "redColor"
+                          }
+                        >
+                          {order.orderStatus && order.orderStatus}
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  </div> */}
+
+
                 </div>
                 <div className="confirmCartItems">
-                  <Typography>Your Cart Items:</Typography>
+                  <Typography>Your Ordered Courses:</Typography>
                   <div className="confirmCartItemsContainer">
                     {order.orderItems &&
                       order.orderItems.map((item) => (
@@ -143,7 +186,7 @@ const ProcessOrder = ({match}) => {
                             {item.name}={" "}
                           </Link>{" "}
                           <span>
-                            <b>PKR {item.price }</b>
+                            <b>PKR {item.price}</b>
                           </span>
                         </div>
                       ))}
@@ -153,38 +196,38 @@ const ProcessOrder = ({match}) => {
               {/*  */}
               <div
                 style={{
-                  display: order.orderStatus === "Delivered" ? "none" : "block",
+                  // display: order.orderStatus === "Delivered" ? "none" : "block",
                 }}
               >
                 <form
                   className="updateOrderForm"
                   onSubmit={updateOrderSubmitHandler}
                 >
-                  <h1>Process Order</h1>
+                  <h1>Choose the Payment verification for the course*</h1>
 
                   <div>
-                    <AccountTreeIcon />
+                    <AttachMoneyIcon />
                     <select onChange={(e) => setStatus(e.target.value)}>
-                      <option value="">Choose Category</option>
+                      <option value="">Payment Option</option>
                       {order.orderStatus === "Processing" && (
-                        <option value="Shipped">Shipped</option>
+                        <option value="Verified">Verified</option>
                       )}
 
-                      {order.orderStatus === "Shipped" && (
+                      {/* {order.orderStatus === "Verified" && (
                         <option value="Delivered">Delivered</option>
-                      )}
+                      )} */}
                     </select>
                   </div>
 
-                  <Button
-                    id="createProductBtn"
+                  <button
                     type="submit"
+                    className="btn_primary"
                     disabled={
                       loading ? true : false || status === "" ? true : false
                     }
                   >
                     Process
-                  </Button>
+                  </button>
                 </form>
               </div>
             </div>

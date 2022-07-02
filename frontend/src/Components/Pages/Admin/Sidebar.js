@@ -49,8 +49,9 @@ const Sidebar = () => {
       <TreeView
         defaultCollapseIcon={<ExpandMoreIcon />}
         defaultExpandIcon={<ImportExportIcon />}
+        className='sideBar_list unstyled'
       >
-        <TreeItem nodeId="1" label="Courses">
+        <TreeItem nodeId="1" label="Courses" className='unstyled'>
           <Link to="/create/courses">
             <TreeItem nodeId="3" label="Create" icon={<AddIcon />} />
           </Link>
@@ -62,6 +63,7 @@ const Sidebar = () => {
       <TreeView
         defaultCollapseIcon={<ExpandMoreIcon />}
         defaultExpandIcon={<DesignServicesIcon />}
+        className='sideBar_list unstyled'
       >
         <TreeItem nodeId="1" label="Services">
           <Link to="/create/service">
@@ -99,6 +101,7 @@ const Sidebar = () => {
       <TreeView
         defaultCollapseIcon={<ExpandMoreIcon />}
         defaultExpandIcon={<EventIcon />}
+        className='sideBar_list unstyled'
       >
         <TreeItem nodeId="1" label="Events">
           <Link to="/all/events">

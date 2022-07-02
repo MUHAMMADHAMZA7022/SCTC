@@ -1,44 +1,140 @@
+.processOrder {
+  padding: 50px 50px 50px 0px;
+}
+
 .updateOrderForm {
-    margin: 5vmax 0;
-    padding: 3vmax;
-    background-color: white;
+  padding: 3vmax;
+  background-color: white;
+}
+
+.updateOrderForm>div {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.updateOrderForm h1 {
+  margin-bottom: 30px;
+  font-size: 20px;
+  line-height: 24px;
+  color: var(--redColor);
+}
+
+.updateOrderForm>div>select {
+  padding: 1vmax 4vmax;
+  /* margin: 2rem 0; */
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.267);
+  border-radius: 4px;
+  font: 300 0.9vmax cursive;
+  outline: none;
+  box-shadow: var(--boxShadow);
+}
+
+.updateOrderForm>div>svg {
+  position: absolute;
+  transform: translateX(1vmax);
+  font-size: 1.6vmax;
+  color: rgba(0, 0, 0, 0.623);
+}
+
+.updateOrderForm button.btn_primary {
+  width: 100%;
+}
+.updateOrderForm button.btn_primary:focus, 
+.updateOrderForm button.btn_primary:hover {
+  color: var(--whiteColor) !important;
+  background-color: transparent;
+  background: var(--themeColor);
+  text-shadow: nthree;
+}
+.pro_box,
+.verification_status{
+  border: 1px solid var(--lightBorder);
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: var(--boxShadow);
+  padding: 10px 10px 10px 10px;
+  margin-bottom: 10px;
+}
+.verification_status h3{
+  display: inline-block;
+  margin-right: 20px;
+  font-size: 16px;
+  color: var(--themeColor);
+  width: 30%;
+}
+.verification_status p{
+  display: inline-block;
+  margin-right: 20px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.verification_status .proOrder_dtlSub{
+  width: 60%;
+  text-align: center;
+}
+
+
+.processOrder .confirmshippingArea {
+  padding: 40px;
+}
+
+.proOrder_dtl {
+  display: inline-block;
+  width: 25%;
+}
+
+.proOrder_dtl p {
+  display: inline-block;
+  color: var(--redColor);
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+.proOrder_dtlSub {
+  display: inline-block;
+  width: 75%;
+}
+
+.proOrder_dtlSub span {
+  color: var(--lightColor);
+}
+
+.orderDetailsContainerBox {
+  margin-bottom: 20px;
+}
+
+.confirmshippingArea>p {
+  margin-bottom: 20px;
+}
+
+.processOrder .confirmOrderPage {
+  border: 1px solid var(--lightBorder);
+  margin-bottom: 30px;
+  box-shadow: var(--boxShadow);
+}
+
+.newProductContainer {
+  padding: 0px 50px 50px 50px;
+}
+
+
+
+
+@media screen and (max-width: 600px) {
+  .updateOrderForm {
+    padding: 5vmax;
   }
-  
-  .updateOrderForm > div {
-    display: flex;
-    width: 100%;
-    align-items: center;
+
+  .updateOrderForm>div>select {
+    padding: 2.5vmax 5vmax;
+    font: 300 1.7vmax cursive;
   }
-  .updateOrderForm > div > select {
-    padding: 1vmax 4vmax;
-    margin: 2rem 0;
-    width: 100%;
-    box-sizing: border-box;
-    border: 1px solid rgba(0, 0, 0, 0.267);
-    border-radius: 4px;
-    font: 300 0.9vmax cursive;
-    outline: none;
+
+  .updateOrderForm>div>svg {
+    font-size: 2.8vmax;
   }
-  
-  .updateOrderForm > div > svg {
-    position: absolute;
-    transform: translateX(1vmax);
-    font-size: 1.6vmax;
-    color: rgba(0, 0, 0, 0.623);
-  }
-  
-  @media screen and (max-width: 600px) {
-    .updateOrderForm {
-      padding: 5vmax;
-    }
-  
-    .updateOrderForm > div > select {
-      padding: 2.5vmax 5vmax;
-      font: 300 1.7vmax cursive;
-    }
-  
-    .updateOrderForm > div > svg {
-      font-size: 2.8vmax;
-    }
-  }
-  
+}

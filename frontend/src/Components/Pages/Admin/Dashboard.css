@@ -9,6 +9,10 @@
     width: 80%;
     float: right;
 }
+.dashboard_content h1{
+    padding: 10px;
+    margin-bottom: 20px;
+}
 .dashboard_sidebar{
     padding: 10px 0px;
     border-right: 1px solid var(--themeColor);
@@ -182,4 +186,15 @@
     padding: 2px 6px;
     margin-right: 10px;
     border-radius: 0px;
+    float: left;
+}
+.crs_action button.btn_primary{
+    padding: 1px 6px;
+}
+div.css-r11z79-MuiDataGrid-root{
+    border: 1px solid var(--lightBorder);
+    border-radius: 5px;
+    box-shadow: var(--boxShadow);
+    margin-bottom: 50px;
+    margin-right: 20px;
 }

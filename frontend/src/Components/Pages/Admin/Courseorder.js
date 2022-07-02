@@ -148,7 +148,7 @@ const OrderList = () => {
                     <Sidebar />
                 </div>
                 <div className='dashboard_content'>
-          <h1>All Orders</h1>
+          <h1>All Ordered Courses</h1>
 
           { loading===false ? (
                <DataGrid
