@@ -59,11 +59,8 @@ const orderSchema = new mongoose.Schema({
     status: {
       type: String,
       required: true,
+      default: "Pending",
     },
-  },
-  paidAt: {
-    type: Date,
-    required: true,
   },
   totalPrice: {
     type: Number,
@@ -73,9 +70,11 @@ const orderSchema = new mongoose.Schema({
   orderStatus: {
     type: String,
     required: true,
-    default: "Processing",
+    default: "Not Verified",
   },
-  deliveredAt: Date,
+  verifiedAt:{
+    type:Date,
+  },
   createdAt: {
     type: Date,
     default: Date.now,

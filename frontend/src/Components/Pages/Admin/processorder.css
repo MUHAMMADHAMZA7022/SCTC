@@ -89,7 +89,6 @@
 
 .proOrder_dtl p {
   display: inline-block;
-  color: var(--redColor);
   font-weight: 700;
   margin-right: 10px;
 }

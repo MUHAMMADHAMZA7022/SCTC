@@ -24,7 +24,6 @@ const Payment = () => {
     totalPrice: orderInfo.totalPrice,
     paymentInfo: {
       id: selectedval,
-      status: "succeede",
     },
   };
   const handlechange = (e) => {

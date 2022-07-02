@@ -11,7 +11,7 @@ import {
 import { useSelector, useDispatch } from "react-redux";
 import Loader from "../../Layout/Loader/loader";
 import { useAlert } from "react-alert";
-import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+import CurrencyRubleIcon from '@mui/icons-material/CurrencyRuble';
 import { UPDATE_ORDER_RESET } from "../../../redux/Constant/orderconstant";
 import "./processorder.css";
 
@@ -117,15 +117,15 @@ const ProcessOrder = ({ match }) => {
                         <p
                           className={
                             order.paymentInfo &&
-                              order.paymentInfo.status === "succeeded"
-                              ? "greenColor"
-                              : "redColor"
+                              order.paymentInfo.status === "PAID"
+                            ?  "greenColor" :"redColor"
+                               
+                             
                           }
                         >
                           {order.paymentInfo &&
-                            order.paymentInfo.status === "succeeded"
-                            ? "PAID"
-                            : "NOT PAID"}
+                            order.paymentInfo.status
+                            }
                         </p>
                       </div>
                     </div>
@@ -144,7 +144,7 @@ const ProcessOrder = ({ match }) => {
                         <div className="proOrder_dtlSub">
                           <p
                             className={
-                              order.orderStatus && order.orderStatus === "Pending"
+                              order.orderStatus && order.orderStatus === "Verified"
                                 ? "greenColor"
                                 : "redColor"
                             }
@@ -196,7 +196,7 @@ const ProcessOrder = ({ match }) => {
               {/*  */}
               <div
                 style={{
-                  // display: order.orderStatus === "Delivered" ? "none" : "block",
+                   display: order.orderStatus === "Verified" ? "none" : "block",
                 }}
               >
                 <form
@@ -206,10 +206,10 @@ const ProcessOrder = ({ match }) => {
                   <h1>Choose the Payment verification for the course*</h1>
 
                   <div>
-                    <AttachMoneyIcon />
+                    <CurrencyRubleIcon />
                     <select onChange={(e) => setStatus(e.target.value)}>
                       <option value="">Payment Option</option>
-                      {order.orderStatus === "Processing" && (
+                      {order.orderStatus === "Not Verified" && (
                         <option value="Verified">Verified</option>
                       )}
 
@@ -230,13 +230,14 @@ const ProcessOrder = ({ match }) => {
                   </button>
                 </form>
 
-                <form className="sendLink_form">
+               
+              </div>
+              <form className="sendLink_form">
                   <h2>Please enter the student's email address and file url to send*</h2>
                   <input type={"email"} placeholder="Enter Student Email" />
                   <input type={"url"} placeholder="Enter File Url" />
                   <button className="btn_primary">Send Url</button>
                 </form>
-              </div>
             </div>
           )}
         </div>

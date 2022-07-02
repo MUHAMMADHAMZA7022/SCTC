@@ -174,8 +174,9 @@ exports.updateorder = catchasyncerror(async (req, res, next) => {
 //   }
   order.orderStatus = req.body.status;
 
-  if (req.body.status === "Delivered") {
-    order.deliveredAt = Date.now();
+  if (req.body.status === "Verified") {
+    order.paymentInfo.status="PAID"
+    order.verifiedAt = Date.now();
   }
 
   await order.save({ validateBeforeSave: false });
