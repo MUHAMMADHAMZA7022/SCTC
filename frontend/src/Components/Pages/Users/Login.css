@@ -6,6 +6,9 @@
     flex: 1;
     position: relative;
 }
+/* .loginImg img{
+    filter: brightness(2) contrast(0.5);
+} */
 .loginImg::after{
     position: absolute;
     content: " ";
@@ -13,7 +16,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(0, 46, 59, 0.4);
+    background: rgba(0, 0, 0, 0.5);
 }
 .loginHolder{
     flex: 1;
@@ -33,13 +36,21 @@
     color: var(--themeColor);
     font-size: 12px;
     float: right;
+    margin-bottom: 10px;
 }
 .loginForm a.acc_link:focus,
 .loginForm a.acc_link:hover{
     color: var(--redColor);
 }
+.group_field button:nth-child(1){
+    margin-bottom: 20px;
+}
+.group_field a:nth-child(3){
+    margin-right: 20px;
+}
 .loginForm .group_field{
     width: 100%;
+    margin-bottom: 20px;
 }
 .group_field{
     width: 60%;

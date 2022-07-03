@@ -43,48 +43,48 @@ function Login() {
             {/* Login Form */}
             <div className='formHolder'>
                 <div className="grid">
-                <div className='loginImg'>
-                    <img src={logInImg} alt="loginImg" />
-                </div>
-                <div className='loginHolder'>
-                    <h1>Log In</h1>
-                    <form className="loginForm" onSubmit={loginSubmit}>
-                        {/* Email */}
-                        <div class="form__group field">
-                            <input
-                                className='form__field'
-                                type='email'
-                                autoComplete="Email"
-                                placeholder="Email"
-                                name="email"
-                                value={loginEmail}
-                                onChange={(e) => setLoginEmail(e.target.value)}
-                                required
-                            />
-                            <label for="name" className="form__label">Email</label>
-                        </div>
-                        {/* Password */}
-                        <div class="form__group field">
-                            <input
-                                className='form__field'
-                                type='password'
-                                placeholder="Password"
-                                autoComplete="current-password"
-                                value={loginPassword}
-                                onChange={(e) => setLoginPassword(e.target.value)}
-                                required
-                            />
-                            <label for="name" className="form__label">Password</label>
-                        </div>
-                        <div className="group_field">
-                            <button className='btn_primary' >Login</button>
-                            <Link to={"/signup"} className="acc_link">Doesn't have an Account?</Link>
+                    <div className='loginImg'>
+                        <img src={logInImg} alt="loginImg" />
+                    </div>
+                    <div className='loginHolder'>
+                        <h1>Log In</h1>
+                        <form className="loginForm" onSubmit={loginSubmit}>
+                            {/* Email */}
+                            <div class="form__group field">
+                                <input
+                                    className='form__field'
+                                    type='email'
+                                    autoComplete="Email"
+                                    placeholder="Email"
+                                    name="email"
+                                    value={loginEmail}
+                                    onChange={(e) => setLoginEmail(e.target.value)}
+                                    required
+                                />
+                                <label for="name" className="form__label">Email</label>
+                            </div>
+                            {/* Password */}
+                            <div class="form__group field">
+                                <input
+                                    className='form__field'
+                                    type='password'
+                                    placeholder="Password"
+                                    autoComplete="current-password"
+                                    value={loginPassword}
+                                    onChange={(e) => setLoginPassword(e.target.value)}
+                                    required
+                                />
+                                <label for="name" className="form__label">Password</label>
+                            </div>
+                            <div className="group_field">
+                                <button className='btn_primary' >Login</button>
+                                <Link to={"/signup"} className="acc_link">Doesn't have an Account?</Link>
+                                <Link to={"/signup"} className="acc_link">Forget your password?</Link>
+                            </div>
 
-                        </div>
-
-                    </form>
+                        </form>
+                    </div>
                 </div>
-            </div>
             </div>
         </Fragment>
     )
