@@ -43,7 +43,7 @@ function Home({ course }) {
               <Link to={"#"} className='red_link' onClick={() => addToCartHandler()}>Buy now</Link>
               <Link to={`/course/details/${course._id}`}>View Details</Link>
               <span className='share_link red_link' title='share course'>
-                <ShareCourse />
+                <ShareCourse  />
               </span>
             </div>
           </div>
