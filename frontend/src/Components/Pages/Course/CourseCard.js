@@ -5,8 +5,6 @@ import { CLEAR_ERROR } from "../../../redux/action/courseaction";
 import { addItemsToCart } from "../../../redux/action/cartAction";
 import { useDispatch, useSelector } from 'react-redux';
 import ShareCourse from './ShareCourse';
-
-
 function Home({ course }) {
   const { error } = useSelector((state) => state.courseDetails);
   const alert = useAlert();
