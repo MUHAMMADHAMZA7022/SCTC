@@ -149,3 +149,22 @@
     font-size: 15px;
     padding-top: 5px;
 }
+.evnDetail_action{
+    position: relative;
+}
+.eventJoin_holder{
+    padding: 20px;
+    width: 30%;
+    position: absolute;
+    bottom: 10%;
+    left: 15%;
+    right: 0;
+}
+.eventJoin_form input{
+    display: block;
+    width: 100%;
+    outline: none;
+    border: 1px solid var(--boxBorder);
+    padding: 10px;
+    margin-bottom: 10px;
+}

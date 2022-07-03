@@ -76,7 +76,7 @@ function ResetPassword() {
                                 onChange={(e) => setConformPassword(e.target.value)}
                                 required
                             />
-                            <label for="name" className="form__label">Password</label>
+                            <label for="name" className="form__label">Confirm Password</label>
                         </div>
                         <div className="group_field">
                             <button className='btn_primary'>Reset</button>

@@ -92,8 +92,9 @@ function Courses() {
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
+                id="evnName"
               />
-              <label for="name" className="form__label">Event Name</label>
+              <label for="evnName" className="form__label">Event Name</label>
             </div>
             <div class="form__group field">
               {images ? (
@@ -120,8 +121,9 @@ function Courses() {
                 onChange={(e) => setDescription(e.target.value)}
                 cols="30"
                 rows="1"
+                id="evndesp"
               ></textarea>
-              <label for="name" className="form__label">Event Description</label>
+              <label for="evndesp" className="form__label">Event Description</label>
             </div>
             <div class="form__group field">
               <input
@@ -131,8 +133,9 @@ function Courses() {
                 required
                 value={startdate}
                 onChange={(e) => setStartdate(e.target.value)}
+                id="evnSdate"
               />
-              <label for="name" className="form__label">Start Date</label>
+              <label for="evnSdate" className="form__label">Start Date</label>
             </div>
 
             <div class="form__group field">
@@ -156,8 +159,10 @@ function Courses() {
                 min={startdate}
                 value={enddate}
                 className="form__field"
-                onChange={(e) => setEnddate(e.target.value)} />
-              <label for="name" className="form__label">End Date</label>
+                onChange={(e) => setEnddate(e.target.value)}
+                id="evnEdate"
+                />
+              <label for="evnEdate" className="form__label">End Date</label>
             </div>
 
             <div class="form__group field">
@@ -168,8 +173,9 @@ function Courses() {
                 required
                 value={organization}
                 onChange={(e) => setOrganization(e.target.value)}
+                id="orgName"
               />
-              <label for="name" className="form__label">Organization Name</label>
+              <label for="orgName" className="form__label">Organization Name</label>
             </div>
             <div class="form__group field">
               <input
@@ -179,8 +185,9 @@ function Courses() {
                 required
                 value={location}
                 onChange={(e) => setlocation(e.target.value)}
+                id="evnLoc"
               />
-              <label for="name" className="form__label">Event Location</label>
+              <label for="evnLoc" className="form__label">Event Location</label>
             </div>
             {loading === true ? (
               <LoadingButton

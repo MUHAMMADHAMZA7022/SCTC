@@ -52,7 +52,7 @@ function ForgetPassword() {
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
-              <label for="name" className="form__label">Password</label>
+              <label for="name" className="form__label">Email</label>
             </div>
             <div className="group_field">
               <button className='btn_primary'>Forget Password</button>

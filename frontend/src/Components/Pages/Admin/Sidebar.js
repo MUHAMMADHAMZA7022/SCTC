@@ -104,12 +104,12 @@ const Sidebar = () => {
         className='sideBar_list unstyled'
       >
         <TreeItem nodeId="1" label="Events">
-          <Link to="/all/events">
-            <TreeItem nodeId="2" label="All Events" icon={<PostAddIcon />} />
-          </Link>
 
           <Link to="/create/event">
             <TreeItem nodeId="3" label="Create" icon={<AddIcon />} />
+          </Link>
+          <Link to="/all/events">
+            <TreeItem nodeId="2" label="All Events" icon={<PostAddIcon />} />
           </Link>
 
         </TreeItem>

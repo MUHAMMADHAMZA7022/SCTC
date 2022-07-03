@@ -70,6 +70,14 @@ function EventDetails() {
                     <div className='evnDetail_action'>
                         <h2>Event Action</h2>
                         <Link to="#"><TurnedInIcon />Join Now</Link>
+                        <div className='eventJoin_holder'>
+                            <form className='eventJoin_form'>
+                                <input type={"text"} placeholder="Name" />
+                                <input type={"email"} placeholder="Email" />
+                                <input type={"number"} placeholder="Phone No" />
+                                <button className='btn_primary'>Join</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

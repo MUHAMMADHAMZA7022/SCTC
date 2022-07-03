@@ -103,7 +103,6 @@ function Courses() {
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                name="name"
                 id='name'
               />
               <label for="name" className="form__label">Name</label>
@@ -116,6 +115,7 @@ function Courses() {
                 required
                 value={course_file}
                 onChange={(e) => setcourse_file(e.target.value)}
+                id="fileUrl"
               />
               <label for="fileUrl" className="form__label">File Url</label>
             </div>
@@ -127,8 +127,9 @@ function Courses() {
                 onChange={(e) => setDescription(e.target.value)}
                 cols="30"
                 rows="1"
+                id="crsdesp"
               ></textarea>
-              <label for="name" className="form__label">Course Description</label>
+              <label for="crsdesp" className="form__label">Course Description</label>
             </div>
             <div class="form__group field">
               <input
@@ -137,8 +138,9 @@ function Courses() {
                 placeholder=" Course Price"
                 required
                 onChange={(e) => setPrice(e.target.value)}
+                id="crsprc"
               />
-              <label for="name" className="form__label">Course Price</label>
+              <label for="crsprc" className="form__label">Course Price</label>
             </div>
             <div class="form__group field">
             {images ? (
@@ -164,8 +166,9 @@ function Courses() {
                 required
                 value={instructor}
                 onChange={(e) => setinstructor(e.target.value)}
+                id="insName"
               />
-              <label for="name" className="form__label">Instructor Name</label>
+              <label for="insName" className="form__label">Instructor Name</label>
             </div>
             <div class="form__group field">
               <input
@@ -175,8 +178,9 @@ function Courses() {
                 required
                 value={instructor_field}
                 onChange={(e) => setinstructor_field(e.target.value)}
+                id="insField"
               />
-              <label for="name" className="form__label">Instructor Field</label>
+              <label for="insField" className="form__label">Instructor Field</label>
             </div>
             <div class="form__group field">
               <textarea
@@ -186,8 +190,9 @@ function Courses() {
                 rows="1"
                 value={instructor_bio}
                 onChange={(e) => setinstructor_bio(e.target.value)}
+                id="insBio"
               ></textarea>
-              <label for="name" className="form__label">Instructor Bio</label>
+              <label for="insBio" className="form__label">Instructor Bio</label>
             </div>
             <div class="form__group field">
               <input
@@ -197,8 +202,9 @@ function Courses() {
                 required
                 value={duration}
                 onChange={(e) => setduration(e.target.value)}
+                id="crsDue"
               />
-              <label for="name" className="form__label">Course Duration</label>
+              <label for="crsDue" className="form__label">Course Duration</label>
             </div>
             <div class="form__group field">
               <select className="form__field selectOpt" onChange={(e) => setcateogery(e.target.value)}>

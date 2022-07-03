@@ -42,17 +42,17 @@ function Home({ course }) {
             <div className='hc_action'>
               <Link to={"#"} className='red_link' onClick={() => addToCartHandler()}>Buy now</Link>
               <Link to={`/course/details/${course._id}`}>View Details</Link>
-              
+
               <span className='share_link red_link' title='share course'>
-              <RWebShare
-                data={{
+                <RWebShare
+                  data={{
                     url: `http://localhost:3000/course/details/${course._id}`,
                     title: "SCTC",
-                }}
-                onClick={() => console.log("Shared Successfully!")}
-            >
-                <span><ShareOutlinedIcon  /></span>
-            </RWebShare>
+                  }}
+                  onClick={() => console.log("Shared Successfully!")}
+                >
+                  <span><ShareOutlinedIcon /></span>
+                </RWebShare>
               </span>
             </div>
           </div>

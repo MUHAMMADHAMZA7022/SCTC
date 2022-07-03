@@ -5,8 +5,8 @@
     --themeColor: #002e3b;
     --lightColor: #868686;
     --whiteColor: #fff;
-    --lightBorder: 0 2px 3px rgb(0 0 0 / 10%);
-    --boxBorder: rgb(0 0 0 / 10%);
+    --lightBorder: 0 2px 3px rgb(0 0 0 / 20%);
+    --boxBorder: rgb(0 0 0 / 20%);
     --redColor: #ec595f;
     --greenColor: #5a9f68;
     --curve: 40;
@@ -238,7 +238,7 @@ button.btn_primary:focus,
   top: 0;
   display: block;
   transition: 0.2s;
-  font-size: 1rem;
+  font-size: 10px;
   color: var(--lightColor);
 }
 .form__field:focus {
@@ -255,9 +255,11 @@ button.btn_primary:focus,
   top: 0;
   display: block;
   transition: 0.2s;
-  font-size: 0.7rem;
+  font-size: 9px;
   color: var(--themeColor);
   font-weight: 700;
+  /* opacity: 0;
+  visibility: hidden; */
 }
 /* reset input */
 .form__field:required, .form__field:invalid {

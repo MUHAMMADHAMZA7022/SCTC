@@ -268,8 +268,8 @@ setlink("")
                 load===true?(<Loader1/>):(
                   <form className="sendLink_form"  onSubmit={emailOrderSubmitHandler}>
                   <h2>Please enter the student's email address and file url to send*</h2>
-                  <input type={"email"} value={email} onChange={(e)=>setemail(e.target.value)} placeholder="Enter Student Email" />
-                  <input type="url" value={link}  onChange={(e)=>setlink(e.target.value)}  placeholder="Enter File Url" />
+                  <input required type={"email"} value={email} onChange={(e)=>setemail(e.target.value)} placeholder="Enter Student Email" />
+                  <input required type="url" value={link}  onChange={(e)=>setlink(e.target.value)}  placeholder="Enter File Url" />
                   <button className="btn_primary">Send Url</button>
                 </form>
                 )
