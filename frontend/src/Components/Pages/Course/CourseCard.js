@@ -4,6 +4,8 @@ import { useAlert } from "react-alert";
 import { CLEAR_ERROR } from "../../../redux/action/courseaction";
 import { addItemsToCart } from "../../../redux/action/cartAction";
 import { useDispatch,useSelector } from 'react-redux';
+import ShareCourse from './ShareCourse';
+
 function Home({course}) {
   const { error } = useSelector((state) => state.courseDetails);
   const alert = useAlert();
@@ -37,6 +39,7 @@ function Home({course}) {
                 <div className='hc_action'>
                   <Link to={"#"} className='red_link' onClick={() => addToCartHandler()}>Buy now</Link>
                   <Link to={`/course/details/${course._id}`}>View Details</Link>
+                  <span className='share_link red_link' title='share course'><ShareCourse /></span>
                 </div>
               </div>
             </div>

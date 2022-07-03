@@ -1,19 +1,21 @@
 
 import bg3 from '../../../images/slide-img-3.jpg';
 // import bg1 from '../../../images/slide-img-1.jpg';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+
+import ShareCourse from './ShareCourse';
 
 import './CourseDetails.css';
 import React, { Fragment, useEffect, } from "react";
 // import Carousel from "react-material-ui-carousel";
 import { useSelector, useDispatch } from "react-redux";
 import {
-  getProductDetails,
- 
-  CLEAR_ERROR,
+    getProductDetails,
+
+    CLEAR_ERROR,
 } from "../../../redux/action/courseaction";
 import { useParams } from "react-router-dom";
 import { useAlert } from "react-alert";
@@ -23,20 +25,20 @@ import { useAlert } from "react-alert";
 // import { addItemsToCart, FavouriteToCart } from "../../redux/action/cartAction";
 function CourseDetails() {
     const { id } = useParams();
-  const dispatch = useDispatch();
-  const alert = useAlert();
-  const { course, error } = useSelector((state) => state.courseDetails);
-  console.log(course)
-  useEffect(() => {
-    if (error) {
-      alert.error(error);
-      dispatch(CLEAR_ERROR);
-    }
-   
+    const dispatch = useDispatch();
+    const alert = useAlert();
+    const { course, error } = useSelector((state) => state.courseDetails);
+    console.log(course)
+    useEffect(() => {
+        if (error) {
+            alert.error(error);
+            dispatch(CLEAR_ERROR);
+        }
 
- 
-    dispatch(getProductDetails(id));
-  }, [dispatch, id, error, alert]);
+
+
+        dispatch(getProductDetails(id));
+    }, [dispatch, id, error, alert]);
     return (
         <Fragment>
             <div className='courseDetails'>
@@ -45,14 +47,14 @@ function CourseDetails() {
                     <div className='crs_bannerImg'>
                         <img src={bg3} alt="banner" />
                     </div>
-                        <div className="crsBanner_content">
-                            <h2>Course Detailed</h2>
-                        </div>
+                    <div className="crsBanner_content">
+                        <h2>Course Detailed</h2>
+                    </div>
                 </div>
                 {/* Single Page Course Details */}
-           
+
                 <div className='crsDetailsContent grid' >
-                    
+
                     <div className='course_img'>
                         <img src={course?.images?.url} alt="courseImg" />
                     </div>
@@ -70,13 +72,20 @@ function CourseDetails() {
                     </div>
                     <div className='crsDetail_action'>
                         <h2>Course Details</h2>
-                        <span><AccessTimeIcon />{course.duration}</span>
+                        <span className='dur_time'><AccessTimeIcon />{course.duration}</span>
                         <Link to="#"><AddShoppingCartIcon />Buy Now</Link>
+                        <span className='course_price'>
+                            88
+                            <span className='course_currency'>PKR</span>
+                        </span>
+                        <span className='share_link red_link' title='share course'>
+                            <ShareCourse />
+                        </span>
                     </div>
                 </div>
-                     
-          
-              
+
+
+
             </div>
         </Fragment>
     )
