@@ -30,6 +30,10 @@ function Home({course}) {
               <div className='hc_content'>
                 <h2>{course.name}</h2>
                 <p>{course.description}</p>
+                <span className='course_price'>
+                  88
+                  <span className='course_currency'>PKR</span>
+                </span>
                 <div className='hc_action'>
                   <Link to={"#"} className='red_link' onClick={() => addToCartHandler()}>Buy now</Link>
                   <Link to={`/course/details/${course._id}`}>View Details</Link>

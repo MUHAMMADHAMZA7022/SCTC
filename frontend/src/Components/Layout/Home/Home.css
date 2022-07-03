@@ -132,6 +132,17 @@
     text-overflow: ellipsis;
     width: 90%;
 }
+.hc_content .course_price{
+    color: var(--redColor);
+    display: inline-block;
+    margin-right: 2px;
+}
+.hc_content .course_price span.course_currency{
+    color: var(--greenColor);
+    display: inline-block;
+    margin-right: 2px;
+    font-size: 12px;
+}
 .hc_action{
     position: absolute;
     bottom: 2%;
