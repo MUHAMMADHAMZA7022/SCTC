@@ -4,8 +4,8 @@ import { useAlert } from "react-alert";
 import { CLEAR_ERROR } from "../../../redux/action/courseaction";
 import { addItemsToCart } from "../../../redux/action/cartAction";
 import { useDispatch, useSelector } from 'react-redux';
-import ShareCourse from './ShareCourse';
-
+import { RWebShare } from "react-web-share";
+import ShareOutlinedIcon from '@mui/icons-material/ShareOutlined';
 
 function Home({ course }) {
   const { error } = useSelector((state) => state.courseDetails);
@@ -42,8 +42,17 @@ function Home({ course }) {
             <div className='hc_action'>
               <Link to={"#"} className='red_link' onClick={() => addToCartHandler()}>Buy now</Link>
               <Link to={`/course/details/${course._id}`}>View Details</Link>
+              
               <span className='share_link red_link' title='share course'>
-                <ShareCourse  />
+              <RWebShare
+                data={{
+                    url: `http://localhost:3000/course/details/${course._id}`,
+                    title: "SCTC",
+                }}
+                onClick={() => console.log("Shared Successfully!")}
+            >
+                <span><ShareOutlinedIcon  /></span>
+            </RWebShare>
               </span>
             </div>
           </div>
