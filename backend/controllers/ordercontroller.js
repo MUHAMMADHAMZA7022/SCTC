@@ -2,7 +2,7 @@ const Order = require("../models/ordermodel");
 const Course = require("../models/coursemodel");
 const Errorhandler = require("../middleware/errorhandler");
 const catchasyncerror = require("../middleware/asyncerror.js");
-// const nodemailer = require("nodemailer");
+const nodemailer = require("nodemailer");
 // const hbs = require("nodemailer-express-handlebars");
 // const path = require("path");
 // Create new Order
@@ -227,4 +227,49 @@ exports.deleteorder = catchasyncerror(async (req, res, next) => {
     success: true,
     order,
   });
+});
+
+exports.orderemail = catchasyncerror(async (req, res, next) => {
+  const{
+    email,
+    link
+  } = req.body;
+
+  const message = `Thank You! For use sctc website`;
+
+  const transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
+    service: process.env.SMPT_SERVICE,
+    auth: {
+      user: process.env.SMPT_MAIL,
+      pass: process.env.SMPT_PASSWORD,
+    },
+  });
+  const mailoption = {
+    from: process.env.SMPT_MAIL,
+    to: email,
+    subject: "SCTC COURSE WEBSITE",
+    text: message,
+    html:`
+    <div style="padding:10px;border-style: ridge">
+    <p>You have a course request Link.</p>
+    <h3>SCTC COURSE </h3>
+    <ul>
+        <li>LINK: ${link}</li>
+    </ul>`
+  };
+  transporter.sendMail(mailoption, function (error, info) {
+    if (error)
+        {
+          res.json({status: true, respMesg: error.message})
+        } 
+        else
+        {
+          res.json({status: true, respMesg: `Email Sent Successfully`})
+        }
+     
+  });
+
 });

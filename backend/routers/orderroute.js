@@ -9,6 +9,7 @@ const {
   deleteorder,
   getrandomcheckorder,
   getrandomemailorder,
+  orderemail,
 } = require("../controllers/ordercontroller");
 
 const authenticate = require("../utils/auth");
@@ -25,4 +26,6 @@ router
   .route("/admin/order/:id")
   .put(authenticate, authorizerole("admin"), updateorder)
   .delete(authenticate, authorizerole("admin"), deleteorder);
+router.route("/admin/emailorder").post(authenticate, authorizerole("admin"), orderemail);
+
 module.exports = router;

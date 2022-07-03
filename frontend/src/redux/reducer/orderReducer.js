@@ -25,6 +25,10 @@ import {
   CHECK_EMAIL_DETAILS_REQUEST,
   CHECK_EMAIL_DETAILS_SUCCESS,
   CHECK_EMAIL_DETAILS_FAIL,
+  EMAIL_ORDER_FAIL,
+  EMAIL_ORDER_SUCCESS,
+  EMAIL_ORDER_REQUEST,
+
   CLEAR_ERRORS,
 } from "../Constant/orderconstant";
 
@@ -216,6 +220,36 @@ export const randomemailReducer = (state = { order: [] }, action) => {
       };
 
     case CHECK_EMAIL_DETAILS_FAIL:
+      return {
+        loading: false,
+        error: action.payload,
+      };
+    case CLEAR_ERRORS:
+      return {
+        ...state,
+        error: null,
+      };
+
+    default:
+      return state;
+  }
+};
+//email order
+export const emailReducer = (state = {}, action) => {
+  switch (action.type) {
+    case EMAIL_ORDER_REQUEST:
+      return {
+        ...state,
+        loading: true,
+      };
+
+    case EMAIL_ORDER_SUCCESS:
+      return {
+        loading: false,
+        isorder: action.payload,
+      };
+
+    case EMAIL_ORDER_FAIL:
       return {
         loading: false,
         error: action.payload,

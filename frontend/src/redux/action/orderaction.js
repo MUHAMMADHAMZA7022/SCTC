@@ -23,6 +23,9 @@ import {
   CHECK_EMAIL_DETAILS_REQUEST,
   CHECK_EMAIL_DETAILS_SUCCESS,
   CHECK_EMAIL_DETAILS_FAIL,
+  EMAIL_ORDER_REQUEST,
+  EMAIL_ORDER_SUCCESS,
+  EMAIL_ORDER_FAIL,
   CLEAR_ERRORS,
 } from "../Constant/orderconstant";
 
@@ -48,7 +51,26 @@ export const createOrder = (order) => async (dispatch) => {
     });
   }
 };
+//email order
+export const emailOrder = (order) => async (dispatch) => {
+  try {
+    dispatch({ type: EMAIL_ORDER_REQUEST });
 
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+    const { data } = await axios.post("/api/v1/order/admin/emailorder", order, config);
+
+    dispatch({ type: EMAIL_ORDER_SUCCESS, payload: data });
+  } catch (error) {
+    dispatch({
+      type: EMAIL_ORDER_FAIL,
+      payload: error.response.data.message,
+    });
+  }
+};
 // My Orders
 export const myOrders = () => async (dispatch) => {
   try {

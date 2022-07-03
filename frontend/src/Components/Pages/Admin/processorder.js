@@ -5,20 +5,44 @@ import { Typography } from '@mui/material';
 import SideBar from "./Sidebar";
 import {
   getOrderDetails,
+  emailOrder,
   clearErrors,
   updateOrder,
 } from "../../../redux/action/orderaction";
 import { useSelector, useDispatch } from "react-redux";
 import Loader from "../../Layout/Loader/loader";
+import Loader1 from "../../Layout/Loader/Courseloader";
 import { useAlert } from "react-alert";
 import CurrencyRubleIcon from '@mui/icons-material/CurrencyRuble';
 import { UPDATE_ORDER_RESET } from "../../../redux/Constant/orderconstant";
 import "./processorder.css";
-
 const ProcessOrder = ({ match }) => {
   const id = useParams().id;
   const { order, error, loading } = useSelector((state) => state.orderDetails);
   const { error: updateError, isUpdated } = useSelector((state) => state.order);
+  const {loading:load,error:emailerror,isorder} = useSelector((state) => state.emailorder);
+
+
+  const [email, setemail] = useState("");
+  const [link, setlink] = useState("");
+
+
+  const emailOrderSubmitHandler = (e) => {
+    e.preventDefault();
+
+    const myForm = new FormData();
+
+    myForm.set("email", email);
+    myForm.set("link", link);
+
+    dispatch(emailOrder( myForm));
+setemail("")
+setlink("")
+    
+
+  
+
+  };
   const updateOrderSubmitHandler = (e) => {
     e.preventDefault();
 
@@ -43,13 +67,20 @@ const ProcessOrder = ({ match }) => {
       alert.error(updateError);
       dispatch(clearErrors());
     }
+    if (emailerror) {
+      alert.error(error);
+      dispatch(clearErrors());
+    }
+    if (isorder) {
+      alert.success("Email Send Successfully");
+    }
     if (isUpdated) {
       alert.success("Order Updated Successfully");
       dispatch({ type: UPDATE_ORDER_RESET });
     }
 
     dispatch(getOrderDetails(id));
-  }, [dispatch, alert, error, id, isUpdated, updateError]);
+  }, [dispatch, alert, error,isorder,emailerror, id, isUpdated, updateError]);
 
   return (
     <Fragment>
@@ -233,12 +264,17 @@ const ProcessOrder = ({ match }) => {
                
               </div>
              { order.orderStatus === "Verified"?(
-              <form className="sendLink_form">
+              
+                load===true?(<Loader1/>):(
+                  <form className="sendLink_form"  onSubmit={emailOrderSubmitHandler}>
                   <h2>Please enter the student's email address and file url to send*</h2>
-                  <input type={"email"} placeholder="Enter Student Email" />
-                  <input type={"url"} placeholder="Enter File Url" />
+                  <input type={"email"} value={email} onChange={(e)=>setemail(e.target.value)} placeholder="Enter Student Email" />
+                  <input type="url" value={link}  onChange={(e)=>setlink(e.target.value)}  placeholder="Enter File Url" />
                   <button className="btn_primary">Send Url</button>
-                </form>):(null)}
+                </form>
+                )
+              
+             ):(null)}
             </div>
           )}
         </div>

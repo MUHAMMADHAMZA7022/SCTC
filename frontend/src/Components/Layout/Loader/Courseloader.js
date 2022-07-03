@@ -1,30 +1,21 @@
-import React from "react";
-import { Fragment } from "react";
-// import { Audio } from "react-loader-spinner";
+
 import SyncLoader from "react-spinners/FadeLoader";
+
+import React from "react";
 import { css } from "@emotion/react";
-
 import "./Loader.css";
-const ploader = () => {
-
-  const override = css`
-  color: red;
-margin:auto;
-border-color: red;
+const Loader = () => {
+    const override = css`
+    color: red;
+  margin:auto;
+  border-color: red;
 `;
   return (
-    <Fragment>
-      <div className="loaderCard">
-        <div className="loader_logo_holder">
-          <div className="loaderCard_Holder">
-          <SyncLoader width={20}  height={30} color='grey'   css={override} />
-
-          </div>
-        </div>
+      <div className="s">
+       
+          <SyncLoader  size={30} color='black'  css={override} />
       </div>
-      
-    </Fragment>
   );
 };
 
-export default ploader;
+export default Loader;
