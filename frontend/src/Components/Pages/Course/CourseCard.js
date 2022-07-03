@@ -4,13 +4,9 @@ import { useAlert } from "react-alert";
 import { CLEAR_ERROR } from "../../../redux/action/courseaction";
 import { addItemsToCart } from "../../../redux/action/cartAction";
 import { useDispatch, useSelector } from 'react-redux';
-<<<<<<< HEAD
-import ShareCourse from './ShareCourse';
-=======
 import { RWebShare } from "react-web-share";
 import ShareOutlinedIcon from '@mui/icons-material/ShareOutlined';
 
->>>>>>> a545a2e2f8c89574a9a005519ceeb8d9d6381629
 function Home({ course }) {
   const { error } = useSelector((state) => state.courseDetails);
   const alert = useAlert();
