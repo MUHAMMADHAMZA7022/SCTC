@@ -3,7 +3,7 @@ import { RWebShare } from "react-web-share";
 import ShareOutlinedIcon from '@mui/icons-material/ShareOutlined';
 
 function ShareCourse() {
-    const urlLink = window.location.href
+    const urlLink = window.location.href;
     return (
         <Fragment>
             <RWebShare

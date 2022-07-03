@@ -14,14 +14,16 @@
 
 .crs_searchBar {
     width: 100%;
-    padding: 20px 5px;
     display: flex;
+    margin-bottom: 30px;
+    box-shadow: var(--boxShadow);
+    border-radius: 5%;
 }
 
 .crs_searchBar input {
     display: inline-block;
     outline: none;
-    border: 2px solid var(--themeColor);
+    border: 1px solid var(--themeColor);
     text-shadow: none;
     padding: 10px 5px;
     flex: 9;
@@ -33,20 +35,21 @@
     flex: 1;
     display: inline-block;
     vertical-align: top;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border-top-right-radius: 5%;
+    border-bottom-right-radius: 5%;
     overflow: hidden;
+    border-width: 1px;
 }
 .filterCategories li.ct_btn {
     display: inline-block;
-    border: 2px solid var(--themeColor);
+    border: 1px solid var(--themeColor);
     padding: 10px 5px;
     border-right: none;
     color: var(--themeColor);
     cursor: pointer;
     position: relative;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
+    border-top-left-radius: 5%;
+    border-bottom-left-radius: 5%;
 }
 
 .filterCategories li.ct_btn>ul {

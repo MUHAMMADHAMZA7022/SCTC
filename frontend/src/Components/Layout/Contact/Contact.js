@@ -41,7 +41,11 @@ function Contact() {
                 </div>
                 <h2>Get in touch with SCTC</h2>
                 <div className='contactUs_holder grid'>
-                    <div className='ourMap'></div>
+                    <div className='ourMap'>
+                        <div className='map_holder'>
+                            <iframe title='SCTC Map' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d217972.70283029746!2d73.97748862499998!3d31.3914304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3919018a8ea548c1%3A0x4a52db69c2c814f!2sThe%20University%20of%20Lahore!5e0!3m2!1sen!2s!4v1656856582082!5m2!1sen!2s" width="600" height="450" style={{ border: "0px"}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
                     <div className='contactUs_form'>
                         <form>
                             <input type={"text"} placeholder="First Name" />

@@ -11,8 +11,11 @@
 .contactUs_holder{
     display: flex;
 }
-.ourMap{
-    flex: 2;
+.ourMap {
+    flex: 2 1;
+    overflow: hidden;
+    height: 250px;
+    margin: 0 50px 0 0;
 }
 .contactUs_form{
     flex: 4;

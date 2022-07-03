@@ -75,7 +75,7 @@ function CourseDetails() {
                         <span className='dur_time'><AccessTimeIcon />{course.duration}</span>
                         <Link to="#"><AddShoppingCartIcon />Buy Now</Link>
                         <span className='course_price'>
-                            88
+                            {course.price}
                             <span className='course_currency'>PKR</span>
                         </span>
                         <span className='share_link red_link' title='share course'>

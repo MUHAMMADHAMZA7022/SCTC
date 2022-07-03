@@ -1,17 +1,18 @@
-import React, { Fragment ,useEffect,} from 'react'
+import React, { Fragment, useEffect, } from 'react'
 import { Link } from 'react-router-dom';
 import { useAlert } from "react-alert";
 import { CLEAR_ERROR } from "../../../redux/action/courseaction";
 import { addItemsToCart } from "../../../redux/action/cartAction";
-import { useDispatch,useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import ShareCourse from './ShareCourse';
 
-function Home({course}) {
+
+function Home({ course }) {
   const { error } = useSelector((state) => state.courseDetails);
   const alert = useAlert();
   const dispatch = useDispatch();
   const addToCartHandler = () => {
- 
+
     dispatch(addItemsToCart(course._id));
     alert.success("Item Added To Cart");
   };
@@ -21,29 +22,33 @@ function Home({course}) {
       dispatch(CLEAR_ERROR);
     }
   }, [dispatch, alert, error]);
+
+
   return (
     <Fragment>
-     
-          <div className='hc_holder'>
-            <div className='hc_card'>
-              <Link to={`/course/details/${course._id}`} className='hc_img'>
-                <img src={course.images.url} alt='#' />
-              </Link>
-              <div className='hc_content'>
-                <h2>{course.name}</h2>
-                <p>{course.description}</p>
-                <span className='course_price'>
-                  88
-                  <span className='course_currency'>PKR</span>
-                </span>
-                <div className='hc_action'>
-                  <Link to={"#"} className='red_link' onClick={() => addToCartHandler()}>Buy now</Link>
-                  <Link to={`/course/details/${course._id}`}>View Details</Link>
-                  <span className='share_link red_link' title='share course'><ShareCourse /></span>
-                </div>
-              </div>
+
+      <div className='hc_holder'>
+        <div className='hc_card'>
+          <Link to={`/course/details/${course._id}`} className='hc_img'>
+            <img src={course.images.url} alt='#' />
+          </Link>
+          <div className='hc_content'>
+            <h2>{course.name}</h2>
+            <p>{course.description}</p>
+            <span className='course_price'>
+              {course.price}
+              <span className='course_currency'>PKR</span>
+            </span>
+            <div className='hc_action'>
+              <Link to={"#"} className='red_link' onClick={() => addToCartHandler()}>Buy now</Link>
+              <Link to={`/course/details/${course._id}`}>View Details</Link>
+              <span className='share_link red_link' title='share course'>
+                <ShareCourse />
+              </span>
             </div>
           </div>
+        </div>
+      </div>
     </Fragment>
   )
 }
