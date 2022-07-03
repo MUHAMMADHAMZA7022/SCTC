@@ -1,0 +1,15 @@
+.about_holder{
+    padding: 50px;
+}
+.abt_box h3{
+    color: var(--themeColor);
+    margin-bottom: 50px;
+    font-size: 20px;
+    line-height: 24px;
+}
+.abt_box p{
+    color: var(--themeColor);
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 20px;
+}
