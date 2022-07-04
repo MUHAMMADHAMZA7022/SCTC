@@ -77,6 +77,7 @@ function EventDetails() {
                         <Link to="#" onClick={ToggleClass}><TurnedInIcon />Join Now</Link>
                         <div className={isActive ? "evn_box" : null}>
                             <div className='eventJoin_holder'>
+                                <p className='capitalize'>to join event please fill the below information*</p>
                                 <form className='eventJoin_form'>
                                     <input type={"text"} placeholder="Name" />
                                     <input type={"email"} placeholder="Email" />

@@ -67,7 +67,7 @@
     color: var(--redColor);
 }
 .ct_text a.ct_title:hover{
-    color: var(--themeColor);
+    color: var(--greenColor);
 }
 .ct_text p{
     display: inline-block;

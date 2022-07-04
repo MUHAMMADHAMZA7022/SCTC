@@ -13,14 +13,14 @@ import { CLEAR_ERROR, getProduct } from "../../../redux/action/courseaction";
 import CourseCard from "./CourseCard";
 // import Pagination from "react-js-pagination";
 import { useAlert } from "react-alert";
-import { useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Loader1 from "../../Layout/Loader/loader";
 
 // import Search from "./Search";
-const cateogories = ["Biology", "Statical", "Physics",""];
+const cateogories = ["Biology", "Statical", "Physics", ""];
 function HomeCourses() {
   const dispatch = useDispatch();
-  let history=useNavigate();
+  let history = useNavigate();
   const [cateogery, setcateogery] = useState("");
   const [keyword, setKeyword] = useState("");
   const alert = useAlert();
@@ -40,7 +40,7 @@ function HomeCourses() {
   } = useSelector((state) => state.courses);
 
   //let count = filterproductCount;
-console.log(cateogery)
+  console.log(cateogery)
   useEffect(() => {
     if (error) {
       alert.error(error);
@@ -69,49 +69,41 @@ console.log(cateogery)
               <li className="ct_btn"  >
                 Categories
                 <ul className="unstyled ct_list">
-                <li
-                      className="category-link"
-                     
-                
-                      onMouseEnter={() => dispatch(getProduct())}
-                 
-                    >
+                  <li
+                    className="category-link"
+                    onMouseEnter={() => dispatch(getProduct())}
+                  >
                     ALL
-                    </li>
+                  </li>
                   {
-                  cateogories.map((cato) => (
-                    <li
-                      className="category-link"
-                      key={cato}
-                     
-                
-                      onMouseEnter={() => setcateogery(cato)}
-                 
-                    >
-                      {cato}
-                    </li>
-                  ))}
-                 
+                    cateogories.map((cato) => (
+                      <li
+                        className="category-link"
+                        key={cato}
+                        onMouseEnter={() => setcateogery(cato)}
+                      >
+                        {cato}
+                      </li>
+                    ))}
+
                 </ul>
               </li>
             </ul>
-            <input type="search" 
-              placeholder="Search a Courses ..." 
-              onChange={(e) => setKeyword(e.target.value)}/>
+            <input type="search"
+              placeholder="Search a Courses ..."
+              onChange={(e) => setKeyword(e.target.value)} />
             <button className="btn_primary" >Search</button>
           </form>
           {/* All courses cards for each course */}
           {/* <div className='allCourses_card'> */}
 
-          {loading===false&&courses? (
+          {loading === false && courses ? (
             courses.map((course) => (
               <CourseCard key={course._id} course={course} />
             ))
           ) : (
             <Loader1 />
           )}
-
- 
         </div>
       </div>
       {/* </div> */}
