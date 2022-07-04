@@ -119,7 +119,7 @@ function Home() {
         </section>
         {/* Find Courses Section */}
         <section className='homeEvents grid'>
-          <div className='section_heading'>
+          <div className='section_heading grid'>
             <h1>Find Your Courses</h1>
           </div>
           <div className="find_course grid">
