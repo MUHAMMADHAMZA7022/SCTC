@@ -2,6 +2,7 @@
     /* --boxShadow: 0px 5px 5px -5px rgba(44, 39, 39, 0.75); */
     --boxShadow: 0px 1px 6px 1px rgba(44, 39, 39, 0.75);
     /* 0, 46, 59, 1  for theme color*/
+    --hoverBoxShadow: 0px 1px 6px 1px  rgba(199, 12, 12, 0.75);
     --themeColor: #002e3b;
     --lightColor: #868686;
     --whiteColor: #fff;
@@ -59,6 +60,7 @@ button.btn_primary:focus,
 .btn_primary:hover {
   color: var(--whiteColor) !important;
   background-color: transparent;
+  background: transparent;
   text-shadow: nthree;
 }
 .btn_primary:focus:before,
@@ -78,6 +80,7 @@ button.btn_primary:focus,
   content: '';
   color: var(--whiteColor) !important;
   background: var(--themeColor);
+  background-color: var(--themeColor);
   transition: all 0.5s cubic-bezier(0.42, 0, 0.58, 1);
 }
 
