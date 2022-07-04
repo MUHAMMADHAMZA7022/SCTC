@@ -21,13 +21,13 @@ import { useSelector, useDispatch } from "react-redux";
 import Loader1 from "../Loader/Courseloader";
 import { useAlert } from "react-alert";
 import BannerCard from "../../Pages/Event/baneercard";
-import Cloader from "../Loader/cloader";
+
 function Home() {
   // const history = useNavigate();
   const alert = useAlert();
   const dispatch = useDispatch();
 
-  const {loading, courses, error } = useSelector((state) => state.courses);
+  const { courses, error } = useSelector((state) => state.courses);
   const { latestevent, error: eventerror } = useSelector((state) => state.events);
   // const [cateogery, setcateogery] = useState("");
   // const [keyword, setKeyword] = useState("");
@@ -120,7 +120,36 @@ function Home() {
 
         {/* This is course card loader styles */}
 
-      
+        <div className="grid">
+          <div className="crsCard_loader">
+            <div className="crsImg_loader"></div>
+            <div className="crsCardLoader_content">
+              {/* <h1>Course card title</h1>
+              <p>Course card descirption</p>
+              <span>44pkr</span>
+              <div className="crsCardLoader_action">
+                buy now view details share
+              </div> */}
+              <div className="windows8">
+                <div className="wBall" id="wBall_1">
+                  <div className="wInnerBall"></div>
+                </div>
+                <div className="wBall" id="wBall_2">
+                  <div className="wInnerBall"></div>
+                </div>
+                <div className="wBall" id="wBall_3">
+                  <div className="wInnerBall"></div>
+                </div>
+                <div className="wBall" id="wBall_4">
+                  <div className="wInnerBall"></div>
+                </div>
+                <div className="wBall" id="wBall_5">
+                  <div className="wInnerBall"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
 
 
@@ -172,14 +201,14 @@ function Home() {
             <h1>Latest Courses to join</h1>
           </div>
 
-          {loading===false? (
+          {courses ? (
             courses
               .slice(0, 6)
               .map((course) => (
                 <CourseCard key={course._id} course={course} />
               ))
           ) : (
-            <Cloader />
+            <Loader1 />
           )}
 
           {/* <div className='hc_holder'>
