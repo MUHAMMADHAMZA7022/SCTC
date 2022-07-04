@@ -154,6 +154,46 @@ function Header() {
             <li><Link to='/services'>Services</Link></li>
             <li><Link to='/about'>About</Link></li>
             <li><Link to='/contact'>Contact</Link></li>
+
+            
+            <li>
+            <Link
+              to="/cart"
+              style={{ color: cartItems.length > 0 ? "red" : "unset" }}
+            >
+              <ShoppingCartOutlinedIcon
+                style={{ color: cartItems.length > 0 ? "red" : "unset" }}
+              />{" "}
+              <sup style={{ color: cartItems.length > 0 ? "red" : "unset" }}>
+                {" "}
+                {cartItems.length > 0 ? cartItems.length : null}
+              </sup>
+            </Link>
+          </li>
+            {
+              !isAuthenticated ? (
+                <li><Link to='/login' className='nav_btn'>Sign In</Link></li>
+
+              ):(
+            
+            <li className={isHovering ? 'pr_box' : ''}
+            onMouseOver={handleMouseOver}
+            onMouseOut={handleMouseOut} id="pr_item">
+              {/* className={isActive ? "pr_box" : null} onClick={ToggleClass}  */}
+              <Link to={'#'} className='profile_box'></Link>
+              <ul className='unstyled pr_list'>
+                <li><Link to={'/profile'}>Profile</Link></li>
+                 {
+                  user.role === "admin" ?( 
+                    <li><Link to={'/dashboard'}>Dashboard</Link></li>
+                   ):(
+                     null
+                  )
+                 } 
+                <li><button className='logoutBtn' onClick={logoutUser}>Logout</button></li>
+              </ul>
+            </li>
+              )}
           </ul>
         </div>
       </div>
