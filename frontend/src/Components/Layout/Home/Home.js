@@ -29,6 +29,8 @@ function Home() {
 
   const { courses, error } = useSelector((state) => state.courses);
   const { latestevent, error: eventerror } = useSelector((state) => state.events);
+  // const [cateogery, setcateogery] = useState("");
+  // const [keyword, setKeyword] = useState("");
   // const cateogories = ["Biology", "Statical", "Physics",];
   // const searchSubmitHandler = (e) => {
   //   e.preventDefault();
@@ -50,6 +52,7 @@ function Home() {
       dispatch(CLEAR_ERROR_EVENT);
     }
     dispatch(getEvent());
+    // dispatch(getProduct(keyword, cateogery));
   }, [alert, dispatch, error, eventerror]);
 
   return (
