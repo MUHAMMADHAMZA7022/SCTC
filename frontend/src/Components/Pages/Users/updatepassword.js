@@ -67,8 +67,9 @@ const UpdatePassword = () => {
                   required
                   value={oldpassword}
                   onChange={(e) => setOldPassword(e.target.value)}
+                  id="opassword"
                 />
-                <label for="name" className="form__label">Old Password</label>
+                <label for="opassword" className="form__label">Old Password</label>
               </div>
               <div class="form__group field">
                 <input
@@ -78,8 +79,9 @@ const UpdatePassword = () => {
                   required
                   value={newpassword}
                   onChange={(e) => setNewPassword(e.target.value)}
+                  id="newpassword"
                 />
-                <label for="name" className="form__label">New Password</label>
+                <label for="newpassword" className="form__label">New Password</label>
               </div>
               <div class="form__group field">
                 <input
@@ -89,8 +91,9 @@ const UpdatePassword = () => {
                   required
                   value={conformpassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
+                  id="copassword"
                 />
-                <label for="name" className="form__label">Confirm Password</label>
+                <label for="copassword" className="form__label">Confirm Password</label>
               </div>
 
               <div className="row group_field e_btn">

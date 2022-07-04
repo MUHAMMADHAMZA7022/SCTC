@@ -46,11 +46,10 @@ function ForgetPassword() {
                 className='form__field'
                 type='email'
                 placeholder="Email"
-
-                name="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
+                id="name"
               />
               <label for="name" className="form__label">Email</label>
             </div>

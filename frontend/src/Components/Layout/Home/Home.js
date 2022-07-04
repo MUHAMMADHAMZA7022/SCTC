@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useEffect } from "react";
 // import slide1 from '../../../images/bimg1.jpg';
 import bg1 from '../../../images/sctc1.jpg';
 // import bg2 from '../../../images/slide-img-2.jpg';
@@ -9,13 +9,13 @@ import MapsHomeWorkIcon from '@mui/icons-material/MapsHomeWork';
 import FaxIcon from '@mui/icons-material/Fax';
 import MarkEmailUnreadIcon from '@mui/icons-material/MarkEmailUnread';
 import "./Home.css";
-import { Link, useNavigate } from "react-router-dom";
-import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
-import SearchIcon from '@mui/icons-material/Search';
+import { Link } from "react-router-dom";
+// import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+// import SearchIcon from '@mui/icons-material/Search';
 
 import CourseCard from "../../Pages/Course/CourseCard";
 import EventCard from "../../Pages/Event/EventCard";
-import { CLEAR_ERROR, getProduct } from "../../../redux/action/courseaction";
+import { CLEAR_ERROR } from "../../../redux/action/courseaction";
 import { CLEAR_ERROR_EVENT, getEvent } from "../../../redux/action/eventaction";
 import { useSelector, useDispatch } from "react-redux";
 import Loader1 from "../Loader/Courseloader";
@@ -23,23 +23,21 @@ import { useAlert } from "react-alert";
 import BannerCard from "../../Pages/Event/baneercard";
 
 function Home() {
-  const history = useNavigate();
+  // const history = useNavigate();
   const alert = useAlert();
   const dispatch = useDispatch();
 
   const { courses, error } = useSelector((state) => state.courses);
   const { latestevent, error: eventerror } = useSelector((state) => state.events);
-  const [cateogery, setcateogery] = useState("");
-  const [keyword, setKeyword] = useState("");
-  const cateogories = ["Biology", "Statical", "Physics",];
-  const searchSubmitHandler = (e) => {
-    e.preventDefault();
-    if (keyword.trim()) {
-      history(`/${keyword}`);
-    } else {
-      history("/");
-    }
-  };
+  // const cateogories = ["Biology", "Statical", "Physics",];
+  // const searchSubmitHandler = (e) => {
+  //   e.preventDefault();
+  //   if (keyword.trim()) {
+  //     history(`/${keyword}`);
+  //   } else {
+  //     history("/");
+  //   }
+  // };
   useEffect(() => {
     if (error) {
       alert.error(error);
@@ -52,8 +50,7 @@ function Home() {
       dispatch(CLEAR_ERROR_EVENT);
     }
     dispatch(getEvent());
-    dispatch(getProduct(keyword, cateogery));
-  }, [alert, dispatch, error, eventerror, keyword, cateogery]);
+  }, [alert, dispatch, error, eventerror]);
 
   return (
     <Fragment>
@@ -118,7 +115,7 @@ function Home() {
           </div>
         </section>
         {/* Find Courses Section */}
-        <section className='homeEvents grid'>
+        {/* <section className='homeEvents grid'>
           <div className='section_heading grid'>
             <h1>Find Your Courses</h1>
           </div>
@@ -158,7 +155,7 @@ function Home() {
               </form>
             </div>
           </div>
-        </section>
+        </section> */}
         <section className="homeCourses grid">
           <div className="section_heading">
             <h1>Latest Courses to join</h1>

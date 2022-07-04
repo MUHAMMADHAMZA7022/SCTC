@@ -62,8 +62,9 @@ function ResetPassword() {
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 required
+                                id="password"
                             />
-                            <label for="name" className="form__label">Password</label>
+                            <label for="password" className="form__label">Password</label>
                         </div>
                         {/* Confirm Password */}
                         <div class="form__group field">
@@ -75,8 +76,9 @@ function ResetPassword() {
                                 value={confirmpassword}
                                 onChange={(e) => setConformPassword(e.target.value)}
                                 required
+                                id="cpassword"
                             />
-                            <label for="name" className="form__label">Confirm Password</label>
+                            <label for="cpassword" className="form__label">Confirm Password</label>
                         </div>
                         <div className="group_field">
                             <button className='btn_primary'>Reset</button>

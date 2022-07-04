@@ -1,8 +1,8 @@
-import React, { Fragment,useEffect } from "react";
+import React, { Fragment, useEffect } from "react";
 import { useSelector } from "react-redux";
 // import MetaData from "../Layout/Metadata";
 // import Loader from "../Layout/Loader/Loader";
-import { Link, useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Profile.css";
 import { useDispatch } from "react-redux";
 import { Logout } from "../../../redux/action/useraction";
@@ -11,8 +11,8 @@ const Profile = () => {
   const dispatch = useDispatch();
   const alert = useAlert();
 
- let history=useNavigate();
-   const { user,isAuthenticated} = useSelector((state) => state.user);
+  let history = useNavigate();
+  const { user, isAuthenticated } = useSelector((state) => state.user);
   function logoutUser() {
 
     dispatch(Logout());
@@ -38,31 +38,33 @@ const Profile = () => {
           </div>
         </div>
         <div className="profileContainer">
-      
-          <div>
-            <div>
-              <h4>Full Name</h4>
-              <p>{user.name}</p>
+          <div className="proCont">
+            <div className="profC_holder">
+              <div>
+                <h4>Full Name</h4>
+                <p>{user.name}</p>
+              </div>
+              <div>
+                <h4>Email</h4>
+                <p>{user.email}</p>
+              </div>
+              <div>
+                <h4>Joined On</h4>
+                <p>{String(user.createdAt).substr(0, 10)}</p>
+              </div>
             </div>
-            <div>
-              <h4>Email</h4>
-              <p>{user.email}</p>
-            </div>
-            <div>
-              <h4>Joined On</h4>
-              <p>{String(user.createdAt).substr(0, 10)}</p>
-            </div>
-
-            <div>
-              <Link className="btn_primary" to="/coursehistory">
-                Course History
-              </Link>
-              <Link className="btn_primary" to="/password/update">
-                Change Password
-              </Link>
-              <button className="btn_primary" onClick={logoutUser}>
-              Logout
-            </button>
+            <div className="profC_holder">
+              <div>
+                <Link className="btn_primary" to="/coursehistory">
+                  Course History
+                </Link>
+                <Link className="btn_primary" to="/password/update">
+                  Change Password
+                </Link>
+                <button className="btn_primary" onClick={logoutUser}>
+                  Logout
+                </button>
+              </div>
             </div>
           </div>
         </div>

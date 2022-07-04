@@ -21,9 +21,9 @@
     /* 400 Regular
     600 SemiBold
     800 Bold */
+    transition: all ease-in-out 0.3s;
   }
   a{
-    transition: all ease-in-out 0.3s;
     text-decoration: none;
     text-shadow: none;
     list-style-type: none;
