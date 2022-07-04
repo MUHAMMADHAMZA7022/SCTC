@@ -102,8 +102,8 @@ function Home() {
                 <FaxIcon />
               </div>
               <div className='ct_text'>
-              <Link className="ct_title" to={"/events"}>Our Events</Link>
-              <p>See what's on at our great Knowledge Hub.</p>
+                <Link className="ct_title" to={"/events"}>Our Events</Link>
+                <p>See what's on at our great Knowledge Hub.</p>
               </div>
             </div>
             <div className='ct_box'>
@@ -111,12 +111,49 @@ function Home() {
                 <MarkEmailUnreadIcon />
               </div>
               <div className='ct_text'>
-              <Link className="ct_title" to={"/about"}>Heritage</Link>
-              <p>Learn more about SCTC and history.</p>
+                <Link className="ct_title" to={"/about"}>Heritage</Link>
+                <p>Learn more about SCTC and history.</p>
               </div>
             </div>
           </div>
         </section>
+
+        {/* This is course card loader styles */}
+
+        <div className="grid">
+          <div className="crsCard_loader">
+            <div className="crsImg_loader"></div>
+            <div className="crsCardLoader_content">
+              {/* <h1>Course card title</h1>
+              <p>Course card descirption</p>
+              <span>44pkr</span>
+              <div className="crsCardLoader_action">
+                buy now view details share
+              </div> */}
+              <div className="windows8">
+                <div className="wBall" id="wBall_1">
+                  <div className="wInnerBall"></div>
+                </div>
+                <div className="wBall" id="wBall_2">
+                  <div className="wInnerBall"></div>
+                </div>
+                <div className="wBall" id="wBall_3">
+                  <div className="wInnerBall"></div>
+                </div>
+                <div className="wBall" id="wBall_4">
+                  <div className="wInnerBall"></div>
+                </div>
+                <div className="wBall" id="wBall_5">
+                  <div className="wInnerBall"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
         {/* Find Courses Section */}
         {/* <section className='homeEvents grid'>
           <div className='section_heading grid'>
