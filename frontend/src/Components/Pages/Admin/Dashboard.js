@@ -12,7 +12,9 @@ function Dashboard() {
                 </div>
                 {/* Main Content */}
                 <div className='dashboard_content'>
-                    This is Dashboard.
+                    <div className='dashboardContent_holder'>
+                        jbfhdbfgv
+                    </div>
                 </div>
             </div>
         </Fragment>

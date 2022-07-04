@@ -8,6 +8,11 @@
 .dashboard_content{
     width: 80%;
     float: right;
+    padding: 50px;
+}
+.dashboardContent_holder{
+    padding: 20px;
+    box-shadow: var(--boxShadow);
 }
 .dashboard_content h1{
     padding: 10px;
