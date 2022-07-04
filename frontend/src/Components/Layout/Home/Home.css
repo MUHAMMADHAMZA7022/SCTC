@@ -436,15 +436,23 @@ a.ev_img {
 
 /* course card loader styles */
 
-.crsCard_loader {
-    width: calc(33.33% - 10px);
+.crsLoader_card{
+    display: inline-block;
+    width: calc(33.33% - 20px);
+    margin: 0 10px;
     padding: 10px;
     box-shadow: var(--boxShadow);
     height: 150px;
     max-height: 150px;
-    display: flex;
+    margin-bottom: 20px;
 }
-
+.crsCard_loader {
+    float: left;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    height: 100%;
+}
 .crsImg_loader {
     height: 100%;
     flex: 1;
@@ -469,6 +477,7 @@ a.ev_img {
         background: rgba(0, 0, 0, 0.6);
     }
 }
+
 .crsCardLoader_content {
     flex: 2;
     width: 70%;
@@ -479,12 +488,14 @@ a.ev_img {
     justify-content: center;
     align-items: center;
 }
+
 .crsCardLoader_content h1 {
     font-size: 16px;
     line-height: 20px;
     color: var(--themeColor);
     margin-bottom: 10px;
 }
+
 .crsCardLoader_content p {
     font-size: 14px;
     line-height: 18px;
@@ -496,23 +507,27 @@ a.ev_img {
     text-overflow: ellipsis;
     width: 90%;
 }
+
 .crsCardLoader_content span {
     color: var(--themeColor);
     display: inline-block;
     font-weight: 700;
     font-size: 14px;
 }
+
 .crsCardLoader_action {
     position: absolute;
     bottom: 2%;
     left: auto;
 }
+
 .windows8 {
     position: relative;
     width: 60px;
     height: 60px;
     margin: auto;
 }
+
 .windows8 .wBall {
     position: absolute;
     width: 50px;
@@ -531,6 +546,7 @@ a.ev_img {
     -webkit-animation: orbit 4.2325s infinite;
     -moz-animation: orbit 4.2325s infinite;
 }
+
 .windows8 .wBall .wInnerBall {
     position: absolute;
     width: 8px;
@@ -540,6 +556,7 @@ a.ev_img {
     top: 0px;
     border-radius: 8px;
 }
+
 .windows8 #wBall_1 {
     animation-delay: 0.926s;
     -o-animation-delay: 0.926s;
@@ -547,6 +564,7 @@ a.ev_img {
     -webkit-animation-delay: 0.926s;
     -moz-animation-delay: 0.926s;
 }
+
 .windows8 #wBall_2 {
     animation-delay: 0.183s;
     -o-animation-delay: 0.183s;
@@ -554,6 +572,7 @@ a.ev_img {
     -webkit-animation-delay: 0.183s;
     -moz-animation-delay: 0.183s;
 }
+
 .windows8 #wBall_3 {
     animation-delay: 0.3665s;
     -o-animation-delay: 0.3665s;
@@ -561,6 +580,7 @@ a.ev_img {
     -webkit-animation-delay: 0.3665s;
     -moz-animation-delay: 0.3665s;
 }
+
 .windows8 #wBall_4 {
     animation-delay: 0.5495s;
     -o-animation-delay: 0.5495s;
@@ -568,6 +588,7 @@ a.ev_img {
     -webkit-animation-delay: 0.5495s;
     -moz-animation-delay: 0.5495s;
 }
+
 .windows8 #wBall_5 {
     animation-delay: 0.743s;
     -o-animation-delay: 0.743s;
@@ -575,6 +596,7 @@ a.ev_img {
     -webkit-animation-delay: 0.743s;
     -moz-animation-delay: 0.743s;
 }
+
 @keyframes orbit {
     0% {
         opacity: 1;
@@ -628,6 +650,7 @@ a.ev_img {
         transform: rotate(900deg);
     }
 }
+
 @-o-keyframes orbit {
     0% {
         opacity: 1;
