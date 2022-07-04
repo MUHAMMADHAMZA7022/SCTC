@@ -6,7 +6,7 @@
     --themeColor: #002e3b;
     --lightColor: #868686;
     --whiteColor: #fff;
-    --lightBorder: 0 2px 3px rgb(0 0 0 / 20%);
+    --lightBorder:rgb(0 0 0 / 20%);
     --boxBorder: rgb(0 0 0 / 20%);
     --redColor: #ec595f;
     --greenColor: #5a9f68;
@@ -16,12 +16,17 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: all ease-in-out 0.3s;
     text-decoration: none;
     font-family: "Noto Sans", "sans-serif", sans-serif !important;
     /* 400 Regular
     600 SemiBold
     800 Bold */
+  }
+  a{
+    transition: all ease-in-out 0.3s;
+    text-decoration: none;
+    text-shadow: none;
+    list-style-type: none;
   }
   body {
     margin: 0;
