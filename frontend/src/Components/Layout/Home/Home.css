@@ -866,3 +866,89 @@ a.ev_img {
         -moz-transform: rotate(900deg);
     }
 }
+
+
+/* course card loader styles */
+
+.evnLoader_card{
+    display: inline-block;
+    width: calc(33.33% - 20px);
+    margin: 0 10px;
+    box-shadow: var(--boxShadow);
+    height: 210px;
+    max-height: 210px;
+    margin-bottom: 20px;
+}
+.evnCard_loader {
+    float: left;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+}
+.evnImg_loader {
+    display: block;
+    height: 150px;
+    width: 100%;
+    min-width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: linear crsImgLoading 1s infinite;
+}
+
+@keyframes crsImgLoading {
+    0% {
+        background: rgba(0, 0, 0, 0.1);
+    }
+
+    25% {
+        background: rgba(0, 0, 0, 0.2);
+    }
+
+    50% {
+        background: rgba(0, 0, 0, 0.3);
+    }
+
+    100% {
+        background: rgba(0, 0, 0, 0.6);
+    }
+}
+.evnImg_loader .windows8 .wBall .wInnerBall{
+    background: rgba(255, 255, 255, 0.6);
+}
+.evnCardLoader_content{
+    width: 100%;
+    min-width: 100%;
+    background: var(--whiteColor);
+    height: 28%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.evn_loadBAr{
+    width: 10%;
+    background-color: rgba(0, 46, 59, 0.6);
+    height: 10px;
+    animation: linear evnBarLoading 1s infinite;
+}
+
+@keyframes evnBarLoading {
+    0% {
+        width: 10%;
+    }
+
+    25% {
+        width: 25%;
+    }
+
+    50% {
+        width: 60%;
+    }
+
+    100% {
+        width: 80%;
+    }
+
+}
