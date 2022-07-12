@@ -18,10 +18,10 @@ import Eventsloader from "../Loader/eLoader";
 
 import CourseCard from "../../Pages/Course/CourseCard";
 import EventCard from "../../Pages/Event/EventCard";
-import { CLEAR_ERROR } from "../../../redux/action/courseaction";
+import { CLEAR_ERROR,getProduct } from "../../../redux/action/courseaction";
 import { CLEAR_ERROR_EVENT, getEvent } from "../../../redux/action/eventaction";
 import { useSelector, useDispatch } from "react-redux";
-import Loader1 from "../Loader/Courseloader";
+// import Loader1 from "../Loader/Courseloader";
 import { useAlert } from "react-alert";
 import BannerCard from "../../Pages/Event/baneercard";
 
@@ -55,7 +55,7 @@ function Home() {
       dispatch(CLEAR_ERROR_EVENT);
     }
     dispatch(getEvent());
-    // dispatch(getProduct(keyword, cateogery));
+    dispatch(getProduct());
   }, [alert, dispatch, error, eventerror]);
 
   return (
@@ -122,9 +122,9 @@ function Home() {
         </section>
 
         {/* This is course card loader styles */}
-        <section>
+        {/* <section>
           <Courseloader />
-        </section>
+        </section> */}
 
 
 
@@ -181,8 +181,8 @@ function Home() {
               .map((course) => (
                 <CourseCard key={course._id} course={course} />
               ))
-          ) : (
-            <Loader1 />
+          ): (
+            <Courseloader />
           )}
 
           {/* <div className='hc_holder'>
@@ -210,9 +210,9 @@ function Home() {
 
         
         {/* This is Events card loader styles */}
-        <section>
+        {/* <section>
           <Eventsloader />
-        </section>
+        </section> */}
 
 
         {/* Home Events Section */}
@@ -228,7 +228,7 @@ function Home() {
 
               ))
           ) : (
-            <Loader1 />
+            <Eventsloader />
           )}
           {/* <div className='ev_holder'>
             <div className='ev_card'>
