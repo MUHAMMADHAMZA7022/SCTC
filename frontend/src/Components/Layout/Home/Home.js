@@ -30,7 +30,7 @@ function Home() {
   const alert = useAlert();
   const dispatch = useDispatch();
 
-  const { courses, error } = useSelector((state) => state.courses);
+  const {loading, courses, error } = useSelector((state) => state.courses);
   const { latestevent, error: eventerror } = useSelector((state) => state.events);
   // const [cateogery, setcateogery] = useState("");
   // const [keyword, setKeyword] = useState("");
@@ -175,7 +175,7 @@ function Home() {
             <h1>Latest Courses to join</h1>
           </div>
 
-          {courses ? (
+          {loading===false&&courses ? (
             courses&&courses
               .slice(0, 6)
               .map((course) => (
