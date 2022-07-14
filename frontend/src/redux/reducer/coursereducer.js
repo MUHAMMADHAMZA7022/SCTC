@@ -32,7 +32,7 @@ export const ALLcoursesReducer = (state = { courses: [] }, action) => {
     case ADMIN_COURSE_REQUEST:
       return {
         loading: true,
-        courses: [],
+        allcourses: [],
       };
     case ALL_COURSE_SUCCESS:
       return {
