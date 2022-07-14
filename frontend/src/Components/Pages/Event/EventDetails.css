@@ -198,3 +198,76 @@
     background: var(--themeColor);
     color: var(--whiteColor);
 }
+/* Media Queries for responsive site layout */
+@media screen and (max-width: 1199px) {
+}
+@media screen and (max-width: 999px) {
+    .evnDetail_title {
+        padding: 10px 0px 10px 0;
+        margin-bottom: 0;
+    }
+    .evnDetail_title h2 {
+        font-size: 18px;
+        line-height: 18px;
+    }
+    .evnDetail_desp {
+        text-align: left;
+        margin-bottom: 10px;
+    }
+    .evnDetail_desp p {
+        font-size: 12px;
+        line-height: 14px;
+    }
+    .evn_time {
+        padding: 10px 0px 0px 0;
+        margin-bottom: 10px;
+    }
+    .evn_time h2 {
+        font-size: 14px;
+        line-height: 14px;
+        margin-bottom: 10px;
+    }
+    .evn_time span {
+        font-size: 10px;
+        line-height: 10px;
+        margin-bottom: 10px;
+        margin-right: 20px;
+    }
+    .evn_time span svg {
+        margin-right: 3px;
+        font-size: 10px;
+    }
+    .eventJoin_holder {
+        width: 90%;
+        padding: 10px;
+        left: 5%;
+    }
+}
+@media screen and (max-width: 599px) {
+    .evn_banner {
+        height: 150px;
+    }
+    .evnBanner_content h2 {
+        font-size: 16px;
+        line-height: 16px;
+    }
+    .evnDetailsContent {
+        padding: 20px 0px;
+    }
+    .event_img {
+        height: 150px;
+    }
+    .evnDetail_title h2 {
+        font-size: 14px;
+        line-height: 14px;
+    }
+    .evn_time h2 {
+        font-size: 12px;
+        line-height: 12px;
+        margin-bottom: 0;
+    }
+    .evnDetail_action h2 {
+        font-size: 14px;
+        line-height: 14px;
+    }
+}

@@ -176,3 +176,94 @@
     float: left;
     margin-right: 4px;
 }
+@media screen and (max-width: 1199px) {
+    .crsDetail_action span.course_price {
+        width: 8%;
+    }
+}
+@media screen and (max-width: 999px) {
+    .crsDetail_title h2 {
+        font-size: 18px;
+        line-height: 18px;
+    }
+    .crsDetail_title {
+        padding: 10px 0px 10px 0;
+        text-align: left;
+        margin-bottom: 0;
+    }
+    .crsDetail_desp p {
+        font-size: 14px;
+        line-height: 17px;
+    }
+    .csr_instructor {
+        padding: 10px 0px 10px 0;
+        margin-bottom: 0px;
+    }
+    .csr_instructor h2 {
+        font-size: 18px;
+        line-height: 18px;
+        margin-bottom: 10px;
+    }
+    .crsDetail_action span.course_price {
+        width: 12%;
+    }
+}
+@media screen and (max-width: 599px) {
+    .crs_banner {
+        height: 150px;
+    }
+    .crsBanner_content h2 {
+        margin-bottom: 15px;
+        font-size: 18px;
+        line-height: 18px;
+        letter-spacing: 2px;
+    }
+    .crsDetailsContent {
+        padding: 20px 0px;
+    }
+    .course_img {
+        height: 100px;
+    }
+    .crsDetail_title {
+        padding: 10px 0px 10px 0;
+    }    
+    .crsDetail_title h2 {
+        font-size: 14px;
+        line-height: 14px;
+    }
+    .crsDetail_desp {
+        margin-bottom: 10px;
+    }
+    .crsDetail_desp p {
+        font-size: 12px;
+        line-height: 14px;
+    }
+    .csr_instructor {
+        padding: 10px 0px 10px 0;
+        margin-bottom: 0px;
+    }
+    .csr_instructor h2 {
+        font-size: 14px;
+        line-height: 14px;
+        margin-bottom: 5px;
+    }
+    .crsDetail_action span.course_price {
+        width: 20%;
+    }
+    .csr_instructor h3.ins_name {
+        font-size: 12px;
+        line-height: 12px;
+    }
+    .csr_instructor span.specialized {
+        font-size: 10px;
+        line-height: 10px;
+    }
+    .csr_instructor p.ins_bio {
+        font-size: 12px;
+        line-height: 14px;
+    }
+    .crsDetail_action h2 {
+        font-size: 14px;
+        line-height: 14px;
+    }
+}

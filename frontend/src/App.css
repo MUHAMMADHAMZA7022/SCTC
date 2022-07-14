@@ -58,6 +58,7 @@ button.btn_primary,
   transition: all 0.5s cubic-bezier(0.42, 0, 0.58, 1);
   padding: 5px 20px;
   text-transform: capitalize;
+  font-size: 18px;
 }
 button.btn_primary:hover,
 button.btn_primary:focus,
@@ -292,4 +293,36 @@ button.btn_primary:focus,
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 46, 59, 1);
+}
+/* Media Queries for responsive site layout */
+@media screen and (max-width: 1199px) {
+}
+
+@media screen and (max-width: 999px) {
+  .section_heading {
+    padding: 10px 0;
+  }
+  .section_heading h1 {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+  button[type='submit'],
+  button.btn_primary,
+  .btn_primary{
+    padding: 3px 12px;
+    border-width: 1px;
+    font-size: 12px;
+  }
+  .form__group {
+    margin-top: 0px;
+    margin-bottom: 10px;
+  }
+  .form__field{
+    font-size: 16px;
+    line-height: normal;
+  }
+  .form__field:placeholder-shown ~ .form__label {
+    font-size: 12px;
+  }
 }

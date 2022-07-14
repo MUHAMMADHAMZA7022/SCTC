@@ -89,4 +89,34 @@
   /* box-shadow: 0px 5px 5px -5px rgba(0, 46, 59, 1); */
   box-shadow: 0px 3px 6px 1px rgba(0, 46, 59, 1);
   /* border-bottom: 1px solid var(--themeColor); */
+}/* Media Queries for responsive site layout */
+@media screen and (max-width: 1199px) {
+}
+@media screen and (max-width: 999px) {
+}
+@media screen and (max-width: 599px) {
+    .formHolder {
+        padding: 20px 0px;
+    }
+    .loginHolder {
+        flex: 2 1;
+        padding: 20px;
+    }
+    .loginHolder h1 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .loginForm a.acc_link {
+        color: var(--themeColor);
+        font-size: 10px;
+        float: left;
+        margin-bottom: 5px;
+    }
+    .group_field button:nth-child(1) {
+        margin-bottom: 10px;
+        float: right;
+    }
+    .group_field a:nth-child(3) {
+        margin-right: 0px;
+    }
 }

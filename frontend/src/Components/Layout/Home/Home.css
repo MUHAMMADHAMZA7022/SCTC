@@ -231,6 +231,9 @@ span.share_link svg:hover {
     padding: 50px 0px;
     overflow: hidden;
 }
+.events_holder{
+    padding: 100px 20px;
+}
 
 .ev_holder {
     display: inline-block;
@@ -437,7 +440,7 @@ a.ev_img {
 
 /* course card loader styles */
 
-.crsLoader_card{
+.crsLoader_card {
     display: inline-block;
     width: calc(33.33% - 20px);
     margin: 0 10px;
@@ -447,6 +450,7 @@ a.ev_img {
     max-height: 150px;
     margin-bottom: 20px;
 }
+
 .crsCard_loader {
     float: left;
     width: 100%;
@@ -454,6 +458,7 @@ a.ev_img {
     display: flex;
     height: 100%;
 }
+
 .crsImg_loader {
     height: 100%;
     flex: 1;
@@ -871,7 +876,7 @@ a.ev_img {
 
 /* course card loader styles */
 
-.evnLoader_card{
+.evnLoader_card {
     display: inline-block;
     width: calc(33.33% - 20px);
     margin: 0 10px;
@@ -880,12 +885,14 @@ a.ev_img {
     max-height: 210px;
     margin-bottom: 20px;
 }
+
 .evnCard_loader {
     float: left;
     width: 100%;
     overflow: hidden;
     height: 100%;
 }
+
 .evnImg_loader {
     display: block;
     height: 150px;
@@ -915,10 +922,12 @@ a.ev_img {
         background: rgba(0, 0, 0, 0.6);
     }
 }
-.evnImg_loader .windows8 .wBall .wInnerBall{
+
+.evnImg_loader .windows8 .wBall .wInnerBall {
     background: rgba(255, 255, 255, 0.6);
 }
-.evnCardLoader_content{
+
+.evnCardLoader_content {
     width: 100%;
     min-width: 100%;
     background: var(--whiteColor);
@@ -928,7 +937,8 @@ a.ev_img {
     justify-content: center;
     align-items: center;
 }
-.evn_loadBAr{
+
+.evn_loadBAr {
     width: 10%;
     background-color: rgba(0, 46, 59, 0.6);
     height: 10px;
@@ -958,45 +968,38 @@ a.ev_img {
 @media screen and (max-width: 1199px) {
     .nav_list li a {
         padding: 5px 15px;
+        width: 100%;
     }
+
     .banner {
         height: 35rem;
     }
-    .ct_text a.ct_title {
-        font-size: 18px;
-        line-height: 22px;
-    }
-    .ct_text p {
-        font-size: 11px;
-        line-height: 12px;
-    }
+
     .discover {
         padding: 30px 10px;
     }
+
     .homeCourses {
         padding: 30px 0px;
     }
+
     .hc_content h2 {
         font-size: 14px;
         line-height: 18px;
     }
+
     .homeEvents {
         padding: 30px 0px;
     }
+
     .ev_content_holder a h3 {
         font-size: 16px;
         line-height: 20px;
     }
+
     .ft_title h2 {
         font-size: 18px;
         line-height: 22px;
-    }
-    .ct_icon {
-        width: 50px;
-        height: 50px;
-    }
-    .ct_text {
-        padding: 0px 0 0 0;
     }
 }
 
@@ -1004,53 +1007,154 @@ a.ev_img {
     .banner {
         height: 20rem;
     }
+
     .banner {
         height: 20rem;
     }
-    .banner_content span.dot{
+
+    .banner_content span.dot {
         font-size: 3rem;
         margin: 0 5px;
     }
-    .banner_content h2{
+
+    .banner_content h2 {
         font-size: 3rem;
     }
-    .ct_icon {
-        width: 30px;
-        height: 30px;
-    }
-    .ct_icon svg{
-        font-size: 1rem;
-    }
-    .ct_text{
-        padding: 0px;
-    }
-    .ct_text a.ct_title {
-        font-size: 13px;
-        line-height: 15px;
-    }
-    .ct_text p {
-        font-size: 10px;
-        line-height: 10px;
-    }
+
     .discover {
-        padding: 30px 10px;
+        padding: 20px 10px;
     }
+
     .homeCourses {
-        padding: 30px 0px;
+        padding: 20px 0px;
     }
+
+    .hc_holder {
+        width: calc(50% - 10px);
+    }
+
     .hc_content h2 {
-        font-size: 14px;
-        line-height: 18px;
+        font-size: 13px;
+        line-height: 13px;
     }
+
+    .hc_content p {
+        font-size: 12px;
+        line-height: 12px;
+        margin-bottom: 20px;
+    }
+
     .homeEvents {
-        padding: 30px 0px;
+        padding: 20px 0px;
     }
+
     .ev_content_holder a h3 {
         font-size: 16px;
         line-height: 20px;
     }
+
     .ft_title h2 {
         font-size: 18px;
         line-height: 22px;
+    }
+
+    /* .hc_action a {
+        font-weight: 600;
+        margin-right: 5px;
+        font-size: 10px;
+    }
+    span.share_link svg {
+        font-size: 13px;
+        margin-top: 7px;
+    } */
+    .ev_holder {
+        width: calc(50% - 10px);
+    }
+    .evnLoader_card,
+    .crsLoader_card {
+        width: calc(50% - 20px);
+    }
+}
+
+@media screen and (max-width: 599px) {
+    .banner {
+        height: 12rem;
+    }
+
+    .banner_content {
+        top: 30%;
+    }
+    .banner_content h2 {
+        font-size: 2rem;
+    }
+    .banner_content h2 span {
+        font-size: 12px;
+    }
+
+    .discover {
+        padding: 10px 10px;
+    }
+
+    .homeCourses {
+        padding: 10px 0px;
+    }
+
+    .homeEvents {
+        padding: 10px 0px;
+    }
+    .section_heading {
+        padding: 0px 0;
+    }
+    .section_heading h1 {
+        margin-bottom: 20px;
+        font-size: 12px;
+        line-height: 12px;
+    }
+    .section_heading h1::before {
+        bottom: -2px;
+        left: 0;
+        width: 10%;
+        height: 2px;
+    }
+    .hc_holder {
+        display: block;
+        width: calc(100% - 10px);
+        float: none;
+        padding: 0;
+    }
+    .hc_card{
+        float: none;
+        width: 100%;
+        height: 120px;
+        max-height: 120px;
+    }
+    .ev_holder {
+        width: calc(100% - 10px);
+    }
+    .evnImg_loader,
+    a.ev_img {
+        display: block;
+        height: 100px;
+    }
+    .footer_wrapper {
+        padding: 20px 0 20px 0px;
+    }
+    .evnLoader_card,
+    .crsLoader_card {
+        width: 100%;
+        margin: 0 0 10px 0;
+    }
+    .crsLoader_card {
+        height: 120px;
+    }
+    .evnLoader_card{
+        max-height: 150px;
+    }
+    .ev_content_holder a h3 {
+        font-size: 12px;
+        line-height: 12px;
+    }    
+    .events_holder {
+        padding: 20px 0px;
     }
 }

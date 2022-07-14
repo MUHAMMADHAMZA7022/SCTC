@@ -134,10 +134,10 @@
     z-index: auto;
   }
   .mn_open_btn{
-    box-shadow: var(--boxShadow);
+    box-shadow: var(--hoverBoxShadow);
     background: var(--whiteColor);
     border: none;
-    border-radius: 5px;
+    border-radius: 1px;
     width: 30px;
     height: 30px;
     justify-content: center;
@@ -263,16 +263,17 @@
   .mobileModeBar{
     position: absolute;
     right: 0;
-    top: 5%;
+    top: 2%;
   }
   
+/* Media Queries for responsive site layout */
 @media screen and (max-width: 999px) {
   .header_holder{
     padding: 10px 2px;
   }
   #mobile_menu{
     display: inline-block;
-    top: 5%;
+    top: 2%;
   }
   .header_holder .navbar{
     display: none;
@@ -281,21 +282,59 @@
     display: block;
     float: right;
   }
+  /* .mobileModeBar.navbar .nav_list{
+    width: 100px;
+  } */
+  .mobileModeBar.navbar .nav_list li{
+    float: right;
+  }
   .header_holder .logo_holder{
     width: 8%;
     display: block;
     margin: 0 auto;
   }
-  .nav_list li.mobCart{
+  /* .nav_list li.mobCart{
     margin: 0 50px 0 0;
-  }
+  } */
   .nav_list li#pr_item {
     top: -3px;
-    right: 20%;
+    right: 80%;
     left: auto;
   }
   .nav_list li.pr_box ul.pr_list {
     right: 0;
-    left: -120%;
+    left: -100%;
+    width: 100px;
+  }
+  .nav_list li.pr_box ul.pr_list li{
+    float: none;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 599px) {
+  .mn_open_btn{
+    width: 20px;
+    height: 20px;
+  }
+  .mn_open_btn svg {
+      font-size: 20px;
+  }
+  #mobile_menu{
+    top: 12px;
+  }
+  .mobileModeBar {
+    right: 0;
+    top: 5px;
+  }
+  .nav_list li a {
+    padding: 5px 10px;
+    width: 100%;
+    font-size: 10px;
+  }
+  .nav_list li a svg{
+    font-size: 18px;
+  }
+  .nav_list li ul.pr_list li button.logoutBtn{
+    font-size: 10px;
   }
 }

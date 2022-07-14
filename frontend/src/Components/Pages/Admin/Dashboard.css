@@ -203,3 +203,46 @@ div.css-r11z79-MuiDataGrid-root{
     margin-bottom: 50px;
     margin-right: 20px;
 }
+/* Media Queries for responsive site layout */
+@media screen and (max-width: 1199px) {
+}
+@media screen and (max-width: 999px) {
+    .dSidebar {
+        width: 25%;
+        float: left;
+    }
+    .dashboard_content {
+        width: 75%;
+        float: right;
+        padding: 10px;
+    }
+    .courses_holder {
+        overflow: hidden;
+        padding: 10px;
+        display: inline-block;
+        width: 50%;
+    }
+    .dashboard_content h1 {
+        padding: 10px;
+        margin-bottom: 10px;
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 599px) {
+    .dashboard_content {
+        width: 100%;
+        float: none;
+        padding: 0px 20px;
+        margin: 0 0 20px 0;
+    }
+    .courses_content h1 {
+        color: var(--themeColor);
+        margin-bottom: 10px;
+        font-size: 20px;
+        padding: 0px;
+    }
+    .courses_holder {
+        padding: 10px;
+        width: 100%;
+    }
+}

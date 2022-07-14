@@ -38,3 +38,33 @@
 .proCont > div:last-child > div:last-child > a{
   margin-bottom: 20px;
 }
+/* Media Queries for responsive site layout */
+@media screen and (max-width: 1199px) {
+}
+@media screen and (max-width: 999px) {
+}
+@media screen and (max-width: 599px) {
+  .homeHeading{
+    padding: 10px;
+    margin: 0;
+  }
+  .homeHeading h2{
+    font-size: 20px;
+    line-height: normal;
+  }
+  .profileContainer {
+    padding: 20px;
+  }
+  .proCont{
+    padding: 20px;
+  }
+  .proCont .profC_holder{
+    padding: 10px;
+  }
+  .proCont .profC_holder h4{
+    font-size: 14px;
+  }
+  .proCont .profC_holder p {
+    font-size: 12px;
+  }
+}

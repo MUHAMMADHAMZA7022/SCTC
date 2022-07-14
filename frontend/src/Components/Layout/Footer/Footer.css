@@ -103,3 +103,34 @@
 .newsletter form button:hover svg{
     fill: var(--redColor);
 }
+/* Media Queries for responsive site layout */
+@media screen and (max-width: 1199px) {
+}
+
+@media screen and (max-width: 999px) {
+    .footer_wrapper{
+        padding: 20px;
+    }
+    .footer_holder{
+        height: auto;
+        display: block;
+    }
+    .ft_block{
+        flex: none;
+    }
+    .footerlogo_holder {
+        width: 20%;
+        margin-bottom: 10px;
+    }
+}
+@media screen and (max-width: 599px) {
+    .ft_list ul li address {
+        font-size: 12px;
+    }
+    .ft_list ul li a {
+        font-size: 12px;
+    }
+    .ft_list ul li {
+        margin-bottom: 0px;
+    }
+}

@@ -152,3 +152,45 @@
     display: inline-block;
     margin-bottom: 0px;
 }
+/* Media Queries for responsive site layout */
+@media screen and (max-width: 1199px) {
+}
+@media screen and (max-width: 999px) {
+}
+@media screen and (max-width: 599px) {
+    .allCourses_content {
+        display: block;
+        padding: 20px 0px;
+    }
+    .crs_searchBar input{
+        flex: 1;
+        padding: 5px;
+        font-size: 12px;
+    }
+    .filterCategories li.ct_btn{
+        font-size: 13px;
+        line-height: normal;
+        padding: 5px;
+    }
+    .crs_searchBar button{
+        padding: 5px;
+    }
+    /* .crs_searchBar{
+        display: block;
+    }
+    .filterCategories{
+        width: 20%;
+        flex: none;
+        display: inline-block;
+    }
+    .crs_searchBar input{
+        flex: none;
+        width: 60%;
+        display: inline-block;
+    }
+    .crs_searchBar button{
+        flex: none;
+        width: 20%;
+        display: inline-block;
+    } */
+}

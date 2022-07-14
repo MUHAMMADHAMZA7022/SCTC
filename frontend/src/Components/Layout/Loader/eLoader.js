@@ -5,7 +5,6 @@ function eLoader() {
         <div>
             {/* This is event card loader styles */}
             <div className="grid">
-                {/* some changes hamza k lye  */}
                 <div className="evnLoader_card">
                     <div className="evnCard_loader">
                         <div className="evnImg_loader">
