@@ -184,7 +184,7 @@ function Header() {
               <ul className='unstyled pr_list'>
                 <li><Link to={'/profile'}>Profile</Link></li>
                  {
-                  user.role === "admin" ?( 
+                  user&&user.role === "admin" ?( 
                     <li><Link to={'/dashboard'}>Dashboard</Link></li>
                    ):(
                      null
