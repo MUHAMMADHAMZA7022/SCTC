@@ -125,7 +125,9 @@
 
 /* --------------------Mobile Menu Styles----------------- */
 #mobile_menu {
-    display: inline-block;
+    /* display: inline-block; */
+    /* this is display none bacause it will be turn on in mobile mode */
+    display: none; 
     position: absolute;
     top: 6%;
     left: 1%;
@@ -255,3 +257,45 @@
     padding-right: 0px;
     flex-direction: row-reverse;
   } */
+  .mobileModeBar.navbar{
+    display: none;
+  }
+  .mobileModeBar{
+    position: absolute;
+    right: 0;
+    top: 5%;
+  }
+  
+@media screen and (max-width: 999px) {
+  .header_holder{
+    padding: 10px 2px;
+  }
+  #mobile_menu{
+    display: inline-block;
+    top: 5%;
+  }
+  .header_holder .navbar{
+    display: none;
+  }
+  .mobileModeBar.navbar{
+    display: block;
+    float: right;
+  }
+  .header_holder .logo_holder{
+    width: 8%;
+    display: block;
+    margin: 0 auto;
+  }
+  .nav_list li.mobCart{
+    margin: 0 50px 0 0;
+  }
+  .nav_list li#pr_item {
+    top: -3px;
+    right: 20%;
+    left: auto;
+  }
+  .nav_list li.pr_box ul.pr_list {
+    right: 0;
+    left: -120%;
+  }
+}
