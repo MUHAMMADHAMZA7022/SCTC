@@ -42,15 +42,15 @@ const Profile = () => {
             <div className="profC_holder">
               <div>
                 <h4>Full Name</h4>
-                <p>{user.name}</p>
+                <p>{user&&user.name}</p>
               </div>
               <div>
                 <h4>Email</h4>
-                <p>{user.email}</p>
+                <p>{user&&user.email}</p>
               </div>
               <div>
                 <h4>Joined On</h4>
-                <p>{String(user.createdAt).substr(0, 10)}</p>
+                <p>{String(user&&user.createdAt).substr(0, 10)}</p>
               </div>
             </div>
             <div className="profC_holder">
