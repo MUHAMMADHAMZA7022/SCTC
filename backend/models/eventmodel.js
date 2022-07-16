@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const validator = require("validator");
 const eventSechema = new mongoose.Schema({
     name: {
         type: String,
@@ -19,6 +20,28 @@ const eventSechema = new mongoose.Schema({
           required: true,
         },
       },
+      joining:
+      [ {
+        
+          join_name: {
+            type: String,
+          },
+          join_phone: {
+            type: Number,
+          },
+          join_email: {
+            type: String,
+            unique: true,
+            validate: [validator.isEmail, "Please Enter a valid Email"],
+            trim: true,
+          },
+          join_date: {
+            type: Date,
+            default: Date.now
+        }
+       
+        
+      }],
     startdate: {
         type:  String,
         required: [true, "Please Enter  Event Start Date"],
@@ -46,6 +69,7 @@ const eventSechema = new mongoose.Schema({
         required: [true, "Please Enter Event Location"],
 
     },
+  
     createdate: {
         type: Date,
         default: Date.now

@@ -5,56 +5,54 @@ const Errorhandler = require("../middleware/errorhandler");
 const catchasyncerror = require("../middleware/asyncerror");
 const cloudinary = require("cloudinary");
 const ApiFeatures = require("../utils/apifeatures");
+const { json } = require("express");
 //createcourse -- Admin
 exports.createevent = async (req, res, next) => {
-try {
-  const { name,description,startdate,enddate,organization,location} =
-  req.body;
-   var st=new Date(startdate).toLocaleString('default', {hour12: true});
-   var et=new Date(enddate).toLocaleString('default', { hour12: true});
-  
-  const images = req.body.images;
-  const mycloud = await cloudinary.v2.uploader.upload(images,{
-    folder: "events",
-    gravity: "faces", crop: "fill",
-    quality: "auto", fetch_format: "auto"
-    
-  });
-// console.log(st)
-// console.log(startdate)
-  req.body.user = req.user.id;
-  const courses = await Event.create({
-    name,
-    description,
-startdate:st,
+  try {
+    const { name, description, startdate, enddate, organization, location } =
+      req.body;
+    var st = new Date(startdate).toLocaleString("default", { hour12: true });
+    var et = new Date(enddate).toLocaleString("default", { hour12: true });
 
-enddate:et,
-
-organization,
-location,
-    images: {
-      public_id: mycloud.public_id,
-      url: mycloud.secure_url,
-    },
-  });
-  res.status(201).json({
-    success: true,
-    courses,
-    message: "Event Created Successfully",
-  });
-} catch (error) {
-  res.status(500).json({ success: false, message: error.message });
-
-}
-}
+    const images = req.body.images;
+    const mycloud = await cloudinary.v2.uploader.upload(images, {
+      folder: "events",
+      gravity: "faces",
+      crop: "fill",
+      quality: "auto",
+      fetch_format: "auto",
+    });
+    // console.log(st)
+    // console.log(startdate)
+    req.body.user = req.user.id;
+    const courses = await Event.create({
+      name,
+      description,
+      startdate: st,
+      enddate: et,
+      organization,
+      location,
+      images: {
+        public_id: mycloud.public_id,
+        url: mycloud.secure_url,
+      },
+    });
+    res.status(201).json({
+      success: true,
+      courses,
+      message: "Event Created Successfully",
+    });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
 
 //Getcourses All
 exports.allevent = catchasyncerror(async (req, res) => {
   const eventscount = await Event.countDocuments();
 
-  const latestevent = await Event.find().sort( { _id : -1 });
+  const latestevent = await Event.find().sort({ _id: -1 });
   const oldevent = await Event.find();
-  
 
   res.status(200).json({
     success: true,
@@ -65,7 +63,7 @@ exports.allevent = catchasyncerror(async (req, res) => {
 });
 //get all admin courses
 exports.alleventsadmin = catchasyncerror(async (req, res) => {
-  const latestevent = await Event.find().sort( { _id : -1 });
+  const latestevent = await Event.find().sort({ _id: -1 });
   res.status(200).json({
     success: true,
     latestevent,
@@ -83,27 +81,26 @@ exports.singleevent = catchasyncerror(async (req, res, next) => {
   });
 });
 
-
 // updateCourse -- Admin
-exports.updateevent = catchasyncerror(async (req, res,next) => {
+exports.updateevent = catchasyncerror(async (req, res, next) => {
   let uevent = await Event.findById(req.params.id);
   if (!uevent) {
     return next(new Errorhandler("Event Not Found", 404)); //ly class bnae v utils mein phir ye error bnya wa sb sy phir middleare ein erro.js bnae
   }
- 
 
   // console.log(dat)
   // //addd avtar cloudinary
   if (req.body.images !== "") {
-
     const imageId = uevent.images.public_id;
 
     await cloudinary.v2.uploader.destroy(imageId);
 
     const myCloud = await cloudinary.v2.uploader.upload(req.body.images, {
       folder: "events",
-      gravity: "faces", crop: "fill",
-    quality: "auto", fetch_format: "auto"
+      gravity: "faces",
+      crop: "fill",
+      quality: "auto",
+      fetch_format: "auto",
     });
 
     req.body.images = {
@@ -111,8 +108,12 @@ exports.updateevent = catchasyncerror(async (req, res,next) => {
       url: myCloud.secure_url,
     };
   }
-  req.body.startdate=new Date(req.body.startdate).toLocaleString('default', { hour12: true});
-  req.body.enddate=new Date(req.body.enddate).toLocaleString('default', { hour12: true});
+  req.body.startdate = new Date(req.body.startdate).toLocaleString("default", {
+    hour12: true,
+  });
+  req.body.enddate = new Date(req.body.enddate).toLocaleString("default", {
+    hour12: true,
+  });
   // console.log(req.body.startdate)
   // console.log(req.body.enddate)
   // var et=new Date(enddate).toLocaleString([], { hour12: true});
@@ -138,7 +139,6 @@ exports.deleteevent = catchasyncerror(async (req, res, next) => {
   const imageId = devent.images.public_id;
 
   await cloudinary.v2.uploader.destroy(imageId);
-  
 
   await devent.remove();
   res.status(200).json({
@@ -146,3 +146,39 @@ exports.deleteevent = catchasyncerror(async (req, res, next) => {
     message: "Event Deleted Successfully",
   });
 });
+// ADD joining event
+
+exports.joinevent = async (req, res, next) => {
+  try {
+    let uevent = await Event.findById(req.params.id);
+    if (!uevent) {
+      return next(new Errorhandler("Event Not Found", 404)); //ly class bnae v utils mein phir ye error bnya wa sb sy phir middleare ein erro.js bnae
+    }
+    let obj = uevent.joining.find((o) => o.join_email === req.body.join_email);
+    if (!obj) {
+      await Event.findOneAndUpdate(
+        { _id: req.params.id },
+        {
+          $push: {
+            joining: {
+              join_name: req.body.join_name,
+              join_email: req.body.join_email,
+              join_phone: req.body.join_phone,
+            },
+          },
+        }
+      );
+      return res.status(200).json({
+        success: true,
+        message: "Event Joined Successfully",
+      });
+    } else {
+      return res.status(200).json({
+        success: false,
+        message: "Event Already joined",
+      });
+    }
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
