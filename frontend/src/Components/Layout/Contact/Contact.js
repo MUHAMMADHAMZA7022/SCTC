@@ -1,10 +1,60 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect, useState } from "react";
 import './Contact.css'
 import MapsHomeWorkIcon from '@mui/icons-material/MapsHomeWork';
 import FaxIcon from '@mui/icons-material/Fax';
 import MarkEmailUnreadIcon from '@mui/icons-material/MarkEmailUnread';
-
+import { useSelector, useDispatch } from "react-redux";
+import Loader1 from "../../Layout/Loader/Courseloader";
+import {
+  
+    contactuser,
+    CLEAR_ERROR,
+    
+  } from "../../../redux/action/useraction";
+  import { useAlert } from "react-alert";
+  
 function Contact() {
+    const dispatch=useDispatch();
+    const alert=useAlert();
+    const {loading,error,iscontact} = useSelector((state) => state.contactuser);
+    const [firstname, setfirstname] = useState("");
+    const [lastname, setlastname] = useState("");
+    const [email, setemail] = useState("");
+    const [subject, setsubject] = useState("");
+    const [message, setmessage] = useState("");
+    const contactSubmitHandler = (e) => {
+        e.preventDefault();
+    
+        const myForm = new FormData();
+    
+        myForm.set("firstname", firstname);
+        myForm.set("lastname", lastname);
+        myForm.set("email", email);
+        myForm.set("subject", subject);
+        myForm.set("message", message);
+
+
+    
+        dispatch(contactuser( myForm));
+    setfirstname("")
+    setlastname("")
+    setemail("")
+    setsubject("")
+    setmessage("")
+      };
+
+      useEffect(() => {
+        if (error) {
+          alert.error(error);
+          dispatch(CLEAR_ERROR());
+        }
+       
+        if (iscontact) {
+          alert.success("Message Send Successfully");
+        }
+       
+      }, [dispatch, alert, error,iscontact]);
+    
     return (
         <Fragment>
             <div className='contactUs'>
@@ -47,14 +97,18 @@ function Contact() {
                         </div>
                     </div>
                     <div className='contactUs_form'>
-                        <form>
-                            <input type={"text"} placeholder="First Name" />
-                            <input type={"text"} placeholder="Last Name" />
-                            <input type={"email"} placeholder="Email" />
-                            <input type={"text"} placeholder="Subject(Optional)" />
-                            <textarea placeholder='Write your message...'></textarea>
+                   { loading===true?(<Loader1/>):(
+                 
+                
+                        <form onSubmit={contactSubmitHandler}>
+                            <input type={"text"} placeholder="First Name" value={firstname} onChange={(e)=>setfirstname(e.target.value)}/>
+                            <input type={"text"} placeholder="Last Name" value={lastname} onChange={(e)=>setlastname(e.target.value)}/>
+                            <input type={"email"} placeholder="Email" value={email} onChange={(e)=>setemail(e.target.value)}/>
+                            <input type={"text"} placeholder="Subject(Optional)" value={subject} onChange={(e)=>setsubject(e.target.value)}/>
+                            <textarea placeholder='Write your message...' value={message} onChange={(e)=>setmessage(e.target.value)}></textarea>
                             <button className='btn_primary'>Send Message</button>
                         </form>
+                    )}
                     </div>
                 </div>
             </div>

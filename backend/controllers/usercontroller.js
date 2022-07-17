@@ -4,6 +4,7 @@ const sendToken = require("../utils/getjwt");
 const crypto = require("crypto");
 const Errorhandler = require("../middleware/errorhandler"); //ye hum ny product error k liye bnya mtlb glt id dy user to server bnd naw ho
 const catchasyncerror = require("../middleware/asyncerror");
+const nodemailer = require("nodemailer");
 exports.createuser = async (req, res) => {
   try {
     const { name, email, password } = req.body;
@@ -243,6 +244,51 @@ exports.updateprofile = async (req, res) => {
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }
-    
-  
 }
+exports.contact_user = catchasyncerror(async (req, res, next) => {
+  const{firstname,lastname,email,subject,message}=req.body
+  if(!firstname ||!lastname|| !email||!subject||!message){
+    return res.status(400).json({success:false,message:"Please enter all the fields"})
+  }
+ 
+
+  // const message = `Thank You! For use sctc website`;
+
+  const transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
+    service: process.env.SMPT_SERVICE,
+    auth: {
+      user: process.env.SMPT_MAIL,
+      pass: process.env.SMPT_PASSWORD,
+    },
+  });
+  const mailoption = {
+    from: process.env.SMPT_MAIL,
+    to: email,
+    subject: "CONTACT SCTC WEBSITE",
+    text: message,
+    html:`
+    <div style="padding:10px;border-style: ridge">
+    <h2>CONTACT INFORMATION</h2>
+    <h4>Name: ${firstname} ${lastname}</h4>
+    <h4>Email: ${email}</h4>
+
+    <h3>Subject: ${subject}</h3>
+    <ul>
+        <li><b>Message</b>: ${message}</li>
+    </ul>`
+  };
+  transporter.sendMail(mailoption, function (error, info) {
+    if (error)
+        {
+          res.json({status: true, respMesg: error.message})
+        } 
+        else
+        {
+          res.json({status: true, respMesg: `Message Sent Successfully`})
+        }
+     
+  });
+});
