@@ -95,7 +95,6 @@ function EventDetails() {
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Phone</th>
-                                <th>Phone</th>
                             </tr>
                             <tr>
                                 <td>Syed Saim</td>
