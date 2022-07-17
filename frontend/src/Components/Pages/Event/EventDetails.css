@@ -151,6 +151,7 @@
 }
 .evnDetail_action{
     position: relative;
+    margin-bottom: 20px;
 }
 .eventJoin_holder{
     padding: 20px;
@@ -198,6 +199,54 @@
     background: var(--themeColor);
     color: var(--whiteColor);
 }
+.eventJoined{
+    padding: 20px;
+    box-shadow: var(--boxShadow);
+}
+.eventJoined h1{
+    color: var(--greenColor);
+    font-size: 20px;
+    padding: 20px 0px;
+}
+.eventJoined table.eventJoinedTable{
+    display: block;
+    width: 100%;
+    border: 1px solid var(--themeColor);
+    border-radius: 2px;
+}
+.eventJoined table.eventJoinedTable tr{
+    display: flex;
+    border-bottom: 1px solid var(--themeColor);
+}
+.eventJoined table.eventJoinedTable tr:last-child{
+    border-bottom: 0px;
+}
+.eventJoined table.eventJoinedTable tr th{
+    flex: 1;
+    padding: 10px;
+    text-align: left;
+    border: 0px;
+    border-bottom: 0px;
+    border-right: 1px solid var(--themeColor);
+    color: var(--redColor);
+    font-weight: 900;
+}
+.eventJoined table.eventJoinedTable tr th:last-child{
+    border: 0px;
+}
+.eventJoined table.eventJoinedTable tr td{
+    flex: 1;
+    padding: 10px;
+    /* border: 1px solid var(--themeColor); */
+    border-bottom: 0px;
+    border: 0px;
+    border-right: 1px solid var(--themeColor);
+}
+.eventJoined table.eventJoinedTable tr td:last-child{
+    border: 0px;
+}
+
+
 /* Media Queries for responsive site layout */
 @media screen and (max-width: 1199px) {
 }

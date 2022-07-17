@@ -87,6 +87,22 @@ function EventDetails() {
                             </div>
                         </div>
                     </div>
+                    {/* event joined list */}
+                    <div className='eventJoined'>
+                        <h1>List of Members who joined the Event.</h1>
+                        <table className='eventJoinedTable' border={1} style={{width: "100%"}} >
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                            </tr>
+                            <tr>
+                                <td>Syed Saim</td>
+                                <td>syedsaim40@gmail.com</td>
+                                <td>03209455811</td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
         </Fragment>

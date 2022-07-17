@@ -12,4 +12,19 @@
     margin-bottom: 30px;
     font-size: 16px;
     line-height: 20px;
+}/* Media Queries for responsive site layout */
+@media screen and (max-width: 1199px) {
+}
+@media screen and (max-width: 999px) {
+    .about_holder {
+        padding: 20px;
+    }
+    .abt_box h3 {
+        margin-bottom: 20px;
+    }
+    .abt_box p {
+        margin-bottom: 20px;
+    }
+}
+@media screen and (max-width: 599px) {
 }
