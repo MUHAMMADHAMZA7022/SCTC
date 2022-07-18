@@ -112,7 +112,7 @@ function App() {
           <Route path="/count" element={<Countdown />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/vieworder" element={<ViewOrder />} />
-          <Route path="/srvdtl" element={<ServiceDetails />} />
+          <Route path="/service/details/:id" element={<ServiceDetails />} />
           {/* ADMIN ROUTES */}
           {/* dashboard */}
           <Route
