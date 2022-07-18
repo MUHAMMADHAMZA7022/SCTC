@@ -129,8 +129,8 @@ exports.deleteservice = catchasyncerror(async (req, res, next) => {
 });
 //service_email
 
-exports.joinserviceemail = async (req, res, next) => {
- 
+exports.joinserviceemail = catchasyncerror(async(req, res, next) => {
+
     let jservice = await Service.findById(req.params.id);
     if (!jservice) {
       return next(new Errorhandler("Service Not Found", 404)); //ly class bnae v utils mein phir ye error bnya wa sb sy phir middleare ein erro.js bnae
@@ -173,12 +173,14 @@ exports.joinserviceemail = async (req, res, next) => {
     transporter.sendMail(mailoption, function (error, info) {
       if (error)
           {
-            res.json({status: true, respMesg: error.message})
+            res.json({status: true, Error: error.message})
           } 
           else
           {
-            res.json({status: true, respMesg: `Message Sent Successfully`})
+            res.json({status: true, Message: `Message Sent Successfully`})
           }
        
     });
-};
+  
+ 
+})
