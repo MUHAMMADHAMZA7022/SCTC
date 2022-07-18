@@ -61,6 +61,9 @@ function Header() {
 
   return (
     <Fragment>
+      <div className='top_header'>
+        <marquee>Medical research</marquee>
+      </div>
       <div className='header_holder'>
         {/* Start of Mobile menu */}
         <div id="mobile_menu">
@@ -89,43 +92,43 @@ function Header() {
                 <li>
                   <Link to="/">
                     <HomeIcon />
-                      <span>Home</span>
+                    <span>Home</span>
                   </Link>
                 </li>
                 <li>
                   <Link to="/courses">
                     <SchoolIcon />
-                      <span>Courses</span>
+                    <span>Courses</span>
                   </Link>
                 </li>
                 <li>
                   <Link to="/events">
                     <EventIcon />
-                      <span>Workshops</span>
+                    <span>Workshops</span>
                   </Link>
                 </li>
                 <li>
                   <Link to="/services">
                     <DesignServicesIcon />
-                      <span>Services</span>
+                    <span>Services</span>
                   </Link>
                 </li>
                 <li>
                   <Link to="/about">
                     <InfoIcon />
-                      <span>About</span>
+                    <span>About</span>
                   </Link>
                 </li>
                 <li>
                   <Link to="/journals">
                     <InfoIcon />
-                      <span>Journals</span>
+                    <span>Journals</span>
                   </Link>
                 </li>
                 <li>
                   <Link to="/contact">
                     <ContactPhoneIcon />
-                      <span>Contact</span>
+                    <span>Contact</span>
                   </Link>
                 </li>
                 <li>
@@ -159,88 +162,88 @@ function Header() {
             <li><Link to='/events'>Workshops</Link></li>
             <li><Link to='/services'>Services</Link></li>
             <li><Link to='/about'>About</Link></li>
-            <li><Link to='/contact'>Contact</Link></li>        
-            <li><Link to='/journals'>Journals</Link></li>        
+            <li><Link to='/contact'>Contact</Link></li>
+            <li><Link to='/journals'>Journals</Link></li>
             <li>
-            <Link
-              to="/cart"
-              style={{ color: cartItems.length > 0 ? "red" : "unset" }}
-            >
-              <ShoppingCartOutlinedIcon
+              <Link
+                to="/cart"
                 style={{ color: cartItems.length > 0 ? "red" : "unset" }}
-              />{" "}
-              <sup style={{ color: cartItems.length > 0 ? "red" : "unset" }}>
-                {" "}
-                {cartItems.length > 0 ? cartItems.length : null}
-              </sup>
-            </Link>
-          </li>
+              >
+                <ShoppingCartOutlinedIcon
+                  style={{ color: cartItems.length > 0 ? "red" : "unset" }}
+                />{" "}
+                <sup style={{ color: cartItems.length > 0 ? "red" : "unset" }}>
+                  {" "}
+                  {cartItems.length > 0 ? cartItems.length : null}
+                </sup>
+              </Link>
+            </li>
             {
               !isAuthenticated ? (
                 <li><Link to='/login' className='nav_btn'>Sign In</Link></li>
 
-              ):(
-            
-            <li className={isHovering ? 'pr_box' : ''}
-            onMouseOver={handleMouseOver}
-            onMouseOut={handleMouseOut} id="pr_item">
-              {/* className={isActive ? "pr_box" : null} onClick={ToggleClass}  */}
-              <Link to={'#'} className='profile_box'></Link>
-              <ul className='unstyled pr_list'>
-                <li><Link to={'/profile'}>Profile</Link></li>
-                 {
-                  user.role === "admin" ?( 
-                    <li><Link to={'/dashboard'}>Dashboard</Link></li>
-                   ):(
-                     null
-                  )
-                 } 
-                <li><button className='logoutBtn' onClick={logoutUser}>Logout</button></li>
-              </ul>
-            </li>
+              ) : (
+
+                <li className={isHovering ? 'pr_box' : ''}
+                  onMouseOver={handleMouseOver}
+                  onMouseOut={handleMouseOut} id="pr_item">
+                  {/* className={isActive ? "pr_box" : null} onClick={ToggleClass}  */}
+                  <Link to={'#'} className='profile_box'></Link>
+                  <ul className='unstyled pr_list'>
+                    <li><Link to={'/profile'}>Profile</Link></li>
+                    {
+                      user.role === "admin" ? (
+                        <li><Link to={'/dashboard'}>Dashboard</Link></li>
+                      ) : (
+                        null
+                      )
+                    }
+                    <li><button className='logoutBtn' onClick={logoutUser}>Logout</button></li>
+                  </ul>
+                </li>
               )}
           </ul>
         </div>
-        
+
         <div className='mobileModeBar navbar'>
-          <ul className='unstyled nav_list'>          
+          <ul className='unstyled nav_list'>
             <li className='mobCart'>
-            <Link
-              to="/cart"
-              style={{ color: cartItems.length > 0 ? "red" : "unset" }}
-            >
-              <ShoppingCartOutlinedIcon
+              <Link
+                to="/cart"
                 style={{ color: cartItems.length > 0 ? "red" : "unset" }}
-              />{" "}
-              <sup style={{ color: cartItems.length > 0 ? "red" : "unset" }}>
-                {" "}
-                {cartItems.length > 0 ? cartItems.length : null}
-              </sup>
-            </Link>
-          </li>
+              >
+                <ShoppingCartOutlinedIcon
+                  style={{ color: cartItems.length > 0 ? "red" : "unset" }}
+                />{" "}
+                <sup style={{ color: cartItems.length > 0 ? "red" : "unset" }}>
+                  {" "}
+                  {cartItems.length > 0 ? cartItems.length : null}
+                </sup>
+              </Link>
+            </li>
             {
               !isAuthenticated ? (
                 <li><Link to='/login' className='nav_btn'>Sign In</Link></li>
 
-              ):(
-            
-            <li className={isHovering ? 'pr_box' : ''}
-            onMouseOver={handleMouseOver}
-            onMouseOut={handleMouseOut} id="pr_item">
-              {/* className={isActive ? "pr_box" : null} onClick={ToggleClass}  */}
-              <Link to={'#'} className='profile_box'></Link>
-              <ul className='unstyled pr_list'>
-                <li><Link to={'/profile'}>Profile</Link></li>
-                 {
-                  user&&user.role === "admin" ?( 
-                    <li><Link to={'/dashboard'}>Dashboard</Link></li>
-                   ):(
-                     null
-                  )
-                 } 
-                <li><button className='logoutBtn' onClick={logoutUser}>Logout</button></li>
-              </ul>
-            </li>
+              ) : (
+
+                <li className={isHovering ? 'pr_box' : ''}
+                  onMouseOver={handleMouseOver}
+                  onMouseOut={handleMouseOut} id="pr_item">
+                  {/* className={isActive ? "pr_box" : null} onClick={ToggleClass}  */}
+                  <Link to={'#'} className='profile_box'></Link>
+                  <ul className='unstyled pr_list'>
+                    <li><Link to={'/profile'}>Profile</Link></li>
+                    {
+                      user && user.role === "admin" ? (
+                        <li><Link to={'/dashboard'}>Dashboard</Link></li>
+                      ) : (
+                        null
+                      )
+                    }
+                    <li><button className='logoutBtn' onClick={logoutUser}>Logout</button></li>
+                  </ul>
+                </li>
               )}
           </ul>
         </div>
