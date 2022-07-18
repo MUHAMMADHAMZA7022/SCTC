@@ -182,9 +182,40 @@ setlink("")
                           >
                             {order.orderStatus && order.orderStatus}
                           </p>
+                          <p
+                            className={
+                              order.orderStatus && order.orderStatus === "Verified"
+                                ? "greenColor"
+                                : "redColor"
+                            }
+                          >
+                          
+                             { order.orderStatus&& order.orderStatus === "Verified"
+                                ?String(order&&order.verifiedAt).substr(0, 10)
+                                : null
+                            }
+                          </p>
                         </div>
                       </div>
+                      
                     </div>
+                    <div className="verification_status">
+                        <h3> Verification Date</h3>
+                        <div className="proOrder_dtlSub">
+                          <p
+                            className={
+                              order.orderStatus && order.orderStatus === "Verified"
+                                ? "greenColor"
+                                : "redColor"
+                            }
+                          >
+                         { order.orderStatus&& order.orderStatus === "Verified"
+                                ?String(order&&order.verifiedAt).substr(0, 10)
+                                : null
+                            }
+                          </p>
+                        </div>
+                      </div>
                   </div>
 
                   {/* <Typography>Order Status</Typography>
