@@ -103,13 +103,13 @@ const Sidebar = () => {
         defaultExpandIcon={<EventIcon />}
         className='sideBar_list unstyled'
       >
-        <TreeItem nodeId="1" label="Events">
+        <TreeItem nodeId="1" label="Workshops">
 
           <Link to="/create/event">
             <TreeItem nodeId="3" label="Create" icon={<AddIcon />} />
           </Link>
           <Link to="/all/events">
-            <TreeItem nodeId="2" label="All Events" icon={<PostAddIcon />} />
+            <TreeItem nodeId="2" label="All Workshops" icon={<PostAddIcon />} />
           </Link>
 
         </TreeItem>

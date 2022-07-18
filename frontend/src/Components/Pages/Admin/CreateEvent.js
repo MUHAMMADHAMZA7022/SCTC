@@ -78,7 +78,7 @@ function Courses() {
         </div>
         {/* Main Content */}
         <div className="dashboard_content courses_content">
-          <h1>Create Event</h1>
+          <h1>Create Workshop</h1>
           <form
             className="courseForm"
             encType="multipart/form-data"

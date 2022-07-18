@@ -105,7 +105,7 @@ function Home() {
                 <FaxIcon />
               </div>
               <div className='ct_text'>
-                <Link className="ct_title" to={"/events"}>Our Events</Link>
+                <Link className="ct_title" to={"/events"}>Our Workshops</Link>
                 <p>See what's on at our great Knowledge Hub.</p>
               </div>
             </div>
@@ -218,7 +218,7 @@ function Home() {
         {/* Home Events Section */}
         <section className='homeEvents grid'>
           <div className='section_heading'>
-            <h1>Upcoming Events</h1>
+            <h1>Upcoming Workshops</h1>
           </div>
           {latestevent ? (
             latestevent

@@ -59,7 +59,7 @@ let history=useNavigate();
     }
 
     if (isDeleted) {
-      alert.success("Event Deleted Successfully");
+      alert.success("Workshops Deleted Successfully");
       history("/all/events");
       dispatch({ type: DELETE_EVENT_RESET });
       
@@ -75,7 +75,7 @@ let history=useNavigate();
           <Sidebar />
         </div>
         <div className="dashboard_content">
-          <h1>All Events</h1>
+          <h1>All Workshops</h1>
           {latestevent && latestevent ?(
             latestevent.map((event,key) => 
               <div className="courses_holder"  key={key} course={event}>
