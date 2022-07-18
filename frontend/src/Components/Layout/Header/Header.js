@@ -22,7 +22,7 @@ import DesignServicesIcon from '@mui/icons-material/DesignServices';
 import InfoIcon from '@mui/icons-material/Info';
 import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
 import ManageSearchIcon from '@mui/icons-material/ManageSearch';
-import Collapsible from "react-collapsible";
+// import Collapsible from "react-collapsible";
 
 
 function Header() {
@@ -101,7 +101,7 @@ function Header() {
                 <li>
                   <Link to="/events">
                     <EventIcon />
-                      <span>Events</span>
+                      <span>Workshop</span>
                   </Link>
                 </li>
                 <li>
@@ -114,6 +114,12 @@ function Header() {
                   <Link to="/about">
                     <InfoIcon />
                       <span>About</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/journals">
+                    <InfoIcon />
+                      <span>Journals</span>
                   </Link>
                 </li>
                 <li>
@@ -131,13 +137,13 @@ function Header() {
                   </Link>
                 </li>
               </ul>
-              <Collapsible trigger="Categories" className="accordian_menu">
+              {/* <Collapsible trigger="Categories" className="accordian_menu">
                 <ul className="mn_menu_list">
                   <li>
                     <Link to="/Biology">Biology</Link>
                   </li>
                 </ul>
-              </Collapsible>
+              </Collapsible> */}
             </SlidingPane>
           </div>
         </div>
@@ -150,10 +156,11 @@ function Header() {
           <ul className='unstyled nav_list'>
             <li><Link to='/'>Home</Link></li>
             <li><Link to='/courses'>Courses</Link></li>
-            <li><Link to='/events'>Events</Link></li>
+            <li><Link to='/events'>Workshop</Link></li>
             <li><Link to='/services'>Services</Link></li>
             <li><Link to='/about'>About</Link></li>
-            <li><Link to='/contact'>Contact</Link></li>            
+            <li><Link to='/contact'>Contact</Link></li>        
+            <li><Link to='/journals'>Journals</Link></li>        
             <li>
             <Link
               to="/cart"

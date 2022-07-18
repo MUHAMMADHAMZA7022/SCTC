@@ -31,7 +31,7 @@ function Events() {
             <img src={bg3} alt="banner" />
           </div>
           <div className="crsBanner_content">
-            <h2>All Events</h2>
+            <h2>All Workshops</h2>
           </div>
         </div>
    

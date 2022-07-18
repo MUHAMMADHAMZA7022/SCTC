@@ -48,7 +48,7 @@ function EventDetails() {
                         <img src={bg3} alt="banner" />
                     </div>
                     <div className="evnBanner_content">
-                        <h2>Event Detailed</h2>
+                        <h2>Workshop Detailed</h2>
                     </div>
                 </div>
                 {/* Single Page Course Details */}
@@ -69,11 +69,11 @@ function EventDetails() {
                         <h2>Ending Time</h2>
                         <span className='evnt_date'><CalendarMonthOutlinedIcon />{String(event.enddate).substr(0, 8)}</span>
                         <span className='evnt_time'><AccessTimeIcon />{String(event.enddate).substr(10, 4)}{String(event.enddate).substr(17, 11)}</span>
-                        <h2>Event Location</h2>
+                        <h2>Workshop Location</h2>
                         <span className='evnt_location'><LocationOnIcon />{event.location}</span>
                     </div>
                     <div className='evnDetail_action'>
-                        <h2>Event Action</h2>
+                        <h2>Workshop Action</h2>
                         <Link to="#" onClick={ToggleClass}><TurnedInIcon />Join Now</Link>
                         <div className={isActive ? "evn_box" : null}>
                             <div className='eventJoin_holder'>
