@@ -63,6 +63,8 @@ import Payment from "./Components/Pages/Cart/payment";
 import Ordersuccess from "./Components/Pages/Cart/ordersuccess";
 import ProcessOrder from "./Components/Pages/Admin/processorder"
 
+import ServiceDetails from "./Components/Pages/Services/ServiceDetails";
+
 function App() {
   const dispatch = useDispatch();
 
@@ -108,6 +110,7 @@ function App() {
           <Route path="/count" element={<Countdown />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/vieworder" element={<ViewOrder />} />
+          <Route path="/srvdtl" element={<ServiceDetails />} />
           {/* ADMIN ROUTES */}
           {/* dashboard */}
           <Route
