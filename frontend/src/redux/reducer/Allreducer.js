@@ -15,7 +15,8 @@ import {
   ALLservicesReducer,
   serviceDetailsReducer,
   newServiceReducer,
-  updatedeleteserviceReducer ,
+  updatedeleteserviceReducer, 
+  JoinServiceReducer,
 } from "./servicereducer";
 import {
     allUsersReducer,
@@ -59,6 +60,7 @@ const AllReducer = combineReducers({
    services: ALLservicesReducer,
    service:updatedeleteserviceReducer ,
    serviceDetails: serviceDetailsReducer,
+   joinservice:JoinServiceReducer,
    //orders
    newOrder: newOrderReducer,
    myOrders: myOrdersReducer,

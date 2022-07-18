@@ -4,6 +4,7 @@ const sendToken = require("../utils/getjwt");
 const Errorhandler = require("../middleware/errorhandler");
 const catchasyncerror = require("../middleware/asyncerror");
 const cloudinary = require("cloudinary");
+const nodemailer=require("nodemailer")
 const ApiFeatures = require("../utils/apifeatures");
 //createcourse -- Admin
 exports.createservice = async (req, res, next) => {
@@ -126,3 +127,58 @@ exports.deleteservice = catchasyncerror(async (req, res, next) => {
     message: "Service Deleted Successfully",
   });
 });
+//service_email
+
+exports.joinserviceemail = async (req, res, next) => {
+ 
+    let jservice = await Service.findById(req.params.id);
+    if (!jservice) {
+      return next(new Errorhandler("Service Not Found", 404)); //ly class bnae v utils mein phir ye error bnya wa sb sy phir middleare ein erro.js bnae
+    }
+    const{name,email,phoneNo,message}=req.body
+    if(!name || !email||!phoneNo||!message){
+      return res.status(400).json({success:false,message:"Please enter all the fields"})
+    }
+   
+  
+    // const message = `Thank You! For use sctc website`;
+  
+    const transporter = nodemailer.createTransport({
+      host: "smtp.gmail.com",
+      port: 465,
+      secure: true,
+      service: process.env.SMPT_SERVICE,
+      auth: {
+        user: process.env.SMPT_MAIL,
+        pass: process.env.SMPT_PASSWORD,
+      },
+    });
+    const mailoption = {
+      from: process.env.SMPT_MAIL,
+      to: email,
+      subject: "SERVICE SCTC WEBSITE",
+      text: message,
+      html:`
+      <div style="padding:10px;border-style: ridge">
+      <h2>CONTACT INFORMATION</h2>
+      <h4>Name: ${name} </h4>
+      <h4>Email: ${email}</h4>
+      <h4>Email: ${phoneNo}</h4>
+     
+      <h3>Service: ${jservice.name}</h3>
+      <ul>
+          <li><b>Message</b>: ${message}</li>
+      </ul>`
+    };
+    transporter.sendMail(mailoption, function (error, info) {
+      if (error)
+          {
+            res.json({status: true, respMesg: error.message})
+          } 
+          else
+          {
+            res.json({status: true, respMesg: `Message Sent Successfully`})
+          }
+       
+    });
+};

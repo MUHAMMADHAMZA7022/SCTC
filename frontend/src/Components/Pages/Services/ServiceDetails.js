@@ -4,9 +4,11 @@ import { Link } from 'react-router-dom';
 import TurnedInIcon from '@mui/icons-material/TurnedIn';
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
+import Loader1 from "../../Layout/Loader/Courseloader";
+
 import {
     getProductDetails,
-
+service_email,
     CLEAR_ERROR_SERVICE,
 } from "../../../redux/action/serviceaction";
 import { useAlert } from 'react-alert';
@@ -14,28 +16,60 @@ function ServiceDetails() {
     const { id } = useParams();
 
     const { service, error } = useSelector((state) => state.serviceDetails);
+    const {loading,error:iserror,isservice} = useSelector((state) => state.joinservice);
+
     const [isActive, setActive] = useState("false");
     const ToggleClass = () => {
         setActive(!isActive);
     };
-    const dispatch = useDispatch();
     const alert = useAlert();
+    const dispatch=useDispatch();
+    const [name, setname] = useState("");
+    const [email, setemail] = useState("");
+    const [phoneNo, setphoneNo] = useState("");
+    const [message, setmessage] = useState("");
+    const serviceSubmitHandler = (e) => {
+        e.preventDefault();
+    
+        const myForm = new FormData();
+    
+        myForm.set("name", name);
+        myForm.set("email", email);
+        myForm.set("phoneNo", phoneNo);
+        myForm.set("message", message);
+
+
+    
+        dispatch(service_email(id, myForm));
+    // setname("")
+    // setemail("")
+    // setphoneNo("")
+    // setmessage("")
+      };
 
     useEffect(() => {
         if (error) {
             alert.error(error);
             dispatch(CLEAR_ERROR_SERVICE);
         }
-
+        if (iserror) {
+            alert.error(iserror);
+            dispatch(CLEAR_ERROR_SERVICE);
+        }
+         
+          if (isservice) {
+            alert.success("Message Send Successfully");
+          }
 
 
         dispatch(getProductDetails(id));
-    }, [dispatch, id, error, alert]);
+    }, [dispatch, id, error, iserror,alert,isservice]);
 
 
 
   return (
     <Fragment>
+
         <div className='eventsDetails'>
             {/* Single Page Banner */}
             <div className='evn_banner'>
@@ -47,6 +81,7 @@ function ServiceDetails() {
                 </div>
             </div>
             {/* Single Page Course Details */}
+            { loading===true?(<Loader1/>):(
             <div className='evnDetailsContent grid'>
                 <div className='evnDetail_title'>
                     <h2>{service&&service.name}</h2>
@@ -59,17 +94,23 @@ function ServiceDetails() {
                     <div className={isActive ? "evn_box" : null}>
                         <div className='eventJoin_holder'>
                             <p className='capitalize'>for contact to consultant please fill the below information*</p>
-                            <form className='eventJoin_form'>
-                                <input type={"text"} placeholder="Name" />
-                                <input type={"email"} placeholder="Email" />
-                                <textarea placeholder='Your message for consultant'></textarea>
+                            
+                 
+                            <form className='eventJoin_form' onSubmit={serviceSubmitHandler}>
+                                <input type={"text"} placeholder="Name"  value={name} onChange={(e)=>setname(e.target.value)}/>
+                                <input type={"email"} placeholder="Email" value={email} onChange={(e)=>setemail(e.target.value)}/>
+                                <input type={"number"} placeholder="PhoneNo" value={phoneNo} onChange={(e)=>setphoneNo(e.target.value)}/>
+                                <textarea placeholder='Your message for consultant' value={message} onChange={(e)=>setmessage(e.target.value)}></textarea>
                                 <button className='btn_primary'>Send Message</button>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
+        )}
+
         </div>
+
     </Fragment>
   )
 }

@@ -19,7 +19,9 @@ import {
     DELETE_SERVICE_REQUEST,
     DELETE_SERVICE_SUCCESS,
     DELETE_SERVICE_FAIL,
-  
+  JOIN_SERVICE_REQUEST,
+  JOIN_SERVICE_SUCCESS,
+  JOIN_SERVICE_FAIL,
     CLEAR_ERRORS,
   } from "../Constant/serviceconstant";
   import axios from "axios";
@@ -157,7 +159,27 @@ try {
   });
 }
 };
+//service_email
 
+export const service_email = (id,usercontact) => async (dispatch) => {
+  try {
+    dispatch({ type: JOIN_SERVICE_REQUEST });
+
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+    const { data } = await axios.post(`/api/v1/service/join/service/${id}`, usercontact, config);
+
+    dispatch({ type: JOIN_SERVICE_SUCCESS, payload: data });
+  } catch (error) {
+    dispatch({
+      type: JOIN_SERVICE_FAIL,
+      payload: error.response.data.message,
+    });
+  }
+};
 
 //clear error
 export const CLEAR_ERROR_SERVICE = () => async (dispatch) => {
