@@ -9,10 +9,11 @@ import {
 
     contactuser,
     CLEAR_ERROR,
-
-} from "../../../redux/action/useraction";
-import { useAlert } from "react-alert";
-
+    
+  } from "../../../redux/action/useraction";
+  import { useAlert } from "react-alert";
+import { CONTACT_RESET } from "../../../redux/Constant/userconstant";
+  
 function Contact() {
     const dispatch = useDispatch();
     const alert = useAlert();
@@ -50,11 +51,15 @@ function Contact() {
         }
 
         if (iscontact) {
-            alert.success("Message Send Successfully");
+          alert.success("Message Send Successfully");
+          dispatch({
+            type: CONTACT_RESET,
+          });
         }
 
-    }, [dispatch, alert, error, iscontact]);
-
+         
+      }, [dispatch, iscontact,alert, error,]);
+    
     return (
         <Fragment>
             <div className='contactUs'>
