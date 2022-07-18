@@ -6,17 +6,17 @@ import MarkEmailUnreadIcon from '@mui/icons-material/MarkEmailUnread';
 import { useSelector, useDispatch } from "react-redux";
 import Loader1 from "../../Layout/Loader/Courseloader";
 import {
-  
+
     contactuser,
     CLEAR_ERROR,
-    
-  } from "../../../redux/action/useraction";
-  import { useAlert } from "react-alert";
-  
+
+} from "../../../redux/action/useraction";
+import { useAlert } from "react-alert";
+
 function Contact() {
-    const dispatch=useDispatch();
-    const alert=useAlert();
-    const {loading,error,iscontact} = useSelector((state) => state.contactuser);
+    const dispatch = useDispatch();
+    const alert = useAlert();
+    const { loading, error, iscontact } = useSelector((state) => state.contactuser);
     const [firstname, setfirstname] = useState("");
     const [lastname, setlastname] = useState("");
     const [email, setemail] = useState("");
@@ -24,9 +24,9 @@ function Contact() {
     const [message, setmessage] = useState("");
     const contactSubmitHandler = (e) => {
         e.preventDefault();
-    
+
         const myForm = new FormData();
-    
+
         myForm.set("firstname", firstname);
         myForm.set("lastname", lastname);
         myForm.set("email", email);
@@ -34,27 +34,27 @@ function Contact() {
         myForm.set("message", message);
 
 
-    
-        dispatch(contactuser( myForm));
-    setfirstname("")
-    setlastname("")
-    setemail("")
-    setsubject("")
-    setmessage("")
-      };
 
-      useEffect(() => {
+        dispatch(contactuser(myForm));
+        setfirstname("")
+        setlastname("")
+        setemail("")
+        setsubject("")
+        setmessage("")
+    };
+
+    useEffect(() => {
         if (error) {
-          alert.error(error);
-          dispatch(CLEAR_ERROR());
+            alert.error(error);
+            dispatch(CLEAR_ERROR());
         }
-       
+
         if (iscontact) {
-          alert.success("Message Send Successfully");
+            alert.success("Message Send Successfully");
         }
-       
-      }, [dispatch, alert, error,iscontact]);
-    
+
+    }, [dispatch, alert, error, iscontact]);
+
     return (
         <Fragment>
             <div className='contactUs'>
@@ -93,22 +93,27 @@ function Contact() {
                 <div className='contactUs_holder grid'>
                     <div className='ourMap'>
                         <div className='map_holder'>
-                            <iframe title='SCTC Map' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d217972.70283029746!2d73.97748862499998!3d31.3914304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3919018a8ea548c1%3A0x4a52db69c2c814f!2sThe%20University%20of%20Lahore!5e0!3m2!1sen!2s!4v1656856582082!5m2!1sen!2s" width="600" height="450" style={{ border: "0px"}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <iframe title='SCTC Map' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d217972.70283029746!2d73.97748862499998!3d31.3914304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3919018a8ea548c1%3A0x4a52db69c2c814f!2sThe%20University%20of%20Lahore!5e0!3m2!1sen!2s!4v1656856582082!5m2!1sen!2s" width="600" height="450" style={{ border: "0px" }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
                     <div className='contactUs_form'>
-                   { loading===true?(<Loader1/>):(
-                 
-                
-                        <form onSubmit={contactSubmitHandler}>
-                            <input type={"text"} placeholder="First Name" value={firstname} onChange={(e)=>setfirstname(e.target.value)}/>
-                            <input type={"text"} placeholder="Last Name" value={lastname} onChange={(e)=>setlastname(e.target.value)}/>
-                            <input type={"email"} placeholder="Email" value={email} onChange={(e)=>setemail(e.target.value)}/>
-                            <input type={"text"} placeholder="Subject(Optional)" value={subject} onChange={(e)=>setsubject(e.target.value)}/>
-                            <textarea placeholder='Write your message...' value={message} onChange={(e)=>setmessage(e.target.value)}></textarea>
-                            <button className='btn_primary'>Send Message</button>
-                        </form>
-                    )}
+                        {loading === true ? (<Loader1 />) : (
+
+
+                            <form onSubmit={contactSubmitHandler}>
+                                <input type={"text"} placeholder="First Name" value={firstname} onChange={(e) => setfirstname(e.target.value)} />
+                                <input type={"text"} placeholder="Last Name" value={lastname} onChange={(e) => setlastname(e.target.value)} />
+                                <input type={"email"} placeholder="Email" value={email} onChange={(e) => setemail(e.target.value)} />
+                                <input type={"text"} placeholder="Subject(Optional)" value={subject} onChange={(e) => setsubject(e.target.value)} />
+                                <textarea placeholder='Write your message...' value={message} onChange={(e) => setmessage(e.target.value)}></textarea>
+                                <button className='btn_primary'>Send Message</button>
+                            </form>
+                        )}
+                    </div>                    
+                    <div className='mobileMap ourMap'>
+                        <div className='map_holder'>
+                            <iframe title='SCTC Map' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d217972.70283029746!2d73.97748862499998!3d31.3914304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3919018a8ea548c1%3A0x4a52db69c2c814f!2sThe%20University%20of%20Lahore!5e0!3m2!1sen!2s!4v1656856582082!5m2!1sen!2s" width="600" height="450" style={{ border: "0px"}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
                     </div>
                 </div>
             </div>

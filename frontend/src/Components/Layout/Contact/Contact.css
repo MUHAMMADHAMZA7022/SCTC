@@ -17,6 +17,9 @@
     height: 250px;
     margin: 0 50px 0 0;
 }
+.mobileMap.ourMap{
+    display: none;
+}
 .contactUs_form{
     flex: 4;
 }
@@ -80,7 +83,7 @@
     fill: var(--whiteColor);
 }
 .ct_text{
-    padding: 10px 0 0 0;
+    padding: 0;
     float: left;
     width: 70%;
 }
@@ -146,6 +149,35 @@
         font-size: 9px;
         line-height: 9px;
     }
+    .ct_text h3 {
+        font-size: 12px;
+        line-height: 12px;
+        margin-bottom: 0px;
+    }
+    .ct_text a,
+    .ct_text address {
+        font-size: 10px;
+        line-height: 10px;
+    }
+    .contactUs h2 {
+        padding: 20px 10px;
+        display: block;
+        margin-bottom: 10px;
+        font-size: 16px;
+        line-height: 16px;
+    }
+    .ourMap {
+        height: 170px;
+        margin: 0 20px 0 0;
+    }
+    .contactUs_form form textarea,
+    .contactUs_form form input {
+        margin-bottom: 10px;
+        padding: 5px 5px;
+    }
+    .contactUs {
+        padding: 20px 0px;
+    }
 }
 @media screen and (max-width: 599px) {
     .ct_icon {
@@ -163,5 +195,21 @@
         font-size: 11px;
         line-height: 11px;
         margin-bottom: 5px;
+    }   
+    .contactUs_holder {
+        display: block;
+    }
+    .ourMap {
+        flex: none;
+    }
+    .contactUs_form {
+        flex: none;
+        margin-bottom: 20px;
+    }
+    .ourMap{
+        display: none;
+    }
+    .mobileMap.ourMap{
+        display: block;
     }
 }
