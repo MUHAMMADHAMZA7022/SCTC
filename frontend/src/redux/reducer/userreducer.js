@@ -36,6 +36,7 @@ import {
   USER_DETAILS_REQUEST,
   USER_DETAILS_SUCCESS,
   USER_DETAILS_FAIL,
+  CONTACT_REQUEST,CONTACT_SUCCESS,CONTACT_FAIL
 } from "./../Constant/userconstant";
 export const userReducer = (state = { user: {} }, action) => {
   switch (action.type) {
@@ -255,6 +256,37 @@ export const userDetailsReducer = (state = { user: {} }, action) => {
         error: action.payload,
       };
 
+    case CLEAR_ERRORS:
+      return {
+        ...state,
+        error: null,
+      };
+
+    default:
+      return state;
+  }
+};
+
+//contact|_email order
+export const contactReducer = (state = {}, action) => {
+  switch (action.type) {
+    case CONTACT_REQUEST:
+      return {
+        ...state,
+        loading: true,
+      };
+
+    case CONTACT_SUCCESS:
+      return {
+        loading: false,
+        iscontact: action.payload,
+      };
+
+    case CONTACT_FAIL:
+      return {
+        loading: false,
+        error: action.payload,
+      };
     case CLEAR_ERRORS:
       return {
         ...state,

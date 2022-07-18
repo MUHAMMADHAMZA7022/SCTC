@@ -62,9 +62,10 @@ import ConfirmOrder from "./Components/Pages/Cart/confirmorder";
 import Payment from "./Components/Pages/Cart/payment";
 import Ordersuccess from "./Components/Pages/Cart/ordersuccess";
 import ProcessOrder from "./Components/Pages/Admin/processorder"
+import MyORDER from "./Components/Pages/Order/MyOrders"
+import ORDERDETAILS from "./Components/Pages/Order/OrderDetails"
 
 import ServiceDetails from "./Components/Pages/Services/ServiceDetails";
-
 function App() {
   const dispatch = useDispatch();
 
@@ -85,6 +86,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/course" element={<Course />} />
+         
           <Route path="/course/:keyword" element={<Course />} />
           <Route path="/courses/:keyword" element={<HomeCourses />} />
           <Route path="/courses" element={<HomeCourses />} />
@@ -282,6 +284,22 @@ function App() {
             element={
               <ProtectedRoute isAuthenticated={isAuthenticated}>
                 {isAuthenticated ? <Profile /> : <Login />}
+              </ProtectedRoute>
+            }
+          />
+           <Route
+            path="/coursehistory"
+            element={
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                {isAuthenticated ? <MyORDER /> : <Login />}
+              </ProtectedRoute>
+            }
+          />
+           <Route
+            path="/course/order/:id"
+            element={
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                {isAuthenticated ? <ORDERDETAILS /> : <Login />}
               </ProtectedRoute>
             }
           />

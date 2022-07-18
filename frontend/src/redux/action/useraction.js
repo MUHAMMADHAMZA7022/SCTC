@@ -35,6 +35,9 @@ import {
   USER_DETAILS_REQUEST,
   USER_DETAILS_SUCCESS,
   USER_DETAILS_FAIL,
+  CONTACT_REQUEST,
+  CONTACT_SUCCESS,
+  CONTACT_FAIL
 } from "./../Constant/userconstant";
 import axios from "axios";
 export const login = (email, password) => async (dispatch) => {
@@ -244,7 +247,27 @@ export const deleteUser = (id) => async (dispatch) => {
     });
   }
 };
+//contact_email
+//email order
+export const contactuser = (usercontact) => async (dispatch) => {
+  try {
+    dispatch({ type: CONTACT_REQUEST });
 
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+    const { data } = await axios.post("/api/v1/user/contact", usercontact, config);
+
+    dispatch({ type: CONTACT_SUCCESS, payload: data });
+  } catch (error) {
+    dispatch({
+      type: CONTACT_FAIL,
+      payload: error.response.data.message,
+    });
+  }
+};
 //clear error
 export const CLEAR_ERROR = () => async (dispatch) => {
   dispatch({ type: CLEAR_ERRORS });
