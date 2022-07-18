@@ -28,10 +28,10 @@ const OrderSuccess = (props) => {
         <Link
           to={
             isAuthenticated
-              ? "/orders"
-              : props.newOrder
-                ? `/check/order/email/${props.newOrder.order._id}`
-                : "/check/order/email"
+              ? `/course/order/${props.newOrder.order._id}`
+              // : props.newOrder
+              //   ? `/course/order/${props.newOrder.order._id}`
+                : "/login"
           }
           className="btn_primary"
         >
