@@ -121,7 +121,16 @@
 .nav_list li ul.pr_list li button.logoutBtn:hover{
     color: var(--redColor);
 }
-
+.top_header{
+  padding: 5px 0;
+  background: var(--whiteColor);
+  border-bottom: 1px solid var(--lightBorder);
+}
+.top_header marquee{
+  color: var(--themeColor);
+  font-weight: 900;
+  text-transform: uppercase;
+}
 
 /* --------------------Mobile Menu Styles----------------- */
 #mobile_menu {

@@ -62,7 +62,7 @@ function Header() {
   return (
     <Fragment>
       <div className='top_header'>
-        <marquee>Medical research</marquee>
+        <marquee>Medical research statistical & consultancy training centre (Leading Biostatistics)</marquee>
       </div>
       <div className='header_holder'>
         {/* Start of Mobile menu */}
