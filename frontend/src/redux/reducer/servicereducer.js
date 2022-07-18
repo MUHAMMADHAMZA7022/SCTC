@@ -23,6 +23,9 @@ import {
     DELETE_SERVICE_FAIL,
     DELETE_SERVICE_RESET,
   
+    JOIN_SERVICE_REQUEST,
+    JOIN_SERVICE_SUCCESS,
+    JOIN_SERVICE_FAIL,
     CLEAR_ERRORS,
   } from "../Constant/serviceconstant";
   
@@ -173,4 +176,34 @@ import {
         return state;
     }
   };
+  //contact|_email order
+export const JoinServiceReducer = (state = {}, action) => {
+  switch (action.type) {
+    case JOIN_SERVICE_REQUEST:
+      return {
+        ...state,
+        loading: true,
+      };
+
+    case JOIN_SERVICE_SUCCESS:
+      return {
+        loading: false,
+        isservice: action.payload,
+      };
+
+    case JOIN_SERVICE_FAIL:
+      return {
+        loading: false,
+        error: action.payload,
+      };
+      case CLEAR_ERRORS:
+        return {
+          ...state,
+          error: null,
+        };
+
+    default:
+      return state;
+  }
+};
   

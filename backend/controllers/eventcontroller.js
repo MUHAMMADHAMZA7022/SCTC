@@ -22,8 +22,7 @@ exports.createevent = async (req, res, next) => {
       quality: "auto",
       fetch_format: "auto",
     });
-    // console.log(st)
-    // console.log(startdate)
+ 
     req.body.user = req.user.id;
     const courses = await Event.create({
       name,
@@ -85,10 +84,9 @@ exports.singleevent = catchasyncerror(async (req, res, next) => {
 exports.updateevent = catchasyncerror(async (req, res, next) => {
   let uevent = await Event.findById(req.params.id);
   if (!uevent) {
-    return next(new Errorhandler("Event Not Found", 404)); //ly class bnae v utils mein phir ye error bnya wa sb sy phir middleare ein erro.js bnae
+    return next(new Errorhandler("Event Not Found", 404)); 
   }
 
-  // console.log(dat)
   // //addd avtar cloudinary
   if (req.body.images !== "") {
     const imageId = uevent.images.public_id;
@@ -114,9 +112,7 @@ exports.updateevent = catchasyncerror(async (req, res, next) => {
   req.body.enddate = new Date(req.body.enddate).toLocaleString("default", {
     hour12: true,
   });
-  // console.log(req.body.startdate)
-  // console.log(req.body.enddate)
-  // var et=new Date(enddate).toLocaleString([], { hour12: true});
+
   uevent = await Event.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
     runValidators: true,
@@ -148,37 +144,37 @@ exports.deleteevent = catchasyncerror(async (req, res, next) => {
 });
 // ADD joining event
 
-exports.joinevent = async (req, res, next) => {
-  try {
-    let uevent = await Event.findById(req.params.id);
-    if (!uevent) {
-      return next(new Errorhandler("Event Not Found", 404)); //ly class bnae v utils mein phir ye error bnya wa sb sy phir middleare ein erro.js bnae
-    }
-    let obj = uevent.joining.find((o) => o.join_email === req.body.join_email);
-    if (!obj) {
-      await Event.findOneAndUpdate(
-        { _id: req.params.id },
-        {
-          $push: {
-            joining: {
-              join_name: req.body.join_name,
-              join_email: req.body.join_email,
-              join_phone: req.body.join_phone,
-            },
-          },
-        }
-      );
-      return res.status(200).json({
-        success: true,
-        message: "Event Joined Successfully",
-      });
-    } else {
-      return res.status(200).json({
-        success: false,
-        message: "Event Already joined",
-      });
-    }
-  } catch (error) {
-    res.status(500).json({ success: false, message: error.message });
-  }
-};
+// exports.joinevent = async (req, res, next) => {
+//   try {
+//     let uevent = await Event.findById(req.params.id);
+//     if (!uevent) {
+//       return next(new Errorhandler("Event Not Found", 404)); //ly class bnae v utils mein phir ye error bnya wa sb sy phir middleare ein erro.js bnae
+//     }
+//     let obj = uevent.joining.find((o) => o.join_email === req.body.join_email);
+//     if (!obj) {
+//       await Event.findOneAndUpdate(
+//         { _id: req.params.id },
+//         {
+//           $push: {
+//             joining: {
+//               join_name: req.body.join_name,
+//               join_email: req.body.join_email,
+//               join_phone: req.body.join_phone,
+//             },
+//           },
+//         }
+//       );
+//       return res.status(200).json({
+//         success: true,
+//         message: "Event Joined Successfully",
+//       });
+//     } else {
+//       return res.status(200).json({
+//         success: false,
+//         message: "Event Already joined",
+//       });
+//     }
+//   } catch (error) {
+//     res.status(500).json({ success: false, message: error.message });
+//   }
+// };
