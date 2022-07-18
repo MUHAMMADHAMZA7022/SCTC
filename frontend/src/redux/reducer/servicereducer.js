@@ -26,6 +26,7 @@ import {
     JOIN_SERVICE_REQUEST,
     JOIN_SERVICE_SUCCESS,
     JOIN_SERVICE_FAIL,
+    JOIN_SERVICE_RESET,
     CLEAR_ERRORS,
   } from "../Constant/serviceconstant";
   
@@ -196,6 +197,11 @@ export const JoinServiceReducer = (state = {}, action) => {
         loading: false,
         error: action.payload,
       };
+      case JOIN_SERVICE_RESET:
+        return {
+         ...state,
+          isservice: false,
+        };
       case CLEAR_ERRORS:
         return {
           ...state,

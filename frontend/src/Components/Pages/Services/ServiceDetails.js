@@ -12,6 +12,7 @@ service_email,
 CLEAR_ERROR_SERVICE,
 } from "../../../redux/action/serviceaction";
 import { useAlert } from 'react-alert';
+import {JOIN_SERVICE_RESET }from "../../../redux/Constant/serviceconstant"
 function ServiceDetails() {
     const { id } = useParams();
     const dispatch=useDispatch();
@@ -50,16 +51,18 @@ function ServiceDetails() {
     useEffect(() => {
         if (error) {
             alert.error(error);
-            dispatch(CLEAR_ERROR_SERVICE);
+            dispatch(CLEAR_ERROR_SERVICE());
         }
         if (iserror) {
             alert.error(iserror);
-            dispatch(CLEAR_ERROR_SERVICE);
+            dispatch(CLEAR_ERROR_SERVICE());
         }
          
           if (isservice) {
             alert.success("Message Send Successfully");
-            
+            dispatch({
+                type: JOIN_SERVICE_RESET,
+              });
           }
 
         dispatch(getProductDetails(id));

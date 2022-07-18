@@ -36,7 +36,7 @@ import {
   USER_DETAILS_REQUEST,
   USER_DETAILS_SUCCESS,
   USER_DETAILS_FAIL,
-  CONTACT_REQUEST,CONTACT_SUCCESS,CONTACT_FAIL
+  CONTACT_REQUEST,CONTACT_SUCCESS,CONTACT_FAIL, CONTACT_RESET
 } from "./../Constant/userconstant";
 export const userReducer = (state = { user: {} }, action) => {
   switch (action.type) {
@@ -287,6 +287,11 @@ export const contactReducer = (state = {}, action) => {
         loading: false,
         error: action.payload,
       };
+      case CONTACT_RESET:
+        return {
+    ...state,
+          iscontact:false,
+        };
     case CLEAR_ERRORS:
       return {
         ...state,
