@@ -1,5 +1,5 @@
 import bg3 from '../../../images/slide-img-3.jpg';
-import React, { Fragment, useState,useEffect  } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import TurnedInIcon from '@mui/icons-material/TurnedIn';
 import { useSelector, useDispatch } from "react-redux";
