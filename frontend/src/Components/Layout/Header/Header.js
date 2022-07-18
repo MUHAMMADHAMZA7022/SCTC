@@ -101,7 +101,7 @@ function Header() {
                 <li>
                   <Link to="/events">
                     <EventIcon />
-                      <span>Workshop</span>
+                      <span>Workshops</span>
                   </Link>
                 </li>
                 <li>
@@ -156,7 +156,7 @@ function Header() {
           <ul className='unstyled nav_list'>
             <li><Link to='/'>Home</Link></li>
             <li><Link to='/courses'>Courses</Link></li>
-            <li><Link to='/events'>Workshop</Link></li>
+            <li><Link to='/events'>Workshops</Link></li>
             <li><Link to='/services'>Services</Link></li>
             <li><Link to='/about'>About</Link></li>
             <li><Link to='/contact'>Contact</Link></li>        
