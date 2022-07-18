@@ -6,7 +6,7 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import TurnedInIcon from '@mui/icons-material/TurnedIn';
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useEffect } from "react";
 // import Carousel from "react-material-ui-carousel";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -34,10 +34,10 @@ function EventDetails() {
         dispatch(getProductDetails(id));
     }, [dispatch, id, error, alert]);
 
-    const [isActive, setActive] = useState("false");
-    const ToggleClass = () => {
-        setActive(!isActive);
-    };
+    // const [isActive, setActive] = useState("false");
+    // const ToggleClass = () => {
+    //     setActive(!isActive);
+    // };
 
     return (
         <Fragment>
@@ -74,7 +74,11 @@ function EventDetails() {
                     </div>
                     <div className='evnDetail_action'>
                         <h2>Workshop Action</h2>
-                        <Link to="#" onClick={ToggleClass}><TurnedInIcon />Join Now</Link>
+                        <Link to="#"><TurnedInIcon />Join Workshop</Link>
+
+
+
+                        {/* <Link to="#" onClick={ToggleClass}><TurnedInIcon />Join Now</Link>
                         <div className={isActive ? "evn_box" : null}>
                             <div className='eventJoin_holder'>
                                 <p className='capitalize'>to join event please fill the below information*</p>
@@ -85,7 +89,7 @@ function EventDetails() {
                                     <button className='btn_primary'>Join</button>
                                 </form>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                     {/* event joined list */}
                     {/* <div className='eventJoined'>
