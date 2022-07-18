@@ -45,7 +45,7 @@ function Services() {
           {loading === false && latestservice ? (
             latestservice.map((service, key) => (
               <div className="srvc_card" key={key} service={service}>
-                <Link to={"#"}>
+                <Link to={"/srvdtl"}>
                   <img
                     src={service?.images?.url}
                     alt="srvce img"

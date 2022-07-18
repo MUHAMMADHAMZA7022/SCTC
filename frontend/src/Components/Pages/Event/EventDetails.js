@@ -88,7 +88,7 @@ function EventDetails() {
                         </div>
                     </div>
                     {/* event joined list */}
-                    <div className='eventJoined'>
+                    {/* <div className='eventJoined'>
                         <h1>List of Members who joined the Event.</h1>
                         <table className='eventJoinedTable' border={1} style={{width: "100%"}} >
                             <tr>
@@ -102,7 +102,7 @@ function EventDetails() {
                                 <td>03209455811</td>
                             </tr>
                         </table>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </Fragment>
