@@ -9,11 +9,12 @@ import Loader1 from "../../Layout/Loader/Courseloader";
 import {
     getProductDetails,
 service_email,
-    CLEAR_ERROR_SERVICE,
+CLEAR_ERROR_SERVICE,
 } from "../../../redux/action/serviceaction";
 import { useAlert } from 'react-alert';
 function ServiceDetails() {
     const { id } = useParams();
+    const dispatch=useDispatch();
 
     const { service, error } = useSelector((state) => state.serviceDetails);
     const {loading,error:iserror,isservice} = useSelector((state) => state.joinservice);
@@ -23,7 +24,6 @@ function ServiceDetails() {
         setActive(!isActive);
     };
     const alert = useAlert();
-    const dispatch=useDispatch();
     const [name, setname] = useState("");
     const [email, setemail] = useState("");
     const [phoneNo, setphoneNo] = useState("");
@@ -41,10 +41,10 @@ function ServiceDetails() {
 
     
         dispatch(service_email(id, myForm));
-    // setname("")
-    // setemail("")
-    // setphoneNo("")
-    // setmessage("")
+    setname("")
+    setemail("")
+    setphoneNo("")
+    setmessage("")
       };
 
     useEffect(() => {
@@ -59,10 +59,11 @@ function ServiceDetails() {
          
           if (isservice) {
             alert.success("Message Send Successfully");
+            
           }
 
-
         dispatch(getProductDetails(id));
+        
     }, [dispatch, id, error, iserror,alert,isservice]);
 
 

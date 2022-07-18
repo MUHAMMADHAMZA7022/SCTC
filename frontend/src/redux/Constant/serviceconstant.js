@@ -35,5 +35,4 @@ export const JOIN_SERVICE_RESET="JOIN_SERVICE_RESET";
 
 
 
-
 export const CLEAR_ERRORS = "CLEAR_ERRORS";
