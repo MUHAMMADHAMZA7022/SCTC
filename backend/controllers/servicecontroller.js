@@ -163,7 +163,7 @@ exports.joinserviceemail = async (req, res, next) => {
       <h2>CONTACT INFORMATION</h2>
       <h4>Name: ${name} </h4>
       <h4>Email: ${email}</h4>
-      <h4>Email: ${phoneNo}</h4>
+      <h4>PhoneNo: ${phoneNo}</h4>
      
       <h3>Service: ${jservice.name}</h3>
       <ul>
