@@ -75,4 +75,30 @@
 .checkout_summary{
     flex: 1;
     box-shadow: var(--boxShadow);
+}/* Media Queries for responsive site layout */
+@media screen and (max-width: 1199px) {
+}
+@media screen and (max-width: 999px) {
+    .checkout {
+        padding: 20px;
+    }
+    .checkout h1 {
+        padding: 10px 0px;
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+    .chk_formHolder {
+        margin-right: 10px;
+    }
+    .checkout_summary {
+        flex: 1 1;
+        padding: 0px 10px;
+        margin-bottom: 30px;
+    }
+    .checkout_summary_holder button.btn_primary,
+    .stdInfo_form button.btn_primary {
+        padding: 5px 15px;
+    }
+}
+@media screen and (max-width: 599px) {
 }

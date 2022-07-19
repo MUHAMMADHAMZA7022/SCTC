@@ -36,7 +36,7 @@ const CheckoutSteps = ({ activeStep }) => {
             completed={activeStep >= index ? true : false}
           >
             <StepLabel
-              className="ss"
+              className="ss chkOutSteps"
               style={{
                 color: activeStep >= index ? "tomato" : "rgba(0, 0, 0, 0.649)",
               }}

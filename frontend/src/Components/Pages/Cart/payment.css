@@ -188,9 +188,9 @@
     top: 10px;
   }
   
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 999px) {
     .paymentForm {
-      width: 90%;
+      width: 100%;
     }
     .paymentForm>p {
       padding: 4vw 0;

@@ -116,9 +116,20 @@
       border-top: 1px solid rgba(0, 0, 0, 0.247);
     }
     .confirmshippingAreaBox > div {
-      display: flex;
-      margin: 6vw 0;
-    }
+      margin: 0px;
+      padding: 10px 0;
+  }
+  .confirmshippingArea {
+      padding: 20px;
+  }
+  .confirmshippingAreaBox,
+  .confirmCartItemsContainer {
+      margin: 0px;
+  }
+  .confirmCartItems {
+    padding: 20px;
+    padding-top: 0px;
+}
     .confirmCartItemsContainer {
       max-height: 50vw;
     }

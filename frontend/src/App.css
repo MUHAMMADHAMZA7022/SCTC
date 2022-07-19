@@ -56,9 +56,10 @@ button.btn_primary,
   position: relative;
   border: 1px solid var(--themeColor);
   transition: all 0.5s cubic-bezier(0.42, 0, 0.58, 1);
-  padding: 5px 20px;
+  padding: 2px 20px;
   text-transform: capitalize;
-  font-size: 18px;
+  font-size: 16px;
+  line-height: normal !important;
 }
 button.btn_primary:hover,
 button.btn_primary:focus,

@@ -101,4 +101,43 @@ span.checkout_price span{
     display: block;
     font-size: 20px;
     font-weight: 800;
+}/* Media Queries for responsive site layout */
+@media screen and (max-width: 1199px) {
+}
+@media screen and (max-width: 999px) {
+    .course_cart {
+        padding: 20px 10px;
+    }
+    .cart h1 {
+        padding: 10px 0px;
+        font-size: 20px;
+        line-height: 20px;
+        margin-bottom: 20px;
+    }
+    .cart_crs_title{
+        font-size: 16px;
+        flex: 2 1;
+    }
+    .cart_crs {
+        padding: 0 10px;
+    }
+    .cart_courses {
+        padding: 10px;
+    }
+    .cart_checkout span.checkout_price{
+        font-size: 2rem;
+    }
+    .cart_checkout button.btn_primary {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+    .css-ahj2mt-MuiTypography-root{
+        font-size: 12px !important;
+        font-weight: 700 !important;
+    }
+    .chkOutSteps .css-i4bv87-MuiSvgIcon-root{
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 599px) {
 }

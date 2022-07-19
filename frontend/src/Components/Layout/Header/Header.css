@@ -272,7 +272,7 @@
   .mobileModeBar{
     position: absolute;
     right: 0;
-    top: 2%;
+    top: 5%;
   }
   
 /* Media Queries for responsive site layout */
@@ -282,7 +282,7 @@
   }
   #mobile_menu{
     display: inline-block;
-    top: 2%;
+    top: 5%;
   }
   .header_holder .navbar{
     display: none;
@@ -318,6 +318,9 @@
   .nav_list li.pr_box ul.pr_list li{
     float: none;
     text-align: center;
+  }
+  .top_header marquee{
+    font-size: 12px;
   }
 }
 @media screen and (max-width: 599px) {
