@@ -5,6 +5,7 @@ import TurnedInIcon from '@mui/icons-material/TurnedIn';
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import Loader1 from "../../Layout/Loader/Courseloader";
+import CloseIcon from '@mui/icons-material/Close';
 
 import {
     getProductDetails,
@@ -20,7 +21,7 @@ function ServiceDetails() {
     const { service, error } = useSelector((state) => state.serviceDetails);
     const { loading, error: iserror, isservice } = useSelector((state) => state.joinservice);
 
-    
+
     const alert = useAlert();
     const [name, setname] = useState("");
     const [email, setemail] = useState("");
@@ -67,16 +68,17 @@ function ServiceDetails() {
     }, [dispatch, id, error, iserror, alert, isservice]);
 
 
-    const [isActive, setActive] = useState("false");
-    const ToggleClass = () => {
-        setActive(!isActive);
-    };
+    // const [isActive, setActive] = useState("false");
+    // const ToggleClass = () => {
+    //     setActive(!isActive);
+    // };
 
-    
-    const [isRemove, setRemove] = useState("true");
-    const ToggleRemoveClass = () => {
-        setRemove(!isRemove);
-    };
+
+    // const [isRemove, setRemove] = useState("true");
+    // const ToggleRemoveClass = () => {
+    //     setRemove(!isRemove);
+    // };
+    const [show, setShow] = React.useState();
 
 
     return (
@@ -105,12 +107,15 @@ function ServiceDetails() {
                             <p>{service && service.description}</p>
                         </div>
                         <div className='evnDetail_action'>
-                            <Link to="#" onClick={ToggleClass}><TurnedInIcon />Take Appointment</Link>
-                            <div className={isActive ? "evn_box" : null}>
+                            {/* <Link to="#" onClick={ToggleClass}><TurnedInIcon />Take Appointment</Link> */}
+                            <Link to="#" className="add" onClick={() => setShow(true)}><TurnedInIcon />Take Appointment</Link>
+                            {/* <div className={isActive ? "evn_box" : null}> */}
+                            <div className={show ? "evn_box" : ""}>
                                 <div className='eventJoin_holder'>
-                                    <p className='capitalize'>for contact to consultant please fill the below information*</p>
-
-
+                                    <div>
+                                        <p className='capitalize'>for contact to consultant please fill the below information*</p>
+                                        <button className="remove" onClick={() => setShow(false)}><CloseIcon /></button>
+                                    </div>
                                     <form className='eventJoin_form' onSubmit={serviceSubmitHandler}>
                                         <input type={"text"} placeholder="Name" value={name} onChange={(e) => setname(e.target.value)} />
                                         <input type={"email"} placeholder="Email" value={email} onChange={(e) => setemail(e.target.value)} />

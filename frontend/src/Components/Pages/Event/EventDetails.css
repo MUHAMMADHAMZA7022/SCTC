@@ -169,20 +169,36 @@
 }
 .evnDetail_action div.evn_box .eventJoin_holder{
     /* transform: translateX(-150%); */
-    transform: scale(0);
-    visibility: hidden;
-    opacity: 0;
-}
-.evnDetail_action div .eventJoin_holder{
     transform: scale(1);
     visibility: visible;
     opacity: 1;
 }
-.eventJoin_holder p{
+.evnDetail_action div .eventJoin_holder{
+    /* transform: scale(1);
+    visibility: visible;
+    opacity: 1; */
+    transform: scale(0);
+    visibility: hidden;
+    opacity: 0;
+}
+.eventJoin_holder > div{
+    display: flex;
+}
+.eventJoin_holder > div p{
     font-size: 12px;
     color: var(--redColor);
     font-weight: 600;
     margin-bottom: 10px;
+    display: inline-block;
+    flex: 8;
+}
+.eventJoin_holder > div button{
+    flex: 2;
+    outline: none;
+    border-radius: 0px;
+    border: 0px;
+    background-color: var(--whiteColor);
+    display: inline-block;
 }
 .eventJoin_form {
     background: var(--whiteColor);
