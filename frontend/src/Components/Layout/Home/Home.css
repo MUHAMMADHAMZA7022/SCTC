@@ -308,7 +308,18 @@ a.ev_img {
     display: block;
     margin-bottom: 2px;
 }
-
+.ev_time .evn_joinBtn{
+    float: right;
+}
+.ev_time .evn_joinBtn a{
+    font-size: 14px;
+    font-weight: 900;
+    color: var(--themeColor);
+}
+.ev_time .evn_joinBtn a:hover,
+.ev_time .evn_joinBtn a:focus{
+    color: var(--redColor);
+}
 .ev_date strong {
     font-size: 12px;
     line-height: 16px;
