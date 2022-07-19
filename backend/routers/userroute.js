@@ -3,7 +3,7 @@ const router = express.Router();
 const auth =require( "../utils/auth");
 
 const {
-  createuser, loginuser, logout, forgetPassword, resetPassword,getuserdetails,getallusers,getsingleuser,deleteuser,updatepassword,updateprofile, contact_user
+  createuser, loginuser, logout, forgetPassword, resetPassword,getuserdetails,getallusers,getsingleuser,deleteuser,updatepassword,updateprofile, contact_user, news_letter
 } = require("../controllers/usercontroller"); 
 router.route("/register").post( createuser);
  router.route("/login").post( loginuser);
@@ -11,6 +11,7 @@ router.route("/register").post( createuser);
  router.route("/resetpassword/:token").put( resetPassword);
  router.route("/logout").get(logout);
  router.route("/contact").post(contact_user);
+ router.route("/news/letter").post(news_letter);
   router.route("/me").get(auth, getuserdetails);
  router.route("/admin/allusers").get(auth, authorizerole("admin"), getallusers);
 router.route("/admin/singleuser/:id").get(auth, authorizerole("admin"), getsingleuser);

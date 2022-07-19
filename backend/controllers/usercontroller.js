@@ -292,3 +292,47 @@ exports.contact_user = catchasyncerror(async (req, res, next) => {
      
   });
 });
+//news_letter
+exports.news_letter= catchasyncerror(async (req, res, next) => {
+  const{name,email}=req.body
+  if(!name || !email){
+    return res.status(400).json({success:false,message:"Please enter all the fields"})
+  }
+ 
+
+
+  const transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
+    service: process.env.SMPT_SERVICE,
+    auth: {
+      user: process.env.SMPT_MAIL,
+      pass: process.env.SMPT_PASSWORD,
+    },
+  });
+  const mailoption = {
+    from: process.env.SMPT_MAIL,
+    to: email,
+    subject: "Thanks for Subscribing us.",
+    html:`
+    <div style="padding:10px;border-style: ridge">
+    <h2>MR_SCTC WEBSITE</h2>
+    <h4>Name: ${name} </h4>
+    <h3> Thanks for subscribing to our Website. You'll always receive updates from us. And we won't share and sell your information.</h3>
+    <ul>
+        <li><b>SCTC WEBSITE</b>:https://localhost:3000 </li>
+    </ul>`
+  };
+  transporter.sendMail(mailoption, function (error, info) {
+    if (error)
+        {
+          res.json({status: true, respMesg: error.message})
+        } 
+        else
+        {
+          res.json({status: true, respMesg: `Thanks for Subscribing us.`})
+        }
+     
+  });
+});
