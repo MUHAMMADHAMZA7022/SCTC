@@ -1,16 +1,29 @@
-import React, { Fragment } from 'react'
+import React, { Fragment ,useEffect} from 'react'
 import { Link } from 'react-router-dom';
 //  import bg3 from '../../../images/slide-img-3.jpg';
+import { CLEAR_ERROR_EVENT } from "../../../redux/action/eventaction";
+
 import { addItemsToCartWork } from "../../../redux/action/cartAction";
 import { useSelector, useDispatch } from "react-redux";
+import { useAlert } from 'react-alert';
 
 function Home({ event }) {
+  const { error } = useSelector((state) => state.eventDetails);
+  const alert = useAlert();
   const dispatch = useDispatch();
   const addToCartHandler = () => {
 
-      dispatch(addItemsToCartWork(event._id));
-      alert.success("Item Added To Cart");
-    };
+    dispatch(addItemsToCartWork(event._id));
+    alert.success("Item Added To Cart");
+  };
+  useEffect(() => {
+    if (error) {
+      alert.error(error);
+      dispatch(CLEAR_ERROR_EVENT);
+    }
+  }, [dispatch, alert, error]);
+
+
   return (
     <Fragment>
 
