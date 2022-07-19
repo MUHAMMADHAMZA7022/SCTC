@@ -202,6 +202,7 @@ div.css-r11z79-MuiDataGrid-root{
     box-shadow: var(--boxShadow);
     margin-bottom: 50px;
     margin-right: 20px;
+    background: var(--whiteColor);
 }
 /* Media Queries for responsive site layout */
 @media screen and (max-width: 1199px) {

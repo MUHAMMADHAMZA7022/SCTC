@@ -86,11 +86,13 @@ const MyOrders = () => {
 
   return (
     <Fragment>
-      <MetaData title={`${user&&user.name} - Orders`} />
+      <MetaData title={`${user && user.name} - Orders`} />
       {/* 
       {loading ? (
         <Loader />
       ) : ( */}
+
+      <Typography id="myOrdersHeading">{user && user.name}'s Orders</Typography>
       <div className="myOrdersPage">
         <DataGrid
           rows={rows}
@@ -100,8 +102,6 @@ const MyOrders = () => {
           className="myOrdersTable"
           autoHeight
         />
-
-        <Typography id="myOrdersHeading">{user&&user.name}'s Orders</Typography>
       </div>
       {/* )} */}
     </Fragment>
