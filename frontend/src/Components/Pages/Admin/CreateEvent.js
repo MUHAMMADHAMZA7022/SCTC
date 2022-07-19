@@ -90,25 +90,25 @@ function Courses() {
               <input
                 className='form__field'
                 type="text"
-                placeholder="Event Name"
+                placeholder="Workshop Title"
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 id="evnName"
               />
-              <label for="evnName" className="form__label">Event Name</label>
+              <label for="evnName" className="form__label">Workshop Title</label>
             </div>
             <div class="form__group field">
               <input
                 className='form__field'
                 type="number"
-                placeholder="Event Price"
+                placeholder="Workshop Price"
                 required
                 value={price}
                 onChange={(e) => setprice(e.target.value)}
                 id="evnName"
               />
-              <label for="evnName" className="form__label">Event Price</label>
+              <label for="evnName" className="form__label">Workshop Price</label>
             </div>
             <div class="form__group field">
               {images ? (
@@ -121,7 +121,7 @@ function Courses() {
               <input
                 className='form__field'
                 type="file"
-                placeholder="Event Image"
+                placeholder="Workshop Image"
                 name="images"
                 accept="image/*"
                 onChange={updateProfileDataChange}
@@ -137,7 +137,7 @@ function Courses() {
                 rows="1"
                 id="evndesp"
               ></textarea>
-              <label for="evndesp" className="form__label">Event Description</label>
+              <label for="evndesp" className="form__label">Workshop Description</label>
             </div>
             <div class="form__group field">
               <input
@@ -201,7 +201,7 @@ function Courses() {
                 onChange={(e) => setlocation(e.target.value)}
                 id="evnLoc"
               />
-              <label for="evnLoc" className="form__label">Event Location</label>
+              <label for="evnLoc" className="form__label">Workshop Location</label>
             </div>
             {loading === true ? (
               <LoadingButton
