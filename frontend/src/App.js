@@ -115,7 +115,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/vieworder" element={<ViewOrder />} />
           <Route path="/service/details/:id" element={<ServiceDetails />} />
-          <Route path="/pagenotfound" element={<PageNotFound />} />
+          <Route path="/*" element={<PageNotFound />} />
           {/* ADMIN ROUTES */}
           {/* dashboard */}
           <Route

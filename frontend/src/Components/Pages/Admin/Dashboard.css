@@ -13,12 +13,59 @@
 .dashboardContent_holder{
     padding: 20px;
     box-shadow: var(--boxShadow);
+    display: flex;
 }
 .dashboardContent_holder .dasCard{
     width: 25%;
     padding: 20px;
     margin: 0 10px;
     box-shadow: var(--boxShadow);
+    text-align: center;
+    flex: 1;
+    position: relative;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.dashboardContent_holder .dasCard .lnk_boxDsh{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: var(--themeColor);
+    max-height: 40px;
+}
+.dashboardContent_holder .dasCard .lnk_boxDsh:hover,
+.dashboardContent_holder .dasCard .lnk_boxDsh:focus{
+    background: var(--greenColor);
+}
+.dashboardContent_holder .dasCard h3,
+.dashboardContent_holder .dasCard span,
+.dashboardContent_holder .dasCard .lnk_boxDsh a{
+    display: block;
+    margin-bottom: 20px;
+}
+.dashboardContent_holder .dasCard h3{
+    color: var(--themeColor);
+    font-size: 20px;
+    line-height: normal;
+}
+.dashboardContent_holder .dasCard span{
+    color: var(--redColor);
+    font-size: 20px;
+    line-height: normal;
+    font-weight: 900;
+    margin-bottom: 30px;
+}
+.dashboardContent_holder .dasCard .lnk_boxDsh a{
+    color: var(--whiteColor);
+    font-size: 16px;
+    padding: 10px;
+    line-height: normal;
+}
+.dashboardContent_holder .dasCard .lnk_boxDsh:hover a{
+    color: var(--whiteColor);
 }
 .dashboard_content h1{
     padding: 10px;
@@ -194,7 +241,7 @@
 }
 .crs_action button.btn_primary,
 .crs_action a.btn_primary{
-    padding: 2px 6px;
+    padding: 1px 6px;
     margin-right: 10px;
     border-radius: 0px;
     float: left;
@@ -210,10 +257,14 @@ div.css-r11z79-MuiDataGrid-root{
     margin-right: 20px;
     background: var(--whiteColor);
 }
+.dashboard_holder .css-1g86id8-MuiTreeItem-content .MuiTreeItem-iconContainer{
+    width: auto !important;
+}
 /* Media Queries for responsive site layout */
 @media screen and (max-width: 1199px) {
 }
 @media screen and (max-width: 999px) {
+    
     .dSidebar {
         width: 25%;
         float: left;
@@ -222,6 +273,17 @@ div.css-r11z79-MuiDataGrid-root{
         width: 75%;
         float: right;
         padding: 10px;
+    }
+    .dashboardContent_holder {
+        display: block;
+    }
+    .dashboardContent_holder .dasCard {
+        width: 100%;
+        display: block;
+        margin: 0 0 20px  0;
+        flex: none;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
     }
     .courses_holder {
         overflow: hidden;

@@ -60,7 +60,8 @@
     background-image: url(../../../images/Profile.png);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    /* background-size: cover; */
+    background-size: contain;
     overflow: hidden;
 }
 .nav_list li{
@@ -143,8 +144,8 @@
     z-index: auto;
   }
   .mn_open_btn{
-    box-shadow: var(--hoverBoxShadow);
-    background: var(--whiteColor);
+    /* box-shadow: var(--boxShadow);
+    background: var(--whiteColor); */
     border: none;
     border-radius: 1px;
     width: 30px;
@@ -322,6 +323,10 @@
   .top_header marquee{
     font-size: 12px;
   }
+  .nav_list li a.profile_box{
+    height: 25px;
+    margin: 0.3rem 0 0 1rem;
+  }
 }
 @media screen and (max-width: 599px) {
   .mn_open_btn{
@@ -332,11 +337,11 @@
       font-size: 20px;
   }
   #mobile_menu{
-    top: 12px;
+    top: 4%;
   }
   .mobileModeBar {
     right: 0;
-    top: 5px;
+    top: 3.5%;
   }
   .nav_list li a {
     padding: 5px 10px;
@@ -347,6 +352,12 @@
     font-size: 18px;
   }
   .nav_list li ul.pr_list li button.logoutBtn{
+    font-size: 10px;
+  }
+  .top_header {
+    padding: 2px 0;
+  }
+  .top_header marquee {
     font-size: 10px;
   }
 }

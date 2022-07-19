@@ -1016,11 +1016,7 @@ a.ev_img {
 
 @media screen and (max-width: 999px) {
     .banner {
-        height: 20rem;
-    }
-
-    .banner {
-        height: 20rem;
+        height: 12rem;
     }
 
     .banner_content span.dot {
@@ -1089,7 +1085,7 @@ a.ev_img {
 
 @media screen and (max-width: 599px) {
     .banner {
-        height: 12rem;
+        height: 8rem;
     }
 
     .banner_content {
