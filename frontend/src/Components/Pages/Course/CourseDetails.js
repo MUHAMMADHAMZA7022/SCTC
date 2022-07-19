@@ -20,7 +20,6 @@ import {
 import { addItemsToCart } from "../../../redux/action/cartAction";
 import { useParams } from "react-router-dom";
 import { useAlert } from "react-alert";
-import { addItemsToCart } from "../../../redux/action/cartAction";
 
 // import Loader from "../Layout/Loader/Loader";
 // import Imageload from "../Layout/Loader/imageload";
@@ -28,15 +27,7 @@ import { addItemsToCart } from "../../../redux/action/cartAction";
 function CourseDetails() {
     const { id } = useParams();
     const dispatch = useDispatch();
-<<<<<<< HEAD
-    const addToCartHandler = () => {
-  
-      dispatch(addItemsToCart(course._id));
-      alert.success("Item Added To Cart");
-    };
-=======
     
->>>>>>> d46b91500d559f53acb69e89a6fe67e82650b2c8
     const alert = useAlert();
     const { course, error } = useSelector((state) => state.courseDetails);
     console.log(course)
