@@ -23,6 +23,23 @@ export const addItemsToCart = (id) => async (dispatch, getState) => {
 
   localStorage.setItem("cartItems", JSON.stringify(getState().cart.cartItems));
 };
+// Add to Cart
+export const addItemsToCartWork = (id) => async (dispatch, getState) => {
+  const { data } = await axios.get(`/api/v1/event/singleevent/${id}`);
+  console.log(data);
+  dispatch({
+    type: ADD_TO_CART,
+    payload: {
+      event: data.sevent._id,
+      name: data.sevent.name,
+      price: data.sevent.price,
+      image: data.sevent.images.url,
+   
+    },
+  });
+
+  localStorage.setItem("cartItems", JSON.stringify(getState().cart.cartItems));
+};
 
 // REMOVE FROM CART
 export const removeItemsFromCart = (id) => async (dispatch, getState) => {
