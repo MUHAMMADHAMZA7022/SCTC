@@ -17,16 +17,22 @@ import {
 import { useParams } from "react-router-dom";
 import { useAlert } from "react-alert";
 import './EventDetails.css';
+import { addItemsToCartWork } from "../../../redux/action/cartAction";
+
 function EventDetails() {
     const { id } = useParams();
     const dispatch = useDispatch();
     const alert = useAlert();
     const { event, error } = useSelector((state) => state.eventDetails);
-    console.log(event)
+    const addToCartHandler = () => {
+  
+        dispatch(addItemsToCartWork(event._id));
+        alert.success("Item Added To Cart");
+      };
     useEffect(() => {
         if (error) {
             alert.error(error);
-            dispatch(CLEAR_ERROR_EVENT);
+            dispatch(CLEAR_ERROR_EVENT());
         }
 
 
@@ -74,7 +80,7 @@ function EventDetails() {
                     </div>
                     <div className='evnDetail_action'>
                         <h2>Workshop Action</h2>
-                        <Link to="#"><TurnedInIcon />Join Workshop</Link>
+                        <Link to="#" onClick={() => addToCartHandler()}><TurnedInIcon />Join Workshop</Link>
 
 
 

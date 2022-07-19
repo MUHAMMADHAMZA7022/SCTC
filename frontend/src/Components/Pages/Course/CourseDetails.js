@@ -17,6 +17,7 @@ import {
 
     CLEAR_ERROR,
 } from "../../../redux/action/courseaction";
+import { addItemsToCart } from "../../../redux/action/cartAction";
 import { useParams } from "react-router-dom";
 import { useAlert } from "react-alert";
 
@@ -26,13 +27,22 @@ import { useAlert } from "react-alert";
 function CourseDetails() {
     const { id } = useParams();
     const dispatch = useDispatch();
+    
     const alert = useAlert();
     const { course, error } = useSelector((state) => state.courseDetails);
     console.log(course)
+    const addToCartHandler = () => {
+  
+      dispatch(addItemsToCart(course._id));
+      alert.success("Item Added To Cart");
+    };
+
+  
+  
     useEffect(() => {
         if (error) {
             alert.error(error);
-            dispatch(CLEAR_ERROR);
+            dispatch(CLEAR_ERROR());
         }
 
 
@@ -73,7 +83,7 @@ function CourseDetails() {
                     <div className='crsDetail_action'>
                         <h2>Course Details</h2>
                         <span className='dur_time'><AccessTimeIcon />{course.duration}</span>
-                        <Link to="#"><AddShoppingCartIcon />Buy Now</Link>
+                        <Link to="#" onClick={() => addToCartHandler()}><AddShoppingCartIcon />Buy Now</Link>
                         <span className='course_price'>
                             {course.price}
                             <span className='course_currency'>PKR</span>

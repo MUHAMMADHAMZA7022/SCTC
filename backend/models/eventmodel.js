@@ -48,6 +48,12 @@ const eventSechema = new mongoose.Schema({
         required: [true, "Please Enter Event Location"],
 
     },
+    
+    price: {
+        type: Number,
+        required: [true, "Please Enter Course Price"],
+        maxlength: [8, "Price caannot exceed 8 charaters"],
+    },
   
     createdate: {
         type: Date,
