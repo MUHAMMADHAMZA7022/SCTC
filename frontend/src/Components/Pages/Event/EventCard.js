@@ -1,8 +1,16 @@
 import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom';
 //  import bg3 from '../../../images/slide-img-3.jpg';
+import { addItemsToCartWork } from "../../../redux/action/cartAction";
+import { useSelector, useDispatch } from "react-redux";
 
 function Home({ event }) {
+  const dispatch = useDispatch();
+  const addToCartHandler = () => {
+
+      dispatch(addItemsToCartWork(event._id));
+      alert.success("Item Added To Cart");
+    };
   return (
     <Fragment>
 
@@ -26,7 +34,7 @@ function Home({ event }) {
                 <span>-</span>
                 <span>{String(event.enddate).substr(10, 11)}</span>
                 <div className='evn_joinBtn'>
-                  <Link to={"#"}>Join now</Link>
+                  <Link to={"#"} onClick={() => addToCartHandler()}>Join now</Link>
                 </div>
               </div>
             </div>
