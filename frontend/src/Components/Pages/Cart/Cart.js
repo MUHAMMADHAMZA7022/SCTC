@@ -13,7 +13,6 @@ function Cart() {
 
   const dispatch = useDispatch();
   const { cartItems } = useSelector((state) => state.cart);
-
   const deleteCartItems = (id) => {
     dispatch(removeItemsFromCart(id));
   };
@@ -46,6 +45,8 @@ function Cart() {
                       deleteCartItems={deleteCartItems}
                       key={key}
                     />
+                   
+
                   ))}
               </div>
 
