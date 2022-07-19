@@ -42,6 +42,11 @@ const orderSchema = new mongoose.Schema({
         ref: "Course",
         required: true,
       },
+      event: {
+        type: mongoose.Schema.ObjectId,
+        ref: "Event",
+        // required: true,
+      },
     },
   ],
   user: {

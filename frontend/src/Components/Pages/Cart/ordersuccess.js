@@ -9,7 +9,7 @@ const OrderSuccess = (props) => {
   const { isAuthenticated } = useSelector((state) => state.user);
   return (
     <Fragment>
-      {/* {props.newOrder ? ( */}
+      {props.newOrder ? ( 
       <div className="orderSuccess">
         <CheckCircleIcon />
         <Typography>Your Order has been Placed successfully </Typography>
@@ -38,7 +38,17 @@ const OrderSuccess = (props) => {
           View Orders
         </Link>
       </div>
-      {/* ) : null} */}
+      ) : <Link
+          to={
+            isAuthenticated
+              ? "/coursehistory"
+                : "/login"
+          }
+          className="btn_primary"
+        >
+          View Orders
+        </Link>
+      }
     </Fragment>
   );
 };

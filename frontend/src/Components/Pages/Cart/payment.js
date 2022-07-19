@@ -37,6 +37,7 @@ const Payment = () => {
     });
     dispatch(RESETCart())
     history("/success");
+    
   
   };
   useEffect(() => {

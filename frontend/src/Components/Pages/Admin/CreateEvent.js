@@ -16,6 +16,7 @@ function Courses() {
   const { error, success, loading } = useSelector((state) => state.newEvent);
 
   const [name, setName] = useState("");
+  const [price, setprice] = useState("");
   const [description, setDescription] = useState("");
   const [organization, setOrganization] = useState("");
   const [startdate, setStartdate] = useState("");
@@ -31,7 +32,7 @@ function Courses() {
     }
 
     if (success) {
-      alert.success("Event Created Successfully");
+      alert.success("Workshop Created Successfully");
       history("/all/events");
       dispatch({ type: NEW_EVENT_RESET });
     }
@@ -42,6 +43,7 @@ function Courses() {
 
     const myForm = new FormData();
     myForm.set("name", name);
+    myForm.set("price", price);
     myForm.set("startdate", startdate);
     myForm.set("enddate", enddate);
     myForm.set("description", description);
@@ -95,6 +97,18 @@ function Courses() {
                 id="evnName"
               />
               <label for="evnName" className="form__label">Event Name</label>
+            </div>
+            <div class="form__group field">
+              <input
+                className='form__field'
+                type="number"
+                placeholder="Event Price"
+                required
+                value={price}
+                onChange={(e) => setprice(e.target.value)}
+                id="evnName"
+              />
+              <label for="evnName" className="form__label">Event Price</label>
             </div>
             <div class="form__group field">
               {images ? (

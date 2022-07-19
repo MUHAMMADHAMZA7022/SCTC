@@ -9,7 +9,7 @@ const { json } = require("express");
 //createcourse -- Admin
 exports.createevent = async (req, res, next) => {
   try {
-    const { name, description, startdate, enddate, organization, location } =
+    const { name,price, description, startdate, enddate, organization, location } =
       req.body;
     var st = new Date(startdate).toLocaleString("default", { hour12: true });
     var et = new Date(enddate).toLocaleString("default", { hour12: true });
@@ -27,6 +27,7 @@ exports.createevent = async (req, res, next) => {
     const courses = await Event.create({
       name,
       description,
+      price,
       startdate: st,
       enddate: et,
       organization,
@@ -39,7 +40,7 @@ exports.createevent = async (req, res, next) => {
     res.status(201).json({
       success: true,
       courses,
-      message: "Event Created Successfully",
+      message: "Workshop Created Successfully",
     });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
@@ -72,7 +73,7 @@ exports.alleventsadmin = catchasyncerror(async (req, res) => {
 exports.singleevent = catchasyncerror(async (req, res, next) => {
   const sevent = await Event.findById(req.params.id);
   if (!sevent) {
-    return next(new Errorhandler("Event Not Found", 404));
+    return next(new Errorhandler("Workshop Not Found", 404));
   }
   res.status(200).json({
     success: true,
@@ -84,7 +85,7 @@ exports.singleevent = catchasyncerror(async (req, res, next) => {
 exports.updateevent = catchasyncerror(async (req, res, next) => {
   let uevent = await Event.findById(req.params.id);
   if (!uevent) {
-    return next(new Errorhandler("Event Not Found", 404)); 
+    return next(new Errorhandler("Workshop Not Found", 404)); 
   }
 
   // //addd avtar cloudinary
@@ -121,7 +122,7 @@ exports.updateevent = catchasyncerror(async (req, res, next) => {
   res.status(200).json({
     success: true,
     uevent,
-    message: "Event Update Successfully",
+    message: "Workshop Update Successfully",
   });
 });
 
@@ -129,7 +130,7 @@ exports.updateevent = catchasyncerror(async (req, res, next) => {
 exports.deleteevent = catchasyncerror(async (req, res, next) => {
   const devent = await Event.findById(req.params.id);
   if (!devent) {
-    return next(new Errorhandler("Event Not Found", 404));
+    return next(new Errorhandler("Workshop Not Found", 404));
   }
   // Deleting Images From Cloudinary
   const imageId = devent.images.public_id;
@@ -139,7 +140,7 @@ exports.deleteevent = catchasyncerror(async (req, res, next) => {
   await devent.remove();
   res.status(200).json({
     success: true,
-    message: "Event Deleted Successfully",
+    message: "Workshop Deleted Successfully",
   });
 });
 // ADD joining event

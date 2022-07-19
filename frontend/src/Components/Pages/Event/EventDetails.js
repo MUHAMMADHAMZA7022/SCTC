@@ -18,6 +18,10 @@ import { useParams } from "react-router-dom";
 import { useAlert } from "react-alert";
 import './EventDetails.css';
 import { addItemsToCart } from "../../../redux/action/cartAction";
+<<<<<<< HEAD
+=======
+
+>>>>>>> d46b91500d559f53acb69e89a6fe67e82650b2c8
 function EventDetails() {
     const { id } = useParams();
     const dispatch = useDispatch();
@@ -28,11 +32,15 @@ function EventDetails() {
     };
     const alert = useAlert();
     const { event, error } = useSelector((state) => state.eventDetails);
-    console.log(event)
+    const addToCartHandler = () => {
+  
+        dispatch(addItemsToCart(event._id));
+        alert.success("Item Added To Cart");
+      };
     useEffect(() => {
         if (error) {
             alert.error(error);
-            dispatch(CLEAR_ERROR_EVENT);
+            dispatch(CLEAR_ERROR_EVENT());
         }
 
 

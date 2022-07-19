@@ -26,6 +26,7 @@ function UpdateCourse() {
   } = useSelector((state) => state.event);
 
   const [name, setName] = useState("");
+  const [price, setprice] = useState("");
   const [description, setDescription] = useState("");
   const [organization, setOrganization] = useState("");
   const [startdate, setStartdate] = useState("");
@@ -43,6 +44,7 @@ function UpdateCourse() {
       dispatch(getProductDetails(productId));
     } else {
       setName(event.name);
+      setprice(event.price);
       setDescription(event.description);
       setStartdate(new Date(String(event.startdate)).toISOString().substr(0, 16));
       setEnddate(new Date(String(event.enddate)).toISOString().substr(0, 16));
@@ -83,6 +85,7 @@ function UpdateCourse() {
 
     const myForm = new FormData();
     myForm.set("name", name);
+    myForm.set("price", price);
     myForm.set("startdate", startdate);
     myForm.set("enddate", enddate);
     myForm.set("description", description);
@@ -133,6 +136,18 @@ function UpdateCourse() {
                 id="evnName"
               />
               <label for="evnName" className="form__label">Event Name</label>
+            </div>
+            <div class="form__group field">
+              <input
+                className='form__field'
+                type="number"
+                placeholder="Event Price"
+                required
+                value={price}
+                onChange={(e) => setprice(e.target.value)}
+                id="evnName"
+              />
+              <label for="evnName" className="form__label">Event Price</label>
             </div>
             <div class="form__group field">
               {
