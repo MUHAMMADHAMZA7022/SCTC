@@ -66,6 +66,8 @@ import MyORDER from "./Components/Pages/Order/MyOrders"
 import ORDERDETAILS from "./Components/Pages/Order/OrderDetails"
 
 import ServiceDetails from "./Components/Pages/Services/ServiceDetails";
+import PageNotFound from "./Components/Layout/NotFoundPage/PageNotFound";
+
 function App() {
   const dispatch = useDispatch();
 
@@ -113,6 +115,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/vieworder" element={<ViewOrder />} />
           <Route path="/service/details/:id" element={<ServiceDetails />} />
+          <Route path="/pagenotfound" element={<PageNotFound />} />
           {/* ADMIN ROUTES */}
           {/* dashboard */}
           <Route
