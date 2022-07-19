@@ -2,7 +2,8 @@ import {
   ADD_TO_CART,
   REMOVE_CART_ITEM,
   CART_RESET,
-  CHECK_OUT ,
+  CHECK_OUT, 
+  ADD_TO_CART_WORK,
 } from "../Constant/cartConstants";
 import axios from "axios";
 
@@ -26,9 +27,9 @@ export const addItemsToCart = (id) => async (dispatch, getState) => {
 // Add to Cart
 export const addItemsToCartWork = (id) => async (dispatch, getState) => {
   const { data } = await axios.get(`/api/v1/event/singleevent/${id}`);
-  console.log(data);
+  console.log(data.sevent._id);
   dispatch({
-    type: ADD_TO_CART,
+    type: ADD_TO_CART_WORK,
     payload: {
       event: data.sevent._id,
       name: data.sevent.name,
@@ -46,6 +47,7 @@ export const removeItemsFromCart = (id) => async (dispatch, getState) => {
   dispatch({
     type: REMOVE_CART_ITEM,
     payload: id,
+   
   });
 
   localStorage.setItem("cartItems", JSON.stringify(getState().cart.cartItems));
