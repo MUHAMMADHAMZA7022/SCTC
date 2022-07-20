@@ -18,11 +18,12 @@ import Eventsloader from "../Loader/eLoader";
 
 import CourseCard from "../../Pages/Course/CourseCard";
 import EventCard from "../../Pages/Event/EventCard";
-import { CLEAR_ERROR,getProduct } from "../../../redux/action/courseaction";
+import { CLEAR_ERROR, getProduct } from "../../../redux/action/courseaction";
 import { CLEAR_ERROR_EVENT, getEvent } from "../../../redux/action/eventaction";
 import { useSelector, useDispatch } from "react-redux";
 // import Loader1 from "../Loader/Courseloader";
 import { useAlert } from "react-alert";
+import PanToolAltIcon from '@mui/icons-material/PanToolAlt';
 import BannerCard from "../../Pages/Event/baneercard";
 
 function Home() {
@@ -30,8 +31,13 @@ function Home() {
   const alert = useAlert();
   const dispatch = useDispatch();
 
-  const {loading, courses, error } = useSelector((state) => state.courses);
+  const { loading, courses, error } = useSelector((state) => state.courses);
   const { latestevent, error: eventerror } = useSelector((state) => state.events);
+
+  // const { event } = useSelector((state) => state.events);
+
+
+
   // const [cateogery, setcateogery] = useState("");
   // const [keyword, setKeyword] = useState("");
   // const cateogories = ["Biology", "Statical", "Physics",];
@@ -65,6 +71,9 @@ function Home() {
         <div className="banner">
           <div className="banner_img">
             <img src={bg1} alt="slide1" />
+
+            {/* <img src={event.images.url} alt="slide1" /> */}
+
           </div>
           <div className="banner_content">
             {/* <h2>Starting in september 2016?</h2>
@@ -118,6 +127,13 @@ function Home() {
                 <p>Learn more about SCTC and history.</p>
               </div>
             </div>
+          </div>
+        </section>
+        {/* Discover Section */}
+        <section className="advertiseSection grid">
+          <div className="advtHolder">
+            <h2>Advertise Here</h2>
+            <span><PanToolAltIcon /></span>
           </div>
         </section>
 
@@ -175,13 +191,13 @@ function Home() {
             <h1>Latest Courses to join</h1>
           </div>
 
-          {loading===false&&courses ? (
-            courses&&courses
+          {loading === false && courses ? (
+            courses && courses
               .slice(0, 6)
               .map((course) => (
                 <CourseCard key={course._id} course={course} />
               ))
-          ): (
+          ) : (
             <Courseloader />
           )}
 
@@ -208,7 +224,7 @@ function Home() {
           </div>
         </section>
 
-        
+
         {/* This is Events card loader styles */}
         {/* <section>
           <Eventsloader />

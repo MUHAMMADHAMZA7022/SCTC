@@ -974,6 +974,52 @@ a.ev_img {
     }
 
 }
+.advtHolder{
+    padding: 20px;
+    text-align: center;
+    box-shadow: var(--boxShadow);
+    width: 70%;
+    margin: 0 auto;
+    position: relative;
+}
+.advtHolder h2{
+    font-size: 20px;
+    line-height: normal;
+    color: var(--themeColor);
+    display: inline-block;
+}
+.advtHolder span{
+    display: inline-block;
+    position: absolute;
+    top: auto;
+    left: 60%;
+    animation: linear advSign 1s infinite;
+}
+.advtHolder span svg{
+    font-size: 30px;
+    line-height: normal;
+    transform: rotate(180deg);
+    fill: var(--redColor);
+}
+
+@keyframes advSign {
+    0% {
+        top: 10%;
+    }
+
+    25% {
+        top: 15%;
+    }
+
+    50% {
+        top: 20%;
+    }
+
+    100% {
+        top: 25%;
+    }
+
+}
 
 /* Media Queries for responsive site layout */
 @media screen and (max-width: 1199px) {
@@ -1030,6 +1076,18 @@ a.ev_img {
 
     .discover {
         padding: 20px 10px;
+    }
+    .advtHolder span {
+        left: 65%;
+    }
+    .advtHolder h2 {
+        font-size: 16px;
+    }
+    .advtHolder {
+        padding: 10px;
+    }
+    .advtHolder span {
+        left: 74%;
     }
 
     .homeCourses {
