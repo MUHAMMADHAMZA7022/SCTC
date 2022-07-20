@@ -197,25 +197,6 @@ const ProcessOrder = ({ match }) => {
                       </div>
 
                     </div>
-<<<<<<< HEAD
-                    <div className="verification_status">
-                      <h3> Verification Date</h3>
-                      <div className="proOrder_dtlSub">
-                        <p
-                          className={
-                            order.orderStatus && order.orderStatus === "Verified"
-                              ? "greenColor"
-                              : "redColor"
-                          }
-                        >
-                          {order.orderStatus && order.orderStatus === "Verified"
-                            ? String(order && order.verifiedAt).substr(0, 10)
-                            : null
-                          }
-                        </p>
-                      </div>
-                    </div>
-=======
                     {/* <div className="verification_status">
                         <h3> Verification Date</h3>
                         <div className="proOrder_dtlSub">
@@ -233,7 +214,6 @@ const ProcessOrder = ({ match }) => {
                           </p>
                         </div>
                       </div> */}
->>>>>>> cd1ced8f2cefa649af1cf1f27329b1ca57147d54
                   </div>
 
                   {/* <Typography>Order Status</Typography>
