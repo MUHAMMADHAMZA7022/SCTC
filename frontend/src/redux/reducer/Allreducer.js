@@ -25,6 +25,7 @@ import {
     forgotPasswordReducer,
     userDetailsReducer,
     contactReducer,
+    newsletterReducer
   } from "./userreducer";
   import {
     newOrderReducer,
@@ -45,6 +46,7 @@ const AllReducer = combineReducers({
     forgotPassword: forgotPasswordReducer, 
     allUsers: allUsersReducer,
     contactuser:contactReducer,
+    newsletter:newsletterReducer,
     //courses
     newCourse: newCourseReducer,
     courses: ALLcoursesReducer,
