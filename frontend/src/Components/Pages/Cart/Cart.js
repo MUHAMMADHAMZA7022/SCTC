@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { removeItemsFromCart } from "../../../redux/action/cartAction";
 import { Link, useNavigate } from "react-router-dom";
 import RemoveShoppingCartOutlinedIcon from "@mui/icons-material/RemoveShoppingCartOutlined";
+import MetaData from "../../Layout/Metadata";
 function Cart() {
 
 
@@ -23,6 +24,7 @@ function Cart() {
 
   return (
     <Fragment>
+      <MetaData title={"Cart-MRSCTC"} />
       <div className="course_cart">
         {cartItems.length === 0 ? (
           <div className="emptyCart grid">
@@ -45,7 +47,7 @@ function Cart() {
                       deleteCartItems={deleteCartItems}
                       key={key}
                     />
-                   
+
 
                   ))}
               </div>

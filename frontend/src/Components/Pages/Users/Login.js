@@ -3,6 +3,7 @@ import React, { Fragment, useState, useEffect } from "react";
 import "./SignUp.css";
 import logInImg from '../../../images/sctc3.jpg';
 import { useDispatch, useSelector } from "react-redux";
+import MetaData from "../../Layout/Metadata";
 import {
 
     CLEAR_ERROR,
@@ -40,6 +41,7 @@ function Login() {
     }, [dispatch, success, error, alert, history, isAuthenticated]);
     return (
         <Fragment>
+            <MetaData title={"Login-MRSCTC"} />
             {/* Login Form */}
             <div className='formHolder'>
                 <div className="grid">

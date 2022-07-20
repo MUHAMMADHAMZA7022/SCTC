@@ -7,6 +7,7 @@ import { CLEAR_ERROR, updatePassword } from "../../../redux/action/useraction";
 import { useAlert } from "react-alert";
 import { UPDATE_PASSWORD_RESET } from "../../../redux/Constant/userconstant";
 import { useNavigate } from "react-router-dom";
+import MetaData from "../../Layout/Metadata";
 const UpdatePassword = () => {
   let history = useNavigate();
 
@@ -51,6 +52,7 @@ const UpdatePassword = () => {
         <Loader />
       ) : ( */}
       <Fragment>
+        <MetaData title={"Update Password-MRSCTC"} />
         <div className="updateProfileContainer">
           <div className="LoginSignUpBox">
             <div className="section_heading">

@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { CLEAR_ERROR, resetPassword } from "../../../redux/action/useraction";
 import { useAlert } from "react-alert";
 import { useNavigate, useParams } from "react-router-dom";
+import MetaData from "../../Layout/Metadata";
 
 function ResetPassword() {
     const token = useParams();
@@ -47,6 +48,7 @@ function ResetPassword() {
 
     return (
         <Fragment>
+            <MetaData title={"Reset Password-MRSCTC"} />
             {/* Reset Form */}
             <div className='forgetformHolder'>
                 <div className='forgetHolder'>

@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import "./confirmorder.css";
 import { Link, useNavigate } from "react-router-dom";
 import { Typography } from "@mui/material";
+import MetaData from "../../Layout/Metadata";
 const ConfirmOrder = () => {
   let history = useNavigate();
   const { checkout, cartItems } = useSelector((state) => state.cart);
@@ -29,6 +30,7 @@ const ConfirmOrder = () => {
 
   return (
     <Fragment>
+      <MetaData title={"Confirm-MRSCTC"} />
       {/* <MetaData title="Confirm Order" /> */}
       <CheckoutSteps activeStep={1} />
       <div className="confirmOrderPage">

@@ -67,7 +67,7 @@ function Home() {
 
   return (
     <Fragment>
-    <MetaData title={"MRSCTC"} />
+    <MetaData title={"MRSCTC-Medical Research Statistical & Consultancy Training Centre"} />
       <div className="home_wrapper">
         {/* Banner Section */}
         <div className="banner">

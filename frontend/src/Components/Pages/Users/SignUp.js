@@ -10,6 +10,7 @@ import {
 import { Link, useNavigate } from "react-router-dom"
 
 import { useAlert } from "react-alert";
+import MetaData from "../../Layout/Metadata";
 function SignUp() {
   const { success, error, isAuthenticated } = useSelector((state) => state.user);
   let history = useNavigate();
@@ -49,6 +50,7 @@ function SignUp() {
   }, [dispatch, success, error, alert, history, isAuthenticated]);
   return (
     <Fragment>
+      <MetaData title={"Sign Up-MRSCTC"} />
       {/* Sign Up Form */}
       <div className='formHolder'>
         <div className="grid">

@@ -7,6 +7,7 @@ import { RESETCart } from "../../../redux/action/cartAction";
 
 import "./payment.css";
 import { useNavigate } from "react-router-dom";
+import MetaData from "../../Layout/Metadata";
 const Payment = () => {
   let history = useNavigate()
   const orderInfo = JSON.parse(sessionStorage.getItem("orderInfo"));
@@ -50,6 +51,7 @@ const Payment = () => {
 
   return (
     <Fragment>
+    <MetaData title={"Payment-MRSCTC"} />
       <CheckoutSteps activeStep={2} />
       <div className="paymentContainer">
         <div className="order_info">

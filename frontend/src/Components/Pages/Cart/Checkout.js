@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useAlert } from "react-alert";
 import { useSelector, useDispatch } from "react-redux";
 import { savecheckout } from "../../../redux/action/cartAction";
+import MetaData from "../../Layout/Metadata";
 
 function Checkout() {
   let history = useNavigate();
@@ -33,6 +34,7 @@ function Checkout() {
 
   return (
     <Fragment>
+      <MetaData title={"Checkout-MRSCTC"} />
       <CheckoutSteps activeStep={0} />
       <div className="checkout">
         <h1>Checkout</h1>

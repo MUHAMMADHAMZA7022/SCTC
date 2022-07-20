@@ -2,6 +2,7 @@ import "./Dashboard.css";
 import Sidebar from './Sidebar';
 import React, { Fragment, useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import MetaData from "../../Layout/Metadata";
 import {
   CLEAR_ERROR,
   updateProduct,
@@ -123,6 +124,7 @@ function UpdateCourse() {
   };
   return (
     <Fragment>
+      <MetaData title={"Update Course-MRSCTC"} />
       <div className='dashboard_holder courses'>
         {/* Sidebar */}
         <div className='dSidebar'>

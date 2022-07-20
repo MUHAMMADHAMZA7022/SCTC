@@ -11,6 +11,7 @@ import { useAlert } from "react-alert";
 import { UPDATE_SERVICE_RESET } from "../../../redux/Constant/serviceconstant";
 import { useNavigate, useParams } from "react-router-dom";
 import { LoadingButton } from "@mui/lab";
+import MetaData from "../../Layout/Metadata";
 
 
 function UpdateService() {
@@ -95,6 +96,7 @@ function UpdateService() {
   };
   return (
     <Fragment>
+      <MetaData title={"Update Service-MRSCTC"} />
       <div className='dashboard_holder courses'>
         {/* Sidebar */}
         <div className='dSidebar'>

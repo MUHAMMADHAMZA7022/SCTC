@@ -16,6 +16,7 @@ import { useAlert } from "react-alert";
 import CurrencyRubleIcon from '@mui/icons-material/CurrencyRuble';
 import { UPDATE_ORDER_RESET } from "../../../redux/Constant/orderconstant";
 import "./processorder.css";
+import MetaData from "../../Layout/Metadata";
 const ProcessOrder = ({ match }) => {
   const id = useParams().id;
   const { order, error, loading } = useSelector((state) => state.orderDetails);
@@ -84,6 +85,7 @@ const ProcessOrder = ({ match }) => {
 
   return (
     <Fragment>
+      <MetaData title={"Process Order-MRSCTC"} />
       {/* <MetaData title="Process Order" /> */}
       <div className="dashboard processOrder">
         <div className="dSidebar">
@@ -240,17 +242,17 @@ const ProcessOrder = ({ match }) => {
                   <div className="confirmCartItemsContainer">
                     {order.orderItems &&
                       order.orderItems.map((item) => (
-                        item.course?(
-                        <div key={item.course}>
-                          <img src={item.image} alt="Course" />
-                          <Link to={`/course/details/${item.course}`}>
-                            {item.name}={" "}
-                          </Link>{" "}
-                          <span>
-                            <b>PKR {item.price}</b>
-                          </span>
-                        </div>
-                        ):( <div key={item.event}>
+                        item.course ? (
+                          <div key={item.course}>
+                            <img src={item.image} alt="Course" />
+                            <Link to={`/course/details/${item.course}`}>
+                              {item.name}={" "}
+                            </Link>{" "}
+                            <span>
+                              <b>PKR {item.price}</b>
+                            </span>
+                          </div>
+                        ) : (<div key={item.event}>
                           <img src={item.image} alt="Workshop" />
                           <Link to={`/event/details/${item.event}`}>
                             {item.name}={" "}

@@ -7,6 +7,7 @@ import "./Profile.css";
 import { useDispatch } from "react-redux";
 import { Logout } from "../../../redux/action/useraction";
 import { useAlert } from "react-alert";
+import MetaData from "../../Layout/Metadata";
 const Profile = () => {
   const dispatch = useDispatch();
   const alert = useAlert();
@@ -30,6 +31,7 @@ const Profile = () => {
         <Loader />
       ) : ( */}
       <Fragment>
+        <MetaData title={"Profile-MRSCTC"} />
         {/* <MetaData title={`${user.name}'s Profile`} /> */}
 
         <div className="section_heading">
@@ -42,15 +44,15 @@ const Profile = () => {
             <div className="profC_holder">
               <div>
                 <h4>Full Name</h4>
-                <p>{user&&user.name}</p>
+                <p>{user && user.name}</p>
               </div>
               <div>
                 <h4>Email</h4>
-                <p>{user&&user.email}</p>
+                <p>{user && user.email}</p>
               </div>
               <div>
                 <h4>Joined On</h4>
-                <p>{String(user&&user.createdAt).substr(0, 10)}</p>
+                <p>{String(user && user.createdAt).substr(0, 10)}</p>
               </div>
             </div>
             <div className="profC_holder">

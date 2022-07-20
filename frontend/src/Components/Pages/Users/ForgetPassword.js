@@ -3,6 +3,7 @@ import React, { Fragment, useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { CLEAR_ERROR, forgotPassword } from "../../../redux/action/useraction";
 import { useAlert } from "react-alert";
+import MetaData from "../../Layout/Metadata";
 function ForgetPassword() {
   const dispatch = useDispatch();
   const alert = useAlert();
@@ -35,6 +36,7 @@ function ForgetPassword() {
 
   return (
     <Fragment>
+      <MetaData title={"Forget Password-MRSCTC"} />
       {/* Forget Form */}
       <div className='forgetformHolder'>
         <div className='forgetHolder'>
