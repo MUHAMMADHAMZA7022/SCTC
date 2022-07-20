@@ -14,16 +14,17 @@ import Button from '@mui/material/Button';
 import { DELETE_SERVICE_RESET } from "../../../redux/Constant/serviceconstant";
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
+import MetaData from "../../Layout/Metadata";
 const Products = () => {
   const dispatch = useDispatch();
 
   const alert = useAlert();
-  const { latestservice, error,} = useSelector((state) => state.services);
- 
-let history=useNavigate();
+  const { latestservice, error, } = useSelector((state) => state.services);
+
+  let history = useNavigate();
 
 
-  const { error: deleteError, isDeleted ,loading} = useSelector(
+  const { error: deleteError, isDeleted, loading } = useSelector(
     (state) => state.service
   );
 
@@ -35,12 +36,12 @@ let history=useNavigate();
         {
           label: 'Yes',
           onClick: () => {
-            loading===true?(<Loader />):(dispatch(deleteProduct(id)));
-          }   
+            loading === true ? (<Loader />) : (dispatch(deleteProduct(id)));
+          }
         },
         {
           label: 'No',
-          onClose: () => {}
+          onClose: () => { }
         }
       ]
     });
@@ -52,7 +53,7 @@ let history=useNavigate();
       alert.error(error);
       dispatch(CLEAR_ERROR_SERVICE());
     }
-    
+
     if (deleteError) {
       alert.error(deleteError);
       dispatch(CLEAR_ERROR_SERVICE());
@@ -62,52 +63,53 @@ let history=useNavigate();
       alert.success("SERVICE Deleted Successfully");
       history("/all/services");
       dispatch({ type: DELETE_SERVICE_RESET });
-      
+
     }
 
     dispatch(getAdminProduct());
-  }, [dispatch, alert,error,deleteError, history, isDeleted]);
+  }, [dispatch, alert, error, deleteError, history, isDeleted]);
 
   return (
     <Fragment>
+      <MetaData title={"All Services-MRSCTC"} />
       <div className="dashboard_holder students">
         <div className="dSidebar">
           <Sidebar />
         </div>
         <div className="dashboard_content">
           <h1>All Services</h1>
-          {latestservice && latestservice ?(
-            latestservice.map((service,key) => 
-              <div className="courses_holder"  key={key} course={service}>
-              <div className="course_card"   >
-                <div className="cr_img">
-                  <img  src={service.images.url} alt="service_image" />
-                </div>
-                <div className="crs_content">
-                  <div className="crs_title">
-                    <h2 >{service.name}</h2>
+          {latestservice && latestservice ? (
+            latestservice.map((service, key) =>
+              <div className="courses_holder" key={key} course={service}>
+                <div className="course_card"   >
+                  <div className="cr_img">
+                    <img src={service.images.url} alt="service_image" />
                   </div>
-                  <div className="crs_desp">
-                    <p >{service.description} </p>
-                  </div>
-                  <div className="crs_action">
-                    <Button className="btn_primary" onClick={() =>
+                  <div className="crs_content">
+                    <div className="crs_title">
+                      <h2 >{service.name}</h2>
+                    </div>
+                    <div className="crs_desp">
+                      <p >{service.description} </p>
+                    </div>
+                    <div className="crs_action">
+                      <Button className="btn_primary" onClick={() =>
                         deleteProductHandler(service._id)
                       }>
-                      Delete
-                    </Button>
-                  
-                    <Link className="btn_primary" to={`/updateservice/${service._id}`}>
-                      Update
-            </Link>
+                        Delete
+                      </Button>
+
+                      <Link className="btn_primary" to={`/updateservice/${service._id}`}>
+                        Update
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
             )
-          
-          ):(<Loader/>)}
-          
+
+          ) : (<Loader />)}
+
         </div>
       </div>
     </Fragment>

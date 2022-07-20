@@ -5,6 +5,7 @@ import {
   getAdminProduct,
   deleteProduct,
 } from "../../../redux/action/courseaction";
+import MetaData from "../../Layout/Metadata";
 import { useAlert } from "react-alert";
 import Sidebar from "./Sidebar";
 import Loader from "../../Layout/Loader/loader";
@@ -70,6 +71,7 @@ const Products = () => {
 
   return (
     <Fragment>
+      <MetaData title={"All Courses-MRSCTC"} />
       <div className="dashboard_holder students">
         <div className="dSidebar">
           <Sidebar />

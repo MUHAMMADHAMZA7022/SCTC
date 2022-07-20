@@ -9,6 +9,7 @@ import { useAlert } from "react-alert";
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from "@mui/icons-material/Edit";
+import MetaData from "../../Layout/Metadata";
 
 import {
   deleteOrder,
@@ -148,12 +149,13 @@ const OrderList = () => {
 
   return (
     <Fragment>
+      <MetaData title={"All Orders-MRSCTC"} />
       <div className='dashboard_holder students'>
         <div className='dSidebar'>
           <Sidebar />
         </div>
         <div className='dashboard_content'>
-          <h1>All Ordered Courses</h1>
+          <h1>All Orders</h1>
 
           {loading === false ? (
             <DataGrid

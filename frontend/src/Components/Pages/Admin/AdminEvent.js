@@ -5,6 +5,7 @@ import {
   deleteProduct,
   CLEAR_ERROR_EVENT,
 } from "../../../redux/action/eventaction";
+import MetaData from "../../Layout/Metadata";
 import { useAlert } from "react-alert";
 import Sidebar from "./Sidebar";
 import Loader from "../../Layout/Loader/loader";
@@ -18,12 +19,12 @@ const Products = () => {
   const dispatch = useDispatch();
 
   const alert = useAlert();
-  const { latestevent, error,} = useSelector((state) => state.events);
- 
-let history=useNavigate();
+  const { latestevent, error, } = useSelector((state) => state.events);
+
+  let history = useNavigate();
 
 
-  const { error: deleteError, isDeleted ,loading} = useSelector(
+  const { error: deleteError, isDeleted, loading } = useSelector(
     (state) => state.event
   );
 
@@ -35,12 +36,12 @@ let history=useNavigate();
         {
           label: 'Yes',
           onClick: () => {
-            loading===true?(<Loader />):(dispatch(deleteProduct(id)));
-          }   
+            loading === true ? (<Loader />) : (dispatch(deleteProduct(id)));
+          }
         },
         {
           label: 'No',
-          onClose: () => {}
+          onClose: () => { }
         }
       ]
     });
@@ -52,7 +53,7 @@ let history=useNavigate();
       alert.error(error);
       dispatch(CLEAR_ERROR_EVENT());
     }
-    
+
     if (deleteError) {
       alert.error(deleteError);
       dispatch(CLEAR_ERROR_EVENT());
@@ -62,52 +63,53 @@ let history=useNavigate();
       alert.success("Workshops Deleted Successfully");
       history("/all/events");
       dispatch({ type: DELETE_EVENT_RESET });
-      
+
     }
 
     dispatch(getAdminProduct());
-  }, [dispatch, alert,error,deleteError, history, isDeleted]);
+  }, [dispatch, alert, error, deleteError, history, isDeleted]);
 
   return (
     <Fragment>
+      <MetaData title={"All Workshops-MRSCTC"} />
       <div className="dashboard_holder students">
         <div className="dSidebar">
           <Sidebar />
         </div>
         <div className="dashboard_content">
           <h1>All Workshops</h1>
-          {latestevent && latestevent ?(
-            latestevent.map((event,key) => 
-              <div className="courses_holder"  key={key} course={event}>
-              <div className="course_card"   >
-                <div className="cr_img">
-                  <img  src={event.images.url} alt="event_image" />
-                </div>
-                <div className="crs_content">
-                  <div className="crs_title">
-                    <h2 >{event.name}</h2>
+          {latestevent && latestevent ? (
+            latestevent.map((event, key) =>
+              <div className="courses_holder" key={key} course={event}>
+                <div className="course_card"   >
+                  <div className="cr_img">
+                    <img src={event.images.url} alt="event_image" />
                   </div>
-                  <div className="crs_desp">
-                    <p >{event.description} </p>
-                  </div>
-                  <div className="crs_action">
-                    <Button className="btn_primary" onClick={() =>
+                  <div className="crs_content">
+                    <div className="crs_title">
+                      <h2 >{event.name}</h2>
+                    </div>
+                    <div className="crs_desp">
+                      <p >{event.description} </p>
+                    </div>
+                    <div className="crs_action">
+                      <Button className="btn_primary" onClick={() =>
                         deleteProductHandler(event._id)
                       }>
-                      Delete
-                    </Button>
-                  
-                    <Link className="btn_primary" to={`/updateevent/${event._id}`}>
-                      Update
-            </Link>
+                        Delete
+                      </Button>
+
+                      <Link className="btn_primary" to={`/updateevent/${event._id}`}>
+                        Update
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
             )
-          
-          ):(<Loader/>)}
-          
+
+          ) : (<Loader />)}
+
         </div>
       </div>
     </Fragment>

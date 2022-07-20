@@ -87,7 +87,7 @@ function Courses() {
   };
   return (
     <Fragment>
-      <MetaData title={"Courses-MRSCTC"} />
+      <MetaData title={"Create Course-MRSCTC"} />
       <div className='dashboard_holder courses'>
         {/* Sidebar */}
         <div className='dSidebar'>

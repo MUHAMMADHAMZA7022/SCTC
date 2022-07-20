@@ -7,6 +7,7 @@ import { NEW_SERVICE_RESET } from "../../../redux/Constant/serviceconstant";
 import { useNavigate } from "react-router-dom";
 import { useAlert } from "react-alert";
 import { LoadingButton } from "@mui/lab";
+import MetaData from "../../Layout/Metadata";
 
 function CreateService() {
 
@@ -68,6 +69,7 @@ function CreateService() {
   return (
     
     <Fragment>
+    <MetaData title={"Create Service-MRSCTC"} />
       <div className="dashboard_holder courses">
         {/* Sidebar */}
         <div className="dSidebar">

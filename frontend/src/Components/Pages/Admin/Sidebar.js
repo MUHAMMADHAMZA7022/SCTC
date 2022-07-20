@@ -76,13 +76,13 @@ const Sidebar = () => {
       </TreeView>
       <Link to="/students">
         <p>
-          <AccessibilityIcon /> Students
+          <AccessibilityIcon /> Users
         </p>
       </Link>
       <Link to="/courseorder">
         <p>
           <ListAltIcon />
-          Course Orders
+          All Orders
         </p>
       </Link>
 

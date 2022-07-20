@@ -7,6 +7,7 @@ import { NEW_EVENT_RESET } from "../../../redux/Constant/eventconstant";
 import { useNavigate } from "react-router-dom";
 import { useAlert } from "react-alert";
 import { LoadingButton } from "@mui/lab";
+import MetaData from "../../Layout/Metadata";
 // import moment from "moment"
 function Courses() {
   let history = useNavigate();
@@ -73,6 +74,7 @@ function Courses() {
   };
   return (
     <Fragment>
+    <MetaData title={"Create Workshop-MRSCTC"} />
       <div className="dashboard_holder courses">
         {/* Sidebar */}
         <div className="dSidebar">
