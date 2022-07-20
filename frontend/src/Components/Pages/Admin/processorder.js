@@ -197,6 +197,7 @@ const ProcessOrder = ({ match }) => {
                       </div>
 
                     </div>
+<<<<<<< HEAD
                     <div className="verification_status">
                       <h3> Verification Date</h3>
                       <div className="proOrder_dtlSub">
@@ -214,6 +215,25 @@ const ProcessOrder = ({ match }) => {
                         </p>
                       </div>
                     </div>
+=======
+                    {/* <div className="verification_status">
+                        <h3> Verification Date</h3>
+                        <div className="proOrder_dtlSub">
+                          <p
+                            className={
+                              order.orderStatus && order.orderStatus === "Verified"
+                                ? "greenColor"
+                                : "redColor"
+                            }
+                          >
+                         { order.orderStatus&& order.orderStatus === "Verified"
+                                ?String(order&&order.verifiedAt).substr(0, 10)
+                                : null
+                            }
+                          </p>
+                        </div>
+                      </div> */}
+>>>>>>> cd1ced8f2cefa649af1cf1f27329b1ca57147d54
                   </div>
 
                   {/* <Typography>Order Status</Typography>
@@ -240,15 +260,25 @@ const ProcessOrder = ({ match }) => {
                   <div className="confirmCartItemsContainer">
                     {order.orderItems &&
                       order.orderItems.map((item) => (
+                        item.course?(
                         <div key={item.course}>
-                          <img src={item.image} alt="Product" />
-                          <Link to={`/product/${item.product}`}>
+                          <img src={item.image} alt="Course" />
+                          <Link to={`/course/details/${item.course}`}>
                             {item.name}={" "}
                           </Link>{" "}
                           <span>
                             <b>PKR {item.price}</b>
                           </span>
                         </div>
+                        ):( <div key={item.event}>
+                          <img src={item.image} alt="Workshop" />
+                          <Link to={`/event/details/${item.event}`}>
+                            {item.name}={" "}
+                          </Link>{" "}
+                          <span>
+                            <b>PKR {item.price}</b>
+                          </span>
+                        </div>)
                       ))}
                   </div>
                 </div>
