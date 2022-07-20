@@ -78,6 +78,7 @@ function App() {
         families: ["Noto Sans", "sans-serif"],
       },
     });
+    
     dispatch(loadUser());
   }, [dispatch]);
 

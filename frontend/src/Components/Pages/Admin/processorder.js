@@ -199,7 +199,7 @@ setlink("")
                       </div>
                       
                     </div>
-                    <div className="verification_status">
+                    {/* <div className="verification_status">
                         <h3> Verification Date</h3>
                         <div className="proOrder_dtlSub">
                           <p
@@ -215,7 +215,7 @@ setlink("")
                             }
                           </p>
                         </div>
-                      </div>
+                      </div> */}
                   </div>
 
                   {/* <Typography>Order Status</Typography>
@@ -242,15 +242,25 @@ setlink("")
                   <div className="confirmCartItemsContainer">
                     {order.orderItems &&
                       order.orderItems.map((item) => (
+                        item.course?(
                         <div key={item.course}>
-                          <img src={item.image} alt="Product" />
-                          <Link to={`/product/${item.product}`}>
+                          <img src={item.image} alt="Course" />
+                          <Link to={`/course/details/${item.course}`}>
                             {item.name}={" "}
                           </Link>{" "}
                           <span>
                             <b>PKR {item.price}</b>
                           </span>
                         </div>
+                        ):( <div key={item.event}>
+                          <img src={item.image} alt="Workshop" />
+                          <Link to={`/event/details/${item.event}`}>
+                            {item.name}={" "}
+                          </Link>{" "}
+                          <span>
+                            <b>PKR {item.price}</b>
+                          </span>
+                        </div>)
                       ))}
                   </div>
                 </div>

@@ -110,7 +110,8 @@ const OrderDetails = () => {
               <div className="orderDetailsCartItemsContainer">
                 {order.orderItems &&
                   order.orderItems.map((item) => (
-                    <div key={item.course}>
+                    item.course?(
+                      <div key={item.course}>
                       <img src={item.image} alt="Course" />
                       <Link to={`/course/details/${item.course}`}>
                         {item.name}
@@ -120,6 +121,19 @@ const OrderDetails = () => {
                         <b>PKR {item.price }</b>
                       </span>
                     </div>
+                    ):(
+                      <div key={item.event}>
+                      <img src={item.image} alt="Workshop" />
+                      <Link to={`/event/details/${item.event}`}>
+                        {item.name}
+                      </Link>{" "}
+                      <span>
+                       
+                        <b>PKR {item.price }</b>
+                      </span>
+                    </div>
+                    )
+                    
                   ))}
               </div>
               <span>
