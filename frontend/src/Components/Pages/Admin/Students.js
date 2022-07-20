@@ -75,7 +75,7 @@ let history = useNavigate();
   
     const columns = [
         
-      { field: "id", headerName: "User ID", minWidth: 180, flex: 0.8 },
+      // { field: "id", headerName: "User ID", minWidth: 180, flex: 0.8 },
       {
         field: "name",
         headerName: "Name",
@@ -85,15 +85,15 @@ let history = useNavigate();
       {
         field: "email",
         headerName: "Email",
-        minWidth: 200,
-        flex: 1,
+        minWidth: 90,
+        flex: 0.8,
       },
      
       {
      field: "role",
         headerName: "Role",
         type: "number",
-        minWidth: 70,
+        minWidth: 20,
         flex: 0.3,
         cellClassName: (params) => {
             return params.getValue(params.id, "role") === "admin"
