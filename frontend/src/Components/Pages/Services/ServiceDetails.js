@@ -121,7 +121,7 @@ function ServiceDetails() {
                                         <input type={"email"} placeholder="Email" value={email} onChange={(e) => setemail(e.target.value)} />
                                         <input type={"number"} placeholder="PhoneNo" value={phoneNo} onChange={(e) => setphoneNo(e.target.value)} />
                                         <textarea placeholder='Your message for consultant' value={message} onChange={(e) => setmessage(e.target.value)}></textarea>
-                                        <button className='btn_primary'>Send Message</button>
+                                        <button className='btn_primary'>Send</button>
                                     </form>
                                 </div>
                             </div>

@@ -7,11 +7,11 @@ import { Link, useParams } from "react-router-dom";
 import { Typography } from '@mui/material';
 
 import { getOrderDetails, clearErrors } from "../../../redux/action/orderaction";
- import Loader1 from "../../Layout/Loader/loader";
+import Loader1 from "../../Layout/Loader/loader";
 import { useAlert } from "react-alert";
 
 const OrderDetails = () => {
-  const id=useParams().id;
+  const id = useParams().id;
   const { order, error } = useSelector((state) => state.orderDetails);
 
   const dispatch = useDispatch();
@@ -33,28 +33,28 @@ const OrderDetails = () => {
           <div className="orderDetailsPage">
             <div className="orderDetailsContainer">
               <Typography component="h1">
-                Order #{order && order._id}
+                <span>Order No: </span> {order && order._id}
               </Typography>
               <Typography>Checkout Info</Typography>
               <div className="orderDetailsContainerBox">
                 <div>
                   <p>Name:</p>
-                  <span>{order.user&& order.checkout.name}</span>
+                  <span>{order.user && order.checkout.name}</span>
                 </div>
                 <div>
                   <p>Email:</p>
-                  <span>{order.user&& order.user}</span>
+                  <span>{order.user && order.user}</span>
                 </div>
                 <div>
                   <p>University:</p>
                   <span>
-                    {order.user&& order.checkout.university}
+                    {order.user && order.checkout.university}
                   </span>
                 </div>
                 <div>
                   <p>Department:</p>
                   <span>
-                    {order.user&& order.checkout.department}
+                    {order.user && order.checkout.department}
                   </span>
                 </div>
                 <div>
@@ -63,29 +63,29 @@ const OrderDetails = () => {
                     {order.user && order.checkout.phoneNo}
                   </span>
                 </div>
-               
+
               </div>
               <Typography>Payment</Typography>
               <div className="orderDetailsContainerBox">
+
+                <div>
+                  <p>Amount:</p>
+                  <span>{order.totalPrice && order.totalPrice}<span>PKR</span></span>
+                </div>
                 <div>
                   <p
                     className={
                       order.paymentInfo &&
-                      order.paymentInfo.status === "PAID"
+                        order.paymentInfo.status === "PAID"
                         ? "greenColor"
                         : "redColor"
                     }
                   >
                     {order.paymentInfo &&
-                    order.paymentInfo.status === "PAID"
+                      order.paymentInfo.status === "PAID"
                       ? "PAID"
                       : "Pending"}
                   </p>
-                </div>
-
-                <div>
-                  <p>Amount:</p>
-                  <span>{order.totalPrice && order.totalPrice}</span>
                 </div>
               </div>
 
@@ -116,22 +116,22 @@ const OrderDetails = () => {
                         {item.name}
                       </Link>{" "}
                       <span>
-                       
-                        <b>PKR {item.price }</b>
+
+                        <b>PKR {item.price}</b>
                       </span>
                     </div>
                   ))}
               </div>
               <span>
-                       
-                       <b>TOTAL=PKR {order.totalPrice }</b>
-                     </span>
+
+                <b>TOTAL=PKR {order.totalPrice}</b>
+              </span>
             </div>
           </div>
         </Fragment>
       ) : (
         <div className="search_holder">
-          <Loader1/>
+          <Loader1 />
         </div>
       )}
     </Fragment>
