@@ -37,7 +37,10 @@ import {
   USER_DETAILS_FAIL,
   CONTACT_REQUEST,
   CONTACT_SUCCESS,
-  CONTACT_FAIL
+  CONTACT_FAIL,
+  NEWSLETTER_REQUEST,
+  NEWSLETTER_SUCCESS,
+  NEWSLETTER_FAIL
 } from "./../Constant/userconstant";
 import axios from "axios";
 export const login = (email, password) => async (dispatch) => {
@@ -264,6 +267,26 @@ export const contactuser = (usercontact) => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: CONTACT_FAIL,
+      payload: error.response.data.message,
+    });
+  }
+};
+//newsletter
+export const newsletter = (news) => async (dispatch) => {
+  try {
+    dispatch({ type: NEWSLETTER_REQUEST });
+
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+    const { data } = await axios.post("/api/v1/user/news/letter", news, config);
+
+    dispatch({ type: NEWSLETTER_SUCCESS, payload: data });
+  } catch (error) {
+    dispatch({
+      type: NEWSLETTER_FAIL,
       payload: error.response.data.message,
     });
   }
