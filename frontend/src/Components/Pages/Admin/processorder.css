@@ -43,15 +43,17 @@
 .updateOrderForm button.btn_primary {
   width: 100%;
 }
-.updateOrderForm button.btn_primary:focus, 
+
+.updateOrderForm button.btn_primary:focus,
 .updateOrderForm button.btn_primary:hover {
   color: var(--whiteColor) !important;
   background-color: transparent;
   background: var(--themeColor);
   text-shadow: nthree;
 }
+
 .pro_box,
-.verification_status{
+.verification_status {
   border: 1px solid var(--lightBorder);
   border-radius: 5px;
   overflow: hidden;
@@ -59,21 +61,23 @@
   padding: 10px 10px 10px 10px;
   margin-bottom: 10px;
 }
-.verification_status h3{
+
+.verification_status h3 {
   display: inline-block;
-  margin-right: 20px;
   font-size: 16px;
   color: var(--themeColor);
-  width: 30%;
+  width: 50%;
 }
-.verification_status p{
+
+.verification_status p {
   display: inline-block;
   margin-right: 20px;
   font-size: 14px;
   font-weight: 700;
 }
-.verification_status .proOrder_dtlSub{
-  width: 60%;
+
+.verification_status .proOrder_dtlSub {
+  width: 50%;
   text-align: center;
 }
 
@@ -119,16 +123,19 @@
 .newProductContainer {
   padding: 0px 50px 50px 50px;
 }
-.sendLink_form{
+
+.sendLink_form {
   padding: 3vmax;
 }
-.sendLink_form h2{
+
+.sendLink_form h2 {
   margin-bottom: 30px;
   font-size: 20px;
   line-height: 24px;
   color: var(--redColor);
 }
-.sendLink_form input{
+
+.sendLink_form input {
   outline: none;
   border: none;
   text-shadow: none;
@@ -139,14 +146,36 @@
   color: var(--redColor);
 }
 
-.sendLink_form button.btn_primary{
+.sendLink_form button.btn_primary {
   width: 100%;
 }
 
+@media screen and (max-width: 999px) {
+  .processOrder .confirmshippingArea {
+    padding: 20px;
+  }
 
-@media screen and (max-width: 600px) {
+  .orderDetailsContainerBox>div{
+    padding: 1vw;
+  }
+}
+
+
+@media screen and (max-width: 599px) {
   .updateOrderForm {
     padding: 5vmax;
+  }
+
+  .processOrder .confirmOrderPage {
+    box-shadow: none;
+  }
+
+  .newProductContainer {
+    padding: 0px;
+  }
+
+  .processOrder {
+    padding: 0px;
   }
 
   .updateOrderForm>div>select {
@@ -156,5 +185,16 @@
 
   .updateOrderForm>div>svg {
     font-size: 2.8vmax;
+  }
+
+  .processOrder .confirmshippingArea {
+    padding: 20px;
+  }
+
+  .pro_box,
+  .verification_status {
+    box-shadow: none;
+    border: 0px;
+    padding: 0px;
   }
 }

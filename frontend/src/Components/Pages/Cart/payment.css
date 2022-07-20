@@ -208,11 +208,18 @@
     .paymentFormBtn {
       padding: 4vw;
     }
-  }
-  @media screen and (max-width: 768px) {
     .order_info {
       width: 90%;
       padding: 20px;
+    }
+    label.lShow{
+      left: 10%;
+    }
+  }
+  @media screen and (max-width: 599px) {
+    .order_info {
+      width: 100%;
+      padding: 10px;
     }
     label.lShow{
       left: 10%;

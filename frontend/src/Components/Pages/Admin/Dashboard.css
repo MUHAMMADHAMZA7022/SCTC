@@ -266,7 +266,7 @@ div.css-r11z79-MuiDataGrid-root{
 @media screen and (max-width: 999px) {
     
     .dSidebar {
-        width: 25%;
+        width: 30%;
         float: left;
     }
     .dashboard_content {
@@ -303,6 +303,9 @@ div.css-r11z79-MuiDataGrid-root{
         float: none;
         padding: 0px 20px;
         margin: 0 0 20px 0;
+    }
+    div.css-r11z79-MuiDataGrid-root{
+        margin-right: 0px;
     }
     .courses_content h1 {
         color: var(--themeColor);

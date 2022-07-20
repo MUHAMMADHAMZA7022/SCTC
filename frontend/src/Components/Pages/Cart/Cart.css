@@ -140,4 +140,37 @@ span.checkout_price span{
     }
 }
 @media screen and (max-width: 599px) {
+    .cart_allCourses {
+        width: 100%;
+        float: none;
+        margin-bottom: 20px;
+    }
+    .cart_checkout {
+        width: 100%;
+        float: none;
+        border-top: 1px solid var(--lightBorder);
+        border-right: 1px solid var(--lightBorder);
+        border-bottom: 1px solid var(--lightBorder);
+        border-left: 1px solid var(--lightBorder);
+    }
+    .cart_checkout span.crs_total {
+        font-size: 1rem;
+        text-align: left;
+        float: left;
+        padding-top: 10px;
+    }
+    .cart_checkout span.checkout_price {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        font-weight: 700;
+        text-align: right;
+        float: right;
+    }
+    .cart_crs_title {
+        font-size: 12px;
+        flex: 4 1;
+    }
+    .cart_crs_price{
+        font-size: 12px;
+    }
 }

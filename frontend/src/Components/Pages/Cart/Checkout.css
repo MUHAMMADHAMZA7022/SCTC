@@ -101,4 +101,20 @@
     }
 }
 @media screen and (max-width: 599px) {
+    .checkout h1 {
+        padding: 10px 0px;
+        font-size: 1rem;
+    }
+    .stdForm_holder {
+        display: block;
+    }
+    .chk_formHolder {
+        flex: none;
+        padding: 10px;
+    }
+    .checkout_summary {
+        flex: none;
+        padding: 0px 10px 20px 10px;
+        margin-bottom: 20px;
+    }
 }

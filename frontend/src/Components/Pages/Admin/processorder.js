@@ -20,7 +20,7 @@ const ProcessOrder = ({ match }) => {
   const id = useParams().id;
   const { order, error, loading } = useSelector((state) => state.orderDetails);
   const { error: updateError, isUpdated } = useSelector((state) => state.order);
-  const {loading:load,error:emailerror,isorder} = useSelector((state) => state.emailorder);
+  const { loading: load, error: emailerror, isorder } = useSelector((state) => state.emailorder);
 
 
   const [email, setemail] = useState("");
@@ -35,12 +35,12 @@ const ProcessOrder = ({ match }) => {
     myForm.set("email", email);
     myForm.set("link", link);
 
-    dispatch(emailOrder( myForm));
-setemail("")
-setlink("")
-    
+    dispatch(emailOrder(myForm));
+    setemail("")
+    setlink("")
 
-  
+
+
 
   };
   const updateOrderSubmitHandler = (e) => {
@@ -80,7 +80,7 @@ setlink("")
     }
 
     dispatch(getOrderDetails(id));
-  }, [dispatch, alert, error,isorder,emailerror, id, isUpdated, updateError]);
+  }, [dispatch, alert, error, isorder, emailerror, id, isUpdated, updateError]);
 
   return (
     <Fragment>
@@ -149,14 +149,14 @@ setlink("")
                           className={
                             order.paymentInfo &&
                               order.paymentInfo.status === "PAID"
-                            ?  "greenColor" :"redColor"
-                               
-                             
+                              ? "greenColor" : "redColor"
+
+
                           }
                         >
                           {order.paymentInfo &&
                             order.paymentInfo.status
-                            }
+                          }
                         </p>
                       </div>
                     </div>
@@ -169,53 +169,51 @@ setlink("")
                         <span>{order.totalPrice && order.totalPrice}</span>
                       </div>
                     </div>
-                    <div>
-                      <div className="verification_status">
-                        <h3>Payment Verification</h3>
-                        <div className="proOrder_dtlSub">
-                          <p
-                            className={
-                              order.orderStatus && order.orderStatus === "Verified"
-                                ? "greenColor"
-                                : "redColor"
-                            }
-                          >
-                            {order.orderStatus && order.orderStatus}
-                          </p>
-                          <p
-                            className={
-                              order.orderStatus && order.orderStatus === "Verified"
-                                ? "greenColor"
-                                : "redColor"
-                            }
-                          >
-                          
-                             { order.orderStatus&& order.orderStatus === "Verified"
-                                ?String(order&&order.verifiedAt).substr(0, 10)
-                                : null
-                            }
-                          </p>
-                        </div>
+                    <div className="verification_status">
+                      <h3>Payment Verification</h3>
+                      <div className="proOrder_dtlSub">
+                        <p
+                          className={
+                            order.orderStatus && order.orderStatus === "Verified"
+                              ? "greenColor"
+                              : "redColor"
+                          }
+                        >
+                          {order.orderStatus && order.orderStatus}
+                        </p>
+                        <p
+                          className={
+                            order.orderStatus && order.orderStatus === "Verified"
+                              ? "greenColor"
+                              : "redColor"
+                          }
+                        >
+
+                          {order.orderStatus && order.orderStatus === "Verified"
+                            ? String(order && order.verifiedAt).substr(0, 10)
+                            : null
+                          }
+                        </p>
                       </div>
-                      
+
                     </div>
                     <div className="verification_status">
-                        <h3> Verification Date</h3>
-                        <div className="proOrder_dtlSub">
-                          <p
-                            className={
-                              order.orderStatus && order.orderStatus === "Verified"
-                                ? "greenColor"
-                                : "redColor"
-                            }
-                          >
-                         { order.orderStatus&& order.orderStatus === "Verified"
-                                ?String(order&&order.verifiedAt).substr(0, 10)
-                                : null
-                            }
-                          </p>
-                        </div>
+                      <h3> Verification Date</h3>
+                      <div className="proOrder_dtlSub">
+                        <p
+                          className={
+                            order.orderStatus && order.orderStatus === "Verified"
+                              ? "greenColor"
+                              : "redColor"
+                          }
+                        >
+                          {order.orderStatus && order.orderStatus === "Verified"
+                            ? String(order && order.verifiedAt).substr(0, 10)
+                            : null
+                          }
+                        </p>
                       </div>
+                    </div>
                   </div>
 
                   {/* <Typography>Order Status</Typography>
@@ -258,7 +256,7 @@ setlink("")
               {/*  */}
               <div
                 style={{
-                   display: order.orderStatus === "Verified" ? "none" : "block",
+                  display: order.orderStatus === "Verified" ? "none" : "block",
                 }}
               >
                 <form
@@ -292,20 +290,20 @@ setlink("")
                   </button>
                 </form>
 
-               
+
               </div>
-             { order.orderStatus === "Verified"?(
-              
-                load===true?(<Loader1/>):(
-                  <form className="sendLink_form"  onSubmit={emailOrderSubmitHandler}>
-                  <h2>Please enter the student's email address and file url to send*</h2>
-                  <input required type={"email"} value={email} onChange={(e)=>setemail(e.target.value)} placeholder="Enter Student Email" />
-                  <input required type="url" value={link}  onChange={(e)=>setlink(e.target.value)}  placeholder="Enter File Url" />
-                  <button className="btn_primary">Send Url</button>
-                </form>
+              {order.orderStatus === "Verified" ? (
+
+                load === true ? (<Loader1 />) : (
+                  <form className="sendLink_form" onSubmit={emailOrderSubmitHandler}>
+                    <h2>Please enter the student's email address and file url to send*</h2>
+                    <input required type={"email"} value={email} onChange={(e) => setemail(e.target.value)} placeholder="Enter Student Email" />
+                    <input required type="url" value={link} onChange={(e) => setlink(e.target.value)} placeholder="Enter File Url" />
+                    <button className="btn_primary">Send Url</button>
+                  </form>
                 )
-              
-             ):(null)}
+
+              ) : (null)}
             </div>
           )}
         </div>
