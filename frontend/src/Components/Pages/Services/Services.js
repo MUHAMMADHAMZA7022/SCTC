@@ -3,6 +3,7 @@ import "./Services.css";
 import { Link } from "react-router-dom";
 import React, { Fragment, useEffect } from "react";
 
+import MetaData from "../../Layout/Metadata";
 import {
   CLEAR_ERROR_SERVICE,
   getService,
@@ -29,6 +30,7 @@ function Services() {
   }, [alert, dispatch, serviceerror]);
   return (
     <Fragment>
+      <MetaData title={"Services-MRSCTC"} />
       <div className="services">
         {/* Single Page Banner */}
         <div className="crs_banner">

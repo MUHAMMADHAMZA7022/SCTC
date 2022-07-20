@@ -7,6 +7,7 @@ import { NEW_COURSE_RESET } from "../../../redux/Constant/courseconstant";
 import { useNavigate } from "react-router-dom";
 import { useAlert } from "react-alert"
 import { LoadingButton } from "@mui/lab";
+import MetaData from "../../Layout/Metadata";
 function Courses() {
   let history = useNavigate();
   const dispatch = useDispatch();
@@ -86,6 +87,7 @@ function Courses() {
   };
   return (
     <Fragment>
+      <MetaData title={"Courses-MRSCTC"} />
       <div className='dashboard_holder courses'>
         {/* Sidebar */}
         <div className='dSidebar'>
@@ -143,7 +145,7 @@ function Courses() {
               <label for="crsprc" className="form__label">Course Price</label>
             </div>
             <div class="form__group field">
-            {images ? (
+              {images ? (
                 <img
                   src={avatarPreview}
                   alt="Course Preview"

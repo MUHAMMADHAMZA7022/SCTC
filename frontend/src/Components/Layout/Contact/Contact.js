@@ -5,6 +5,7 @@ import FaxIcon from '@mui/icons-material/Fax';
 import MarkEmailUnreadIcon from '@mui/icons-material/MarkEmailUnread';
 import { useSelector, useDispatch } from "react-redux";
 import Loader1 from "../../Layout/Loader/Courseloader";
+import MetaData from "../../Layout/Metadata";
 import {
 
     contactuser,
@@ -62,6 +63,7 @@ function Contact() {
     
     return (
         <Fragment>
+            <MetaData title={"Contact-MRSCTC"} />
             <div className='contactUs'>
                 <div className='contact_boxes grid'>
                     <div className='ct_box'>

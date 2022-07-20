@@ -7,6 +7,7 @@ import { CLEAR_ERROR_EVENT, getEvent } from "../../../redux/action/eventaction";
 import { useSelector, useDispatch } from "react-redux";
 import Loader1 from "../../Layout/Loader/loader";
 import { useAlert } from "react-alert";
+import MetaData from "../../Layout/Metadata";
 function Events() {
 
   const alert = useAlert();
@@ -23,7 +24,7 @@ function Events() {
   }, [alert, dispatch, eventerror]);
   return (
     <Fragment>
-
+      <MetaData title={"Workshops-MRSCTC"} />
       <div className="events">
         {/* Single Page Banner */}
         <div className='crs_banner'>
@@ -34,9 +35,9 @@ function Events() {
             <h2>All Workshops</h2>
           </div>
         </div>
-   
-          <div className="events_holder grid">
-          {loading === false&&latestevent ? (
+
+        <div className="events_holder grid">
+          {loading === false && latestevent ? (
             latestevent
               .map((event) => (
                 <EventCard key={event._id} event={event} />
@@ -45,7 +46,7 @@ function Events() {
             <Loader1 />
           )}
         </div>
-      
+
       </div>
     </Fragment>
   )

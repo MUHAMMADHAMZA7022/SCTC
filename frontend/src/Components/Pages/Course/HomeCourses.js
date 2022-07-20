@@ -15,6 +15,7 @@ import CourseCard from "./CourseCard";
 import { useAlert } from "react-alert";
 import { useNavigate } from "react-router-dom";
 import Loader1 from "../../Layout/Loader/loader";
+import MetaData from "../../Layout/Metadata";
 
 // import Search from "./Search";
 const cateogories = ["Biology", "Statical", "Physics", ""];
@@ -51,6 +52,7 @@ function HomeCourses() {
 
   return (
     <Fragment>
+      <MetaData title={"Courses-MRSCTC"} />
       <div className="eventsDetails">
         {/* Single Page Banner */}
         <div className="crs_banner">

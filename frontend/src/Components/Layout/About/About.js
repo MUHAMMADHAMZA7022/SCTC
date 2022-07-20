@@ -2,10 +2,12 @@ import React, { Fragment } from 'react';
 
 import bg3 from '../../../images/slide-img-3.jpg'
 import './About.css'
+import MetaData from "../../Layout/Metadata";
 
 function About() {
   return (
     <Fragment>
+    <MetaData title={"About-MRSCTC"} />
       <div className="about">
       {/* Single Page Banner */}
       <div className='crs_banner'>

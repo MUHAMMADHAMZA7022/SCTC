@@ -14,6 +14,7 @@ import {
 
     CLEAR_ERROR_EVENT,
 } from "../../../redux/action/eventaction";
+import MetaData from "../../Layout/Metadata";
 import { useParams } from "react-router-dom";
 import { useAlert } from "react-alert";
 import './EventDetails.css';
@@ -46,6 +47,7 @@ function EventDetails() {
 
     return (
         <Fragment>
+        <MetaData title={"Workshop Detailed-MRSCTC"} />
             <div className='eventsDetails'>
                 {/* Single Page Banner */}
                 <div className='evn_banner'>

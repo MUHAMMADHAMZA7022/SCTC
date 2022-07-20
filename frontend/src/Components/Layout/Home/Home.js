@@ -25,6 +25,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useAlert } from "react-alert";
 import PanToolAltIcon from '@mui/icons-material/PanToolAlt';
 import BannerCard from "../../Pages/Event/baneercard";
+import MetaData from "../../Layout/Metadata";
 
 function Home() {
   // const history = useNavigate();
@@ -66,6 +67,7 @@ function Home() {
 
   return (
     <Fragment>
+    <MetaData title={"MRSCTC"} />
       <div className="home_wrapper">
         {/* Banner Section */}
         <div className="banner">

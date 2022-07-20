@@ -12,6 +12,7 @@ import './CourseDetails.css';
 import React, { Fragment, useEffect, } from "react";
 // import Carousel from "react-material-ui-carousel";
 import { useSelector, useDispatch } from "react-redux";
+import MetaData from "../../Layout/Metadata";
 import {
     getProductDetails,
 
@@ -27,18 +28,18 @@ import { useAlert } from "react-alert";
 function CourseDetails() {
     const { id } = useParams();
     const dispatch = useDispatch();
-    
+
     const alert = useAlert();
     const { course, error } = useSelector((state) => state.courseDetails);
     console.log(course)
     const addToCartHandler = () => {
-  
-      dispatch(addItemsToCart(course._id));
-      alert.success("Item Added To Cart");
+
+        dispatch(addItemsToCart(course._id));
+        alert.success("Item Added To Cart");
     };
 
-  
-  
+
+
     useEffect(() => {
         if (error) {
             alert.error(error);
@@ -51,6 +52,7 @@ function CourseDetails() {
     }, [dispatch, id, error, alert]);
     return (
         <Fragment>
+            <MetaData title={"Course Detailed-MRSCTC"} />
             <div className='courseDetails'>
                 {/* Single Page Banner */}
                 <div className='crs_banner'>
