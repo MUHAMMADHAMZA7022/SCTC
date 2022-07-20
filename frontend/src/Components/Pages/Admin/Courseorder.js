@@ -72,13 +72,15 @@ const OrderList = () => {
   }, [dispatch, alert, error, deleteError, history, isDeleted]);
 
   const columns = [
-    { field: "id", headerName: "Order ID", minWidth: 300, flex: 1 },
+    // { field: "id", headerName: "Order ID", minWidth: 300, flex: 1 },
+    { field: "itemsname", headerName: " Name", minWidth: 100, flex: 0.6 },
+    { field: "itemsemail", headerName: "Email", minWidth: 300, flex: 1 },
 
     {
       field: "status",
       headerName: "Status",
-      minWidth: 150,
-      flex: 0.5,
+      minWidth: 100,
+      flex: 0.3,
       cellClassName: (params) => {
         return params.getValue(params.id, "status") === "Verified"
           ? "greenColor"
@@ -87,25 +89,25 @@ const OrderList = () => {
     },
     {
       field: "itemsQty",
-      headerName: "Items Qty",
+      headerName: "Qunatity",
       type: "number",
-      minWidth: 150,
-      flex: 0.4,
+      minWidth: 90,
+      flex: 0.3,
     },
 
     {
       field: "amount",
       headerName: "Amount",
       type: "number",
-      minWidth: 270,
-      flex: 0.5,
+      minWidth: 100,
+      flex: 0.3,
     },
 
     {
       field: "actions",
-      flex: 0.3,
+      flex: 0.5,
       headerName: "Actions",
-      minWidth: 150,
+      minWidth: 100,
       type: "number",
       sortable: false,
       renderCell: (params) => {
@@ -135,6 +137,9 @@ const OrderList = () => {
     orders.forEach((item) => {
       rows.push({
         id: item._id,
+        itemsname: item.checkout.name,
+        itemsemail: item.checkout.email,
+
         itemsQty: item.orderItems.length,
         amount: item.totalPrice,
         status: item.orderStatus,
