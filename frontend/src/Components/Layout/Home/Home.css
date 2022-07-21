@@ -231,7 +231,8 @@ span.share_link svg:hover {
     padding: 50px 0px;
     overflow: hidden;
 }
-.events_holder{
+
+.events_holder {
     padding: 100px 20px;
 }
 
@@ -308,18 +309,22 @@ a.ev_img {
     display: block;
     margin-bottom: 2px;
 }
-.ev_time .evn_joinBtn{
+
+.ev_time .evn_joinBtn {
     float: right;
 }
-.ev_time .evn_joinBtn a{
+
+.ev_time .evn_joinBtn a {
     font-size: 14px;
     font-weight: 900;
     color: var(--themeColor);
 }
+
 .ev_time .evn_joinBtn a:hover,
-.ev_time .evn_joinBtn a:focus{
+.ev_time .evn_joinBtn a:focus {
     color: var(--redColor);
 }
+
 .ev_date strong {
     font-size: 12px;
     line-height: 16px;
@@ -974,7 +979,8 @@ a.ev_img {
     }
 
 }
-.advtHolder{
+
+.advtHolder {
     padding: 20px;
     text-align: center;
     box-shadow: var(--boxShadow);
@@ -982,20 +988,23 @@ a.ev_img {
     margin: 0 auto;
     position: relative;
 }
-.advtHolder h2{
+
+.advtHolder h2 {
     font-size: 20px;
     line-height: normal;
     color: var(--themeColor);
     display: inline-block;
 }
-.advtHolder span{
+
+.advtHolder span {
     display: inline-block;
     position: absolute;
     top: auto;
     left: 60%;
     animation: linear advSign 1s infinite;
 }
-.advtHolder span svg{
+
+.advtHolder span svg {
     font-size: 30px;
     line-height: normal;
     transform: rotate(180deg);
@@ -1077,15 +1086,19 @@ a.ev_img {
     .discover {
         padding: 20px 10px;
     }
+
     .advtHolder span {
         left: 65%;
     }
+
     .advtHolder h2 {
         font-size: 16px;
     }
+
     .advtHolder {
         padding: 10px;
     }
+
     .advtHolder span {
         left: 74%;
     }
@@ -1135,6 +1148,7 @@ a.ev_img {
     .ev_holder {
         width: calc(50% - 10px);
     }
+
     .evnLoader_card,
     .crsLoader_card {
         width: calc(50% - 20px);
@@ -1149,9 +1163,11 @@ a.ev_img {
     .banner_content {
         top: 30%;
     }
+
     .banner_content h2 {
         font-size: 2rem;
     }
+
     .banner_content h2 span {
         font-size: 12px;
     }
@@ -1167,58 +1183,71 @@ a.ev_img {
     .homeEvents {
         padding: 10px 0px;
     }
+
     .section_heading {
         padding: 0px 0;
     }
+
     .section_heading h1 {
         margin-bottom: 20px;
         font-size: 12px;
         line-height: 12px;
     }
+
     .section_heading h1::before {
         bottom: -2px;
         left: 0;
         width: 10%;
         height: 2px;
     }
+
     .hc_holder {
         display: block;
         width: calc(100% - 10px);
         float: none;
         padding: 0;
     }
-    .hc_card{
+
+    .hc_card {
         float: none;
         width: 100%;
         height: 120px;
         max-height: 120px;
     }
+
     .ev_holder {
         width: calc(100% - 10px);
     }
+
     .evnImg_loader,
     a.ev_img {
         display: block;
         height: 100px;
     }
+
     .footer_wrapper {
         padding: 20px 0 20px 0px;
     }
+
     .evnLoader_card,
     .crsLoader_card {
         width: 100%;
         margin: 0 0 10px 0;
     }
+
     .crsLoader_card {
         height: 120px;
     }
-    .evnLoader_card{
+
+    .evnLoader_card {
         max-height: 150px;
     }
+
     .ev_content_holder a h3 {
         font-size: 12px;
         line-height: 12px;
-    }    
+    }
+
     .events_holder {
         padding: 20px 0px;
     }

@@ -50,15 +50,24 @@
   display: none !important;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 999px) {
   .myOrdersPage {
-    padding: 0;
+    padding: 50px;
     height: auto;
+  }
+  .myOrdersPage .myOrdersTable {
+    margin: 0px !important;
   }
   #myOrdersHeading {
     padding: 4vw;
   }
   .MuiDataGrid-columnHeader {
     padding: 20px !important;
+  }
+}
+
+@media only screen and (max-width: 599px) {
+  .myOrdersPage {
+    padding: 25px;
   }
 }
