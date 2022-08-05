@@ -17,6 +17,7 @@
     /* display: block; */
     display: flex;
     overflow: hidden;
+    padding: 20px;
 }
 
 .teamBox {
