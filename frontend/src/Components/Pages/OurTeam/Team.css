@@ -1,19 +1,25 @@
-.ourTeam{
+.ourTeam {
     padding: 50px;
+    overflow: hidden;
 }
-.teamHeading{
+
+.teamHeading {
     text-align: center;
 }
-.teamHeading h1{
+
+.teamHeading h1 {
     font-size: 24px;
     line-height: normal;
     margin-bottom: 20px;
 }
-.ourTeam_holder{
+
+.ourTeam_holder {
     /* display: block; */
     display: flex;
+    overflow: hidden;
 }
-.teamBox{
+
+.teamBox {
     /* display: inline-block;
     width: calc(25% - 20px);
     margin: 0px 10px; */
@@ -24,13 +30,15 @@
     box-shadow: var(--boxShadow);
     margin-bottom: 20px;
 }
-.teamBox h2{
+
+.teamBox h2 {
     font-size: 20px;
     line-height: normal;
     color: var(--themeColor);
     margin-bottom: 10px;
 }
-.teamBox span{
+
+.teamBox span {
     font-size: 12px;
     line-height: 14px;
     color: var(--redColor);
@@ -38,22 +46,46 @@
     margin-bottom: 10px;
     display: inline-block;
 }
-.teamBox p{
+
+.teamBox p {
     font-size: 14px;
     line-height: 16px;
     color: var(--lightColor);
     font-weight: 700;
     margin-bottom: 10px;
 }
-.teamBox .teamAction span{
+
+.teamBox .teamAction span {
     margin-right: 6px;
 }
-.teamBox .teamAction a{
+
+.teamBox .teamAction a {
     font-size: 14px;
     line-height: 16px;
     color: var(--greenColor);
 }
+
 .teamBox .teamAction a:hover,
-.teamBox .teamAction a:focus{
+.teamBox .teamAction a:focus {
     color: var(--themeColor);
+}
+
+/* Media Queries for responsive site layout */
+@media screen and (max-width: 1199px) {}
+
+@media screen and (max-width: 999px) {
+    .ourTeam_holder {
+        display: block;
+        padding: 20px 0px 0px 0px;
+    }
+
+    .ourTeam_holder:last-child {
+        padding: 10px 0px 0px 0px;
+    }
+}
+
+@media screen and (max-width: 599px) {
+    .ourTeam {
+        padding: 20px;
+    }
 }
