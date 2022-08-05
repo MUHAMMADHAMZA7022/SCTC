@@ -26,34 +26,57 @@ function Team() {
                         <p>Managing Director at SCTC (Leading Biostatistics)</p>
                         <div className='teamAction'>
                             <span>Email:</span>
-                            <Link to={"#"}>asifhanif@gmail.com</Link>
+                            <Link to={"#"}>asif@sctc.com.pk</Link>
                         </div>
                     </div>
                     <div className='teamBox'>
-                        <h2>Asif Hanif</h2>
-                        <span>Assistant Prof. of Biostatistics: GD-PGMI</span>
-                        <p>Managing Director at SCTC (Leading Biostatistics)</p>
+                        <h2>Asim Butt</h2>
+                        <span>Assistant Managing Director at SCTC (Leading Biostatistics)</span>
                         <div className='teamAction'>
                             <span>Email:</span>
-                            <Link to={"#"}>asifhanif@gmail.com</Link>
+                            <Link to={"#"}>	asim@sctc.com.pk</Link>
                         </div>
                     </div>
                     <div className='teamBox'>
-                        <h2>Asif Hanif</h2>
-                        <span>Assistant Prof. of Biostatistics: GD-PGMI</span>
-                        <p>Managing Director at SCTC (Leading Biostatistics)</p>
+                        <h2>Amjad Rafique</h2>
+                        <span>Assistant Managing Director at SCTC (Leading Biostatistics)</span>
                         <div className='teamAction'>
                             <span>Email:</span>
-                            <Link to={"#"}>asifhanif@gmail.com</Link>
+                            <Link to={"#"}>amjad@sctc.com.pk</Link>
                         </div>
                     </div>
                     <div className='teamBox'>
-                        <h2>Asif Hanif</h2>
-                        <span>Assistant Prof. of Biostatistics: GD-PGMI</span>
-                        <p>Managing Director at SCTC (Leading Biostatistics)</p>
+                        <h2>Tahira Ashraf</h2>
+                        <span>Research Coordinator at SCTC (Leading Biostatistics)</span>
                         <div className='teamAction'>
                             <span>Email:</span>
-                            <Link to={"#"}>asifhanif@gmail.com</Link>
+                            <Link to={"#"}>Tahira@sctc.com.pk</Link>
+                        </div>
+                    </div>
+                </div>
+                <div className='ourTeam_holder grid'>
+                    <div className='teamBox'>
+                        <h2>Iqra Waheed</h2>
+                        <span>Senior Biostatistician at SCTC (Leading Biostatistics)</span>
+                        <div className='teamAction'>
+                            <span>Email:</span>
+                            <Link to={"#"}>iqra@sctc.com.pk</Link>
+                        </div>
+                    </div>
+                    <div className='teamBox'>
+                        <h2>Kashif Saddique</h2>
+                        <span>Senior Biostatistician at SCTC (Leading Biostatistics)</span>
+                        <div className='teamAction'>
+                            <span>Email:</span>
+                            <Link to={"#"}>	Kashif@sctc.com.pk</Link>
+                        </div>
+                    </div>
+                    <div className='teamBox'>
+                        <h2>Umar Farooq</h2>
+                        <span>Biostatistician at SCTC (Leading Biostatistics)</span>
+                        <div className='teamAction'>
+                            <span>Email:</span>
+                            <Link to={"#"}>	umar@sctc.com.pk</Link>
                         </div>
                     </div>
                 </div>

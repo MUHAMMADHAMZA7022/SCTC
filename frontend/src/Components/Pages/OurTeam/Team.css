@@ -10,15 +10,19 @@
     margin-bottom: 20px;
 }
 .ourTeam_holder{
-    display: block;
+    /* display: block; */
+    display: flex;
 }
 .teamBox{
-    display: inline-block;
+    /* display: inline-block;
     width: calc(25% - 20px);
+    margin: 0px 10px; */
     margin: 0px 10px;
+    flex: 1;
     padding: 10px 20px;
     text-align: center;
     box-shadow: var(--boxShadow);
+    margin-bottom: 20px;
 }
 .teamBox h2{
     font-size: 20px;
