@@ -131,13 +131,6 @@ function Home() {
             </div>
           </div>
         </section>
-        {/* Discover Section */}
-        <section className="advertiseSection grid">
-          <div className="advtHolder">
-            <h2>Advertise Here</h2>
-            <span><PanToolAltIcon /></span>
-          </div>
-        </section>
 
         {/* This is course card loader styles */}
         {/* <section>
@@ -223,6 +216,13 @@ function Home() {
             <Link to="/courses" className="btn_primary">
               View All
             </Link>
+          </div>
+        </section>
+        {/* Discover Section */}
+        <section className="advertiseSection grid">
+          <div className="advtHolder">
+            <h2>Advertise Here</h2>
+            <span><PanToolAltIcon /></span>
           </div>
         </section>
 
