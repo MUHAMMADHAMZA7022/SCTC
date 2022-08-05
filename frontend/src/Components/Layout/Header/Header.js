@@ -168,7 +168,7 @@ function Header() {
             <li><Link to='/courses'>Courses</Link></li>
             <li><Link to='/events'>Workshops</Link></li>
             <li><Link to='/services'>Services</Link></li>
-            <li><Link to='/services'>Our Team</Link></li>
+            <li><Link to='/team'>Our Team</Link></li>
             <li><Link to='/contact'>Contact</Link></li>
             <li><Link to='/journals'>Journals</Link></li>
             <li>

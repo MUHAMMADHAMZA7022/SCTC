@@ -22,6 +22,7 @@ import Login from "./Components/Pages/Users/Login";
 import ForgetPassword from "./Components/Pages/Users/ForgetPassword";
 import ResetPassword from "./Components/Pages/Users/ResetPassword";
 import Dashboard from "./Components/Pages/Admin/Dashboard";
+import Team from "./Components/Pages/OurTeam/Team";
 
 import Courses from "./Components/Pages/Admin/Courses";
 import Courseorder from "./Components/Pages/Admin/Courseorder";
@@ -112,6 +113,9 @@ function App() {
           <Route path="/success" element={<Ordersuccess />} />
           <Route path="/events" element={<Events />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/Team" element={<Team />} />
+
+
           <Route path="/count" element={<Countdown />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/vieworder" element={<ViewOrder />} />

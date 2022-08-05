@@ -1,0 +1,10 @@
+.ourTeam{
+    padding: 50px;
+}
+.teamHeading{
+    text-align: center;
+}
+.teamHeading h1{
+    font-size: 24px;
+    line-height: normal;
+}
