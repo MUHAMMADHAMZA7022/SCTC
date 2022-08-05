@@ -29,6 +29,33 @@ function Team() {
                             <Link to={"#"}>asifhanif@gmail.com</Link>
                         </div>
                     </div>
+                    <div className='teamBox'>
+                        <h2>Asif Hanif</h2>
+                        <span>Assistant Prof. of Biostatistics: GD-PGMI</span>
+                        <p>Managing Director at SCTC (Leading Biostatistics)</p>
+                        <div className='teamAction'>
+                            <span>Email:</span>
+                            <Link to={"#"}>asifhanif@gmail.com</Link>
+                        </div>
+                    </div>
+                    <div className='teamBox'>
+                        <h2>Asif Hanif</h2>
+                        <span>Assistant Prof. of Biostatistics: GD-PGMI</span>
+                        <p>Managing Director at SCTC (Leading Biostatistics)</p>
+                        <div className='teamAction'>
+                            <span>Email:</span>
+                            <Link to={"#"}>asifhanif@gmail.com</Link>
+                        </div>
+                    </div>
+                    <div className='teamBox'>
+                        <h2>Asif Hanif</h2>
+                        <span>Assistant Prof. of Biostatistics: GD-PGMI</span>
+                        <p>Managing Director at SCTC (Leading Biostatistics)</p>
+                        <div className='teamAction'>
+                            <span>Email:</span>
+                            <Link to={"#"}>asifhanif@gmail.com</Link>
+                        </div>
+                    </div>
                 </div>
             </div>
         </Fragment>
