@@ -1,11 +1,11 @@
-import React, { Fragment,useState,useEffect } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import './Footer.css';
 import logo from '../../../images/sctc_logo.png'
 import BusinessIcon from '@mui/icons-material/Business';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import EmailIcon from '@mui/icons-material/Email';
 import FacebookIcon from '@mui/icons-material/Facebook';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import YouTubeIcon from '@mui/icons-material/YouTube';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import SendIcon from '@mui/icons-material/Send';
@@ -13,12 +13,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { LoadingButton } from "@mui/lab";
 import {
 
-    newsletter,
-    CLEAR_ERROR,
-    
-  } from "../../../redux/action/useraction";
-  import { useAlert } from "react-alert";
-import {  NEWSLETTER_RESET } from "../../../redux/Constant/userconstant";
+  newsletter,
+  CLEAR_ERROR,
+
+} from "../../../redux/action/useraction";
+import { useAlert } from "react-alert";
+import { NEWSLETTER_RESET } from "../../../redux/Constant/userconstant";
 
 import { Link } from 'react-router-dom';
 
@@ -30,36 +30,36 @@ function Footer() {
   const [email, setemail] = useState("");
 
   const newsletterSubmitHandler = (e) => {
-      e.preventDefault();
+    e.preventDefault();
 
-      const myForm = new FormData();
+    const myForm = new FormData();
 
-      myForm.set("name", name);
-      myForm.set("email", email);
- 
+    myForm.set("name", name);
+    myForm.set("email", email);
 
 
-      dispatch(newsletter(myForm));
-      setname("")
-      setemail("")
-   
+
+    dispatch(newsletter(myForm));
+    setname("")
+    setemail("")
+
   };
 
   useEffect(() => {
-      if (error) {
-          alert.error(error);
-          dispatch(CLEAR_ERROR());
-      }
+    if (error) {
+      alert.error(error);
+      dispatch(CLEAR_ERROR());
+    }
 
-      if (isnews) {
-        alert.success("Thanks for Subscribing us.");
-        dispatch({
-          type: NEWSLETTER_RESET,
-        });
-      }
+    if (isnews) {
+      alert.success("Thanks for Subscribing us.");
+      dispatch({
+        type: NEWSLETTER_RESET,
+      });
+    }
 
-       
-    }, [dispatch, isnews,alert, error,]);
+
+  }, [dispatch, isnews, alert, error,]);
   return (
     <Fragment>
       <div className='footer_wrapper'>
@@ -98,24 +98,24 @@ function Footer() {
             <div className='ft_list social_links'>
               <ul className='unstyled'>
                 <li>
-                  <Link to={"#"}>
+                  <a href="https://www.facebook.com/groups/alluringbiostatisttician">
                     <FacebookIcon />
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link to={"#"}>
-                    <LinkedInIcon />
-                  </Link>
+                  <a href="https://www.youtube.com/channel/UCHdtqsqW57tnGLKxoLLRUzg">
+                    <YouTubeIcon />
+                  </a>
                 </li>
                 <li>
-                  <Link to={"#"}>
+                  <a href="https://www.instagram.com">
                     <InstagramIcon />
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link to={"#"}>
+                  <a href="tel:+923209455811">
                     <WhatsAppIcon />
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </div>
@@ -125,25 +125,25 @@ function Footer() {
               <h2>Newsletter</h2>
             </div>
             <div className='ft_list newsletter'>
-              <form onSubmit={newsletterSubmitHandler }>
-                <input placeholder='Name' type={"text"} required  value={name} onChange={(e) => setname(e.target.value)}/>
-                <input placeholder='Email' type={"email"} required  value={email} onChange={(e) => setemail(e.target.value)}/>
+              <form onSubmit={newsletterSubmitHandler}>
+                <input placeholder='Name' type={"text"} required value={name} onChange={(e) => setname(e.target.value)} />
+                <input placeholder='Email' type={"email"} required value={email} onChange={(e) => setemail(e.target.value)} />
                 {
-              loading === true ? (<LoadingButton
-                loading
-                loadingPosition="center"
-                variant="outlined"
-              >
-              Subscribe
-              </LoadingButton>) : (
-                <button type='submit'>
-                  <span><SendIcon /></span>
-                  Subscribe
-                </button>
+                  loading === true ? (<LoadingButton
+                    loading
+                    loadingPosition="center"
+                    variant="outlined"
+                  >
+                    Subscribe
+                  </LoadingButton>) : (
+                    <button type='submit'>
+                      <span><SendIcon /></span>
+                      Subscribe
+                    </button>
 
-              )
-            }
-              
+                  )
+                }
+
               </form>
             </div>
           </div>

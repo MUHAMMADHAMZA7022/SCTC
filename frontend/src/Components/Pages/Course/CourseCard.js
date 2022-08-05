@@ -40,7 +40,7 @@ function Home({ course }) {
               <span className='course_currency'>PKR</span>
             </span>
             <div className='hc_action'>
-              <Link to={"#"} className='red_link' onClick={() => addToCartHandler()}>Buy now</Link>
+              <Link to={"#"} className='red_link' onClick={() => addToCartHandler()}>Register Now</Link>
               <Link to={`/course/details/${course._id}`}>View Details</Link>
 
               <span className='share_link red_link' title='share course'>

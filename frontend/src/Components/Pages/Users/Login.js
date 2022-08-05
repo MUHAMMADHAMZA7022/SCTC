@@ -80,7 +80,7 @@ function Login() {
                             </div>
                             <div className="group_field">
                                 <button className='btn_primary' >Login</button>
-                                <Link to={"/signup"} className="acc_link">Doesn't have an Account?</Link>
+                                <Link to={"/signup"} className="acc_link">Register Here!</Link>
                                 <Link to={"/forget"} className="acc_link">Forget your password?</Link>
                             </div>
 

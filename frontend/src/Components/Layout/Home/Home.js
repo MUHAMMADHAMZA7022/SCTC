@@ -190,7 +190,7 @@ function Home() {
         </section> */}
         <section className="homeCourses grid">
           <div className="section_heading">
-            <h1>Latest Courses to join</h1>
+            <h1>Upcoming Courses</h1>
           </div>
 
           {loading === false && courses ? (

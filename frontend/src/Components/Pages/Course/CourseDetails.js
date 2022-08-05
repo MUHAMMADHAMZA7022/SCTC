@@ -85,7 +85,7 @@ function CourseDetails() {
                     <div className='crsDetail_action'>
                         <h2>Course Details</h2>
                         <span className='dur_time'><AccessTimeIcon />{course.duration}</span>
-                        <Link to="#" onClick={() => addToCartHandler()}><AddShoppingCartIcon />Buy Now</Link>
+                        <Link to="#" onClick={() => addToCartHandler()}><AddShoppingCartIcon />Register Now</Link>
                         <span className='course_price'>
                             {course.price}
                             <span className='course_currency'>PKR</span>

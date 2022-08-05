@@ -62,7 +62,7 @@ function Header() {
   return (
     <Fragment>
       <div className='top_header'>
-        <marquee>Medical research statistical & consultancy training centre (Leading Biostatistics)</marquee>
+        <marquee scrolldelay="50">Medical research statistical & consultancy training centre (Leading Biostatistics)</marquee>
       </div>
       <div className='header_holder'>
         {/* Start of Mobile menu */}
@@ -96,6 +96,12 @@ function Header() {
                   </Link>
                 </li>
                 <li>
+                  <Link to="/about">
+                    <InfoIcon />
+                    <span>About</span>
+                  </Link>
+                </li>
+                <li>
                   <Link to="/courses">
                     <SchoolIcon />
                     <span>Courses</span>
@@ -114,21 +120,21 @@ function Header() {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/about">
-                    <InfoIcon />
-                    <span>About</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/journals">
-                    <InfoIcon />
-                    <span>Journals</span>
+                  <Link to="/team">
+                    <DesignServicesIcon />
+                    <span>Our Team</span>
                   </Link>
                 </li>
                 <li>
                   <Link to="/contact">
                     <ContactPhoneIcon />
                     <span>Contact</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/journals">
+                    <InfoIcon />
+                    <span>Journals</span>
                   </Link>
                 </li>
                 <li>
@@ -158,10 +164,11 @@ function Header() {
         <div className='navbar'>
           <ul className='unstyled nav_list'>
             <li><Link to='/'>Home</Link></li>
+            <li><Link to='/about'>About</Link></li>
             <li><Link to='/courses'>Courses</Link></li>
             <li><Link to='/events'>Workshops</Link></li>
             <li><Link to='/services'>Services</Link></li>
-            <li><Link to='/about'>About</Link></li>
+            <li><Link to='/services'>Our Team</Link></li>
             <li><Link to='/contact'>Contact</Link></li>
             <li><Link to='/journals'>Journals</Link></li>
             <li>
