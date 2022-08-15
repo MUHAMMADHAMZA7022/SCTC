@@ -67,12 +67,20 @@ function Home() {
 
   return (
     <Fragment>
-    <MetaData title={"MRSCTC-Medical Research Statistical & Consultancy Training Centre"} />
+      <MetaData title={"MRSCTC-Medical Research Statistical & Consultancy Training Centre"} />
       <div className="home_wrapper">
         {/* Banner Section */}
         <div className="banner">
           <div className="banner_img">
-            <img src={bg1} alt="slide1" />
+            {/* <img src={bg1} alt="slide1" /> */}
+            {latestevent &&
+              latestevent
+                .slice(0, 1)
+                .map((event) => (
+                  <img src={event.images.url} alt="bannerimg" />
+
+                ))
+            }
 
             {/* <img src={event.images.url} alt="slide1" /> */}
 
@@ -87,6 +95,17 @@ function Home() {
             <Link to="#" className="btn_primary">
               Check Events
             </Link> */}
+            <div className="workshopName">
+              {/* <h1>Latest Workshop Name</h1> */}
+              {latestevent &&
+                latestevent
+                  .slice(0, 1)
+                  .map((event) => (
+                    <h3>{event.name}</h3>
+
+                  ))
+              }
+            </div>
             {latestevent &&
               latestevent
                 .slice(0, 1)

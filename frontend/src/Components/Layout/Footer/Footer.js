@@ -20,7 +20,7 @@ import {
 import { useAlert } from "react-alert";
 import { NEWSLETTER_RESET } from "../../../redux/Constant/userconstant";
 
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 function Footer() {
   const dispatch = useDispatch();
@@ -68,7 +68,7 @@ function Footer() {
             <div className='footerlogo_holder'>
               <img src={logo} alt="footer logo" />
             </div>
-            <p>Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet,</p>
+            <p>Statistical Consultancy and Training Centre (SCTC) is a professional service and research unit especially dealing with medical/non-medical research and clients</p>
           </div>
           <div className='ft_block bg2'>
             <div className='ft_title'>
@@ -82,11 +82,11 @@ function Footer() {
                 </li>
                 <li>
                   <span><LocalPhoneIcon /></span>
-                  <a href="tel:+923209455811">+92 320 9455811</a>
+                  <a href="tel:+923334468161">+92 333 4468161</a>
                 </li>
                 <li>
                   <span><EmailIcon /></span>
-                  <a href="email:info@sctc.com.pk">info@sctc.com.pk</a>
+                  <a href="email:info@mrsctc.com.pk">info@mrsctc.com.pk</a>
                 </li>
               </ul>
             </div>
@@ -113,7 +113,7 @@ function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href="tel:+923209455811">
+                  <a href="tel:+923334468161">
                     <WhatsAppIcon />
                   </a>
                 </li>

@@ -28,6 +28,10 @@
     max-height: 100%;
     display: block;
 }
+.workshopName h2{
+    color: var(--whiteColor);
+    font-size: 20px;
+}
 
 .banner_content {
     position: absolute;
@@ -44,8 +48,10 @@
 .banner_content h2 {
     font-size: 5rem;
     line-height: normal;
-    display: inline-block;
-    margin-right: 3px;
+    display: inline-block; 
+}
+.banner_content h3{
+    font-size: 2rem;
 }
 
 .banner_content h2 span {
@@ -315,14 +321,17 @@ a.ev_img {
 }
 
 .ev_time .evn_joinBtn a {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 900;
-    color: var(--themeColor);
+    color: var(--whiteColor);
+    padding: 3px 10px;
+    background: var(--redColor);
 }
 
 .ev_time .evn_joinBtn a:hover,
 .ev_time .evn_joinBtn a:focus {
     color: var(--redColor);
+    background: var(--themeColor);
 }
 
 .ev_date strong {
@@ -338,8 +347,8 @@ a.ev_img {
 }
 
 .ev_content_holder a h3 {
-    font-size: 18px;
-    line-height: 20px;
+    font-size: 16px;
+    line-height: normal;
     margin-bottom: 5px;
     color: var(--themeColor);
 }
