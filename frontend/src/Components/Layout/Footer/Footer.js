@@ -150,7 +150,7 @@ function Footer() {
         </div>
       </div>
       <div className='bottomFooter'>
-        <span>Copyright© SCTC. All Rights Reserved</span>
+        <span>Copyright©MRSCTC. All Rights Reserved</span>
         <span>Website Developed by Syed Saim
           <a href="tel:+923209455811">+92 320 9455811</a>
         </span>
