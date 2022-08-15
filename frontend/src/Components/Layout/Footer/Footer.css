@@ -103,6 +103,28 @@
 .newsletter form button:hover svg{
     fill: var(--redColor);
 }
+.bottomFooter{
+    padding: 10px;
+    background: var(--themeColor);
+    overflow: hidden;
+    border-top: 1px solid var(--lightColor);
+}
+.bottomFooter span:first-child{
+    float: left;
+    color: var(--whiteColor);
+}
+.bottomFooter span:last-child{
+    float: right;
+    color: var(--whiteColor);
+}
+.bottomFooter span a{
+    margin-left: 10px;
+    color: var(--redColor);
+}
+.bottomFooter span a:hover,
+.bottomFooter span a:focus{
+    color: var(--greenColor);
+}
 /* Media Queries for responsive site layout */
 @media screen and (max-width: 1199px) {
 }
@@ -132,5 +154,23 @@
     }
     .ft_list ul li {
         margin-bottom: 0px;
+    }
+    .bottomFooter{
+        text-align: center;
+    }
+    .bottomFooter span:first-child{
+        float: none;
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+    .bottomFooter span:last-child{
+        float: none;
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+    .bottomFooter span a{
+        padding-top: 10px;
+        margin-left: 0px;
+        display: inline-block;
     }
 }

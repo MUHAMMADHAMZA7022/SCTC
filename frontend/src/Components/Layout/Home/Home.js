@@ -1,17 +1,10 @@
 import React, { Fragment, useEffect } from "react";
-// import slide1 from '../../../images/bimg1.jpg';
-import bg1 from '../../../images/sctc1.jpg';
-// import bg2 from '../../../images/slide-img-2.jpg';
-// import bg3 from '../../../images/slide-img-3.jpg';
-// import bg4 from '../../../images/slide-img-4.jpg';
 
 import MapsHomeWorkIcon from '@mui/icons-material/MapsHomeWork';
 import FaxIcon from '@mui/icons-material/Fax';
 import MarkEmailUnreadIcon from '@mui/icons-material/MarkEmailUnread';
 import "./Home.css";
 import { Link } from "react-router-dom";
-// import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
-// import SearchIcon from '@mui/icons-material/Search';
 
 import Courseloader from "../Loader/cloader";
 import Eventsloader from "../Loader/eLoader";

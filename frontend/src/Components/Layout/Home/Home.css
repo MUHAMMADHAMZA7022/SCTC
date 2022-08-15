@@ -1162,11 +1162,14 @@ a.ev_img {
     .crsLoader_card {
         width: calc(50% - 20px);
     }
+    .banner_content h3 {
+        font-size: 1rem;
+    }
 }
 
 @media screen and (max-width: 599px) {
     .banner {
-        height: 8rem;
+        height: 10rem;
     }
 
     .banner_content {
